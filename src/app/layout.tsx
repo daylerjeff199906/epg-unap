@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { Providers } from './providers'
 import { NavBarCustom } from '@/components/app'
 
 const geistSans = localFont({
@@ -30,11 +31,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBarCustom
-          title="Template EPG - UNAP"
-          color="primary"
-        />
-        {children}
+        <Providers>
+          <NavBarCustom
+            title="Template EPG - UNAP"
+            color="primary"
+          />
+          {children}
+        </Providers>
       </body>
     </html>
   )
