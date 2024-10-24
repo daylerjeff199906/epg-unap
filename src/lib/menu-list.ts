@@ -4,7 +4,7 @@ import {
   Users,
   Settings,
   LucideIcon,
-  Landmark,
+  BookUser,
 } from 'lucide-react'
 
 type Submenu = {
@@ -85,7 +85,7 @@ export function getMenuList(pathname: string): Group[] {
         {
           href: '',
           label: 'Gestión de personal',
-          icon: Landmark,
+          icon: BookUser,
           submenus: [
             {
               href: '/autoridades',
@@ -98,11 +98,6 @@ export function getMenuList(pathname: string): Group[] {
     {
       groupLabel: 'Settings',
       menus: [
-        {
-          href: '/users',
-          label: 'Users',
-          icon: Users,
-        },
         {
           href: '/account',
           label: 'Account',
