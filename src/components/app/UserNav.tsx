@@ -30,15 +30,23 @@ export const UserNav = () => {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="relative h-8 w-8 rounded-full"
+                className="relative bg-transparent border-none"
               >
-                <Avatar className="h-8 w-8">
-                  <AvatarImage
-                    src="#"
-                    alt="Avatar"
-                  />
-                  <AvatarFallback className="bg-transparent">JD</AvatarFallback>
-                </Avatar>
+                <section className="flex items-center space-x-2">
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage
+                      src="#"
+                      alt="Avatar"
+                    />
+                    <AvatarFallback className="text-gray-400">
+                      JD
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="flex flex-col justify-start items-start">
+                    <h1>Name User</h1>
+                    <p>email@email.com</p>
+                  </div>
+                </section>
               </Button>
             </DropdownMenuTrigger>
           </TooltipTrigger>
