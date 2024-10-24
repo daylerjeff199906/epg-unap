@@ -44,7 +44,7 @@ export const UserNav = () => {
                   </Avatar>
                   <div className="flex flex-col justify-start items-start">
                     <h1>Name User</h1>
-                    <p>email@email.com</p>
+                    <p className="text-xs">johndoe@example.com</p>
                   </div>
                 </section>
               </Button>
