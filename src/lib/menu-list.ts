@@ -49,7 +49,7 @@ export function getMenuList(pathname: string): Group[] {
           icon: User,
           submenus: [
             {
-              href: '/posts',
+              href: '/admin/users',
               label: 'Lista de usuarios',
             },
             {
