@@ -5,21 +5,21 @@ interface NavBarCustomProps {
   color?: 'primary' | 'secondary' | 'tertiary' | 'quaternary'
 }
 
-const colorsApp = {
-  primary: 'bg-primary-900 dark:bg-primary-800',
-  secondary: 'bg-secondary-500',
-  tertiary: 'bg-tertiary-500',
-  quaternary: 'bg-quaternary-500',
-}
+// const colorsApp = {
+//   primary: 'bg-primary-900 dark:bg-primary-800',
+//   secondary: 'bg-secondary-500',
+//   tertiary: 'bg-tertiary-500',
+//   quaternary: 'bg-quaternary-500',
+// }
 
 export const NavBarCustom = (props: NavBarCustomProps) => {
-  const { title, color } = props
+  const { title } = props
 
   return (
     <header
       className={`sticky top-0 z-10 w-full bg-blue-900 dark:bg-blue-950  shadow text-white dark:shadow-secondary  `}
     >
-      <div className="mx-4 sm:mx-8 flex h-14 items-center">
+      <div className="container flex h-14 items-center">
         <div className="flex items-center space-x-4 lg:space-x-0">
           {/* <SheetMenu /> */}
           <div
@@ -32,7 +32,7 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
               width={24}
               height={24}
             />
-            <h1 className="font-bold">{title}</h1>
+            <h1 className="font-bold text-sm">{title}</h1>
           </div>
         </div>
         <div className="flex flex-1 items-center justify-end">
