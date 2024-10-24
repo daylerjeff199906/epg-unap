@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface NavBarCustomProps {
   title: string
   color?: 'primary' | 'secondary' | 'tertiary' | 'quaternary'
@@ -15,12 +17,23 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
 
   return (
     <header
-      className={`sticky top-0 z-10 w-full bg-primary-900 dark:bg-primary-900  shadow text-white dark:shadow-secondary  `}
+      className={`sticky top-0 z-10 w-full bg-blue-900 dark:bg-blue-950  shadow text-white dark:shadow-secondary  `}
     >
       <div className="mx-4 sm:mx-8 flex h-14 items-center">
         <div className="flex items-center space-x-4 lg:space-x-0">
           {/* <SheetMenu /> */}
-          <h1 className="font-bold">{title}</h1>
+          <div
+            id="logo"
+            className="flex items-center space-x-2"
+          >
+            <Image
+              src="/brands/escudo-epg.webp"
+              alt="Logo"
+              width={24}
+              height={24}
+            />
+            <h1 className="font-bold">{title}</h1>
+          </div>
         </div>
         <div className="flex flex-1 items-center justify-end">
           {/* <ModeToggle /> */}
