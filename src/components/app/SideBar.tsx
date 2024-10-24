@@ -1,11 +1,12 @@
 import { cn } from '@/lib/utils'
 import React from 'react'
+import { Menu } from './menu'
 
 export const SideBar = () => {
   return (
     <aside
       className={cn(
-        'fixed top-0 left-0 z-20 h-screen -translate-x-full lg:translate-x-0 transition-[width] ease-in-out duration-300'
+        'fixed top-0 left-0 z-0 h-screen -translate-x-full lg:translate-x-0 transition-[width] ease-in-out duration-300 w-72 bg-primary-900 text-white'
         // !getOpenState() ? 'w-[90px]' : 'w-72',
         // settings.disabled && 'hidden'
       )}
@@ -44,7 +45,11 @@ export const SideBar = () => {
             </h1>
           </Link>
         </Button>
-        <Menu isOpen={getOpenState()} /> */}
+         */}
+        <Menu
+          // isOpen={getOpenState()}
+          isOpen={true}
+        />
       </div>
     </aside>
   )
