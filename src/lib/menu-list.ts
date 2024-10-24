@@ -53,7 +53,7 @@ export function getMenuList(pathname: string): Group[] {
               label: 'Lista de usuarios',
             },
             {
-              href: '/posts/new',
+              href: '/admin/users/inactive-users',
               label: 'Usuarios sin acceso',
             },
           ],
