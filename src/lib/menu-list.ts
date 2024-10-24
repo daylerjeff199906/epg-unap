@@ -1,11 +1,10 @@
 import {
-  Tag,
+  House,
+  User,
   Users,
   Settings,
-  Bookmark,
-  SquarePen,
-  LayoutGrid,
   LucideIcon,
+  Landmark,
 } from 'lucide-react'
 
 type Submenu = {
@@ -34,40 +33,65 @@ export function getMenuList(pathname: string): Group[] {
       groupLabel: '',
       menus: [
         {
-          href: '/dashboard',
-          label: 'Dashboard',
-          icon: LayoutGrid,
+          href: '/',
+          label: 'Inicio',
+          icon: House,
           submenus: [],
         },
       ],
     },
     {
-      groupLabel: 'Contents',
+      groupLabel: 'Usuarios',
       menus: [
         {
           href: '',
-          label: 'Posts',
-          icon: SquarePen,
+          label: 'Usuarios',
+          icon: User,
           submenus: [
             {
               href: '/posts',
-              label: 'All Posts',
+              label: 'Lista de usuarios',
             },
             {
               href: '/posts/new',
-              label: 'New Post',
+              label: 'Usuarios sin acceso',
             },
           ],
         },
         {
-          href: '/categories',
-          label: 'Categories',
-          icon: Bookmark,
+          href: '',
+          label: 'Roles',
+          icon: Users,
+          submenus: [
+            {
+              href: '/roles',
+              label: 'Aplicaciones',
+            },
+            {
+              href: '/roles/new',
+              label: 'Roles',
+            },
+            {
+              href: '/units',
+              label: 'Unidades organizativas',
+            },
+          ],
         },
+      ],
+    },
+    {
+      groupLabel: 'Personal',
+      menus: [
         {
-          href: '/tags',
-          label: 'Tags',
-          icon: Tag,
+          href: '',
+          label: 'Gestión de personal',
+          icon: Landmark,
+          submenus: [
+            {
+              href: '/autoridades',
+              label: 'Autoridades',
+            },
+          ],
         },
       ],
     },
