@@ -5,6 +5,7 @@
 // import { useSidebar } from "@/hooks/use-sidebar";
 // import { useStore } from "@/hooks/use-store";
 import { cn } from '@/lib/utils'
+import { SideBar } from './SideBar'
 
 export default function AdminPanelLayout({
   children,
@@ -16,7 +17,7 @@ export default function AdminPanelLayout({
   //   const { getOpenState, settings } = sidebar;
   return (
     <>
-      {/* <Sidebar /> */}
+      <SideBar />
       <main
         className={cn(
           'min-h-[calc(100vh_-_56px)] bg-zinc-50 dark:bg-zinc-900 transition-[margin-left] ease-in-out duration-300'
