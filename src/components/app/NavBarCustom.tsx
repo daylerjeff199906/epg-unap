@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { UserNav } from './UserNav'
+import { ModeToggle } from '../actions'
 
 interface NavBarCustomProps {
   title: string
@@ -37,7 +38,7 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
           </div>
         </div>
         <div className="flex flex-1 items-center justify-end">
-          {/* <ModeToggle /> */}
+          <ModeToggle />
           <UserNav />
         </div>
       </div>
