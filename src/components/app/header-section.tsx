@@ -3,8 +3,8 @@ import { PlusCircle, RefreshCw, Download } from 'lucide-react'
 
 export const HeaderSection = () => {
   return (
-    <div className="bg-gray-100 p-6 rounded-lg shadow-sm">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+    <main className="p-6 rounded-lg">
+      <h2 className="text-xl font-bold text-gray-800 mb-2">
         Lista de sedes
       </h2>
       <p className="text-sm text-gray-600 mb-4">
@@ -12,6 +12,7 @@ export const HeaderSection = () => {
         Agregar para añadir una nueva sede o actualiza la información existente
         según sea necesario.
       </p>
+      <hr className="border-gray-200 mb-4" />
       <div className="flex space-x-2">
         <Button
           variant="outline"
@@ -35,6 +36,6 @@ export const HeaderSection = () => {
           Exportar
         </Button>
       </div>
-    </div>
+    </main>
   )
 }
