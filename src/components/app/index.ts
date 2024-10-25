@@ -5,6 +5,7 @@ import AdminPanelLayout from './admin-panel-layout'
 import { CollapseMenuButton } from './collapse-menu-button'
 import { MultiStepTimeline } from './multi-step-timeline'
 import { BreadcrumbCustom } from './bread-crumb-custom'
+import { HeaderSection } from './header-section'
 
 export {
   NavBarCustom,
@@ -14,4 +15,5 @@ export {
   CollapseMenuButton,
   MultiStepTimeline,
   BreadcrumbCustom,
+  HeaderSection,
 }
