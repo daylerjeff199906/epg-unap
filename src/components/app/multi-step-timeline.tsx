@@ -26,7 +26,7 @@ export const MultiStepTimeline = () => {
   ]
 
   return (
-    <div className="max-w-md mx-auto mt-8">
+    <div className="max-w-md mt-8">
       <ol className="relative space-y-12">
         {steps.map((step, index) => (
           <li
