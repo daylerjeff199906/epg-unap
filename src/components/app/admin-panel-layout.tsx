@@ -4,7 +4,7 @@
 import { useSidebar } from '@/hooks'
 // useStore 
 import { cn } from '@/lib/utils'
-import { SideBar } from './SideBar'
+import { SideBar } from './side-bar'
 
 export default function AdminPanelLayout({
   children,

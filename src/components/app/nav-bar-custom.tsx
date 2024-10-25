@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import { UserNav } from './UserNav'
+import { UserNav } from './user-nav'
 import { ModeToggle } from '../actions'
-import { MoreApps } from './MoreApps'
+import { MoreApps } from './more-apps'
 
 interface NavBarCustomProps {
   title: string

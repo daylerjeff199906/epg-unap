@@ -1,6 +1,6 @@
-import { NavBarCustom } from './NavBarCustom'
-import { UserNav } from './UserNav'
-import { MoreApps } from './MoreApps'
+import { NavBarCustom } from './nav-bar-custom'
+import { UserNav } from './user-nav'
+import { MoreApps } from './more-apps'
 import AdminPanelLayout from './admin-panel-layout'
 import { CollapseMenuButton } from './collapse-menu-button'
 
