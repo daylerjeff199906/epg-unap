@@ -24,7 +24,7 @@ export const MultiStepTimeline = () => {
       isCompleted: false,
     },
   ]
-  
+
   return (
     <div className="max-w-md mx-auto mt-8">
       <ol className="relative space-y-12">
@@ -34,8 +34,8 @@ export const MultiStepTimeline = () => {
             className="flex items-start"
           >
             <div
-              className={`flex items-center justify-center w-16 h-16 rounded-full ${
-                step.isCompleted ? 'bg-gray-400' : 'border-4 border-gray-400'
+              className={`flex items-center justify-center w-4 h-4 rounded-full ${
+                step.isCompleted ? 'bg-gray-400' : 'border-2 border-gray-400'
               }`}
             >
               {step.isCompleted && <Check className="w-8 h-8 text-white" />}
