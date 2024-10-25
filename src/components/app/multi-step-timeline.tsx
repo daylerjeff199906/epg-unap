@@ -31,10 +31,10 @@ export const MultiStepTimeline = () => {
         {steps.map((step, index) => (
           <li
             key={index}
-            className="flex items-center cursor-pointer"
+            className="flex items-start cursor-pointer"
             onClick={() => setSelectedStep(index)}
           >
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center pt-3">
               <div
                 className={`w-5 h-5 flex items-center justify-center rounded-full ${
                   selectedStep === index
@@ -54,7 +54,7 @@ export const MultiStepTimeline = () => {
               <h3
                 className={`text-lg ${
                   selectedStep === index
-                    ? 'font-bold text-blue-500'
+                    ? 'font-bold text-gray-900'
                     : 'font-medium text-gray-900'
                 }`}
               >
