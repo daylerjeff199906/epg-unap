@@ -1,27 +1,27 @@
+'use client'
+import { useState } from 'react'
 import { Check } from 'lucide-react'
 
 interface Step {
   title: string
   description: string
-  isCompleted: boolean
 }
 
 export const MultiStepTimeline = () => {
+  const [selectedStep, setSelectedStep] = useState<number | null>(null)
+
   const steps: Step[] = [
     {
       title: 'Información básica',
       description: 'Ingrese los datos principales',
-      isCompleted: true,
     },
     {
       title: 'Asignación de roles',
       description: 'Defina los roles del usuario',
-      isCompleted: false,
     },
     {
       title: 'Crear usuario y terminar',
       description: 'Finalice el proceso de creación',
-      isCompleted: false,
     },
   ]
 
@@ -31,28 +31,37 @@ export const MultiStepTimeline = () => {
         {steps.map((step, index) => (
           <li
             key={index}
-            className="flex items-start"
+            className="flex items-center cursor-pointer"
+            onClick={() => setSelectedStep(index)}
           >
-            <div
-              className={`flex items-center justify-center w-4 h-4 rounded-full ${
-                step.isCompleted ? 'bg-gray-400' : 'border-2 border-gray-400'
-              }`}
-            >
-              {step.isCompleted && <Check className="w-8 h-8 text-white" />}
+            <div className="relative flex items-center justify-center">
+              <div
+                className={`w-5 h-5 flex items-center justify-center rounded-full ${
+                  selectedStep === index
+                    ? 'bg-gray-400 text-white'
+                    : 'border-2 border-gray-400'
+                }`}
+              >
+                {selectedStep === index && (
+                  <Check className="w-3 h-3 text-white" />
+                )}
+              </div>
+              {index < steps.length - 1 && (
+                <div className="absolute w-0.5 h-20 bg-gray-300 left-1/2 transform -translate-x-1/2 top-8"></div>
+              )}
             </div>
-            <div className="ml-6 pt-3">
+            <div className="ml-6 pt-1">
               <h3
                 className={`text-lg ${
-                  step.isCompleted ? 'font-bold' : 'font-medium'
-                } text-gray-900`}
+                  selectedStep === index
+                    ? 'font-bold text-blue-500'
+                    : 'font-medium text-gray-900'
+                }`}
               >
                 {step.title}
               </h3>
               <p className="mt-2 text-sm text-gray-500">{step.description}</p>
             </div>
-            {index < steps.length - 1 && (
-              <div className="absolute left-8 top-16 w-0.5 h-20 bg-gray-300" />
-            )}
           </li>
         ))}
       </ol>
