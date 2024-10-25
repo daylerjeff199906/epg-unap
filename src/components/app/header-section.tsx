@@ -34,9 +34,9 @@ export const HeaderSection = (props: HeaderSectionProps) => {
         {title || 'Título de la sección'}
       </h2>
       {description && (
-        <p className="text-sm text-gray-600 mb-4">
+        <h2 className="text-sm text-gray-600 mb-4">
           {description || 'Descripción de la sección'}
-        </p>
+        </h2>
       )}
       {showDivider && <hr className="border-gray-200 my mb-4" />}
       <div className="flex space-x-2">
