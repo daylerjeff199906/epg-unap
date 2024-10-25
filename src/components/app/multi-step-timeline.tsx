@@ -60,7 +60,7 @@ export const MultiStepTimeline = () => {
               >
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm text-gray-500">{step.description}</p>
+              <p className="mt-1 text-sm text-gray-500">{step.description}</p>
             </div>
           </li>
         ))}
