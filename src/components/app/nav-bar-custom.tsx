@@ -38,7 +38,7 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
             <h1 className="font-bold text-sm">{title}</h1>
           </div>
         </div>
-        <div className="flex flex-1 items-center justify-end">
+        <div className="flex flex-1 items-center justify-end gap-2">
           <ModeToggle />
           <MoreApps />
           <UserNav />

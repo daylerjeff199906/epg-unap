@@ -30,7 +30,7 @@ export const UserNav = () => {
             <DropdownMenuTrigger asChild>
               <Button
                 variant="outline"
-                className="relative bg-transparent border-none"
+                className="relative bg-transparent border-none hover:bg-slate-400"
               >
                 <section className="flex items-center space-x-2">
                   <Avatar className="h-8 w-8">
