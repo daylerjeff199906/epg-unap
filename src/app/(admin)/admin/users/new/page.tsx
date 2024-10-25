@@ -1,3 +1,9 @@
+import { MultiStepTimeline } from '@/components/app'
+
 export default function Page() {
-  return <div>page</div>
+  return (
+    <div>
+      <MultiStepTimeline />
+    </div>
+  )
 }
