@@ -5,6 +5,7 @@ import { Check } from 'lucide-react'
 interface Step {
   title: string
   description: string
+  href?: string
 }
 
 export const MultiStepTimeline = () => {
@@ -14,14 +15,17 @@ export const MultiStepTimeline = () => {
     {
       title: 'Información básica',
       description: 'Ingrese los datos principales',
+      href: '#',
     },
     {
       title: 'Asignación de roles',
       description: 'Defina los roles del usuario',
+      href: '#',
     },
     {
       title: 'Crear usuario y terminar',
       description: 'Finalice el proceso de creación',
+      href: '#',
     },
   ]
 
