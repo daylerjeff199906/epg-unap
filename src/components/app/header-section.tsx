@@ -18,7 +18,7 @@ export const HeaderSection = (props: HeaderSectionProps) => {
   const {
     title,
     description,
-    showDivider,
+    showDivider = true,
     showAddButton = true,
     showExportButton = true,
     showRefreshButton = true,
