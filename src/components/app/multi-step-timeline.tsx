@@ -35,7 +35,11 @@ export const MultiStepTimeline = (props: MultiStepTimelineProps) => {
                 className="flex items-start cursor-pointer"
                 onClick={() => setSelectedStep && setSelectedStep(index)}
               >
-                <div className="relative flex items-center justify-center pt-3">
+                <div
+                  className={`relative flex items-center justify-center ${
+                    step.description ? 'mt-4' : 'mt-2'
+                  }`}
+                >
                   <div
                     className={`w-5 h-5 flex items-center justify-center rounded-full ${
                       selectedStep === index
