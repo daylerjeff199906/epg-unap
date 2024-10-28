@@ -37,7 +37,7 @@ export const BreadcrumbCustom = () => {
   }
 
   return (
-    <div>
+    <div className="w-full container">
       <Breadcrumb>
         <BreadcrumbList>{generatePaths(pathname)}</BreadcrumbList>
       </Breadcrumb>

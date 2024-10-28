@@ -1,3 +1,9 @@
+import { FrmUserEditor } from '@/components/forms/frm-user-editor/frm-user-editor'
+
 export default function Page() {
-  return <div>page</div>
+  return (
+    <div>
+      <FrmUserEditor />
+    </div>
+  )
 }

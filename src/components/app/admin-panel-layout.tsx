@@ -27,7 +27,7 @@ export default function AdminPanelLayout({
         <section className="p-4 bg-gray-100">
           <BreadcrumbCustom />
         </section>
-        {children}
+        <main className="w-full container">{children}</main>
       </main>
       <footer
         className={cn(
