@@ -1,13 +1,32 @@
 import Image from 'next/image'
 import { UserNav } from './user-nav'
 import { ModeToggle } from '../actions'
-import { MoreApps } from './more-apps'
+import  MoreApps from './more-apps'
+import type { IMoreApp } from '@/types/index'
+import { GripIcon } from 'lucide-react'
 
 interface NavBarCustomProps {
   title: string
   color?: 'primary' | 'secondary' | 'tertiary' | 'quaternary'
+  Apps?: Array<IMoreApp>;
 }
 
+const MoreAppsButton: Array<IMoreApp>=[
+  {
+    id: 1,
+    title: 'EPG',
+    description: 'Ver EPG',
+    icon: 'https://cdn-icons-png.flaticon.com/512/1804/1804486.png',
+    url: 'https://epg.unap.edu.co',
+  },
+  {
+    id: 2,
+    title: 'EPG-UNAP',
+    description: 'Ver EPG-UNAP',
+    icon: 'https://cdn-icons-png.flaticon.com/512/1804/1804486.png',
+    url: 'https://epg-unap.unap.edu.co',
+  },
+]
 // const colorsApp = {
 //   primary: 'bg-primary-900 dark:bg-primary-800',
 //   secondary: 'bg-secondary-500',
@@ -16,7 +35,7 @@ interface NavBarCustomProps {
 // }
 
 export const NavBarCustom = (props: NavBarCustomProps) => {
-  const { title } = props
+  const { title} = props
 
   return (
     <header
@@ -40,7 +59,13 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
         </div>
         <div className="flex flex-1 items-center justify-end gap-2">
           <ModeToggle />
-          <MoreApps />
+          {
+            MoreAppsButton && MoreAppsButton.length > 0 && (
+              <MoreApps apps={MoreAppsButton}>
+                  <GripIcon />
+              </MoreApps>
+            )
+          }
           <UserNav />
         </div>
       </div>
