@@ -21,51 +21,29 @@ export const UserInfoBasic = () => {
         <Input placeholder="N° Documento: 784542" />
       </ContentInput>
       <hr className="my-4 border-t border-gray-300" />
-      <section
-        className="grid grid-cols-1 gap-4 md:grid-cols-3 py-4"
+      <ContentInput
         id="name"
+        label="Nombres"
+        description="Ingrese los nombres de la persona"
       >
-        <div className="col-span-1 sm:col-span-1">
-          <h3 className="text-sm font-bold">Nombres</h3>
-          <p className="text-xs text-gray-500">
-            Ingrese los nombres de la persona
-          </p>
-        </div>
-        <div className="col-span-1 sm:col-span-2">
-          <Input placeholder="Ejemplo: Juan Jorge" />
-        </div>
-      </section>
+        <Input placeholder="Ejemplo: Juan Jorge" />
+      </ContentInput>
       <hr className="my-4 border-t border-gray-300" />
-      <section
-        className="grid grid-cols-1 gap-4 md:grid-cols-3 py-4"
+      <ContentInput
         id="primer-apellido"
+        label="Primer apellido"
+        description="Ingrese el primer apellido de la persona"
       >
-        <div className="col-span-1 sm:col-span-1">
-          <h3 className="text-sm font-bold">Prime apellido</h3>
-          <p className="text-xs text-gray-500">
-            Ingrese el primer apellido de la persona
-          </p>
-        </div>
-        <div className="col-span-1 sm:col-span-2">
-          <Input placeholder="Ejemplo: Pérez" />
-        </div>
-      </section>
+        <Input placeholder="Ejemplo: Pérez" />
+      </ContentInput>
       <hr className="my-4 border-t border-gray-300" />
-      <section
-        className="grid grid-cols-1 gap-4 md:grid-cols-3 py-4"
+      <ContentInput
         id="segundo-apellido"
+        label="Segundo apellido"
+        description="Ingrese el segundo apellido de la persona"
       >
-        <div className="col-span-1 sm:col-span-1">
-          <h3 className="text-sm font-bold">Segundo apellido</h3>
-          <p className="text-xs text-gray-500">
-            Ingrese el segundo apellido de la persona
-          </p>
-        </div>
-        <div className="col-span-1 sm:col-span-2">
-          <Input placeholder="Ejemplo: Pérez" />
-        </div>
-      </section>
-      <hr className="my-4 border-t border-gray-300" />
+        <Input placeholder="Ejemplo: Pérez" />
+      </ContentInput>
     </section>
   )
 }
