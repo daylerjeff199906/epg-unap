@@ -17,14 +17,15 @@ export const BreadcrumbCustom = () => {
 
     const breadcrumbPaths = paths.map((path, index) => {
       const href = `/${paths.slice(0, index + 1).join('/')}`
+      const pathReplace = path.replace(/-/g, ' ')
       return (
         <BreadcrumbItem key={index}>
           <BreadcrumbLink asChild>
             <Link
               href={href}
-              className="capitalize"
+              className="capitalize text-xs"
             >
-              {path}
+              {pathReplace}
             </Link>
           </BreadcrumbLink>
           {index < paths.length - 1 && <BreadcrumbSeparator />}

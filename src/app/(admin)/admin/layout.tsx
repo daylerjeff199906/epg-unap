@@ -6,11 +6,11 @@ interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   const { children } = props
-  
+
   return (
     <>
       <NavBarCustom
-        title="Template EPG - UNAP"
+        title="Panel de administración de EPG - UNAP"
         color="primary"
       />
       <AdminPanelLayout>{children}</AdminPanelLayout>

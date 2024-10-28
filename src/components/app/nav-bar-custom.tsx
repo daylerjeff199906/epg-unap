@@ -20,7 +20,7 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
 
   return (
     <header
-      className={`sticky top-0 z-10 w-full bg-blue-900 dark:bg-blue-950  shadow text-white dark:shadow-secondary  `}
+      className={`sticky top-0 z-10 w-full bg-primary-800 dark:bg-blue-950  shadow text-white dark:shadow-secondary  `}
     >
       <div className="px-4 flex h-14 items-center">
         <div className="flex items-center space-x-4 lg:space-x-0">
@@ -32,10 +32,10 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
             <Image
               src="/brands/escudo-epg.webp"
               alt="Logo"
-              width={24}
-              height={24}
+              width={18}
+              height={18}
             />
-            <h1 className="font-bold text-sm">{title}</h1>
+            <h1 className="font-bold text-xs">{title}</h1>
           </div>
         </div>
         <div className="flex flex-1 items-center justify-end gap-2">
