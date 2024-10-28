@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
-import { AdminPanelLayout, NavBarCustom } from '@/components/app'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,13 +21,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased bg-background text-foreground dark:bg-background-dark dark:text-foreground-dark`}
       >
-        <Providers>
-          <NavBarCustom
-            title="Template EPG - UNAP"
-            color="primary"
-          />
-          <AdminPanelLayout>{children}</AdminPanelLayout>
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
