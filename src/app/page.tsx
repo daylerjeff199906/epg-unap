@@ -1,9 +1,9 @@
-import NextDataTable from "@/components/tables/next-ui/next-data-table";
+import { TableExample } from "@/components/tables/next-ui/table-example";
 
 export default function Home() {
   return (
     <main className="container mx-auto p-4">
-      <NextDataTable /> 
+      <TableExample /> 
     </main>
   )
 }

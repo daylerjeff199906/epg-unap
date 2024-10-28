@@ -1,11 +1,11 @@
 const columns = [
-  {name: "ID", uid: "id", sortable: true},
-  {name: "NAME", uid: "name", sortable: true},
-  {name: "AGE", uid: "age", sortable: true},
-  {name: "ROLE", uid: "role", sortable: true},
+  {name: "ID", uid: "id"},
+  {name: "NAME", uid: "name"},
+  {name: "AGE", uid: "age"},
+  {name: "ROLE", uid: "role"},
   {name: "TEAM", uid: "team"},
   {name: "EMAIL", uid: "email"},
-  {name: "STATUS", uid: "status", sortable: true},
+  {name: "STATUS", uid: "status"},
   {name: "ACTIONS", uid: "actions"},
 ];
 
@@ -219,3 +219,4 @@ const users = [
 ];
 
 export { columns, statusOptions, users };
+
