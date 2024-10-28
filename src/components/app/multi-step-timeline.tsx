@@ -9,8 +9,8 @@ export interface Step {
 
 interface MultiStepTimelineProps {
   steps: Step[]
-  selectedStep?: number | null
-  setSelectedStep?: (index: number) => void
+  selectedStep?: string | null
+  setSelectedStep?: (index: string) => void
 }
 
 export const MultiStepTimeline = (props: MultiStepTimelineProps) => {
@@ -31,9 +31,9 @@ export const MultiStepTimeline = (props: MultiStepTimelineProps) => {
           <>
             {steps?.map((step, index) => (
               <li
-                key={index}
+                key={step.id}
                 className="flex items-start cursor-pointer"
-                onClick={() => setSelectedStep && setSelectedStep(index)}
+                onClick={() => setSelectedStep && setSelectedStep(step.id)}
               >
                 <div
                   className={`relative flex items-center justify-center ${
@@ -42,12 +42,12 @@ export const MultiStepTimeline = (props: MultiStepTimelineProps) => {
                 >
                   <div
                     className={`w-5 h-5 flex items-center justify-center rounded-full ${
-                      selectedStep === index
+                      selectedStep === step.id
                         ? 'bg-gray-400 text-white'
                         : 'border-2 border-gray-400'
                     }`}
                   >
-                    {selectedStep === index && (
+                    {selectedStep === step.id && (
                       <Check className="w-3 h-3 text-white" />
                     )}
                   </div>
@@ -58,7 +58,7 @@ export const MultiStepTimeline = (props: MultiStepTimelineProps) => {
                 <div className="ml-6 pt-1">
                   <h3
                     className={`${
-                      selectedStep === index
+                      selectedStep === step.id
                         ? 'font-bold text-gray-900'
                         : 'font-medium text-gray-900'
                     }`}
