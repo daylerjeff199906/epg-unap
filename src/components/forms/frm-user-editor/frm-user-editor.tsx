@@ -1,9 +1,10 @@
 import { MultiStepTimeline } from '@/components/app'
 import { UserInfoBasic } from './sections'
+import { Button } from '@/components/ui/button'
 
 export const FrmUserEditor = () => {
   return (
-    <main className="py-4">
+    <main className="py-4 relative h-screen max-h-[calc(100vh-104px)]">
       <header>
         <h1 className="font-bold text-xl">Agregar un usuario</h1>
       </header>
@@ -17,7 +18,12 @@ export const FrmUserEditor = () => {
           <UserInfoBasic />
         </section>
       </main>
-      <footer></footer>
+      <footer className="mt-4 border-t absolute left-0 right-0 bottom-0">
+        <main className="flex justify-end w-full py-5">
+          <Button variant="ghost">Cancelar</Button>
+          <Button>Aceptar</Button>
+        </main>
+      </footer>
     </main>
   )
 }
