@@ -1,6 +1,6 @@
 import { DataTable } from '@/components/tables/shadcn-table/main-table';
 import { useEffect, useState } from 'react';
-import { paymentColumns } from './PaymentColumns';
+import { paymentColumns } from './payment-columns';
 import { Payment, payments } from './payments-data';
 
 
