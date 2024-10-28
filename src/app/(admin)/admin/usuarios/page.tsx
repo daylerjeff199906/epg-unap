@@ -9,7 +9,10 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div>
-      <HeaderSection description="Descripción de la sección" />
+      <HeaderSection
+        title="Usuarios creados"
+        description='Consulta y gestiona las matrículas registradas en el sistema. Usa el botón "Agregar" para crear nuevos usuarios y actualiza la información existente según sea necesario.'
+      />
     </div>
   )
 }
