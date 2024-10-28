@@ -52,7 +52,13 @@ export const MultiStepTimeline = (props: MultiStepTimelineProps) => {
                     )}
                   </div>
                   {index < steps?.length - 1 && (
-                    <div className="absolute w-0.5 h-20 bg-gray-300 left-1/2 transform -translate-x-1/2 top-8"></div>
+                    <div
+                      className={`
+                       absolute w-0.5  bg-gray-300 left-1/2 transform -translate-x-1/2 ${
+                         step.description ? 'top-8 h-20' : 'top-4 h-16'
+                       }
+                      `}
+                    ></div>
                   )}
                 </div>
                 <div className="ml-6 pt-1">

@@ -4,7 +4,10 @@ import React from 'react'
 
 export const UserInfoBasic = () => {
   return (
-    <section id="user-info-basic">
+    <section
+      id="user-info-basic"
+      className="w-full p-4"
+    >
       <header>
         <h1 className="font-bold">Configurar la información básica</h1>
         <p className="text-sm text-gray-500">

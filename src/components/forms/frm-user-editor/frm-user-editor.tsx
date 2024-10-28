@@ -1,6 +1,6 @@
 'use client'
 import { MultiStepTimeline } from '@/components/app'
-import { UserInfoBasic } from './sections'
+import { UserInfoBasic, UserRolesData } from './sections'
 import { Button } from '@/components/ui/button'
 
 import { Step } from '@/components/app/multi-step-timeline'
@@ -43,9 +43,8 @@ export const FrmUserEditor = () => {
           />
         </aside>
         <div className="hidden sm:block mx-4 border-l border-gray-300 "></div>
-        <section className="w-full p-4">
-          <UserInfoBasic />
-        </section>
+        {selectedStep === 'user-info-basic' && <UserInfoBasic />}
+        {selectedStep === 'user-roles-data' && <UserRolesData />}
       </main>
       <footer className="mt-4 border-t absolute left-0 right-0 bottom-0">
         <main className="flex justify-end w-full py-5">
