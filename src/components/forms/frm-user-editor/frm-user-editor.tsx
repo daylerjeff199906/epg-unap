@@ -41,9 +41,9 @@ export const FrmUserEditor = () => {
     }
   }
 
-  const validateStep = (isValid: boolean) => {
-    setIsStepValid(isValid)
-  }
+  // const validateStep = (isValid: boolean) => {
+  //   setIsStepValid(isValid)
+  // }
 
   return (
     <main className="py-4 relative h-screen max-h-[calc(100vh-104px)]">
