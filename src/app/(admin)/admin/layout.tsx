@@ -1,11 +1,11 @@
 import { AdminPanelLayout, NavBarCustom } from '@/components/app'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 interface LayoutProps {
   children: React.ReactNode
 }
 
-export const meta: Metadata = {
+export const metadata: Metadata = {
   title: {
     template: '%s | Admin Panel | EPG - UNAP',
     default: 'Panel de administración de EPG - UNAP',
