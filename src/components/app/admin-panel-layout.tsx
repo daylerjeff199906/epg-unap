@@ -2,6 +2,7 @@
 import { useSidebar } from '@/hooks'
 import { cn } from '@/lib/utils'
 import { SideBar } from './side-bar'
+import { BreadcrumbCustom } from './bread-crumb-custom'
 
 export default function AdminPanelLayout({
   children,
@@ -23,6 +24,9 @@ export default function AdminPanelLayout({
           !settings.disabled && (!getOpenState() ? 'lg:ml-[90px]' : 'lg:ml-72')
         )}
       >
+        <section className="p-4 bg-gray-100">
+          <BreadcrumbCustom />
+        </section>
         {children}
       </main>
       <footer
