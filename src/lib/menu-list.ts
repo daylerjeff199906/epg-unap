@@ -56,7 +56,7 @@ export function getMenuList(pathname: string): Group[] {
             {
               href: '/admin/usuarios/inactivos',
               label: 'Usuarios sin acceso',
-              active: pathname === '/admin/users/inactivos',
+              active: pathname === '/admin/usuarios/inactivos',
             },
           ],
         },
