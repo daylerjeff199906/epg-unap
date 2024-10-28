@@ -1,3 +1,4 @@
+import { ContentInput } from '@/components/layouts'
 import { Input } from '@/components/ui/input'
 import React from 'react'
 
@@ -12,20 +13,13 @@ export const UserInfoBasic = () => {
         </p>
       </header>
       <hr className="my-4 border-t border-gray-300" />
-      <section
-        className="grid grid-cols-1 gap-4 md:grid-cols-3 py-4"
+      <ContentInput
         id="nro-documento"
+        label="N° Documento"
+        description="Ingrese el documento de la persona"
       >
-        <div className="col-span-1 sm:col-span-1">
-          <h3 className="text-sm font-bold">N° Documento</h3>
-          <p className="text-xs text-gray-500">
-            Ingrese el documento de la persona
-          </p>
-        </div>
-        <div className="col-span-1 sm:col-span-2">
-          <Input placeholder="N° Documento: 784542" />
-        </div>
-      </section>
+        <Input placeholder="N° Documento: 784542" />
+      </ContentInput>
       <hr className="my-4 border-t border-gray-300" />
       <section
         className="grid grid-cols-1 gap-4 md:grid-cols-3 py-4"
