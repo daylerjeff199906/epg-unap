@@ -33,7 +33,7 @@ export function getMenuList(pathname: string): Group[] {
       groupLabel: '',
       menus: [
         {
-          href: '/',
+          href: '/admin',
           label: 'Inicio',
           icon: House,
           submenus: [],
