@@ -27,7 +27,6 @@ type Group = {
 }
 
 export function getMenuList(pathname: string): Group[] {
-  console.log(pathname)
   return [
     {
       groupLabel: '',
@@ -37,6 +36,7 @@ export function getMenuList(pathname: string): Group[] {
           label: 'Inicio',
           icon: House,
           submenus: [],
+          active: pathname === '/admin',
         },
       ],
     },
@@ -44,17 +44,19 @@ export function getMenuList(pathname: string): Group[] {
       groupLabel: 'Usuarios',
       menus: [
         {
-          href: '',
+          href: '/admin/users',
           label: 'Usuarios',
           icon: User,
           submenus: [
             {
               href: '/admin/users',
               label: 'Lista de usuarios',
+              active: pathname === '/admin/users',
             },
             {
               href: '/admin/users/inactive-users',
               label: 'Usuarios sin acceso',
+              active: pathname === '/admin/users/inactive-users',
             },
           ],
         },
@@ -66,14 +68,17 @@ export function getMenuList(pathname: string): Group[] {
             {
               href: '/roles',
               label: 'Aplicaciones',
+              active: pathname === '/roles',
             },
             {
               href: '/roles/new',
               label: 'Roles',
+              active: pathname === '/roles/new',
             },
             {
               href: '/units',
               label: 'Unidades organizativas',
+              active: pathname === '/units',
             },
           ],
         },
@@ -90,6 +95,7 @@ export function getMenuList(pathname: string): Group[] {
             {
               href: '/autoridades',
               label: 'Autoridades',
+              active: pathname === '/autoridades',
             },
           ],
         },
@@ -102,6 +108,7 @@ export function getMenuList(pathname: string): Group[] {
           href: '/account',
           label: 'Account',
           icon: Settings,
+          active: pathname === '/account',
         },
       ],
     },
