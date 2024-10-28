@@ -30,7 +30,7 @@ export const MultiStepTimeline = () => {
   ]
 
   return (
-    <div className="max-w-md mt-8">
+    <div className="max-w-md">
       <ol className="relative space-y-12">
         {steps.map((step, index) => (
           <li
@@ -56,7 +56,7 @@ export const MultiStepTimeline = () => {
             </div>
             <div className="ml-6 pt-1">
               <h3
-                className={`text-lg ${
+                className={`${
                   selectedStep === index
                     ? 'font-bold text-gray-900'
                     : 'font-medium text-gray-900'
