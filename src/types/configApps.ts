@@ -8,4 +8,8 @@ export const configApps = {
     name: 'Académicos',
     color: '#27272A',
   },
+  docs: {
+    name: 'Documentación',
+    color: '#2C2C2C',
+  },
 }
