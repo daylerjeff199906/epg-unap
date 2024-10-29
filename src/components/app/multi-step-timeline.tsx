@@ -15,7 +15,6 @@ interface MultiStepTimelineProps {
 
 export const MultiStepTimeline = (props: MultiStepTimelineProps) => {
   const { steps, selectedStep, setSelectedStep } = props
-  // const [selectedStep, setSelectedStep] = useState<number | null>(null)
 
   return (
     <div className="max-w-md">
