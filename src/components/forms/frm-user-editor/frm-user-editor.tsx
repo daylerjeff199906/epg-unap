@@ -27,19 +27,19 @@ const steps: Step[] = [
 
 export const FrmUserEditor = () => {
   const [selectedStep, setSelectedStep] = useState<string>(steps[0].id)
-  const [isStepValid, setIsStepValid] = useState<boolean>(false)
+  // const [isStepValid, setIsStepValid] = useState<boolean>(false)
 
-  const currentStepIndex = steps.findIndex((step) => step.id === selectedStep)
-  const isLastStep = currentStepIndex === steps.length - 1
+  // const currentStepIndex = steps.findIndex((step) => step.id === selectedStep)
+  // const isLastStep = currentStepIndex === steps.length - 1
 
-  const handleNext = () => {
-    if (isStepValid) {
-      setSelectedStep(steps[currentStepIndex + 1].id)
-      setIsStepValid(false) // Reset validation for the next step
-    } else {
-      alert('Por favor, complete todos los campos requeridos.')
-    }
-  }
+  // const handleNext = () => {
+  //   if (isStepValid) {
+  //     setSelectedStep(steps[currentStepIndex + 1].id)
+  //     setIsStepValid(false) // Reset validation for the next step
+  //   } else {
+  //     alert('Por favor, complete todos los campos requeridos.')
+  //   }
+  // }
 
   // const validateStep = (isValid: boolean) => {
   //   setIsStepValid(isValid)
