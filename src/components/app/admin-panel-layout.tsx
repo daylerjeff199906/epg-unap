@@ -20,14 +20,14 @@ export default function AdminPanelLayout({
       <SideBar />
       <main
         className={cn(
-          'min-h-[calc(100vh_-_56px)] bg-zinc-50 dark:bg-zinc-900 transition-[margin-left] ease-in-out duration-300',
+          'min-h-[calc(100vh_-_56px)] bg-zinc-50 dark:bg-zinc-900 transition-[margin-left] ease-in-out duration-300 relative',
           !settings.disabled && (!getOpenState() ? 'lg:ml-[90px]' : 'lg:ml-72')
         )}
       >
-        <section className="p-4 bg-gray-100">
+        <section className="px-4 py-3 bg-gray-100">
           <BreadcrumbCustom />
         </section>
-        {children}
+        <main className="w-full container">{children}</main>
       </main>
       <footer
         className={cn(

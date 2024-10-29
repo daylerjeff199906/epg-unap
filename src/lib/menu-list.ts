@@ -44,19 +44,19 @@ export function getMenuList(pathname: string): Group[] {
       groupLabel: 'Usuarios',
       menus: [
         {
-          href: '/admin/users',
+          href: '',
           label: 'Usuarios',
           icon: User,
           submenus: [
             {
-              href: '/admin/users',
+              href: '/admin/usuarios',
               label: 'Lista de usuarios',
-              active: pathname === '/admin/users',
+              active: pathname === '/admin/usuarios',
             },
             {
-              href: '/admin/users/inactive-users',
+              href: '/admin/usuarios/inactivos',
               label: 'Usuarios sin acceso',
-              active: pathname === '/admin/users/inactive-users',
+              active: pathname === '/admin/usuarios/inactivos',
             },
           ],
         },

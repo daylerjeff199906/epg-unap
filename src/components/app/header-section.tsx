@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Plus, RefreshCw, Download } from 'lucide-react'
+import Link from 'next/link'
 
 interface HeaderSectionProps {
   title?: string
@@ -9,7 +10,7 @@ interface HeaderSectionProps {
   showAddButton?: boolean
   showRefreshButton?: boolean
   showExportButton?: boolean
-  onAddButtonClick?: () => void
+  hrefAddLink?: string
   onRefreshButtonClick?: () => void
   onExportButtonClick?: () => void
 }
@@ -22,7 +23,7 @@ export const HeaderSection = (props: HeaderSectionProps) => {
     showAddButton = true,
     showExportButton = true,
     showRefreshButton = true,
-    onAddButtonClick,
+    hrefAddLink,
     onExportButtonClick,
     onRefreshButtonClick,
     children,
@@ -44,10 +45,12 @@ export const HeaderSection = (props: HeaderSectionProps) => {
           <Button
             variant="outline"
             className="bg-white"
-            onClick={onAddButtonClick}
+            asChild
           >
-            <Plus className="mr-2 h-4 w-4" />
-            Agregar nuevo
+            <Link href={hrefAddLink || '#'}>
+              <Plus className="mr-2 h-4 w-4" />
+              Agregar nuevo
+            </Link>
           </Button>
         )}
         {showRefreshButton && (
