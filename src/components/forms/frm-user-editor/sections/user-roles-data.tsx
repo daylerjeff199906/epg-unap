@@ -3,6 +3,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { useState } from 'react'
+import { HeaderFormSection } from '@/components/layouts'
 
 export const UserRolesData = () => {
   const [accessType, setAccessType] = useState('no-access')
@@ -13,19 +14,23 @@ export const UserRolesData = () => {
       id="user-info-basic"
       className="w-full p-4 flex flex-col gap-3"
     >
-      <header>
+      {/* <header>
         <h1 className="font-bold">Asignar roles</h1>
         <p className="text-sm text-gray-500">
           Puede elegir el rol que desea asignar a este usuario y rellenar la
           información de perfil adicional.
         </p>
         <hr className="my-4 border-t border-gray-300" />
-      </header>
+      </header> */}
+      <HeaderFormSection
+        title="Asignar roles"
+        description="Puede elegir el rol que desea asignar a este usuario y rellenar la información de perfil adicional."
+      />
       <div className="space-y-6">
         <RadioGroup
           value={accessType}
           onValueChange={setAccessType}
-          className='space-y-3'
+          className="space-y-3"
         >
           <div className="flex items-center space-x-2">
             <RadioGroupItem
@@ -38,7 +43,7 @@ export const UserRolesData = () => {
             <RadioGroupItem
               value="admin-access"
               id="admin-access"
-              className='mt-1'
+              className="mt-1"
             />
             <div>
               <Label htmlFor="admin-access">

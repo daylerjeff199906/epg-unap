@@ -41,10 +41,10 @@ export const MultiStepTimeline = (props: MultiStepTimelineProps) => {
                   }`}
                 >
                   <div
-                    className={`w-5 h-5 flex items-center justify-center rounded-full ${
+                    className={`w-5 h-5 z-10 flex items-center justify-center rounded-full ${
                       selectedStep === step.id
                         ? 'bg-gray-400 text-white'
-                        : 'border-2 border-gray-400'
+                        : 'border-2 border-gray-400 bg-white'
                     }`}
                   >
                     {selectedStep === step.id && (

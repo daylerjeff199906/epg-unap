@@ -1,4 +1,4 @@
-import { ContentInput } from '@/components/layouts'
+import { ContentInput, HeaderFormSection } from '@/components/layouts'
 import { Input } from '@/components/ui/input'
 import React from 'react'
 
@@ -8,14 +8,10 @@ export const UserInfoBasic = () => {
       id="user-info-basic"
       className="w-full p-4"
     >
-      <header>
-        <h1 className="font-bold">Configurar la información básica</h1>
-        <p className="text-sm text-gray-500">
-          Para empezar, rellene información básica sobre el usuario que va a
-          agregar
-        </p>
-      </header>
-      <hr className="my-4 border-t border-gray-300" />
+      <HeaderFormSection
+        title="Configurar la información básica"
+        description="Para empezar, rellene información básica sobre el usuario que va a agregar"
+      />
       <ContentInput
         id="nro-documento"
         label="N° Documento"
