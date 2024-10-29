@@ -7,33 +7,35 @@ import { SidebarToggle } from './sidebar-toggle'
 import { useStore } from 'zustand'
 import { useSidebar } from '@/hooks'
 import { SheetMenu } from './sheet-menu'
+import { configApps } from '@/types/configApps'
+import { cn } from '@/lib/utils'
 
 interface NavBarCustomProps {
-  title: string
-  color?: 'primary' | 'secondary' | 'tertiary' | 'quaternary'
+  app?: keyof typeof configApps
 }
 
-// const colorsApp = {
-//   primary: 'bg-primary-900 dark:bg-primary-800',
-//   secondary: 'bg-secondary-500',
-//   tertiary: 'bg-tertiary-500',
-//   quaternary: 'bg-quaternary-500',
-// }
-
 export const NavBarCustom = (props: NavBarCustomProps) => {
-  const { title } = props
+  const { app } = props
 
   const sidebar = useStore(useSidebar, (x) => x)
   if (!sidebar) return null
   const { isOpen, toggleOpen } = sidebar
 
+  const appConfig = app ? configApps[app] : configApps['panel-admin']
+
+  const colorApp = appConfig.color
+  const nameApp = appConfig.name
+
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-primary-800 dark:bg-blue-950  shadow text-white dark:shadow-secondary  `}
+      className={cn(
+        `sticky top-0 z-50 w-full  shadow text-white dark:shadow-secondary`,
+        colorApp
+      )}
     >
       <div className="px-4 sm:px-6 md:px-7 flex h-14 items-center">
         <div className="flex items-center space-x-4 lg:space-x-0 sm:gap-3">
-          <SheetMenu title="Panel de administración de EPG - UNAP" />
+          <SheetMenu title={nameApp} />
           <SidebarToggle
             isOpen={isOpen}
             setIsOpen={toggleOpen}
@@ -49,7 +51,7 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
               width={18}
               height={18}
             />
-            <h1 className="font-bold text-xs hidden sm:flex">{title}</h1>
+            <h1 className="font-bold text-xs hidden sm:flex">{nameApp}</h1>
           </div>
         </div>
         <div className="flex flex-1 items-center justify-end gap-2">
