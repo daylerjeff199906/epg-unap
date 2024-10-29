@@ -18,10 +18,7 @@ export default function Layout(props: LayoutProps) {
 
   return (
     <>
-      <NavBarCustom
-        title="Panel de administración de EPG - UNAP"
-        color="primary"
-      />
+      <NavBarCustom app="academicos" />
       <AdminPanelLayout>{children}</AdminPanelLayout>
     </>
   )
