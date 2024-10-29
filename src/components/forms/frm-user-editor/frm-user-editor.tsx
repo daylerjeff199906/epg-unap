@@ -1,6 +1,11 @@
 'use client'
 import { MultiStepTimeline } from '@/components/app'
-import { UserInfoBasic, UserRolesData, UserModulesData } from './sections'
+import {
+  UserInfoBasic,
+  UserRolesData,
+  UserModulesData,
+  UserAuthFinally,
+} from './sections'
 
 import { Step } from '@/components/app/multi-step-timeline'
 import { useState } from 'react'
@@ -60,6 +65,7 @@ export const FrmUserEditor = () => {
           {selectedStep === 'user-info-basic' && <UserInfoBasic />}
           {selectedStep === 'user-roles-data' && <UserRolesData />}
           {selectedStep === 'user-modules-data' && <UserModulesData />}
+          {selectedStep === 'user-create-finish' && <UserAuthFinally />}
         </main>
       </LayoutFormContent>
     </div>
