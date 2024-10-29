@@ -4,9 +4,9 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
+  BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 export const BreadcrumbCustom = () => {
@@ -19,17 +19,23 @@ export const BreadcrumbCustom = () => {
       const href = `/${paths.slice(0, index + 1).join('/')}`
       const pathReplace = path.replace(/-/g, ' ')
       return (
-        <BreadcrumbItem key={index}>
-          <BreadcrumbLink asChild>
-            <Link
-              href={href}
-              className="capitalize text-xs"
-            >
-              {pathReplace}
-            </Link>
-          </BreadcrumbLink>
+        <>
+          <BreadcrumbItem key={index}>
+            {index < paths.length - 1 ? (
+              <BreadcrumbLink
+                href={href}
+                className="capitalize text-xs"
+              >
+                {pathReplace}
+              </BreadcrumbLink>
+            ) : (
+              <BreadcrumbPage className="capitalize text-xs">
+                {pathReplace}
+              </BreadcrumbPage>
+            )}
+          </BreadcrumbItem>
           {index < paths.length - 1 && <BreadcrumbSeparator />}
-        </BreadcrumbItem>
+        </>
       )
     })
 
