@@ -20,7 +20,7 @@ export const BreadcrumbCustom = () => {
       const pathReplace = path.replace(/-/g, ' ')
       return (
         <>
-          <BreadcrumbItem key={index}>
+          <BreadcrumbItem key={path}>
             {index < paths.length - 1 ? (
               <BreadcrumbLink
                 href={href}
