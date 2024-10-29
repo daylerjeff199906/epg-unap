@@ -45,7 +45,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
         data,
         hasPagination = true,
         hasToolbar = true,
-        hasSearch = true,
+        hasSearch = false,
         paginationProps,
         onValueSelectedChange,
         onValueSearch,
@@ -53,7 +53,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
         isLoading = false,
         searchPlaceholder,
     } = props
-    
+
     const [rowSelection, setRowSelection] = React.useState({})
     const [selectedRow, setSelectedRow] = React.useState<TData | undefined>(
         undefined
@@ -74,7 +74,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
     }, [data, paginationProps])
 
     const table = useReactTable({
-        data: paginatedData, 
+        data: paginatedData,
         columns,
         state: {
             sorting,
@@ -123,7 +123,13 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
                                 {headerGroup.headers.map((header) => (
                                     <TableHead
                                         key={header.id}
-                                        className="px-4 py-3 text-left font-semibold text-sm w-64 max-w-64 text-muted/95"
+                                        className={
+                                            header.column.id === 'id'
+                                                ? 'px-4 py-3 text-center font-semibold text-sm w-24 max-w-24 text-muted/95'
+                                                : header.column.id === 'fecha_creacion' || header.column.id === 'actions'
+                                                    ? 'px-4 py-3 text-center font-semibold text-sm w-36 max-w-36 text-muted/95'
+                                                    : 'px-4 py-3 text-center font-semibold text-sm w-64 max-w-64 text-muted/95'
+                                        }
                                     >
                                         {header.isPlaceholder
                                             ? null
@@ -166,7 +172,13 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
                                         {row.getVisibleCells().map((cell) => (
                                             <TableCell
                                                 key={cell.id}
-                                                className="px-4 py-2 w-64 max-w-64 overflow-hidden text-ellipsis whitespace-nowrap"
+                                                className={
+                                                    cell.column.id === 'id'
+                                                        ? 'px-4 py-2 w-24 max-w-24 overflow-hidden text-ellipsis whitespace-nowrap text-left'
+                                                        : cell.column.id === 'actions' || cell.column.id === 'fecha_creacion' ?
+                                                            'px-4 py-2 w-36 max-w-36 overflow-hidden text-ellipsis whitespace-nowrap text-left' :
+                                                            'px-4 py-2 w-64 max-w-64 overflow-hidden text-ellipsis whitespace-nowrap text-left'
+                                                }
                                                 {...(cell.column.id !== 'edit' && {
                                                     onClick: () => handleRowClick(row.original),
                                                 })}

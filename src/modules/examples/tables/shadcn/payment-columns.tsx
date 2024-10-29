@@ -7,27 +7,32 @@ import { Payment } from "./payments-data";
 export const paymentColumns: ColumnDef<Payment>[] = [
     {
         accessorKey: 'id',
-        header: 'Id',
-        cell: ({ row }) => <div>{row.original.id}</div>,
+        header: 'ID',
     },
     {
-        accessorKey: 'email',
-        header: 'Email',
-        cell: ({ row }) => <div>{row.original.email}</div>,
+        accessorKey: 'fecha_creacion',
+        header: 'F. DE CREACION',
     },
     {
-        accessorKey: 'amount',
-        header: 'Amount',
-        cell: ({ row }) => <div>{String(row.original.amount)}</div>,
+        accessorKey: 'nombre_usuario',
+        header: 'NOMBRE DE USUARIO',
+        cell: ({ row }) => <div>{String(row.original.nombre_usuario)}</div>,
     },
     {
-        accessorKey: 'status',
-        header: 'Status',
-        cell: ({ row }) => <div>{row.original.status}</div>,
+        accessorKey: 'persona_asignada',
+        header: 'PERSONA ASIGNADA',
+    },
+    {
+        accessorKey: 'roles',
+        header: 'ROLES',
+    },
+    {
+        accessorKey: 'permisos',
+        header: 'PERMISOS',
     },
     {
         accessorKey: 'actions',
-        header: 'Actions',
+        header: 'ACCIONES',
         enableHiding: false,
         cell: ({ row }) => {
             const { id } = row.original
@@ -35,7 +40,7 @@ export const paymentColumns: ColumnDef<Payment>[] = [
             return (
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className="h-8 w-8 p-0">
+                        <Button variant="ghost" className="h-8 w-full p-0">
                             <span className="sr-only">Open menu</span>
                             <MoreHorizontal className="h-4 w-4" />
                         </Button>

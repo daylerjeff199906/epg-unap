@@ -1,39 +1,51 @@
 export const payments: Payment[] = [
     {
-        id: "m5gr84i9",
-        amount: 316,
-        status: "success",
-        email: "ken99@yahoo.com",
+        id: "001",
+        fecha_creacion: "20/10/2024",
+        nombre_usuario: "asaavedral@postgradounap.edu.pe",
+        persona_asignada: "ANGIE LÓPEZ HUAMASH",
+        roles: ["ADMINISTRADOR", "DOCENTE", "ESTUDIANTE"],
+        permisos: ["ADMINISTRADOR", "DOCENTE", "ESTUDIANTE"]
     },
     {
-        id: "3u1reuv4",
-        amount: 242,
-        status: "success",
-        email: "Abe45@gmail.com",
+        id: "002",
+        fecha_creacion: "21/10/2024",
+        nombre_usuario: "jlopezr@postgradounap.edu.pe",
+        persona_asignada: "JUAN LÓPEZ RAMÍREZ",
+        roles: ["ESTUDIANTE"],
+        permisos: ["ESTUDIANTE"]
     },
     {
-        id: "derv1ws0",
-        amount: 837,
-        status: "processing",
-        email: "Monserrat44@gmail.com",
+        "id": "003",
+        "fecha_creacion": "22/10/2024",
+        nombre_usuario: "mperezc@postgradounap.edu.pe",
+        persona_asignada: "MARÍA PÉREZ CASTRO",
+        roles: ["DOCENTE", "ESTUDIANTE"],
+        permisos: ["DOCENTE", "ESTUDIANTE"]
     },
     {
-        id: "5kma53ae",
-        amount: 874,
-        status: "success",
-        email: "Silas22@gmail.com",
+        "id": "004",
+        "fecha_creacion": "23/10/2024",
+        nombre_usuario: "rfernandezv@postgradounap.edu.pe",
+        persona_asignada: "ROBERTO FERNÁNDEZ VARGAS",
+        roles: ["ADMINISTRADOR"],
+        permisos: ["ADMINISTRADOR"]
     },
     {
-        id: "bhqecj4p",
-        amount: 721,
-        status: "failed",
-        email: "carmella@hotmail.com",
-    },
+        "id": "005",
+        "fecha_creacion": "24/10/2024",
+        nombre_usuario: "lramirezs@postgradounap.edu.pe",
+        persona_asignada: "LAURA RAMÍREZ SÁNCHEZ",
+        roles: ["DOCENTE"],
+        permisos: ["DOCENTE"]
+    }
 ]
 
 export type Payment = {
     id: string
-    amount: number
-    status: "pending" | "processing" | "success" | "failed"
-    email: string
+    fecha_creacion: string
+    nombre_usuario: string
+    persona_asignada: string
+    roles: string[]
+    permisos: string[]
 }
