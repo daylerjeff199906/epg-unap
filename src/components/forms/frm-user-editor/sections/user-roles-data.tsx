@@ -14,14 +14,6 @@ export const UserRolesData = () => {
       id="user-info-basic"
       className="w-full p-4 flex flex-col gap-3"
     >
-      {/* <header>
-        <h1 className="font-bold">Asignar roles</h1>
-        <p className="text-sm text-gray-500">
-          Puede elegir el rol que desea asignar a este usuario y rellenar la
-          información de perfil adicional.
-        </p>
-        <hr className="my-4 border-t border-gray-300" />
-      </header> */}
       <HeaderFormSection
         title="Asignar roles"
         description="Puede elegir el rol que desea asignar a este usuario y rellenar la información de perfil adicional."

@@ -1,6 +1,6 @@
 'use client'
 import { MultiStepTimeline } from '@/components/app'
-import { UserInfoBasic, UserRolesData } from './sections'
+import { UserInfoBasic, UserRolesData, UserModulesData } from './sections'
 
 import { Step } from '@/components/app/multi-step-timeline'
 import { useState } from 'react'
@@ -59,6 +59,7 @@ export const FrmUserEditor = () => {
           <div className="hidden sm:block mx-4 border-l border-gray-300 min-h-full"></div>
           {selectedStep === 'user-info-basic' && <UserInfoBasic />}
           {selectedStep === 'user-roles-data' && <UserRolesData />}
+          {selectedStep === 'user-modules-data' && <UserModulesData />}
         </main>
       </LayoutFormContent>
     </div>
