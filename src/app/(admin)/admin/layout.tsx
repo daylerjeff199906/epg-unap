@@ -18,7 +18,7 @@ export default function Layout(props: LayoutProps) {
 
   return (
     <>
-      <NavBarCustom app="academicos" />
+      <NavBarCustom app="panel-admin" />
       <AdminPanelLayout>{children}</AdminPanelLayout>
     </>
   )
