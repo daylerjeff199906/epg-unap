@@ -35,7 +35,7 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
               width={18}
               height={18}
             />
-            <h1 className="font-bold text-xs">{title}</h1>
+            <h1 className="font-bold text-xs hidden sm:flex">{title}</h1>
           </div>
         </div>
         <div className="flex flex-1 items-center justify-end gap-2">
