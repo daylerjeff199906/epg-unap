@@ -1,5 +1,8 @@
 import type { Config } from 'tailwindcss'
 import animate from 'tailwindcss-animate'
+import { nextui } from '@nextui-org/react'
+
+// const { nextui } = require('@nextui-org/react')
 
 const config: Config = {
   darkMode: ['class'],
@@ -7,9 +10,19 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '2.5rem',
+          xl: '3rem',
+        },
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -59,6 +72,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [animate],
+  plugins: [animate, nextui()],
 }
 export default config
