@@ -10,22 +10,46 @@ interface IProps {
   data: Array<{
     [key: string]: string
   }>
+  actions?: React.ReactNode
+  pagination?: React.ReactNode
 }
 
 export const NextDataTable = (props: IProps) => {
-  const { columns, data } = props
+  const { columns, data, actions, pagination } = props
+
+  const renderCell = (item: { [key: string]: string }, columnKey: string) => {
+    const cellValue = getKeyValue(item, columnKey)
+
+    switch (columnKey) {
+      case 'actions':
+        return <TableCell>{actions}</TableCell>
+      default:
+        return <TableCell>{cellValue}</TableCell>
+    }
+  }
 
   return (
     <Table
-      aria-label="Example table with client async pagination"
+      aria-label="Table with client async pagination"
       radius="none"
       shadow="none"
       isHeaderSticky
+      bottomContent={pagination}
     >
-      <TableHeader 
+      <TableHeader
         columns={columns}
       >
-        {(column) => <TableColumn className="bg-primary-900 text-white" key={column.key}>{column.label}</TableColumn>}
+        {(column) => <TableColumn 
+          className="bg-primary-900 text-white" 
+          key={column.key}
+        >
+          {
+            column.key === 'actions' || column.key === 'Acciones'
+              ? 'ACTIONS'
+              : column.label
+              
+          }
+        </TableColumn>}
       </TableHeader>
       <TableBody
         items={data ?? []}
@@ -38,7 +62,9 @@ export const NextDataTable = (props: IProps) => {
               ? item.id
               : item.key
           }>
-            {(columnKey) => <TableCell>{getKeyValue(item, columnKey)}</TableCell>}
+            {(columnKey) => (
+              renderCell(item, String(columnKey))
+            )}
           </TableRow>
         )}
       </TableBody>

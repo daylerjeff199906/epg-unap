@@ -1,8 +1,9 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
 import { columns, users } from './data';
 import { NextDataTable } from "./next-data-table";
+import { TableAction } from './table-sections/table-action';
+import { TablePagination } from './table-sections/table-pagination';
 
 type User = typeof users[0];
 
@@ -25,6 +26,14 @@ export const TableExample = () => {
     <NextDataTable 
         data={userdata} 
         columns={headers}
+        actions={<TableAction />}
+        pagination={<TablePagination 
+            totalItems={userdata.length} 
+            rowsPerPage={5} 
+            page={1} 
+            onPageChange={() => {}} 
+            onRowsPerPageChange={() => {}}
+        />}
     />
   );
 }
