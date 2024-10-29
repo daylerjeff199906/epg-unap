@@ -19,8 +19,11 @@ export const BreadcrumbCustom = () => {
       const href = `/${paths.slice(0, index + 1).join('/')}`
       const pathReplace = path.replace(/-/g, ' ')
       return (
-        <>
-          <BreadcrumbItem key={path}>
+        <div
+          key={path}
+          className="flex items-center gap-1"
+        >
+          <BreadcrumbItem>
             {index < paths.length - 1 ? (
               <BreadcrumbLink
                 href={href}
@@ -35,7 +38,7 @@ export const BreadcrumbCustom = () => {
             )}
           </BreadcrumbItem>
           {index < paths.length - 1 && <BreadcrumbSeparator />}
-        </>
+        </div>
       )
     })
 
