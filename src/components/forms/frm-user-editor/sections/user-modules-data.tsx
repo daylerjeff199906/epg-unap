@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
+import { HeaderFormSection } from '@/components/layouts'
 
 type Module = {
   name: string
@@ -58,13 +59,13 @@ export const UserModulesData = () => {
   return (
     <section
       id="user-info-basic"
-      className="w-full p-4 flex flex-col gap-3"
+      className="w-full flex flex-col gap-3"
     >
-      <div className="w-full max-w-2xl mx-auto p-6 space-y-8">
-        <h1 className="text-2xl font-bold">Asignar de módulos</h1>
-        <p className="text-sm text-muted-foreground">
-          Selecciona los módulos de las aplicaciones
-        </p>
+      <div className="w-full p-6 space-y-8">
+        <HeaderFormSection
+          title="Asignar de módulos"
+          description="Selecciona los módulos de las aplicaciones"
+        />
 
         {modules.map((module) => (
           <div
