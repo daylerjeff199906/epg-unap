@@ -16,20 +16,22 @@ import {
   TooltipContent,
   TooltipProvider,
 } from '@/components/ui/tooltip'
+import { MenuConfigApps } from '@/types/configApps'
 
 interface MenuProps {
+  app?: MenuConfigApps
   isOpen: boolean | undefined
 }
 
-export function Menu({ isOpen }: MenuProps) {
+export function Menu({ isOpen, app }: MenuProps) {
   const pathname = usePathname()
-  const menuList = getMenuList('admin', pathname)
+  const menuList = app && getMenuList(app, pathname)
 
   return (
     <ScrollArea className="[&>div>div[style]]:!block">
       <nav className="w-full sm:mt-14">
         <ul className="flex flex-col min-h-[calc(100vh-48px-36px-16px-32px)] lg:min-h-[calc(100vh-32px-40px-32px)] items-start space-y-1 px-2">
-          {menuList.map(({ groupLabel, menus }, index) => (
+          {menuList?.map(({ groupLabel, menus }, index) => (
             <li
               className={cn('w-full', groupLabel ? 'pt-5' : '')}
               key={index}

@@ -3,8 +3,14 @@ import React from 'react'
 import { Menu } from './menu'
 import { useSidebar } from '@/hooks/use-sidebar'
 import { useStore } from '@/hooks/use-store'
+import { MenuConfigApps } from '@/types/configApps'
 
-export const SideBar = () => {
+interface SideBarProps {
+  app?: MenuConfigApps
+}
+
+export const SideBar = (props: SideBarProps) => {
+  const { app } = props
   const sidebar = useStore(useSidebar, (x) => x)
   if (!sidebar) return null
   const { getOpenState, setIsHover, settings } = sidebar
@@ -22,7 +28,10 @@ export const SideBar = () => {
         onMouseLeave={() => setIsHover(false)}
         className="relative h-full flex flex-col px-3 py-4 overflow-y-auto shadow-md dark:shadow-zinc-800"
       >
-        <Menu isOpen={getOpenState()} />
+        <Menu
+          isOpen={getOpenState()}
+          app={app}
+        />
       </div>
     </aside>
   )

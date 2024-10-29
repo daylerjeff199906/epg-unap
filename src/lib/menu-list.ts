@@ -20,12 +20,17 @@ type Group = {
   menus: Menu[]
 }
 
+import { MenuConfigApps } from '@/types/configApps'
+
 // Función para obtener el menú según el nombre de la aplicación y el pathname
-export function getMenuList(appName: string, pathname: string): Group[] {
+export function getMenuList(
+  appName: MenuConfigApps,
+  pathname: string
+): Group[] {
   let menuData: Group[]
 
   switch (appName) {
-    case 'admin':
+    case 'panel-admin':
       menuData = menuAdminData
       break
     // Puedes agregar más casos para diferentes aplicaciones

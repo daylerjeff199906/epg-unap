@@ -113,30 +113,10 @@ export const menuAdminData: Group[] = [
   },
 ]
 
-// Otro menú para una aplicación diferente
-// const menuUserData: Group[] = [
-//   {
-//     groupLabel: 'Dashboard',
-//     menus: [
-//       {
-//         href: '/user',
-//         label: 'Inicio',
-//         icon: House,
-//         submenus: [],
-//         active: false,
-//       },
-//     ],
-//   },
-//   {
-//     groupLabel: 'Profile',
-//     menus: [
-//       {
-//         href: '/user/profile',
-//         label: 'Mi Perfil',
-//         icon: User,
-//         active: false,
-//       },
-//     ],
-//   },
-//   // Añade más grupos y menús si es necesario
-// ]
+export const menuAcademicosData: Group[] = []
+
+export const menuDocsData: Group[] = []
+
+export const menuTeacherData: Group[] = []
+
+export const menuStudentData: Group[] = []

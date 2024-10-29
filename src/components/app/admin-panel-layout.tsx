@@ -3,11 +3,14 @@ import { useSidebar, useStore } from '@/hooks'
 import { cn } from '@/lib/utils'
 import { SideBar } from './side-bar'
 import { BreadcrumbCustom } from './bread-crumb-custom'
+import { MenuConfigApps } from '@/types/configApps'
 
 export default function AdminPanelLayout({
   children,
+  app,
 }: {
   children: React.ReactNode
+  app?: MenuConfigApps
 }) {
   const sidebar = useStore(useSidebar, (x) => x)
   if (!sidebar) return null
@@ -15,7 +18,7 @@ export default function AdminPanelLayout({
 
   return (
     <>
-      <SideBar />
+      <SideBar app={app} />
       <main
         className={cn(
           'min-h-[calc(100vh_-_56px)] bg-zinc-50 dark:bg-zinc-900 transition-[margin-left] ease-in-out duration-300 relative',
