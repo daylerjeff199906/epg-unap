@@ -24,6 +24,7 @@ export default function PaymentsTable() {
                 searchPlaceholder='Buscar por nombre'
                 valueSearch={search}
                 onValueSearch={(value) => setSearch(value)}
+                isStriped
             />
         </>
     );

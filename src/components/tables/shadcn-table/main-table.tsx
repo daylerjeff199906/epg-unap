@@ -37,6 +37,7 @@ interface DataTableProps<TData, TValue> {
     onValueSelectedChange?: (value: TData | undefined) => void
     isLoading?: boolean
     searchPlaceholder?: string
+    isStriped?: boolean
 }
 
 export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
@@ -52,6 +53,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
         valueSearch,
         isLoading = false,
         searchPlaceholder,
+        isStriped = false,
     } = props
 
     const [rowSelection, setRowSelection] = React.useState({})
@@ -162,12 +164,15 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
                                     ))}
                                 </>
                             ) : table.getRowModel().rows.length ? (
-                                table.getRowModel().rows.map((row) => (
+                                table.getRowModel().rows.map((row, index) => (
                                     <TableRow
                                         key={row.id}
                                         data-state={row.getIsSelected() && 'selected'}
-                                        className={`hover:bg-gray-100 dark:hover:bg-gray-800 border-none hover:cursor-pointer ${row.original === selectedRow ? 'bg-gray-200' : ''
-                                            }`}
+                                        // className={`hover:bg-gray-100 dark:hover:bg-gray-800 border-none hover:cursor-pointer ${row.original === selectedRow ? 'bg-gray-200' : ''
+                                        //     }`}
+                                        className={`hover:bg-gray-100 dark:hover:bg-gray-800 border-none hover:cursor-pointer
+                                            ${isStriped ? (index % 2 === 0 ? 'bg-gray-50' : 'bg-white') : ''}
+                                            ${row.original === selectedRow ? 'bg-gray-200' : ''}`}
                                     >
                                         {row.getVisibleCells().map((cell) => (
                                             <TableCell
