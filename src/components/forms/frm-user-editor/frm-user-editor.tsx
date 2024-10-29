@@ -47,12 +47,8 @@ export const FrmUserEditor = () => {
 
   return (
     <div>
-      <LayoutFormContent>
-        <main className="py-4 h-screen max-h-[calc(100vh-104px)]">
-          <header>
-            <h1 className="font-bold text-xl">Agregar un usuario</h1>
-          </header>
-          <hr className="mt-4 border-t border-gray-300" />
+      <LayoutFormContent title="Nuevo usuario">
+        <main className="py-4">
           <main className="flex flex-col sm:flex-row">
             <aside className="sm:min-w-[320px] py-4">
               <MultiStepTimeline
