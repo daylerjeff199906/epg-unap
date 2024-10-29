@@ -1,11 +1,5 @@
-import {
-  House,
-  User,
-  Users,
-  Settings,
-  LucideIcon,
-  BookUser,
-} from 'lucide-react'
+import { menuAdminData } from '@/types/menusApp'
+import { LucideIcon } from 'lucide-react'
 
 type Submenu = {
   href: string
@@ -26,91 +20,29 @@ type Group = {
   menus: Menu[]
 }
 
-export function getMenuList(pathname: string): Group[] {
-  return [
-    {
-      groupLabel: '',
-      menus: [
-        {
-          href: '/admin',
-          label: 'Inicio',
-          icon: House,
-          submenus: [],
-          active: pathname === '/admin',
-        },
-      ],
-    },
-    {
-      groupLabel: 'Usuarios',
-      menus: [
-        {
-          href: '',
-          label: 'Usuarios',
-          icon: User,
-          submenus: [
-            {
-              href: '/admin/usuarios',
-              label: 'Lista de usuarios',
-              active: pathname === '/admin/usuarios',
-            },
-            {
-              href: '/admin/usuarios/inactivos',
-              label: 'Usuarios sin acceso',
-              active: pathname === '/admin/usuarios/inactivos',
-            },
-          ],
-        },
-        {
-          href: '',
-          label: 'Roles',
-          icon: Users,
-          submenus: [
-            {
-              href: '/roles',
-              label: 'Aplicaciones',
-              active: pathname === '/roles',
-            },
-            {
-              href: '/roles/new',
-              label: 'Roles',
-              active: pathname === '/roles/new',
-            },
-            {
-              href: '/units',
-              label: 'Unidades organizativas',
-              active: pathname === '/units',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      groupLabel: 'Personal',
-      menus: [
-        {
-          href: '',
-          label: 'Gestión de personal',
-          icon: BookUser,
-          submenus: [
-            {
-              href: '/autoridades',
-              label: 'Autoridades',
-              active: pathname === '/autoridades',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      groupLabel: 'Settings',
-      menus: [
-        {
-          href: '/account',
-          label: 'Account',
-          icon: Settings,
-          active: pathname === '/account',
-        },
-      ],
-    },
-  ]
+// Función para obtener el menú según el nombre de la aplicación y el pathname
+export function getMenuList(appName: string, pathname: string): Group[] {
+  let menuData: Group[]
+
+  switch (appName) {
+    case 'admin':
+      menuData = menuAdminData
+      break
+    // Puedes agregar más casos para diferentes aplicaciones
+    default:
+      menuData = [] // Retorna un menú vacío o muestra un error si el appName no coincide
+  }
+
+  // Actualizar el estado `active` según el `pathname`
+  return menuData.map((group) => ({
+    ...group,
+    menus: group.menus.map((menu) => ({
+      ...menu,
+      active: pathname === menu.href,
+      submenus: menu.submenus?.map((submenu) => ({
+        ...submenu,
+        active: pathname === submenu.href,
+      })),
+    })),
+  }))
 }
