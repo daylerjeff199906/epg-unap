@@ -1,5 +1,5 @@
 'use client'
-import { useSidebar } from '@/hooks'
+import { useSidebar, useStore } from '@/hooks'
 import { cn } from '@/lib/utils'
 import { SideBar } from './side-bar'
 import { BreadcrumbCustom } from './bread-crumb-custom'
@@ -9,11 +9,9 @@ export default function AdminPanelLayout({
 }: {
   children: React.ReactNode
 }) {
-  const { getOpenState, settings } = useSidebar()
-  //   const sidebar = useStore(useSidebar, (x) => x)
-
-  //   if (!sidebar) return null
-  //   const { getOpenState, settings } = sidebar
+  const sidebar = useStore(useSidebar, (x) => x)
+  if (!sidebar) return null
+  const { getOpenState, settings } = sidebar
 
   return (
     <>
