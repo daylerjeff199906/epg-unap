@@ -59,24 +59,25 @@ export const UserModulesData = () => {
   return (
     <section
       id="user-info-basic"
-      className="w-full flex flex-col gap-3"
+      className="w-full p-4"
     >
-      <div className="w-full p-6 space-y-8">
-        <HeaderFormSection
-          title="Asignar de módulos"
-          description="Selecciona los módulos de las aplicaciones"
-        />
+      <HeaderFormSection
+        title="Asignar de módulos"
+        description="Selecciona los módulos de las aplicaciones"
+      />
 
+      <section className='space-y-6'>
         {modules.map((module) => (
           <div
             key={module.name}
             className="space-y-4"
           >
-            <div className="flex items-start space-x-3 pt-4">
+            <div className="flex items-start space-x-3 ">
               <Checkbox
                 id={module.name}
                 checked={selectedModules[module.name] || false}
                 onCheckedChange={() => handleModuleChange(module.name)}
+                className="mt-2"
               />
               <div>
                 <Label
@@ -116,7 +117,7 @@ export const UserModulesData = () => {
             )}
           </div>
         ))}
-      </div>
+      </section>
     </section>
   )
 }
