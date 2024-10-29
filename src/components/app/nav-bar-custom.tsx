@@ -8,11 +8,35 @@ import { useStore } from 'zustand'
 import { useSidebar } from '@/hooks'
 import { SheetMenu } from './sheet-menu'
 import { configApps } from '@/types/configApps'
+import { IMoreApp } from '@/types/more-apps'
 import { cn } from '@/lib/utils'
+import { GripIcon } from 'lucide-react'
 
 interface NavBarCustomProps {
   app?: keyof typeof configApps
+  moreApps?:Array<IMoreApp>;
 }
+
+const MoreAppsButton: Array<IMoreApp>=[
+  {
+    id: 1,
+    title: 'EPG',
+    icon: 'https://cdn-icons-png.flaticon.com/512/1804/1804486.png',
+    url: 'https://epg.unap.edu.co',
+  },
+  {
+    id: 2,
+    title: 'EPG-UNAP',
+    icon: 'https://cdn-icons-png.flaticon.com/512/1804/1804486.png',
+    url: 'https://epg-unap.unap.edu.co',
+  },
+  {
+    id: 3,
+    title: 'EPG',
+    icon: 'https://cdn-icons-png.flaticon.com/512/1804/1804486.png',
+    url: 'https://epg.unap.edu.co',
+  },
+]
 
 export const NavBarCustom = (props: NavBarCustomProps) => {
   const { app } = props
@@ -57,8 +81,14 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
           </div>
         </div>
         <div className="flex flex-1 items-center justify-end gap-2">
-          <ModeToggle />
-          <MoreApps />
+        <ModeToggle />
+          {
+            MoreAppsButton && MoreAppsButton.length > 0 && (
+              <MoreApps apps={MoreAppsButton}>
+                  <GripIcon />
+              </MoreApps>
+            )
+          }
           <UserNav />
         </div>
       </div>
