@@ -1,4 +1,5 @@
 import { HeaderSection } from '@/components/app'
+import PaymentsTable from '@/modules/examples/tables/shadcn/payments-table'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function Page() {
         description='Consulta y gestiona las matrículas registradas en el sistema. Usa el botón "Agregar" para crear nuevos usuarios y actualiza la información existente según sea necesario.'
         hrefAddLink="/admin/usuarios/agregar"
       />
+      <PaymentsTable />
     </div>
   )
 }
