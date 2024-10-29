@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 export const BreadcrumbCustom = () => {
@@ -26,10 +27,10 @@ export const BreadcrumbCustom = () => {
           <BreadcrumbItem>
             {index < paths.length - 1 ? (
               <BreadcrumbLink
-                href={href}
                 className="capitalize text-xs"
+                asChild
               >
-                {pathReplace}
+                <Link href={href}>{pathReplace}</Link>
               </BreadcrumbLink>
             ) : (
               <BreadcrumbPage className="capitalize text-xs">
