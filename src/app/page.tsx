@@ -1,3 +1,9 @@
+import PaymentsTable from "@/modules/examples/tables/shadcn/payments-table";
+
 export default function Home() {
-  return <main></main>
+  return (
+    <main>
+      <PaymentsTable />
+    </main>
+  )
 }

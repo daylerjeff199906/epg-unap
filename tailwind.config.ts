@@ -1,6 +1,6 @@
+import { nextui } from '@nextui-org/react'
 import type { Config } from 'tailwindcss'
 import animate from 'tailwindcss-animate'
-import { nextui } from '@nextui-org/react'
 
 // const { nextui } = require('@nextui-org/react')
 
