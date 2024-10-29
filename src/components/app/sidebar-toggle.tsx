@@ -13,13 +13,13 @@ export function SidebarToggle({ isOpen, setIsOpen }: SidebarToggleProps) {
     <div className="invisible lg:visible">
       <Button
         onClick={() => setIsOpen?.()}
-        className="rounded-md w-8 h-8 text-white border"
+        className="rounded-md  text-white border"
         variant="link"
-        size="icon"
+        size="sm"
       >
         <ChevronLeft
           className={cn(
-            'h-4 w-4 transition-transform ease-in-out duration-700',
+            'h-5 w-5 transition-transform ease-in-out duration-700',
             isOpen === false ? 'rotate-180' : 'rotate-0'
           )}
         />
