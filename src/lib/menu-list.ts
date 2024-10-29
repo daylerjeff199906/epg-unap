@@ -27,16 +27,16 @@ type Group = {
 }
 
 export function getMenuList(pathname: string): Group[] {
-  console.log(pathname)
   return [
     {
       groupLabel: '',
       menus: [
         {
-          href: '/',
+          href: '/admin',
           label: 'Inicio',
           icon: House,
           submenus: [],
+          active: pathname === '/admin',
         },
       ],
     },
@@ -49,12 +49,14 @@ export function getMenuList(pathname: string): Group[] {
           icon: User,
           submenus: [
             {
-              href: '/admin/users',
+              href: '/admin/usuarios',
               label: 'Lista de usuarios',
+              active: pathname === '/admin/usuarios',
             },
             {
-              href: '/admin/users/inactive-users',
+              href: '/admin/usuarios/inactivos',
               label: 'Usuarios sin acceso',
+              active: pathname === '/admin/usuarios/inactivos',
             },
           ],
         },
@@ -66,14 +68,17 @@ export function getMenuList(pathname: string): Group[] {
             {
               href: '/roles',
               label: 'Aplicaciones',
+              active: pathname === '/roles',
             },
             {
               href: '/roles/new',
               label: 'Roles',
+              active: pathname === '/roles/new',
             },
             {
               href: '/units',
               label: 'Unidades organizativas',
+              active: pathname === '/units',
             },
           ],
         },
@@ -90,6 +95,7 @@ export function getMenuList(pathname: string): Group[] {
             {
               href: '/autoridades',
               label: 'Autoridades',
+              active: pathname === '/autoridades',
             },
           ],
         },
@@ -102,6 +108,7 @@ export function getMenuList(pathname: string): Group[] {
           href: '/account',
           label: 'Account',
           icon: Settings,
+          active: pathname === '/account',
         },
       ],
     },
