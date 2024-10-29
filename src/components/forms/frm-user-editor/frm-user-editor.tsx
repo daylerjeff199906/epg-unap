@@ -48,19 +48,17 @@ export const FrmUserEditor = () => {
   return (
     <div>
       <LayoutFormContent title="Nuevo usuario">
-        <main className="py-4">
-          <main className="flex flex-col sm:flex-row">
-            <aside className="sm:min-w-[320px] py-4">
-              <MultiStepTimeline
-                steps={steps}
-                selectedStep={selectedStep}
-                setSelectedStep={setSelectedStep}
-              />
-            </aside>
-            <div className="hidden sm:block mx-4 border-l border-gray-300 min-h-full"></div>
-            {selectedStep === 'user-info-basic' && <UserInfoBasic />}
-            {selectedStep === 'user-roles-data' && <UserRolesData />}
-          </main>
+        <main className="flex flex-col sm:flex-row">
+          <aside className="sm:min-w-[320px] py-4">
+            <MultiStepTimeline
+              steps={steps}
+              selectedStep={selectedStep}
+              setSelectedStep={setSelectedStep}
+            />
+          </aside>
+          <div className="hidden sm:block mx-4 border-l border-gray-300 min-h-full"></div>
+          {selectedStep === 'user-info-basic' && <UserInfoBasic />}
+          {selectedStep === 'user-roles-data' && <UserRolesData />}
         </main>
       </LayoutFormContent>
     </div>
