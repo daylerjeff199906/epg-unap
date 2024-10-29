@@ -1,4 +1,5 @@
 import { AdminPanelLayout, NavBarCustom } from '@/components/app'
+import { MenuConfigApps } from '@/types/configApps'
 import type { Metadata } from 'next'
 
 interface LayoutProps {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   description: 'Panel de administración de EPG - UNAP',
 }
 
-const APP_NAME_KEY = 'panel-admin'
+const APP_NAME_KEY: MenuConfigApps = 'panel-admin'
 
 export default function Layout(props: LayoutProps) {
   const { children } = props
