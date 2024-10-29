@@ -1,75 +1,49 @@
-import { useState, useEffect } from 'react'
+import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { produce } from "immer";
 
-type SidebarSettings = { disabled: boolean; isHoverOpen: boolean }
+type SidebarSettings = { disabled: boolean; isHoverOpen: boolean };
 type SidebarStore = {
-  isOpen: boolean
-  isHover: boolean
-  settings: SidebarSettings
-  toggleOpen: () => void
-  setIsOpen: (isOpen: boolean) => void
-  setIsHover: (isHover: boolean) => void
-  getOpenState: () => boolean
-  setSettings: (settings: Partial<SidebarSettings>) => void
-}
+  isOpen: boolean;
+  isHover: boolean;
+  settings: SidebarSettings;
+  toggleOpen: () => void;
+  setIsOpen: (isOpen: boolean) => void;
+  setIsHover: (isHover: boolean) => void;
+  getOpenState: () => boolean;
+  setSettings: (settings: Partial<SidebarSettings>) => void;
+};
 
-const SIDEBAR_STORAGE_KEY = 'sidebar'
-
-export const useSidebar = (): SidebarStore => {
-  const [isOpen, setIsOpenState] = useState<boolean>(true)
-  const [isHover, setIsHoverState] = useState<boolean>(false)
-  const [settings, setSettingsState] = useState<SidebarSettings>({
-    disabled: false,
-    isHoverOpen: false,
-  })
-
-  // Cargar el estado desde localStorage al montar el componente
-  useEffect(() => {
-    const storedSidebar = localStorage.getItem(SIDEBAR_STORAGE_KEY)
-    if (storedSidebar) {
-      const parsedSidebar = JSON.parse(storedSidebar)
-      setIsOpenState(parsedSidebar.isOpen)
-      setIsHoverState(parsedSidebar.isHover)
-      setSettingsState(parsedSidebar.settings)
+export const useSidebar = create(
+  persist<SidebarStore>(
+    (set, get) => ({
+      isOpen: true,
+      isHover: false,
+      settings: { disabled: false, isHoverOpen: false },
+      toggleOpen: () => {
+        set({ isOpen: !get().isOpen });
+      },
+      setIsOpen: (isOpen: boolean) => {
+        set({ isOpen });
+      },
+      setIsHover: (isHover: boolean) => {
+        set({ isHover });
+      },
+      getOpenState: () => {
+        const state = get();
+        return state.isOpen || (state.settings.isHoverOpen && state.isHover);
+      },
+      setSettings: (settings: Partial<SidebarSettings>) => {
+        set(
+          produce((state: SidebarStore) => {
+            state.settings = { ...state.settings, ...settings };
+          })
+        );
+      }
+    }),
+    {
+      name: "sidebar",
+      storage: createJSONStorage(() => localStorage)
     }
-  }, [])
-
-  // Guardar en localStorage cada vez que cambie el estado
-  useEffect(() => {
-    const sidebarState = { isOpen, isHover, settings }
-    localStorage.setItem(SIDEBAR_STORAGE_KEY, JSON.stringify(sidebarState))
-  }, [isOpen, isHover, settings])
-
-  const toggleOpen = () => {
-    setIsOpenState(!isOpen)
-  }
-
-  const setIsOpen = (newIsOpen: boolean) => {
-    setIsOpenState(newIsOpen)
-  }
-
-  const setIsHover = (newIsHover: boolean) => {
-    setIsHoverState(newIsHover)
-  }
-
-  const getOpenState = (): boolean => {
-    return isOpen || (settings.isHoverOpen && isHover)
-  }
-
-  const setSettings = (newSettings: Partial<SidebarSettings>) => {
-    setSettingsState((prevSettings) => ({
-      ...prevSettings,
-      ...newSettings,
-    }))
-  }
-
-  return {
-    isOpen,
-    isHover,
-    settings,
-    toggleOpen,
-    setIsOpen,
-    setIsHover,
-    getOpenState,
-    setSettings,
-  }
-}
+  )
+);
