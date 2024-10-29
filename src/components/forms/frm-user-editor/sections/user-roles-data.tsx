@@ -25,6 +25,7 @@ export const UserRolesData = () => {
         <RadioGroup
           value={accessType}
           onValueChange={setAccessType}
+          className='space-y-3'
         >
           <div className="flex items-center space-x-2">
             <RadioGroupItem
@@ -37,6 +38,7 @@ export const UserRolesData = () => {
             <RadioGroupItem
               value="admin-access"
               id="admin-access"
+              className='mt-1'
             />
             <div>
               <Label htmlFor="admin-access">
