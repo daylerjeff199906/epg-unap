@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { UserNav } from './user-nav'
 import { ModeToggle } from '../actions'
-import  MoreApps from './more-apps'
+import  {MoreApps} from './more-apps'
 import type { IMoreApp } from '@/types/index'
 import { GripIcon } from 'lucide-react'
 
@@ -15,16 +15,20 @@ const MoreAppsButton: Array<IMoreApp>=[
   {
     id: 1,
     title: 'EPG',
-    description: 'Ver EPG',
     icon: 'https://cdn-icons-png.flaticon.com/512/1804/1804486.png',
     url: 'https://epg.unap.edu.co',
   },
   {
     id: 2,
     title: 'EPG-UNAP',
-    description: 'Ver EPG-UNAP',
     icon: 'https://cdn-icons-png.flaticon.com/512/1804/1804486.png',
     url: 'https://epg-unap.unap.edu.co',
+  },
+  {
+    id: 3,
+    title: 'EPG',
+    icon: 'https://cdn-icons-png.flaticon.com/512/1804/1804486.png',
+    url: 'https://epg.unap.edu.co',
   },
 ]
 // const colorsApp = {
