@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MenuIcon, PanelsTopLeft } from 'lucide-react'
+import { MenuIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { Menu } from './menu'
@@ -8,10 +8,15 @@ import {
   SheetHeader,
   SheetContent,
   SheetTrigger,
-  SheetTitle,
 } from '@/components/ui/sheet'
+import Image from 'next/image'
 
-export function SheetMenu() {
+interface SheetMenuProps {
+  title: string
+}
+
+export function SheetMenu(props: SheetMenuProps) {
+  const { title } = props
   return (
     <Sheet>
       <SheetTrigger
@@ -40,8 +45,18 @@ export function SheetMenu() {
               href="/dashboard"
               className="flex items-center gap-2"
             >
-              <PanelsTopLeft className="w-6 h-6 mr-1" />
-              <SheetTitle className="font-bold text-lg">Brand</SheetTitle>
+              <div
+                id="logo"
+                className="flex items-center space-x-2"
+              >
+                <Image
+                  src="/brands/escudo-epg.webp"
+                  alt="Logo"
+                  width={18}
+                  height={18}
+                />
+                <h1 className="font-bold text-xs">{title}</h1>
+              </div>
             </Link>
           </Button>
         </SheetHeader>

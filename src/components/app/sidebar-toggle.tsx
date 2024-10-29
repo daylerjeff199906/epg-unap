@@ -10,7 +10,7 @@ interface SidebarToggleProps {
 
 export function SidebarToggle({ isOpen, setIsOpen }: SidebarToggleProps) {
   return (
-    <div className="invisible lg:visible">
+    <div className="invisible lg:visible hidden sm:flex">
       <Button
         onClick={() => setIsOpen?.()}
         className="rounded-md  text-white border"

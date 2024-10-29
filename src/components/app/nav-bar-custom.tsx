@@ -32,8 +32,8 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
       className={`sticky top-0 z-50 w-full bg-primary-800 dark:bg-blue-950  shadow text-white dark:shadow-secondary  `}
     >
       <div className="px-4 sm:px-6 md:px-7 flex h-14 items-center">
-        <div className="flex items-center space-x-4 lg:space-x-0 gap-3">
-          <SheetMenu />
+        <div className="flex items-center space-x-4 lg:space-x-0 sm:gap-3">
+          <SheetMenu title="Panel de administración de EPG - UNAP" />
           <SidebarToggle
             isOpen={isOpen}
             setIsOpen={toggleOpen}
