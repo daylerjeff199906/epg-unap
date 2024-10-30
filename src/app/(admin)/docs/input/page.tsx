@@ -21,11 +21,12 @@ export default function Page() {
       />
 
       <TabSection
-        code={`import { Input } from "@/components/ui/input"
+        code={`
+import { Input } from "@/components/ui/input"
  
-                export function InputDemo() {
-                        return <Input type="email" placeholder="Email" />
-                }
+export function InputDemo() {
+        return <Input type="email" placeholder="Email" />
+}
         `}
       >
         <section className="w-full p-6 rounded-md">

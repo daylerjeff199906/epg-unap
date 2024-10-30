@@ -22,24 +22,22 @@ export default function Page() {
       />
 
       <TabSection
-        code={`import { ContentInput } from '@/components/layouts'
-
-
-            export default function Page() {
-                return (
-           <div>
-          <ContentInput
-            id="content-input"
-            label="Prueba de input"
-            description="Descripción de la prueba de input"
-          >
-            <Input placeholder="Prueba de input" />
-          </ContentInput>
+        code={`
+import { ContentInput } from '@/components/layouts'
+  export default function Page() {
+    return (
+      <div>
+        <ContentInput
+          id="content-input"
+          label="Prueba de input"
+          description="Descripción de la prueba de input"
+        >
+          <Input placeholder="Prueba de input" />
+        </ContentInput>
           ))}
-            </div>
-        )
-          }
-        '`}
+      </div>
+        )}
+        `}
       >
         <section className="w-full p-6 rounded-md">
           <ContentInput
