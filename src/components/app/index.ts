@@ -7,6 +7,7 @@ import { MultiStepTimeline } from './multi-step-timeline'
 import { BreadcrumbCustom } from './bread-crumb-custom'
 import { HeaderSection } from './header-section'
 import { TabSection } from './tab-section'
+import { AlertDialogCustom } from './alert-dialog-custom'
 
 export {
   NavBarCustom,
@@ -18,4 +19,5 @@ export {
   BreadcrumbCustom,
   HeaderSection,
   TabSection,
+  AlertDialogCustom,
 }
