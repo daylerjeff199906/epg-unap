@@ -1,4 +1,5 @@
 import { AdminPanelLayout, NavBarCustom } from '@/components/app'
+import { MenuConfigApps } from '@/types/configApps'
 import type { Metadata } from 'next'
 
 interface LayoutProps {
@@ -13,13 +14,15 @@ export const metadata: Metadata = {
   description: 'Documentación de la aplicación',
 }
 
+const APP_NAME_KEY: MenuConfigApps = 'docs'
+
 export default function Layout(props: LayoutProps) {
   const { children } = props
 
   return (
     <>
-      <NavBarCustom app="academicos" />
-      <AdminPanelLayout>{children}</AdminPanelLayout>
+      <NavBarCustom app={APP_NAME_KEY} />
+      <AdminPanelLayout app={APP_NAME_KEY}>{children}</AdminPanelLayout>
     </>
   )
 }

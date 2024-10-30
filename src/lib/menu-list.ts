@@ -1,4 +1,4 @@
-import { menuAdminData } from '@/types/menusApp'
+import { menuAdminData, menuDocsData } from '@/types/menusApp'
 import { LucideIcon } from 'lucide-react'
 
 type Submenu = {
@@ -32,6 +32,9 @@ export function getMenuList(
   switch (appName) {
     case 'panel-admin':
       menuData = menuAdminData
+      break
+    case 'docs':
+      menuData = menuDocsData // Puedes agregar un menú de documentación
       break
     // Puedes agregar más casos para diferentes aplicaciones
     default:
