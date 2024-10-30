@@ -1,3 +1,4 @@
+import { AlertCustom, HeaderSection, TabSection } from '@/components/app'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -5,6 +6,47 @@ export const metadata: Metadata = {
   description: 'Componente de alerta personalizado',
 }
 
+const variants = ['success', 'error', 'warning', 'info']
+
 export default function Page() {
-  return <div></div>
+  return (
+    <div>
+      <HeaderSection
+        title="Dialogo de alerta personalizado"
+        description="Muestra un aviso para llamar la atención del usuario. Puede ser de tipo success, error, warning o info."
+        showAddButton={false}
+        showRefreshButton={false}
+        showExportButton={false}
+      />
+
+      <TabSection
+        code={`import { AlertCustom } from '@/components/app'
+
+        export const SomeComponent = () => {
+
+            return (
+              <AlertCustom
+                key={variant}
+                type={variant as 'success' | 'error' | 'warning' | 'info'}
+                title="Heads up!"
+                message="You can add components to your app using the cli."
+              />
+            )
+        }
+
+    `}
+      >
+        <section className="w-full flex flex-col items-center gap-5">
+          {variants.map((variant) => (
+            <AlertCustom
+              key={variant}
+              type={variant as 'success' | 'error' | 'warning' | 'info'}
+              title="Heads up!"
+              message="You can add components to your app using the cli."
+            />
+          ))}
+        </section>
+      </TabSection>
+    </div>
+  )
 }

@@ -8,6 +8,7 @@ import { BreadcrumbCustom } from './bread-crumb-custom'
 import { HeaderSection } from './header-section'
 import { TabSection } from './tab-section'
 import { AlertDialogCustom } from './alert-dialog-custom'
+import { AlertCustom } from './alert-custom'
 
 export {
   NavBarCustom,
@@ -20,4 +21,5 @@ export {
   HeaderSection,
   TabSection,
   AlertDialogCustom,
+  AlertCustom,
 }
