@@ -6,6 +6,7 @@ import { CollapseMenuButton } from './collapse-menu-button'
 import { MultiStepTimeline } from './multi-step-timeline'
 import { BreadcrumbCustom } from './bread-crumb-custom'
 import { HeaderSection } from './header-section'
+import { TabSection } from './tab-section'
 
 export {
   NavBarCustom,
@@ -16,4 +17,5 @@ export {
   MultiStepTimeline,
   BreadcrumbCustom,
   HeaderSection,
+  TabSection,
 }

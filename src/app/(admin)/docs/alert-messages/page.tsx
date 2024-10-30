@@ -1,3 +1,4 @@
+import { HeaderSection, TabSection } from '@/components/app'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -6,5 +7,22 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <div></div>
+  return (
+    <div>
+      <HeaderSection
+        title="Mensajes de alerta"
+        description='Son tarjetas con mensajes de alerta, que pueden ser de tipo "success", "info", "warning" o "error".'
+        showAddButton={false}
+        showRefreshButton={false}
+        showExportButton={false}
+      />
+
+      <TabSection
+        code=""
+        usage=""
+      >
+        asdasdasdasd
+      </TabSection>
+    </div>
+  )
 }
