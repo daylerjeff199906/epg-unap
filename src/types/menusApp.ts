@@ -159,7 +159,7 @@ export const menuDocsData: Group[] = [
         icon: TextCursorInput,
         submenus: [
           {
-            href: '/docs/inputs',
+            href: '/docs/input',
             label: 'Inputs',
             active: false,
           },
