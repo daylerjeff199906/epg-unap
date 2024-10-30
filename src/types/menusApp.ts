@@ -144,8 +144,8 @@ export const menuDocsData: Group[] = [
             active: false,
           },
           {
-            href: '/docs/alerts',
-            label: 'Alertas',
+            href: '/docs/alert-dialog-custom',
+            label: 'Alerta de diálogo',
             active: false,
           },
           {
