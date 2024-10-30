@@ -162,7 +162,7 @@ export const menuDocsData: Group[] = [
           },
           {
             href: '/docs/content-inputs',
-            label: 'Inputs',
+            label: 'Layout Inputs',
             active: false,
           },
         ],
