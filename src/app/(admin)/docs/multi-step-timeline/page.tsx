@@ -45,6 +45,7 @@ export default function Page() {
       >
         <section className="max-w-lg shadow-lg p-6 rounded-md">
           <MultiStepTimeline
+            selectedStep={'1'}
             steps={[
               {
                 id: '1',
