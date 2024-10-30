@@ -155,6 +155,12 @@ export const menuDocsData: Group[] = [
             label: 'Mensajes de alerta',
             active: false,
           },
+          {
+            href: '/docs/toast-custom',
+            label: 'Toast Custom',
+            active: false,
+          },
+          
         ],
       },
       {
