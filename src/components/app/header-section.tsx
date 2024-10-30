@@ -52,16 +52,18 @@ export const HeaderSection = (props: HeaderSectionProps) => {
   const fontSizeDescription = fontSize[size].description
 
   return (
-    <main className="p-6 rounded-lg">
-      <h2 className={`font-bold text-gray-800 mb-2 ${fontSizeTitle}`}>
-        {title || 'Título de la sección'}
-      </h2>
-      {description && (
-        <h2 className={`text-gray-600 mb-4 ${fontSizeDescription}`}>
-          {description || 'Descripción de la sección'}
+    <main className="p-6 rounded-lg flex flex-col gap-5">
+      <section className='flex flex-col gap-1'>
+        <h2 className={`font-bold text-gray-800 ${fontSizeTitle}`}>
+          {title || 'Título de la sección'}
         </h2>
-      )}
-      {showDivider && <hr className="border-gray-200 my mb-4" />}
+        {description && (
+          <h2 className={`text-gray-600 ${fontSizeDescription}`}>
+            {description || 'Descripción de la sección'}
+          </h2>
+        )}
+      </section>
+      {showDivider && <hr className="border-gray-200" />}
       {!disabledActions && (
         <div className="flex space-x-2">
           {showAddButton && (

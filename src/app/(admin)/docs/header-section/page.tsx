@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: 'Componente de cabecera de sección',
 }
 
+const variants = ['sm', 'md', 'lg']
+
 export default function Page() {
   return (
     <div>
@@ -18,27 +20,36 @@ export default function Page() {
       />
 
       <TabSection
-        code={`import { MultiStepTimeline } from '@/components/app
+        code={`import { HeaderSection,} from '@/components/app
+
+            const variants = ['sm', 'md', 'lg']
 
             export default function Page() {
                 return (
-          <HeaderSection
-            title="Header Section"
-            description="Componente de cabecera de sección, con título y descripción."
-            showAddButton={false}
-            showRefreshButton={false}
-            showExportButton={false}
-          />
+           <div>
+            {variants.map((size) => (
+            <HeaderSection
+              key={size}
+              title={'Título de la sección'}
+              description={'Descripción de la sección'}
+              size={size as 'sm' | 'md' | 'lg'}
+            />
+          ))}
+            </div>
         )
           }
         '`}
       >
         <section className="w-full p-6 rounded-md">
-          <HeaderSection
-            title="Header Section"
-            description="Componente de cabecera de sección, con título y descripción."
-            disabledActions
-          />
+          {variants.map((size) => (
+            <HeaderSection
+              key={size}
+              title={`Título de la sección (${size})`}
+              description={`Descripción de la sección (${size})`}
+              size={size as 'sm' | 'md' | 'lg'}
+              disabledActions
+            />
+          ))}
         </section>
       </TabSection>
     </div>
