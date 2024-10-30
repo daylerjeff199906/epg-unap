@@ -7,6 +7,7 @@ import {
   BookUser,
   TriangleAlert,
   TextCursorInput,
+  Table2,
 } from 'lucide-react'
 
 type Submenu = {
@@ -131,7 +132,7 @@ export const menuDocsData: Group[] = [
     ],
   },
   {
-    groupLabel: 'componentes',
+    groupLabel: 'Componentes',
     menus: [
       {
         href: '',
@@ -173,6 +174,29 @@ export const menuDocsData: Group[] = [
           {
             href: '/docs/multi-step-timeline',
             label: 'Multi Step Timeline',
+            active: false,
+          },
+        ],
+      },
+      {
+        href: '',
+        label: 'Tablas',
+        icon: TextCursorInput,
+        submenus: [],
+      },
+    ],
+  },
+  {
+    groupLabel: 'Formularios',
+    menus: [
+      {
+        href: '',
+        label: 'Layouts',
+        icon: Table2,
+        submenus: [
+          {
+            href: '/docs/layout-form',
+            label: 'Layout Form',
             active: false,
           },
         ],
