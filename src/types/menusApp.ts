@@ -151,11 +151,6 @@ export const menuDocsData: Group[] = [
             label: 'Alerta de diálogo',
             active: false,
           },
-          {
-            href: '/docs/alert-messages',
-            label: 'Mensajes de alerta',
-            active: false,
-          },
         ],
       },
       {
