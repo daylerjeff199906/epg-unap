@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   description: 'Componente de input',
 }
 
-// const variants = ['sm', 'md', 'lg']
-
 export default function Page() {
   return (
     <div className="flex flex-col gap-6">
