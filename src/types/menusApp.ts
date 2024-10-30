@@ -8,6 +8,7 @@ import {
   TriangleAlert,
   TextCursorInput,
   Table2,
+  Table,
 } from 'lucide-react'
 
 type Submenu = {
@@ -181,7 +182,7 @@ export const menuDocsData: Group[] = [
       {
         href: '',
         label: 'Tablas',
-        icon: TextCursorInput,
+        icon: Table,
         submenus: [],
       },
     ],
