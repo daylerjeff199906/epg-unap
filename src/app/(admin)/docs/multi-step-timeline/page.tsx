@@ -43,7 +43,7 @@ export default function Page() {
 
         '`}
       >
-        <section className="max-w-lg shadow-lg p-6 rounded-md">
+        <section className="max-w-lg shadow-lg p-6 rounded-md w-full">
           <MultiStepTimeline
             selectedStep={'1'}
             steps={[

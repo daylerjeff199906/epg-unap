@@ -32,7 +32,7 @@ export const TabSection = (props: IProps) => {
       </TabsList>
       <TabsContent
         value="ui"
-        className="p-8 mt-3 border rounded-lg max-w-3xl"
+        className="p-8 mt-3 border rounded-lg max-w-3xl flex flex-col items-center justify-center"
       >
         {children}
       </TabsContent>
