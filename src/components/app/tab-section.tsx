@@ -30,11 +30,10 @@ export const TabSection = (props: IProps) => {
           Code
         </TabsTrigger>
       </TabsList>
-      <TabsContent
-        value="ui"
-        className="p-8 mt-3 border rounded-lg max-w-3xl flex flex-col items-center justify-center"
-      >
-        {children}
+      <TabsContent value="ui">
+        <main className='p-8 mt-3 border rounded-lg max-w-3xl flex flex-col items-center justify-center'>
+          {children}
+        </main>
       </TabsContent>
       <TabsContent
         value="code"
