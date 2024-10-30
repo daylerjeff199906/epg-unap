@@ -43,7 +43,7 @@ export default function Page() {
             <AlertCustom
               key={variant}
               showIcon
-              radius="lg"
+              radius="md"
               variant="step"
               type={variant as 'success' | 'error' | 'warning' | 'info'}
               title="Heads up!"
