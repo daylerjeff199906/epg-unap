@@ -144,8 +144,13 @@ export const menuDocsData: Group[] = [
             active: false,
           },
           {
-            href: '/admin/usuarios/inactivos',
-            label: 'Usuarios sin acceso',
+            href: '/docs/alerts',
+            label: 'Alertas',
+            active: false,
+          },
+          {
+            href: '/docs/alert-messages',
+            label: 'Mensajes de alerta',
             active: false,
           },
         ],
