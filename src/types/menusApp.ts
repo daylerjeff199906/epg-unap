@@ -9,6 +9,7 @@ import {
   TextCursorInput,
   Table2,
   Table,
+  LayoutPanelTop,
 } from 'lucide-react'
 
 type Submenu = {
@@ -198,6 +199,23 @@ export const menuDocsData: Group[] = [
           {
             href: '/docs/layout-form',
             label: 'Layout Form',
+            active: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    groupLabel: 'Layouts',
+    menus: [
+      {
+        href: '',
+        label: 'Cabeceras',
+        icon: LayoutPanelTop,
+        submenus: [
+          {
+            href: '/docs/header-section',
+            label: 'Header Section',
             active: false,
           },
         ],
