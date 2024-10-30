@@ -140,7 +140,7 @@ export const menuDocsData: Group[] = [
         submenus: [
           {
             href: '/docs/alert-custom',
-            label: 'Lista de usuarios',
+            label: 'Alerta personalizada',
             active: false,
           },
           {
