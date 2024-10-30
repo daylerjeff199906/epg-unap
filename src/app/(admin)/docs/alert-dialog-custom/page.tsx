@@ -18,30 +18,19 @@ export default function Page() {
       />
 
       <TabSection
-        code={`import { MultiStepTimeline } from '@/components/app
+        code={`import { AlertDialogCustom } from '@/components/app'
 
-             <MultiStepTimeline
-            steps={[
-              {
-                id: '1',
-                title: 'Paso 1',
-                description: 'Descripción del paso 1',
-              },
-              {
-                id: '2',
-                title: 'Paso 2',
-                description: 'Descripción del paso 2',
-              },
-              {
-                id: '3',
-                title: 'Paso 3',
-                description: 'Descripción del paso 3',
-              },
-              
-            ]}
-          />
+            export const SomeComponent = () => {
 
-        '`}
+                return (
+                    <AlertDialogCustom 
+                    title="¿Estás seguro de que deseas eliminar este elemento?">
+                        Este es una prueba de alerta personalizada
+                    </AlertDialogCustom>
+                )
+            }
+
+        `}
       >
         <section className="max-w-lg shadow-lg p-6 rounded-md w-full flex flex-col">
           <AlertDialogCustom title="¿Estás seguro de que deseas eliminar este elemento?">
