@@ -19,9 +19,8 @@ export default function Page() {
 
       <TabSection
         code={`import { AlertMessage } from '@/components/app
-import { Alert } from 'react-feather'
+                import { Alert } from 'react-feather'
             '`}
-        usage=""
       >
         asdasdasdasd
       </TabSection>

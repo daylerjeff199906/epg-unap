@@ -5,11 +5,10 @@ import { CodeBlock } from '../actions'
 interface IProps {
   children: React.ReactNode
   code: string
-  usage?: string
 }
 
 export const TabSection = (props: IProps) => {
-  const { children, code, usage } = props
+  const { children, code } = props
 
   return (
     <Tabs
@@ -30,18 +29,10 @@ export const TabSection = (props: IProps) => {
         >
           Code
         </TabsTrigger>
-        {usage && (
-          <TabsTrigger
-            value="usage"
-            className="bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-epgPrimary-900 data-[state=active]:shadow-none data-[state=active]:bg-transparent"
-          >
-            Usage
-          </TabsTrigger>
-        )}
       </TabsList>
       <TabsContent
         value="ui"
-        className="px-1"
+        className="p-8 mt-3 border rounded-lg max-w-4xl"
       >
         {children}
       </TabsContent>
@@ -51,14 +42,6 @@ export const TabSection = (props: IProps) => {
       >
         <CodeBlock code={code} />
       </TabsContent>
-      {usage && (
-        <TabsContent
-          value="usage"
-          className="max-w-screen-md px-1"
-        >
-          <CodeBlock code={usage} />
-        </TabsContent>
-      )}
     </Tabs>
   )
 }

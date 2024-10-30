@@ -170,6 +170,11 @@ export const menuDocsData: Group[] = [
             label: 'Layout Inputs',
             active: false,
           },
+          {
+            href: '/docs/multi-step-timeline',
+            label: 'Multi Step Timeline',
+            active: false,
+          },
         ],
       },
     ],
