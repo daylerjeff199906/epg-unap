@@ -43,7 +43,8 @@ export default function Page() {
             <AlertCustom
               key={variant}
               showIcon
-              radius='lg'
+              radius="lg"
+              variant="step"
               type={variant as 'success' | 'error' | 'warning' | 'info'}
               title="Heads up!"
               message="You can add components to your app using the cli."
