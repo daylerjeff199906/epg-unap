@@ -26,11 +26,13 @@ export default function Page() {
 
             return (
               <AlertCustom
-                key={variant}
-                type={variant as 'success' | 'error' | 'warning' | 'info'}
-                title="Heads up!"
-                message="You can add components to your app using the cli."
-              />
+              key={variant}
+              showIcon
+              radius='lg'
+              type={variant as 'success' | 'error' | 'warning' | 'info'}
+              title="Heads up!"
+              message="You can add components to your app using the cli."
+            />
             )
         }
 
@@ -40,6 +42,8 @@ export default function Page() {
           {variants.map((variant) => (
             <AlertCustom
               key={variant}
+              showIcon
+              radius='lg'
               type={variant as 'success' | 'error' | 'warning' | 'info'}
               title="Heads up!"
               message="You can add components to your app using the cli."
