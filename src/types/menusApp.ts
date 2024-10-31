@@ -9,6 +9,7 @@ import {
   TextCursorInput,
   Table2,
   Table,
+  LayoutPanelTop,
 } from 'lucide-react'
 
 type Submenu = {
@@ -168,12 +169,27 @@ export const menuDocsData: Group[] = [
         icon: TextCursorInput,
         submenus: [
           {
-            href: '/docs/inputs',
+            href: '/docs/input',
             label: 'Inputs',
             active: false,
           },
           {
-            href: '/docs/content-inputs',
+            href: '/docs/checkbox',
+            label: 'Checkbox',
+            active: false,
+          },
+          {
+            href: '/docs/switch',
+            label: 'Switch',
+            active: false,
+          },
+          {
+            href: '/docs/radio-group',
+            label: 'Radio Group',
+            active: false,
+          },
+          {
+            href: '/docs/label-input',
             label: 'Layout Inputs',
             active: false,
           },
@@ -203,6 +219,23 @@ export const menuDocsData: Group[] = [
           {
             href: '/docs/layout-form',
             label: 'Layout Form',
+            active: false,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    groupLabel: 'Layouts',
+    menus: [
+      {
+        href: '',
+        label: 'Cabeceras',
+        icon: LayoutPanelTop,
+        submenus: [
+          {
+            href: '/docs/header-section',
+            label: 'Header Section',
             active: false,
           },
         ],
