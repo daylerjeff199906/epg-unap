@@ -62,18 +62,16 @@ export function InputDemo() {
 
         <TabSection
           code={`
-import { InputSearch } from "@/components/ui/input"
+import { CheckboxCustom } from '@/components/app'
  
 export function InputDemo() {
        return (
-    <div className="flex items-center space-x-2">
+ <section className="w-full p-6 rounded-md">
             <CheckboxCustom
               label="Accept terms and conditions"
               description="You agree to our Terms of Service and Privacy Policy."
             />
-        Accept terms and conditions
-      </label>
-    </div>
+          </section>
   )
 }
         `}
