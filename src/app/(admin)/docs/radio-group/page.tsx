@@ -1,4 +1,5 @@
 import { HeaderSection, RadioGroupDynamic, TabSection } from '@/components/app'
+import { RadioGroupDynamicItem } from '@/components/app/radio-group-dynamic'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Metadata } from 'next'
@@ -8,6 +9,21 @@ export const metadata: Metadata = {
   description:
     'A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.',
 }
+
+const options = [
+  {
+    id: 'option-one',
+    value: 'option-one',
+    label: 'Option One',
+    description: 'Description for option one',
+  },
+  {
+    id: 'option-two',
+    value: 'option-two',
+    label: 'Option Two',
+    description: 'Description for option two',
+  },
+]
 
 export default function Page() {
   return (
@@ -69,8 +85,8 @@ export function RadioGroupDemo() {
       </section>
       <section>
         <HeaderSection
-          title="Input Search"
-          description="Displays a form input field or a component that looks like an input field with a search icon."
+          title="Radio Group Dynamic"
+          description="A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time."
           showAddButton={false}
           showRefreshButton={false}
           showExportButton={false}
@@ -78,15 +94,58 @@ export function RadioGroupDemo() {
 
         <TabSection
           code={`
-import { InputSearch } from "@/components/ui/input"
+import {  RadioGroupDynamic} from '@/components/app'
+import { RadioGroupDynamicItem } from '@/components/app/radio-group-dynamic'
+
+const options = [
+  {
+    id: 'option-one',
+    value: 'option-one',
+    label: 'Option One',
+    description: 'Description for option one',
+  },
+  {
+    id: 'option-two',
+    value: 'option-two',
+    label: 'Option Two',
+    description: 'Description for option two',
+  },
+]
  
-export function InputDemo() {
-        return <InputSearch placeholder="Buscar ..." />
+export function RadioGroupDemo() {
+        return (
+         <section className="w-full p-6 rounded-md">
+            <RadioGroupDynamic>
+              {options.map((item) => (
+                <RadioGroupDynamicItem
+                  key={item.id}
+                  id={item.id}
+                  value={item.value}
+                  description={item.description}
+                >
+                  {item.label}
+                </RadioGroupDynamicItem>
+              ))}
+            </RadioGroupDynamic>
+          </section>
+        )
 }
         `}
         >
           <section className="w-full p-6 rounded-md">
-            <RadioGroupDynamic />
+            <RadioGroupDynamic>
+              {options.map((item) => (
+                <RadioGroupDynamicItem
+                  key={item.id}
+                  id={item.id}
+                  value={item.value}
+                  description={item.description}
+                  showWrapper
+                >
+                  {item.label}
+                </RadioGroupDynamicItem>
+              ))}
+            </RadioGroupDynamic>
           </section>
         </TabSection>
       </section>

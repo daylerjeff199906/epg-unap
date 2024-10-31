@@ -1,34 +1,28 @@
 import { RadioGroup, RadioGroupItem } from '../ui/radio-group'
 import { Label } from '../ui/label'
+import React from 'react'
 
 interface RadioGroupDynamicProps {
   value?: string
   defaultValue?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  showWrapper?: boolean
+  children: React.ReactNode
 }
 
-export const RadioGroupDynamic = (props: RadioGroupDynamicProps) => {
-  const { defaultValue, value, onChange } = props
+export const RadioGroupDynamic = ({
+  defaultValue,
+  value,
+  onChange,
+  children,
+}: RadioGroupDynamicProps) => {
   return (
     <RadioGroup
       defaultValue={defaultValue}
       value={value}
       onChange={onChange}
     >
-      <RadioGroupDynamicItem
-        id="option-one"
-        value="option-one"
-        description="Option One"
-      >
-        Option One
-      </RadioGroupDynamicItem>
-      <RadioGroupDynamicItem
-        id="option-two"
-        value="option-two"
-        description="Option Two"
-      >
-        Option Two
-      </RadioGroupDynamicItem>
+      {children}
     </RadioGroup>
   )
 }
@@ -38,20 +32,24 @@ interface RadioGroupItemProps {
   id: string
   children?: React.ReactNode
   description?: string
+  showWrapper?: boolean
 }
 
-export const RadioGroupDynamicItem = (props: RadioGroupItemProps) => {
-  const { value, id, children, description } = props
-
+export const RadioGroupDynamicItem = ({
+  value,
+  id,
+  children,
+  description,
+  showWrapper,
+}: RadioGroupItemProps) => {
   return (
-    <div className="flex items-center space-x-2">
+    <div className={`flex items-center space-x-3 ${showWrapper && 'border p-3 bg-white rounded-lg'} `}>
       <RadioGroupItem
         value={value}
-        defaultValue={value}
         id={id}
       />
       <section>
-        {children && <Label htmlFor={value}>{children}</Label>}
+        {children && <Label htmlFor={id}>{children}</Label>}
         {description && <p className="text-sm text-gray-500">{description}</p>}
       </section>
     </div>
