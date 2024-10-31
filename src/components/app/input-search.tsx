@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
+import React from 'react'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
-import React from 'react'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
