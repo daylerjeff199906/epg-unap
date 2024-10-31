@@ -10,6 +10,7 @@ import { TabSection } from './tab-section'
 import { AlertDialogCustom } from './alert-dialog-custom'
 import { AlertCustom } from './alert-custom'
 import { InputSearch } from './input-search'
+import { CheckboxCustom } from './checkbox-custom'
 
 export {
   NavBarCustom,
@@ -24,4 +25,5 @@ export {
   AlertDialogCustom,
   AlertCustom,
   InputSearch,
+  CheckboxCustom,
 }
