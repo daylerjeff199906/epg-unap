@@ -82,7 +82,7 @@ export function InputDemo() {
             <CheckboxCustom
               label="Accept terms and conditions"
               description="You agree to our Terms of Service and Privacy Policy."
-              variant="bordered"
+              variant="flat"
             />
           </section>
         </TabSection>

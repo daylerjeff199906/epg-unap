@@ -22,7 +22,7 @@ const variants = {
     color: 'border',
   },
   flat: {
-    color: 'border',
+    color: 'bg-gray-100',
   },
 }
 
