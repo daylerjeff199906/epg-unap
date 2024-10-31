@@ -155,6 +155,11 @@ export const menuDocsData: Group[] = [
             label: 'Mensajes de alerta',
             active: false,
           },
+          {
+            href: '/docs/notifications',
+            label: 'Panel de notificaciones',
+            active: false,
+          },
         ],
       },
       {
