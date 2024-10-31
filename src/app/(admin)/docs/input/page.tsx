@@ -1,4 +1,4 @@
-import { HeaderSection, TabSection } from '@/components/app'
+import { HeaderSection, InputSearch, TabSection } from '@/components/app'
 import { Input } from '@/components/ui/input'
 import { Metadata } from 'next'
 
@@ -41,6 +41,20 @@ export function InputDemo() {
           showRefreshButton={false}
           showExportButton={false}
         />
+
+        <TabSection
+          code={`
+import { Input } from "@/components/ui/input"
+ 
+export function InputDemo() {
+        return <Input type="email" placeholder="Email" />
+}
+        `}
+        >
+          <section className="w-full p-6 rounded-md">
+            <InputSearch />
+          </section>
+        </TabSection>
       </section>
     </div>
   )

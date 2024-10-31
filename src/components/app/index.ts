@@ -9,6 +9,7 @@ import { HeaderSection } from './header-section'
 import { TabSection } from './tab-section'
 import { AlertDialogCustom } from './alert-dialog-custom'
 import { AlertCustom } from './alert-custom'
+import { InputSearch } from './input-search'
 
 export {
   NavBarCustom,
@@ -22,4 +23,5 @@ export {
   TabSection,
   AlertDialogCustom,
   AlertCustom,
+  InputSearch,
 }
