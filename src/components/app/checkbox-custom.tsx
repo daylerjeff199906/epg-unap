@@ -7,6 +7,8 @@ interface CheckboxCustomProps {
   description?: string
   variant?: 'default' | 'bordered' | 'flat'
   color?: 'default' | 'success' | 'danger' | 'warning'
+  value?: boolean
+  onChange?: (value: boolean) => void
 }
 
 const colorClasses = {
@@ -38,12 +40,18 @@ export const CheckboxCustom = ({
   description,
   variant = 'default',
   color = 'default',
+  value,
+  onChange,
 }: CheckboxCustomProps) => {
   const colorStyle = colorClasses[color][variant]
 
   return (
     <div className={`flex items-top space-x-2 p-4 rounded-sm ${colorStyle}`}>
-      <Checkbox id={id || 'terms-checkbox'} />
+      <Checkbox
+        id={id || 'terms-checkbox'}
+        checked={value}
+        onCheckedChange={onChange}
+      />
       <div className="grid gap-1.5 leading-none">
         {label && (
           <label
