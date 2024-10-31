@@ -1,4 +1,4 @@
-import { HeaderSection, TabSection } from '@/components/app'
+import { CheckboxCustom, HeaderSection, TabSection } from '@/components/app'
 import { Checkbox } from '@nextui-org/react'
 import { Metadata } from 'next'
 
@@ -67,11 +67,10 @@ import { InputSearch } from "@/components/ui/input"
 export function InputDemo() {
        return (
     <div className="flex items-center space-x-2">
-      <Checkbox id="terms" />
-      <label
-        htmlFor="terms"
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
+            <CheckboxCustom
+              label="Accept terms and conditions"
+              description="You agree to our Terms of Service and Privacy Policy."
+            />
         Accept terms and conditions
       </label>
     </div>
@@ -80,15 +79,10 @@ export function InputDemo() {
         `}
         >
           <section className="w-full p-6 rounded-md">
-            {/* <div className="flex items-center space-x-2">
-              <Checkbox id="terms" />
-              <label
-                htmlFor="terms"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Accept terms and conditions
-              </label>
-            </div> */}
+            <CheckboxCustom
+              label="Accept terms and conditions"
+              description="You agree to our Terms of Service and Privacy Policy."
+            />
           </section>
         </TabSection>
       </section>
