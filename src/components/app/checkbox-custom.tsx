@@ -11,13 +11,28 @@ interface CheckboxCustomProps {
   id?: string
   label?: string
   description?: string
+  variant?: 'default' | 'bordered' | 'flat'
+}
+
+const variants = {
+  default: {
+    color: '',
+  },
+  bordered: {
+    color: 'border',
+  },
+  flat: {
+    color: 'border',
+  },
 }
 
 export const CheckboxCustom = (props: CheckboxCustomProps) => {
-  const { label, description, id } = props
+  const { id, label, description, variant = 'default' } = props
+
+  const variantStyle = variants[variant]
 
   return (
-    <div className="items-top flex space-x-2">
+    <div className={`items-top flex space-x-2 p-4 rounded-sm ${variantStyle.color}`}>
       <Checkbox id={id || 'terms1'} />
       <div className="grid gap-1.5 leading-none">
         {label && (
