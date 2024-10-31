@@ -174,6 +174,11 @@ export const menuDocsData: Group[] = [
             active: false,
           },
           {
+            href: '/docs/radio-group',
+            label: 'Radio Group',
+            active: false,
+          },
+          {
             href: '/docs/label-input',
             label: 'Layout Inputs',
             active: false,
