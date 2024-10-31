@@ -1,52 +1,60 @@
 'use client'
 import { Checkbox } from '@/components/ui/checkbox'
 
-// interface CheckboxProps extends UseCheckboxProps {
-// }
-// declare const Checkbox: _nextui_org_system.InternalForwardRefRenderFunction<"input", CheckboxProps, never>;
-
-// export { CheckboxProps, Checkbox as default };
-
 interface CheckboxCustomProps {
   id?: string
   label?: string
   description?: string
   variant?: 'default' | 'bordered' | 'flat'
+  color?: 'default' | 'success' | 'danger' | 'warning'
 }
 
-const variants = {
+const colorClasses = {
   default: {
-    color: '',
+    default: 'text-gray-900',
+    bordered: 'border-gray-300 text-gray-900',
+    flat: 'text-gray-900',
   },
-  bordered: {
-    color: 'border',
+  success: {
+    default: 'text-success-600',
+    bordered: 'border-success-600 text-success-600',
+    flat: 'text-success-600 bg-success-50',
   },
-  flat: {
-    color: 'bg-gray-100',
+  danger: {
+    default: 'text-danger-600',
+    bordered: 'border-danger-600 text-danger-600',
+    flat: 'text-danger-600 bg-danger-50',
+  },
+  warning: {
+    default: 'text-warning-600',
+    bordered: 'border-warning-600 text-warning-600',
+    flat: 'text-warning-600 bg-warning-50',
   },
 }
 
-export const CheckboxCustom = (props: CheckboxCustomProps) => {
-  const { id, label, description, variant = 'default' } = props
-
-  const variantStyle = variants[variant]
+export const CheckboxCustom = ({
+  id,
+  label,
+  description,
+  variant = 'default',
+  color = 'default',
+}: CheckboxCustomProps) => {
+  const colorStyle = colorClasses[color][variant]
 
   return (
-    <div className={`items-top flex space-x-2 p-4 rounded-sm ${variantStyle.color}`}>
-      <Checkbox id={id || 'terms1'} />
+    <div className={`flex items-top space-x-2 p-4 rounded-sm ${colorStyle}`}>
+      <Checkbox id={id || 'terms-checkbox'} />
       <div className="grid gap-1.5 leading-none">
         {label && (
           <label
-            htmlFor="terms1"
+            htmlFor={id || 'terms-checkbox'}
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            Accept terms and conditions
+            {label}
           </label>
         )}
         {description && (
-          <p className="text-sm text-muted-foreground">
-            You agree to our Terms of Service and Privacy Policy.
-          </p>
+          <p className="text-sm text-muted-foreground">{description}</p>
         )}
       </div>
     </div>
