@@ -43,7 +43,11 @@ export const RadioGroupDynamicItem = ({
   showWrapper,
 }: RadioGroupItemProps) => {
   return (
-    <div className={`flex items-center space-x-3 ${showWrapper && 'border p-3 bg-white rounded-lg'} `}>
+    <div
+      className={`flex items-center space-x-3 ${
+        showWrapper && 'border p-3 bg-white rounded-lg'
+      } `}
+    >
       <RadioGroupItem
         value={value}
         id={id}
