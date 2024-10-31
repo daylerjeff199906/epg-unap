@@ -164,6 +164,11 @@ export const menuDocsData: Group[] = [
             active: false,
           },
           {
+            href: '/docs/checkbox',
+            label: 'Checkbox',
+            active: false,
+          },
+          {
             href: '/docs/label-input',
             label: 'Layout Inputs',
             active: false,
