@@ -12,6 +12,7 @@ import { AlertCustom } from './alert-custom'
 import { InputSearch } from './input-search'
 import { CheckboxCustom } from './checkbox-custom'
 import { SwitchCustom } from './switch-custom'
+import { RadioGroupDynamic } from './radio-group-dynamic'
 
 export {
   NavBarCustom,
@@ -28,4 +29,5 @@ export {
   InputSearch,
   CheckboxCustom,
   SwitchCustom,
+  RadioGroupDynamic,
 }

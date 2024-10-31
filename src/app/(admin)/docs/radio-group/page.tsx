@@ -1,4 +1,4 @@
-import { HeaderSection, InputSearch, TabSection } from '@/components/app'
+import { HeaderSection, RadioGroupDynamic, TabSection } from '@/components/app'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Metadata } from 'next'
@@ -86,7 +86,7 @@ export function InputDemo() {
         `}
         >
           <section className="w-full p-6 rounded-md">
-            <InputSearch placeholder="Buscar ..." />
+            <RadioGroupDynamic />
           </section>
         </TabSection>
       </section>
