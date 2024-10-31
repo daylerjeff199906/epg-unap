@@ -44,15 +44,15 @@ export function InputDemo() {
 
         <TabSection
           code={`
-import { Input } from "@/components/ui/input"
+import { InputSearch } from "@/components/ui/input"
  
 export function InputDemo() {
-        return <Input type="email" placeholder="Email" />
+        return <InputSearch placeholder="Buscar ..." />
 }
         `}
         >
           <section className="w-full p-6 rounded-md">
-            <InputSearch />
+            <InputSearch placeholder="Buscar ..." />
           </section>
         </TabSection>
       </section>

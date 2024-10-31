@@ -27,23 +27,40 @@ import { ContentInput } from '@/components/layouts'
   export default function Page() {
     return (
       <div>
-        <ContentInput
-          id="content-input"
-          label="Prueba de input"
-          description="Descripción de la prueba de input"
-        >
-          <Input placeholder="Prueba de input" />
-        </ContentInput>
-          ))}
+      <section className="w-full p-6 rounded-md flex flex-col gap-4">
+          <ContentInput
+            id="content-input"
+            label="Prueba de input"
+            description="Descripción de la prueba de input. Orientacion horizontal."
+          >
+            <Input placeholder="Prueba de input" />
+          </ContentInput>
+          <ContentInput
+            id="content-input"
+            label="Prueba de input"
+            description="Descripción de la prueba de input. Orientacion vertical."
+            orientation="vertical"
+          >
+            <Input placeholder="Prueba de input" />
+          </ContentInput>
+        </section>
       </div>
         )}
         `}
       >
-        <section className="w-full p-6 rounded-md">
+        <section className="w-full p-6 rounded-md flex flex-col gap-6">
           <ContentInput
             id="content-input"
             label="Prueba de input"
-            description="Descripción de la prueba de input"
+            description="Descripción de la prueba de input. Orientacion horizontal."
+          >
+            <Input placeholder="Prueba de input" />
+          </ContentInput>
+          <ContentInput
+            id="content-input"
+            label="Prueba de input"
+            description="Descripción de la prueba de input. Orientacion vertical."
+            orientation="vertical"
           >
             <Input placeholder="Prueba de input" />
           </ContentInput>
