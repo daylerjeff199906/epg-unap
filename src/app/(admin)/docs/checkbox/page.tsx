@@ -1,10 +1,10 @@
 import { CheckboxCustom, HeaderSection, TabSection } from '@/components/app'
-import { Checkbox } from '@nextui-org/react'
+import { Checkbox } from '@/components/ui/checkbox'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Input',
-  description: 'Componente de input',
+  title: 'Checkbox',
+  description: 'Componente de checkbox',
 }
 
 export default function Page() {

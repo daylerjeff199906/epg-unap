@@ -169,6 +169,11 @@ export const menuDocsData: Group[] = [
             active: false,
           },
           {
+            href: '/docs/switch',
+            label: 'Switch',
+            active: false,
+          },
+          {
             href: '/docs/label-input',
             label: 'Layout Inputs',
             active: false,

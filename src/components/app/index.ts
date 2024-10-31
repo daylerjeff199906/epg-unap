@@ -11,6 +11,7 @@ import { AlertDialogCustom } from './alert-dialog-custom'
 import { AlertCustom } from './alert-custom'
 import { InputSearch } from './input-search'
 import { CheckboxCustom } from './checkbox-custom'
+import { SwitchCustom } from './switch-custom'
 
 export {
   NavBarCustom,
@@ -26,4 +27,5 @@ export {
   AlertCustom,
   InputSearch,
   CheckboxCustom,
+  SwitchCustom,
 }
