@@ -20,6 +20,7 @@ export default function Page() {
         />
 
         <TabSection
+          size="4xl"
           code={`
 import { Input } from "@/components/ui/input"
  
@@ -28,7 +29,7 @@ export function InputDemo() {
 }
         `}
         >
-          <section className="w-full p-6 rounded-md">
+          <section className="w-full p-6 rounded-md relative">
             <LayoutFormContent>asdasdasdad</LayoutFormContent>
           </section>
         </TabSection>
