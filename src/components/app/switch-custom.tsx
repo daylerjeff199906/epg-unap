@@ -8,7 +8,12 @@ interface SwitchCustomProps {
 }
 
 export const SwitchCustom = (props: SwitchCustomProps) => {
-  const { label, description, value, onChange } = props
+  const {
+    label = 'Security emails',
+    description = 'Receive emails about your account security.',
+    value,
+    onChange,
+  } = props
   return (
     <div className="flex flex-row items-center justify-between rounded-lg border p-4">
       <div className="space-y-0.5">

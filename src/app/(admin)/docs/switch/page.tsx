@@ -54,10 +54,10 @@ export function SwitchDemo() {
 
         <TabSection
           code={`
-import { InputSearch } from "@/components/ui/input"
+import { SwitchCustom } from '@/components/app'
  
 export function InputDemo() {
-        return <InputSearch placeholder="Buscar ..." />
+        return <SwitchCustom />
 }
         `}
         >
