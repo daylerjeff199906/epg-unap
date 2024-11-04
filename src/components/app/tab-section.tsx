@@ -5,10 +5,11 @@ import { CodeBlock } from '../actions'
 interface IProps {
   children: React.ReactNode
   code: string
+  size?: 'xl' | '2xl' | '3xl' | '4xl' | '5xl'
 }
 
 export const TabSection = (props: IProps) => {
-  const { children, code } = props
+  const { children, code, size = '3xl' } = props
 
   return (
     <Tabs
@@ -31,7 +32,9 @@ export const TabSection = (props: IProps) => {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="ui">
-        <main className='p-8 mt-3 border rounded-lg max-w-3xl flex flex-col items-center justify-center'>
+        <main
+          className={`p-8 mt-3 border rounded-lg flex flex-col items-center justify-center max-w-${size}`}
+        >
           {children}
         </main>
       </TabsContent>
