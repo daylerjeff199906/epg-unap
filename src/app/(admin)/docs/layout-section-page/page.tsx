@@ -33,8 +33,6 @@ export function InputDemo() {
             <LayoutSectionPage
               title="Titulo de seccion"
               description="Descripcion de la seccion"
-              isBorder
-              radius="md"
             >
               Hola
             </LayoutSectionPage>
