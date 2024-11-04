@@ -1,6 +1,6 @@
 import { HeaderSection, TabSection } from '@/components/app'
-import { Label } from '@/components/ui/label'
 import { Switch } from '@/components/ui/switch'
+import { Label } from '@/components/ui/label'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
