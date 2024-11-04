@@ -16,7 +16,7 @@ export const LayoutSectionPage = (props: LayoutSectionPageProps) => {
       } ${radius ? `rounded-${radius}` : 'rounded-none'}`}
     >
       <header className={`flex flex-col gap-1 ${isBorder && 'p-4'}`}>
-        <h1 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
+        <h1 className="text-xl font-bold text-gray-800 dark:text-gray-200">
           {title}
         </h1>
         {description && (
