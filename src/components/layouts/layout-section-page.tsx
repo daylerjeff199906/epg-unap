@@ -2,8 +2,8 @@ interface LayoutSectionPageProps {
   isBorder?: boolean
   radius?: 'none' | 'sm' | 'md' | 'lg' | 'full'
   title?: string
-  description?: string
   showDivider?: boolean
+  description?: React.ReactNode
   children: React.ReactNode
 }
 
@@ -20,9 +20,9 @@ export const LayoutSectionPage = (props: LayoutSectionPageProps) => {
           {title}
         </h1>
         {description && (
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <div className="text-sm text-gray-600 dark:text-gray-400">
             {description}
-          </p>
+          </div>
         )}
       </header>
       {showDivider && (
