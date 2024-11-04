@@ -30,7 +30,14 @@ export function InputDemo() {
         `}
         >
           <section className="w-full p-6 rounded-md relative">
-            <LayoutSectionPage>Hola</LayoutSectionPage>
+            <LayoutSectionPage
+              title="Titulo de seccion"
+              description="Descripcion de la seccion"
+              isBorder
+              radius="md"
+            >
+              Hola
+            </LayoutSectionPage>
           </section>
         </TabSection>
       </section>
