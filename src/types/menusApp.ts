@@ -228,6 +228,11 @@ export const menuDocsData: Group[] = [
             label: 'Header Section',
             active: false,
           },
+          {
+            href: '/docs/layout-section-page',
+            label: 'Layout Section Page',
+            active: false,
+          },
         ],
       },
     ],
