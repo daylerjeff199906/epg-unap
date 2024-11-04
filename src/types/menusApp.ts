@@ -106,13 +106,25 @@ export const menuAdminData: Group[] = [
     ],
   },
   {
-    groupLabel: 'Settings',
+    groupLabel: 'Configuración',
     menus: [
       {
-        href: '/account',
-        label: 'Account',
+        href: '',
+        label: 'Generales',
         icon: Settings,
         active: false,
+        submenus: [
+          {
+            href: '/generales',
+            label: 'Configuración general',
+            active: false,
+          },
+          {
+            href: '/institucional-year',
+            label: 'Año institucional',
+            active: false,
+          },
+        ],
       },
     ],
   },
@@ -226,6 +238,11 @@ export const menuDocsData: Group[] = [
           {
             href: '/docs/header-section',
             label: 'Header Section',
+            active: false,
+          },
+          {
+            href: '/docs/layout-section-page',
+            label: 'Layout Section Page',
             active: false,
           },
         ],

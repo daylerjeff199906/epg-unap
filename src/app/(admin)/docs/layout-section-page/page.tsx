@@ -1,10 +1,10 @@
 import { HeaderSection, TabSection } from '@/components/app'
-import { LayoutFormContent } from '@/components/layouts'
+import { LayoutSectionPage } from '@/components/layouts'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Layout Form',
-  description: 'Componente de formulario',
+  title: 'Layout Section Page',
+  description: 'Componente de layout de sección de página',
 }
 
 export default function Page() {
@@ -12,8 +12,8 @@ export default function Page() {
     <div className="flex flex-col gap-6">
       <section>
         <HeaderSection
-          title="Layout Form"
-          description="Displays a form input field or a component that looks like an input field."
+          title="Layout Section Page"
+          description="Displays a layout section page with a header and a main section."
           showAddButton={false}
           showRefreshButton={false}
           showExportButton={false}
@@ -30,11 +30,12 @@ export function InputDemo() {
         `}
         >
           <section className="w-full p-6 rounded-md relative">
-            <LayoutFormContent>
-              <main className="flex flex-col gap-4 p-8">
-                Acá irá el contenido del formulario
-              </main>
-            </LayoutFormContent>
+            <LayoutSectionPage
+              title="Titulo de seccion"
+              description="Descripcion de la seccion"
+            >
+              Hola
+            </LayoutSectionPage>
           </section>
         </TabSection>
       </section>
