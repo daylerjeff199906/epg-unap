@@ -106,13 +106,25 @@ export const menuAdminData: Group[] = [
     ],
   },
   {
-    groupLabel: 'Settings',
+    groupLabel: 'Configuración',
     menus: [
       {
-        href: '/account',
-        label: 'Account',
+        href: '',
+        label: 'Generales',
         icon: Settings,
         active: false,
+        submenus: [
+          {
+            href: '/generales',
+            label: 'Configuración general',
+            active: false,
+          },
+          {
+            href: '/institucional-year',
+            label: 'Año institucional',
+            active: false,
+          },
+        ],
       },
     ],
   },
