@@ -13,6 +13,8 @@ import { InputSearch } from './input-search'
 import { CheckboxCustom } from './checkbox-custom'
 import { SwitchCustom } from './switch-custom'
 import { RadioGroupDynamic } from './radio-group-dynamic'
+import {FooterSimple} from './footer-custom/footer-simple'
+import {FooterLinksSection} from './footer-custom/footer-links-section'
 
 export {
   NavBarCustom,
@@ -30,4 +32,6 @@ export {
   CheckboxCustom,
   SwitchCustom,
   RadioGroupDynamic,
+  FooterSimple,
+  FooterLinksSection
 }
