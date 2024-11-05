@@ -1,3 +1,9 @@
+import { HomeBanner } from '@/modules/intranet'
+
 export default function Page() {
-  return <div>page</div>
+  return (
+    <>
+      <HomeBanner />
+    </>
+  )
 }
