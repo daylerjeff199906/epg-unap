@@ -3,10 +3,11 @@ import { BannerSection } from '@/components/intranet'
 interface LayoutStudentProps {
   title: string
   subtitle?: string
+  children?: React.ReactNode
 }
 
 export const LayoutStudent = (props: LayoutStudentProps) => {
-  const { title, subtitle } = props
+  const { title, subtitle, children } = props
 
   return (
     <>
@@ -15,7 +16,7 @@ export const LayoutStudent = (props: LayoutStudentProps) => {
         subtitle={subtitle}
       />
       <main className="bg-primary-50">
-        <section className="container">asdasdasdasd</section>
+        <article className="container">{children}</article>
       </main>
     </>
   )

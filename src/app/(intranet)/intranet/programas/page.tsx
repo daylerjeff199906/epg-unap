@@ -1,3 +1,4 @@
+import { LayoutStudent } from '@/components/layouts'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -6,5 +7,12 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <div>page</div>
+  return (
+    <LayoutStudent
+      title="Programas Actuales"
+      subtitle="Lista de programas matriculados hasta la actualidad"
+    >
+      <section></section>
+    </LayoutStudent>
+  )
 }
