@@ -1,4 +1,5 @@
 'use client'
+import { useState } from 'react'
 import { IProgram } from '@/types/intranet/IPrograms'
 import {
   Card,
@@ -14,11 +15,20 @@ interface IProgramsCardProps {
   data: IProgram
 }
 export const ProgramCard = (props: IProgramsCardProps) => {
+  const [isHovered, setIsHovered] = useState(false)
   const { data } = props
   const { titulo } = data
 
   return (
-    <Card className="flex flex-row gap-4 p-4 bg-white">
+    <Card
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`flex flex-row gap-4 p-4 bg-white ${
+        isHovered
+          ? 'border-2 border-primary-800 transition-opacity duration-300'
+          : ''
+      }`}
+    >
       <img
         src="https://blogs.ucontinental.edu.pe/wp-content/uploads/2022/09/carrera-de-administracio%CC%81n-y-gestio%CC%81n-pu%CC%81blica-800x450.jpg"
         alt={titulo}
@@ -26,10 +36,16 @@ export const ProgramCard = (props: IProgramsCardProps) => {
       />
       <main className="w-full">
         <CardHeader className="py-3 px-0">
-          <CardTitle className="text-primary-900 font-bold">{titulo}</CardTitle>
+          <CardTitle
+            className={`text-primary-900 font-bold ${
+              isHovered && 'cursor-pointer underline'
+            }`}
+          >
+            {titulo}
+          </CardTitle>
 
           <div>
-            <Badge className="bg-gray-200 text-gray-800">
+            <Badge className="bg-gray-200 text-gray-800 hover:bg-gray-200">
               {data.planEstudios}
             </Badge>
           </div>
