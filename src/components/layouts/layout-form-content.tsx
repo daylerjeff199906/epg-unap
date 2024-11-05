@@ -21,9 +21,7 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
         action=""
         onSubmit={onSubmit}
       >
-        <main className="h-screen max-h-[calc(100vh-200px)]">
-          {children}
-        </main>
+        <main className="h-screen max-h-[calc(100vh-200px)]">{children}</main>
         <footer className="mt-4 border-t absolute left-0 right-0 bottom-0 bg-white">
           <main className="flex justify-end w-full py-5 container">
             <Button variant="ghost">Cancelar</Button>
@@ -34,3 +32,7 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
     </>
   )
 }
+
+// export const LayoutAside = ({ children }) => {
+//   return <aside className="w-80 border-r border-gray-300">{children}</aside>
+// }
