@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
+import { usePathname } from 'next/navigation'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -53,6 +54,8 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function NavigationMenuDemo() {
+  const pathname = usePathname()
+
   return (
     <section className="w-full flex justify-start">
       <NavigationMenu>
