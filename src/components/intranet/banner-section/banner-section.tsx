@@ -15,9 +15,7 @@ export const BannerSection = (props: BannerSectionProps) => {
         <div>
           <h1 className="text-3xl font-bold">{title || 'Title section'}</h1>
           {subtitle && (
-            <h3 className="text-gray-400">
-              Escuela de Posgrado - Universidad Nacional de la Amazonía Peruana
-            </h3>
+            <h3 className="text-gray-400">{subtitle || 'Subtitle section'}</h3>
           )}
         </div>
       </section>
