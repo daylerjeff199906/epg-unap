@@ -15,7 +15,7 @@ export const LayoutStudent = (props: LayoutStudentProps) => {
         title={title}
         subtitle={subtitle}
       />
-      <main className={`bg-primary-50`}>
+      <main className={`bg-primary-50 `}>
         <article className="container py-8 sm:p-10 lg:py-12 h-full">
           {children}
         </article>
