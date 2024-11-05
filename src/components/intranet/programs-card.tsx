@@ -23,7 +23,7 @@ export const ProgramCard = (props: IProgramsCardProps) => {
     <Card
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`flex flex-row gap-4 p-4 bg-white ${
+      className={`flex flex-col sm:flex-row gap-4 p-4 bg-white ${
         isHovered
           ? 'border-2 border-primary-800 transition-opacity duration-300'
           : ''
@@ -32,7 +32,7 @@ export const ProgramCard = (props: IProgramsCardProps) => {
       <img
         src="https://blogs.ucontinental.edu.pe/wp-content/uploads/2022/09/carrera-de-administracio%CC%81n-y-gestio%CC%81n-pu%CC%81blica-800x450.jpg"
         alt={titulo}
-        className="w-80 h-52 object-cover rounded-md"
+        className="sm:w-80 h-52 object-cover rounded-md"
       />
       <main className="w-full">
         <CardHeader className="py-3 px-0">
@@ -44,7 +44,7 @@ export const ProgramCard = (props: IProgramsCardProps) => {
             {titulo}
           </CardTitle>
 
-          <div>
+          <div className="pt-1">
             <Badge className="bg-gray-200 text-gray-800 hover:bg-gray-200">
               {data.planEstudios}
             </Badge>
@@ -66,17 +66,17 @@ export const ProgramCard = (props: IProgramsCardProps) => {
             <p>Creditos: {data.creditos}</p>
           </main>
         </CardContent>
-        <CardFooter className="flex flex-row gap-2 justify-end pb-0">
+        <CardFooter className="flex flex-row gap-4 sm:gap-2 justify-center sm:justify-end pb-0">
           <Button
             size="sm"
             variant="secondary"
-            className="border border-primary-900 text-primary-900"
+            className="border border-primary-900 text-primary-900 w-full sm:w-fit"
           >
             Historial económico
           </Button>
           <Button
             size="sm"
-            className="bg-primary-900 text-white"
+            className="bg-primary-900 text-white w-full sm:w-fit"
           >
             Detalles académicos
           </Button>
