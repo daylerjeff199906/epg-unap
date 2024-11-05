@@ -1,15 +1,16 @@
-export interface Programa {
+export interface IProgram {
+  id: number
   titulo: string
   planEstudios: string
   facultad: string
   creditos: number
   duracion: string
   estado: string
-  botones: Boton[]
+  botones: IButton[]
   etiqueta: string
 }
 
-export interface Boton {
+export interface IButton {
   texto: string
   tipo: 'outline' | 'primary'
 }

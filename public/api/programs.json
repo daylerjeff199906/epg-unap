@@ -1,6 +1,7 @@
 {
-  "programas": [
+  "data": [
     {
+      "id": 1,
       "titulo": "Maestría en Ciencias en Gestión Ambiental",
       "planEstudios": "Plan de Estudios: Plan - A - 2024 - II",
       "facultad": "Ingeniería de sistemas",
@@ -20,6 +21,7 @@
       "etiqueta": "Programa actual"
     },
     {
+      "id": 2,
       "titulo": "Maestría en Gestión de Recursos Naturales",
       "planEstudios": "Plan de Estudios: Plan - B - 2023 - I",
       "facultad": "Ciencias ambientales",
