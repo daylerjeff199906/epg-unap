@@ -1,0 +1,42 @@
+{
+  "programas": [
+    {
+      "titulo": "Maestría en Ciencias en Gestión Ambiental",
+      "planEstudios": "Plan de Estudios: Plan - A - 2024 - II",
+      "facultad": "Ingeniería de sistemas",
+      "creditos": 123,
+      "duracion": "2 años",
+      "estado": "En curso",
+      "botones": [
+        {
+          "texto": "Historial económico",
+          "tipo": "outline"
+        },
+        {
+          "texto": "Detalles académicos",
+          "tipo": "primary"
+        }
+      ],
+      "etiqueta": "Programa actual"
+    },
+    {
+      "titulo": "Maestría en Gestión de Recursos Naturales",
+      "planEstudios": "Plan de Estudios: Plan - B - 2023 - I",
+      "facultad": "Ciencias ambientales",
+      "creditos": 110,
+      "duracion": "1.5 años",
+      "estado": "Finalizado",
+      "botones": [
+        {
+          "texto": "Historial económico",
+          "tipo": "outline"
+        },
+        {
+          "texto": "Detalles académicos",
+          "tipo": "primary"
+        }
+      ],
+      "etiqueta": "Programa finalizado"
+    }
+  ]
+}

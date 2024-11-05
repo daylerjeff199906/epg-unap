@@ -61,7 +61,7 @@ export function NavigationMenuDemo() {
   }
 
   return (
-    <section className="w-full flex justify-start">
+    <section className="w-full hidden sm:flex justify-start">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
