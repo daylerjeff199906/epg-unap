@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { NavigationMenuDemo } from './menu-items'
 
 export const NavbarUser = () => {
@@ -5,7 +6,10 @@ export const NavbarUser = () => {
     <nav className="bg-primary-900 border-b border-white">
       <header className="container py-3 flex items-center justify-between gap-8">
         <section id="navbar">
-          <div className="flex items-center gap-2 w-fit">
+          <Link
+            href={'/intranet'}
+            className="flex items-center gap-2 w-fit hover:cursor-pointer"
+          >
             <img
               src="/brands/escudo-epg.webp"
               alt="logo-epg"
@@ -14,7 +18,7 @@ export const NavbarUser = () => {
             <h1 className="w-32 min-w-32 font-semibold text-xs text-white">
               ESCUELA DE POSTGRADO UNAP
             </h1>
-          </div>
+          </Link>
         </section>
         <NavigationMenuDemo />
         <section></section>

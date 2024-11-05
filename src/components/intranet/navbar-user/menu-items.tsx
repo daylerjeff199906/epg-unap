@@ -64,7 +64,7 @@ export function NavigationMenuDemo() {
               passHref
             >
               <NavigationMenuLink
-                className={`bg-transparent text-white hover:bg-transparent hover:text-gray-300 ${navigationMenuTriggerStyle()}`}
+                className={`bg-transparent text-white hover:bg-transparent hover:text-gray-300 focus:text-gray-400 focus:bg-transparent ${navigationMenuTriggerStyle()}`}
               >
                 Mis programas
               </NavigationMenuLink>
@@ -77,7 +77,7 @@ export function NavigationMenuDemo() {
               passHref
             >
               <NavigationMenuLink
-                className={`bg-transparent text-white hover:bg-transparent hover:text-gray-300 ${navigationMenuTriggerStyle()}`}
+                className={`bg-transparent text-white hover:bg-transparent focus:bg-transparent focus:text-gray-400 hover:text-gray-300 ${navigationMenuTriggerStyle()}`}
               >
                 Matrícula
               </NavigationMenuLink>
@@ -90,7 +90,7 @@ export function NavigationMenuDemo() {
               passHref
             >
               <NavigationMenuLink
-                className={`bg-transparent text-white hover:bg-transparent hover:text-gray-300 ${navigationMenuTriggerStyle()}`}
+                className={`bg-transparent text-white hover:bg-transparent focus:bg-transparent focus:text-gray-400 hover:text-gray-300 ${navigationMenuTriggerStyle()}`}
               >
                 Mis pagos
               </NavigationMenuLink>
