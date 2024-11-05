@@ -6,7 +6,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
@@ -30,7 +29,7 @@ export default function Page() {
       subtitle={`Lista de matrículas realizadas hasta la actualidad ${date}`}
     >
       <article className="flex sm:flex-row gap-4">
-        <aside className="w-full max-w-96">
+        <aside className="w-full max-w-[420px]">
           <header className="w-full">
             <Select defaultValue="apple">
               <SelectTrigger className="w-full h-fit justify-between">
@@ -38,14 +37,13 @@ export default function Page() {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectLabel>Fruits</SelectLabel>
                   <SelectItem value="apple">
                     <section className="space-y-2">
                       <section className="flex flex-col gap-1 justify-start">
                         <p className="text-xs text-gray-500 text-start">
                           Programa
                         </p>
-                        <h1 className="font-bold max-w-80 text-start">
+                        <h1 className="font-bold max-w-96 text-start">
                           Maestría en Ciencias en Gestión Ambiental
                         </h1>
                       </section>
