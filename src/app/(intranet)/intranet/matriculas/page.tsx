@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Matrículas',
@@ -76,7 +77,7 @@ export default function Page() {
               </SelectContent>
             </Select>
           </header>
-          <main className='grid grid-cols-1 gap-3'>
+          <main className="grid grid-cols-1 gap-3">
             <Card>
               <CardContent className="py-3 flex flex-col gap-2">
                 <header className="flex justify-between items-start">
@@ -148,7 +149,23 @@ export default function Page() {
             </Card>
           </main>
         </aside>
-        <main></main>
+        <section className="bg-white p-4 rounded-md border w-full flex flex-col justify-center items-center gap-6">
+          <Image
+            src="/images/notas.webp"
+            alt='Ilustración de "Notas"'
+            width={140}
+            height={140}
+          />
+          <section className="flex flex-col gap-1">
+            <h1 className="text-sm font-bold text-center">
+              Visualizar detalle de matrícula
+            </h1>
+            <p className="text-sm text-center max-w-md">
+              Seleccione una matrícula para visualizar el detalle de los cursos
+              matriculados.
+            </p>
+          </section>
+        </section>
       </article>
     </LayoutStudent>
   )
