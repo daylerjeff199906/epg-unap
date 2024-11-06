@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 
 import { IProgram } from '@/types/intranet/IPrograms'
 import { ProgramCard } from '@/components/intranet/programs-card'
+import { fetchCore } from '@/api/core'
 
 export const metadata: Metadata = {
   title: 'Mis programas',
@@ -13,7 +14,7 @@ export default async function Page() {
   let programs: { data: IProgram[] } = { data: [] }
 
   try {
-    const response = await fetch('http://localhost:3000/api/programs.json', {
+    const response = await fetchCore('api/programs.json', {
       method: 'GET',
     })
 
