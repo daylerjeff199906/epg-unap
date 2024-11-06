@@ -1,4 +1,5 @@
 import { HomeBanner } from './home-banner'
-import { MatriculaStepHome } from './matricula-step-home'
+import { MatriculaStepHome } from './matricula/matricula-step-home'
+import { PaymentsListPage } from './payments/payments-list-page'
 
-export { HomeBanner, MatriculaStepHome }
+export { HomeBanner, MatriculaStepHome, PaymentsListPage }

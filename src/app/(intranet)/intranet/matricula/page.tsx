@@ -12,7 +12,7 @@ export default function Page() {
       title="Matricúlate, Jhonatan Cervantes C."
       subtitle="Matrículas disponibles, selecciona un programa"
     >
-      <article></article>
+      asdas
     </LayoutStudent>
   )
 }
