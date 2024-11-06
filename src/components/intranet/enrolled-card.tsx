@@ -1,15 +1,28 @@
+'use client'
+import { useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 
-interface EnrolledCardProps {}
+// interface EnrolledCardProps {}
 
 export const EnrolledCard = () => {
+  const [isHovered, setIsHovered] = useState(false)
+  const [isSelected, setIsSelected] = useState(false)
+
   return (
-    <Card>
+    <Card
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`cursor-pointer ${isSelected && 'bg-default-200'}`}
+      onClick={() => setIsSelected(!isSelected)}
+    >
       <CardContent className="py-3 flex flex-col gap-2">
         <header className="flex justify-between items-start">
-          <h1 className="font-bold">
-            <span className="text-primary-900 font-bold">Matrícula:</span> Ciclo
-            2024 - II
+          <h1
+            className={`font-bold ${
+              isHovered && 'text-primary-700 underline'
+            } ${isSelected && 'text-primary-800 underline'}`}
+          >
+            <span className=" font-bold">Matrícula:</span> Ciclo 2024 - II
           </h1>
           <span>
             <p className="text-gray-500 text-sm">2024</p>
