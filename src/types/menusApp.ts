@@ -163,6 +163,17 @@ export const menuDocsData: Group[] = [
             label: 'Alerta de diálogo',
             active: false,
           },
+          {
+            href: '/docs/alert-messages',
+            label: 'Mensajes de alerta',
+            active: false,
+          },
+          {
+            href: '/docs/toast-custom',
+            label: 'Toast Custom',
+            active: false,
+          },
+          
         ],
       },
       {
