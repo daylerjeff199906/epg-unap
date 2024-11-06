@@ -1,4 +1,5 @@
 import { LayoutStudent } from '@/components/layouts'
+import { PaymentsListPage } from '@/modules/intranet'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export default function Page() {
       title="Historial de pagos realizados"
       subtitle="Lista de pagos realizados hasta la actualidad"
     >
-      <section></section>
+      <PaymentsListPage />
     </LayoutStudent>
   )
 }
