@@ -273,6 +273,11 @@ export const menuDocsData: Group[] = [
             label: 'Footer Links Section',
             active: false,
           },
+          {
+            href: '/docs/footer-info',
+            label: 'Footer Info',
+            active: false,
+          },
         ],
       }
     ],
