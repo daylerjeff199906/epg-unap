@@ -1,51 +1,45 @@
-export const payments: Payment[] = [
-    {
-        id: "001",
-        fecha_creacion: "20/10/2024",
-        nombre_usuario: "asaavedral@postgradounap.edu.pe",
-        persona_asignada: "ANGIE LÓPEZ HUAMASH",
-        roles: ["ADMINISTRADOR", "DOCENTE", "ESTUDIANTE"],
-        permisos: ["ADMINISTRADOR", "DOCENTE", "ESTUDIANTE"]
-    },
-    {
-        id: "002",
-        fecha_creacion: "21/10/2024",
-        nombre_usuario: "jlopezr@postgradounap.edu.pe",
-        persona_asignada: "JUAN LÓPEZ RAMÍREZ",
-        roles: ["ESTUDIANTE"],
-        permisos: ["ESTUDIANTE"]
-    },
-    {
-        "id": "003",
-        "fecha_creacion": "22/10/2024",
-        nombre_usuario: "mperezc@postgradounap.edu.pe",
-        persona_asignada: "MARÍA PÉREZ CASTRO",
-        roles: ["DOCENTE", "ESTUDIANTE"],
-        permisos: ["DOCENTE", "ESTUDIANTE"]
-    },
-    {
-        "id": "004",
-        "fecha_creacion": "23/10/2024",
-        nombre_usuario: "rfernandezv@postgradounap.edu.pe",
-        persona_asignada: "ROBERTO FERNÁNDEZ VARGAS",
-        roles: ["ADMINISTRADOR"],
-        permisos: ["ADMINISTRADOR"]
-    },
-    {
-        "id": "005",
-        "fecha_creacion": "24/10/2024",
-        nombre_usuario: "lramirezs@postgradounap.edu.pe",
-        persona_asignada: "LAURA RAMÍREZ SÁNCHEZ",
-        roles: ["DOCENTE"],
-        permisos: ["DOCENTE"]
-    }
+export const paymentsData: Payment[] = [
+  {
+    id: '001',
+    code_payment: 'ASD123',
+    date_payment: '20/10/2024',
+    concept: 'Pago de matrícula',
+    status: 'Pendiente',
+  },
+  {
+    id: '002',
+    code_payment: 'ASD124',
+    date_payment: '21/10/2024',
+    concept: 'Pago de matrícula',
+    status: 'Pagado',
+  },
+  {
+    id: '003',
+    code_payment: 'ASD125',
+    date_payment: '22/10/2024',
+    concept: 'Pago de cuotas',
+    status: 'Pendiente',
+  },
+  {
+    id: '004',
+    code_payment: 'ASD126',
+    concept: 'Carne universitario',
+    date_payment: '23/10/2024',
+    status: 'Pendiente',
+  },
+  {
+    id: '005',
+    code_payment: 'ASD127',
+    date_payment: '24/10/2024',
+    concept: 'Solictud de certificado',
+    status: 'Pagado',
+  },
 ]
 
 export type Payment = {
-    id: string
-    fecha_creacion: string
-    nombre_usuario: string
-    persona_asignada: string
-    roles: string[]
-    permisos: string[]
+  id: string
+  date_payment: string
+  code_payment: string
+  concept: string
+  status: string
 }

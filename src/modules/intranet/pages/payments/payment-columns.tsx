@@ -15,25 +15,21 @@ export const paymentColumns: ColumnDef<Payment>[] = [
     header: 'ID',
   },
   {
-    accessorKey: 'fecha_creacion',
-    header: 'F. DE CREACION',
+    accessorKey: 'date_payment',
+    header: 'F. DE PAGO',
+    cell: ({ row }) => <div>{String(row.original.date_payment)}</div>,
   },
   {
-    accessorKey: 'nombre_usuario',
-    header: 'NOMBRE DE USUARIO',
-    cell: ({ row }) => <div>{String(row.original.nombre_usuario)}</div>,
+    accessorKey: 'code_payment',
+    header: 'CÓDIGO DE PAGO',
   },
   {
-    accessorKey: 'persona_asignada',
-    header: 'PERSONA ASIGNADA',
+    accessorKey: 'concept',
+    header: 'CONCEPTO',
   },
   {
-    accessorKey: 'roles',
-    header: 'ROLES',
-  },
-  {
-    accessorKey: 'permisos',
-    header: 'PERMISOS',
+    accessorKey: 'status',
+    header: 'ESTADO',
   },
   {
     accessorKey: 'actions',
