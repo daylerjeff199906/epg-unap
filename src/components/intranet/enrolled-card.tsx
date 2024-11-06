@@ -31,7 +31,7 @@ export const EnrolledCard = (props: EnrolledCardProps) => {
             <p className="text-gray-500 text-sm">2024</p>
           </span>
         </header>
-        <section className="text-sm text-gray-500">
+        <section className="text-sm text-gray-800">
           <p>
             F. de matrícula: <span>20/10/2024 03:00:01</span>
           </p>
