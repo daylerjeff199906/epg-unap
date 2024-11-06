@@ -3,7 +3,7 @@ import { NavigationMenuDemo } from './menu-items'
 
 export const NavbarUser = () => {
   return (
-    <nav className="bg-primary-900 border-b border-white">
+    <nav className="bg-primary-900 border-b border-white sticky top-0 right-0 left-0">
       <header className="container py-3 flex items-center justify-between gap-8">
         <section id="navbar">
           <Link
