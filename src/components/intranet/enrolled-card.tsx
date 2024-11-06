@@ -2,18 +2,21 @@
 import { useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 
-// interface EnrolledCardProps {}
+interface EnrolledCardProps {
+  setIsSelected?: (value: boolean) => void
+  isSelected?: boolean
+}
 
-export const EnrolledCard = () => {
+export const EnrolledCard = (props: EnrolledCardProps) => {
+  const { setIsSelected, isSelected } = props
   const [isHovered, setIsHovered] = useState(false)
-  const [isSelected, setIsSelected] = useState(false)
 
   return (
     <Card
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`cursor-pointer ${isSelected && 'bg-default-200'}`}
-      onClick={() => setIsSelected(!isSelected)}
+      onClick={() => setIsSelected && setIsSelected(!isSelected || false)}
     >
       <CardContent className="py-3 flex flex-col gap-2">
         <header className="flex justify-between items-start">
