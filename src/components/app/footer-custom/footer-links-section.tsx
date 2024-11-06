@@ -1,7 +1,16 @@
-import { LucideFacebook, LucideInstagram, LucideLinkedin, LucideYoutube } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
 import { FooterSimple } from "./footer-simple"
+import { IMoreApp } from "@/types/more-apps"
 
-export const FooterLinksSection = () => {
+interface FooterLinksSectionProps {
+    socialLinks: boolean
+    aplicationsLinks: IMoreApp[]
+}
+
+export const FooterLinksSection = (props: FooterLinksSectionProps) => {
+
+    const { socialLinks, aplicationsLinks } = props
+
     return (
         <main className="bg-primary-800">
             <div className="flex items-center justify-between p-4">
@@ -15,24 +24,33 @@ export const FooterLinksSection = () => {
                     </div>
                 </div>
                 <div className="flex text-xs text-white gap-4 p-2">
-                    <a href="#"><p> Apliaccion 1</p></a>
-                    <a href="#"><p> Apliaccion 1</p></a>
-                    <a href="#"><p> Apliaccion 1</p></a>
-                    <a href="#"><p> Apliaccion 1</p></a>
+                    {aplicationsLinks.map((app, index) => (
+                        <a
+                            key={index}
+                            href={app.url}
+                            className="group transform scale-100 hover:scale-125 transition-transform duration-300"
+                        >
+                            <p className="group-hover:mx-2 hover:underline">{app.title}</p>
+                        </a>
+                    ))}
                 </div>
                 <div className="flex gap-2 p-2">
-                    <div className="border-1 border-white rounded-full p-2 text-xs hover:stroke-default-500 hover:bg-default-300 w-10 h-10">
-                        <LucideFacebook strokeWidth={1.5} className="stroke-white hover:stroke-primary-800"/>
-                    </div>
-                    <div className="border-1 border-white rounded-full p-2 text-xs hover:stroke-default-500 hover:bg-default-300 w-10 h-10">
-                        <LucideYoutube strokeWidth={1.5} className="stroke-white hover:stroke-primary-800"/>
-                    </div>
-                    <div className="border-1 border-white rounded-full p-2 text-xs hover:stroke-default-500 hover:bg-default-300 w-10 h-10">
-                        <LucideLinkedin strokeWidth={1.5} className="stroke-white hover:stroke-primary-800"/>
-                    </div>
-                    <div className="border-1 border-white rounded-full p-2 text-xs hover:stroke-default-500 hover:bg-default-300 w-10 h-10">
-                        <LucideInstagram strokeWidth={1.5} className="stroke-white hover:stroke-primary-800"/>
-                    </div>
+                    {socialLinks && (
+                        <div className="flex gap-2 p-2">
+                            <div className="border-1 border-white rounded-full p-2 text-xs hover:stroke-default-500 hover:bg-default-300 w-10 h-10">
+                                <Facebook strokeWidth={1.5} className="stroke-white hover:stroke-primary-800" />
+                            </div>
+                            <div className="border-1 border-white rounded-full p-2 text-xs hover:stroke-default-500 hover:bg-default-300 w-10 h-10">
+                                <Youtube strokeWidth={1.5} className="stroke-white hover:stroke-primary-800" />
+                            </div>
+                            <div className="border-1 border-white rounded-full p-2 text-xs hover:stroke-default-500 hover:bg-default-300 w-10 h-10">
+                                <Linkedin strokeWidth={1.5} className="stroke-white hover:stroke-primary-800" />
+                            </div>
+                            <div className="border-1 border-white rounded-full p-2 text-xs hover:stroke-default-500 hover:bg-default-300 w-10 h-10">
+                                <Instagram strokeWidth={1.5} className="stroke-white hover:stroke-primary-800" />
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
             <FooterSimple />
