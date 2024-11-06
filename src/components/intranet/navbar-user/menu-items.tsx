@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
+import { usePathname } from 'next/navigation'
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -53,8 +54,14 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function NavigationMenuDemo() {
+  const pathname = usePathname()
+
+  function isPathnameStartingWith(path: string) {
+    return pathname.startsWith(path)
+  }
+
   return (
-    <section className="w-full flex justify-start">
+    <section className="w-full hidden sm:flex justify-start">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -64,7 +71,11 @@ export function NavigationMenuDemo() {
               passHref
             >
               <NavigationMenuLink
-                className={`bg-transparent text-white hover:bg-transparent hover:text-gray-300 focus:text-gray-400 focus:bg-transparent ${navigationMenuTriggerStyle()}`}
+                className={`bg-transparent  hover:bg-transparent hover:text-gray-300 focus:text-gray-400 focus:bg-transparent ${navigationMenuTriggerStyle()} ${
+                  pathname === '/intranet/programas'
+                    ? 'font-extrabold text-white'
+                    : 'font-normal text-gray-200'
+                }`}
               >
                 Mis programas
               </NavigationMenuLink>
@@ -72,14 +83,18 @@ export function NavigationMenuDemo() {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link
-              href="/intranet/matricula"
+              href="/intranet/matriculas"
               legacyBehavior
               passHref
             >
               <NavigationMenuLink
-                className={`bg-transparent text-white hover:bg-transparent focus:bg-transparent focus:text-gray-400 hover:text-gray-300 ${navigationMenuTriggerStyle()}`}
+                className={`bg-transparent  hover:bg-transparent hover:text-gray-300 focus:text-gray-400 focus:bg-transparent ${navigationMenuTriggerStyle()} ${
+                  pathname === '/intranet/matriculas'
+                    ? 'font-extrabold text-white'
+                    : 'font-normal text-gray-200'
+                }`}
               >
-                Matrícula
+                Matrículas
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
@@ -90,14 +105,24 @@ export function NavigationMenuDemo() {
               passHref
             >
               <NavigationMenuLink
-                className={`bg-transparent text-white hover:bg-transparent focus:bg-transparent focus:text-gray-400 hover:text-gray-300 ${navigationMenuTriggerStyle()}`}
+                className={`bg-transparent  hover:bg-transparent hover:text-gray-300 focus:text-gray-400 focus:bg-transparent ${navigationMenuTriggerStyle()} ${
+                  pathname === '/intranet/pagos'
+                    ? 'font-extrabold text-white'
+                    : 'font-normal text-gray-200'
+                }`}
               >
                 Mis pagos
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent text-white hover:bg-transparent hover:text-gray-300">
+            <NavigationMenuTrigger
+              className={`bg-transparent text-white hover:bg-transparent hover:text-gray-300 ${
+                isPathnameStartingWith('/intranet/servicios')
+                  ? 'font-extrabold text-white'
+                  : 'font-normal text-gray-200'
+              }`}
+            >
               Servicios
             </NavigationMenuTrigger>
             <NavigationMenuContent>
