@@ -10,8 +10,8 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card'
 import Image from 'next/image'
+import { EnrolledCard } from '@/components/intranet'
 
 export const metadata: Metadata = {
   title: 'Matrículas',
@@ -78,75 +78,9 @@ export default function Page() {
             </Select>
           </header>
           <main className="grid grid-cols-1 gap-3">
-            <Card>
-              <CardContent className="py-3 flex flex-col gap-2">
-                <header className="flex justify-between items-start">
-                  <h1 className="font-bold">
-                    <span className="text-primary-900 font-bold">
-                      Matrícula:
-                    </span>{' '}
-                    Ciclo 2024 - II
-                  </h1>
-                  <span>
-                    <p className="text-gray-500 text-sm">2024</p>
-                  </span>
-                </header>
-                <section className="text-sm text-gray-500">
-                  <p>
-                    F. de matrícula: <span>20/10/2024 03:00:01</span>
-                  </p>
-                  <p>
-                    Cursos matriculados: <span>5</span>
-                  </p>
-                </section>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="py-3 flex flex-col gap-2">
-                <header className="flex justify-between items-start">
-                  <h1 className="font-bold">
-                    <span className="text-primary-900 font-bold">
-                      Matrícula:
-                    </span>{' '}
-                    Ciclo 2024 - II
-                  </h1>
-                  <span>
-                    <p className="text-gray-500 text-sm">2024</p>
-                  </span>
-                </header>
-                <section className="text-sm text-gray-500">
-                  <p>
-                    F. de matrícula: <span>20/10/2024 03:00:01</span>
-                  </p>
-                  <p>
-                    Cursos matriculados: <span>5</span>
-                  </p>
-                </section>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="py-3 flex flex-col gap-2">
-                <header className="flex justify-between items-start">
-                  <h1 className="font-bold">
-                    <span className="text-primary-900 font-bold">
-                      Matrícula:
-                    </span>{' '}
-                    Ciclo 2024 - II
-                  </h1>
-                  <span>
-                    <p className="text-gray-500 text-sm">2024</p>
-                  </span>
-                </header>
-                <section className="text-sm text-gray-500">
-                  <p>
-                    F. de matrícula: <span>20/10/2024 03:00:01</span>
-                  </p>
-                  <p>
-                    Cursos matriculados: <span>5</span>
-                  </p>
-                </section>
-              </CardContent>
-            </Card>
+            {[1, 2, 3, 4, 5].map((_, index) => (
+              <EnrolledCard key={index} />
+            ))}
           </main>
         </aside>
         <section className="bg-white p-4 rounded-md border w-full flex flex-col justify-center items-center gap-6">
