@@ -15,6 +15,14 @@ export const PaymentsListPage = () => {
         columns={paymentColumns}
         data={paymentsData}
       />
+      <section className="flex flex-row justify-between items-center gap-4">
+        <div></div>
+        <div className="">
+          <h2 className="text-lg">
+            Pagos realizados: <span className="font-bold"> s/. 70,511.00</span>
+          </h2>
+        </div>
+      </section>
     </section>
   )
 }
