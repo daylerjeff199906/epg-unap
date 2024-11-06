@@ -9,6 +9,7 @@ import { HeaderSection } from './header-section'
 import { TabSection } from './tab-section'
 import { AlertDialogCustom } from './alert-dialog-custom'
 import { AlertCustom } from './alert-custom'
+import { ToastCustom } from './toast-custom'
 import { InputSearch } from './input-search'
 import { CheckboxCustom } from './checkbox-custom'
 import { SwitchCustom } from './switch-custom'
@@ -28,6 +29,7 @@ export {
   TabSection,
   AlertDialogCustom,
   AlertCustom,
+  ToastCustom,
   InputSearch,
   CheckboxCustom,
   SwitchCustom,
