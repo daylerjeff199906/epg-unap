@@ -10,15 +10,15 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <main>
-            <HeaderSection
-                title="Footer"
-                description="Displays a footer."
-                showAddButton={false}
-                showRefreshButton={false}
-                showExportButton={false}
-            />
             <div className='flex flex-col gap-4'>
                 <section>
+                    <HeaderSection
+                        title="Footer - Info"
+                        description="Footer para informacion precisa del la institutcion."
+                        showAddButton={false}
+                        showRefreshButton={false}
+                        showExportButton={false}
+                    />
                     <TabSection
                         size="4xl"
                         code={`
@@ -79,6 +79,13 @@ export default function Page() {
                     </TabSection>
                 </section>
                 <section>
+                    <HeaderSection
+                        title="Footer - Links Section"
+                        description="Footer para rennvio a distintas aplicaciones o direcciones web."
+                        showAddButton={false}
+                        showRefreshButton={false}
+                        showExportButton={false}
+                    />
                     <TabSection
                         size='4xl'
                         code={`
@@ -130,6 +137,13 @@ export default function Page() {
                     </TabSection>
                 </section>
                 <section>
+                    <HeaderSection
+                        title="Footer - Simple"
+                        description="Footer simple "
+                        showAddButton={false}
+                        showRefreshButton={false}
+                        showExportButton={false}
+                    />
                     <TabSection
                         size='4xl'
                         code={`import { FooterSimple } from '@/components/app'

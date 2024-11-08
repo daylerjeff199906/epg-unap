@@ -55,14 +55,12 @@ export const ProgramCard = (props: IProgramsCardProps) => {
           <main className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
             <p>Facultad: {data.facultad}</p>
             <p>Duración: {data.duracion}</p>
-            <p>
+            <h1>
               Estado:{' '}
-              <span>
-                <Badge className="bg-warning-100 text-warning-600 hover:bg-warning-100">
-                  En curso
-                </Badge>
-              </span>
-            </p>
+              <Badge className="bg-warning-100 text-warning-600 hover:bg-warning-100">
+                En curso
+              </Badge>
+            </h1>
             <p>Creditos: {data.creditos}</p>
           </main>
         </CardContent>
