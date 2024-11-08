@@ -258,6 +258,33 @@ export const menuDocsData: Group[] = [
           },
         ],
       },
+      {
+        href: '',
+        label: 'Footers',
+        icon: LayoutPanelTop,
+        submenus: [
+          {
+            href: '/docs/footer',
+            label: 'Footer',            
+            active: false,
+          },
+          {
+            href: '/docs/footer-simple',
+            label: 'Footer Simple',
+            active: false,
+          },
+          {
+            href: '/docs/footer-links-section',
+            label: 'Footer Links Section',
+            active: false,
+          },
+          {
+            href: '/docs/footer-info',
+            label: 'Footer Info',
+            active: false,
+          },
+        ],
+      }
     ],
   },
 ]
