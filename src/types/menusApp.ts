@@ -173,6 +173,12 @@ export const menuDocsData: Group[] = [
             label: 'Panel de notificaciones',
             active: false,
           },
+          {
+            href: '/docs/toast-custom',
+            label: 'Toast Custom',
+            active: false,
+          },
+          
         ],
       },
       {
@@ -257,6 +263,18 @@ export const menuDocsData: Group[] = [
           },
         ],
       },
+      {
+        href: '',
+        label: 'Footers',
+        icon: LayoutPanelTop,
+        submenus: [
+          {
+            href: '/docs/footer',
+            label: 'Footer',            
+            active: false,
+          }
+        ],
+      }
     ],
   },
 ]
