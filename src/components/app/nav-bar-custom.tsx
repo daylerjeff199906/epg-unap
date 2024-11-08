@@ -11,13 +11,15 @@ import { configApps } from '@/types/configApps'
 import { IMoreApp } from '@/types/more-apps'
 import { cn } from '@/lib/utils'
 import { GripIcon } from 'lucide-react'
+import { Notification } from './notification'
+import { Button } from '../ui/button'
 
 interface NavBarCustomProps {
   app?: keyof typeof configApps
-  moreApps?:Array<IMoreApp>;
+  moreApps?: Array<IMoreApp>;
 }
 
-const MoreAppsButton: Array<IMoreApp>=[
+const MoreAppsButton: Array<IMoreApp> = [
   {
     id: 1,
     title: 'EPG',
@@ -81,11 +83,14 @@ export const NavBarCustom = (props: NavBarCustomProps) => {
           </div>
         </div>
         <div className="flex flex-1 items-center justify-end gap-2">
-        <ModeToggle />
+          <Notification>
+            <Button>mezy</Button>
+          </Notification>
+          <ModeToggle />
           {
             MoreAppsButton && MoreAppsButton.length > 0 && (
               <MoreApps apps={MoreAppsButton}>
-                  <GripIcon />
+                <GripIcon />
               </MoreApps>
             )
           }
