@@ -264,6 +264,11 @@ export const menuDocsData: Group[] = [
         icon: LayoutPanelTop,
         submenus: [
           {
+            href: '/docs/footer',
+            label: 'Footer',            
+            active: false,
+          },
+          {
             href: '/docs/footer-simple',
             label: 'Footer Simple',
             active: false,
