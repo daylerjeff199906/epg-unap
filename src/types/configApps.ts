@@ -3,7 +3,7 @@ export const configApps = {
     name: 'Panel de administración de EPG - UNAP',
     color: '#002E62',
   },
-  academicos: {
+  academic: {
     name: 'Académicos',
     color: '#27272A',
   },
