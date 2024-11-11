@@ -1,11 +1,17 @@
+'use client'
 import { MultiStepTimeline } from '@/components/app'
 import {
   AsideLayoutFormContent,
   HeaderFormSection,
   LayoutFormContent,
 } from '@/components/layouts'
+import { useState } from 'react'
 
 export const FrmEnrollmentStageEditor = () => {
+  const [selectedStep, setSelectedStep] = useState<string | null>(
+    'periodo-plan'
+  )
+
   return (
     <div>
       <LayoutFormContent
@@ -14,6 +20,8 @@ export const FrmEnrollmentStageEditor = () => {
       >
         <AsideLayoutFormContent>
           <MultiStepTimeline
+            selectedStep={selectedStep}
+            setSelectedStep={setSelectedStep}
             steps={[
               {
                 id: 'periodo-plan',
