@@ -14,6 +14,9 @@ export const FrmEnrollmentStageEditor = () => {
       <LayoutFormContent
         title="Agregar etapa de matrícula"
         position="left"
+        labelOnSubmit={
+          selectedStep === 'info-basica' ? 'Terminar y guardar' : 'Siguiente'
+        }
       >
         <AsideLayoutFormContent>
           <MultiStepTimeline

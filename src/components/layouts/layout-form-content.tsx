@@ -7,10 +7,18 @@ interface LayoutFormContentProps {
   description?: string
   position?: 'left' | 'right' | 'none'
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void
+  labelOnSubmit?: string
 }
 
 export const LayoutFormContent = (props: LayoutFormContentProps) => {
-  const { children, onSubmit, title, description, position = 'none' } = props
+  const {
+    children,
+    onSubmit,
+    title,
+    description,
+    position = 'none',
+    labelOnSubmit,
+  } = props
 
   const aside = React.Children.toArray(children).find(
     (child) => isValidElement(child) && child.type === AsideLayoutFormContent
@@ -49,7 +57,7 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
         <footer className="mt-4 border-t absolute left-0 right-0 bottom-0 bg-white">
           <main className="flex justify-end w-full py-5 container">
             <Button variant="ghost">Cancelar</Button>
-            <Button type="submit">Submit</Button>
+            <Button type="submit">{labelOnSubmit || 'Guardar'}</Button>
           </main>
         </footer>
       </form>
