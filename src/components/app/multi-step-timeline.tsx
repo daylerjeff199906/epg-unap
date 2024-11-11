@@ -64,8 +64,8 @@ export const MultiStepTimeline = (props: MultiStepTimelineProps) => {
                   <h3
                     className={`${
                       selectedStep === step.id
-                        ? 'font-bold text-gray-900'
-                        : 'font-medium text-gray-900'
+                        ? 'font-semibold text-gray-900'
+                        : 'font-medium text-gray-500'
                     }`}
                   >
                     {step.title}
