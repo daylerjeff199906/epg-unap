@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Grupos de Cursos',
+  title: 'Etapas de Matrículas ',
 }
 
 export default function Page() {
