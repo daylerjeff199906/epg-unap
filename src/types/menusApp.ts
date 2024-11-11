@@ -1,15 +1,16 @@
 import {
-  House,
-  User,
-  Users,
-  Settings,
-  LucideIcon,
   BookUser,
-  TriangleAlert,
-  TextCursorInput,
-  Table2,
-  Table,
+  House,
   LayoutPanelTop,
+  LucideIcon,
+  NotebookPen,
+  Settings,
+  Table,
+  Table2,
+  TextCursorInput,
+  TriangleAlert,
+  User,
+  Users
 } from 'lucide-react'
 
 type Submenu = {
@@ -157,17 +158,17 @@ export const menuAcademicosData: Group[] = [
         icon: User,
       },
       {
-        href: '',
-        label: '',
-        icon: User,
+        href: '/matriculas',
+        label: 'Matriculas',
+        icon: NotebookPen,
         submenus: [
           {
             label: 'Matriculas realizadas',
-            href: '',
+            href: '/matriculas',
           },
           {
             label: 'Matricular estudiante',
-            href: '',
+            href: '/agregar',
           },
         ],
       },
