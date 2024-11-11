@@ -7,6 +7,7 @@ interface LayoutFormContentProps {
   description?: string
   position?: 'left' | 'right' | 'none'
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void
+  onCancel?: () => void
   labelOnSubmit?: string
 }
 
@@ -14,6 +15,7 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
   const {
     children,
     onSubmit,
+    onCancel,
     title,
     description,
     position = 'none',
@@ -56,7 +58,13 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
         </main>
         <footer className="mt-4 border-t absolute left-0 right-0 bottom-0 bg-white">
           <main className="flex justify-end w-full py-5 container">
-            <Button variant="ghost">Cancelar</Button>
+            <Button
+              variant="ghost"
+              type="button"
+              onClick={onCancel}
+            >
+              Cancelar
+            </Button>
             <Button type="submit">{labelOnSubmit || 'Guardar'}</Button>
           </main>
         </footer>
