@@ -14,7 +14,7 @@ export const QueryFilter = () => {
     <section className="flex flex-col sm:flex-row items-center gap-3">
       <Select defaultValue="all">
         <SelectTrigger className="w-[180px]">
-          <label className="text-muted-foreground">Estado</label>
+          <label className="text-muted-foreground">Buscar por</label>
           <SelectValue placeholder="Selecciona..." />
         </SelectTrigger>
         <SelectContent>
@@ -28,7 +28,7 @@ export const QueryFilter = () => {
           ))}
         </SelectContent>
       </Select>
-      <InputSearch />
+      <InputSearch placeholder="Buscar ..." />
     </section>
   )
 }

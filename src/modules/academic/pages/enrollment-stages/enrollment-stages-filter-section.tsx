@@ -1,4 +1,4 @@
-import { DatePicker, StatusFilter } from '@/modules/academic'
+import { DatePicker, QueryFilter, StatusFilter } from '@/modules/academic'
 
 export const EnrollmentStagesFilterSection = () => {
   return (
@@ -7,6 +7,7 @@ export const EnrollmentStagesFilterSection = () => {
         <DatePicker />
         <StatusFilter />
       </section>
+      <QueryFilter />
     </main>
   )
 }
