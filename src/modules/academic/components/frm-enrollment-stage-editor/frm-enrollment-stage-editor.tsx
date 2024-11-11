@@ -1,11 +1,8 @@
 'use client'
 import { MultiStepTimeline } from '@/components/app'
-import {
-  AsideLayoutFormContent,
-  HeaderFormSection,
-  LayoutFormContent,
-} from '@/components/layouts'
+import { AsideLayoutFormContent, LayoutFormContent } from '@/components/layouts'
 import { useState } from 'react'
+import { BasicInformationSection, StageStudyPlanSection } from './sections'
 
 export const FrmEnrollmentStageEditor = () => {
   const [selectedStep, setSelectedStep] = useState<string | null>(
@@ -35,10 +32,8 @@ export const FrmEnrollmentStageEditor = () => {
           />
         </AsideLayoutFormContent>
         <section className="p-4">
-          <HeaderFormSection
-            title="Selección de etapa y plan"
-            description="Selecciona al periodo que pertenece a matrícula"
-          />
+          {selectedStep === 'periodo-plan' && <StageStudyPlanSection />}
+          {selectedStep === 'info-basica' && <BasicInformationSection />}
         </section>
       </LayoutFormContent>
     </div>
