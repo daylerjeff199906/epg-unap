@@ -1,0 +1,7 @@
+export * from './IPerson'
+export * from './IPersonInfo'
+export * from './IPersonType'
+export * from './ICountry'
+export * from './IDocument'
+export * from './IJobSector'
+export * from './IUbigeo' 
