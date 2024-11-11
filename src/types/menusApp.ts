@@ -130,7 +130,71 @@ export const menuAdminData: Group[] = [
   },
 ]
 
-export const menuAcademicosData: Group[] = []
+export const menuAcademicosData: Group[] = [
+  {
+    groupLabel: '',
+    menus: [
+      {
+        href: '/academic',
+        label: 'Inicio',
+        icon: House,
+        submenus: [],
+        active: false,
+      },
+    ],
+  },
+  {
+    groupLabel: 'Matriculas',
+    menus: [
+      {
+        href: '',
+        label: 'Etapas de matriculas',
+        icon: Users,
+      },
+      {
+        href: '',
+        label: 'Grupos',
+        icon: User,
+      },
+      {
+        href: '',
+        label: '',
+        icon: User,
+        submenus: [
+          {
+            label: 'Matriculas realizadas',
+            href: '',
+          },
+          {
+            label: 'Matricular estudiante',
+            href: '',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    groupLabel: 'Expedientes',
+    menus: [
+      {
+        href: '',
+        label: 'Registros académicos',
+        icon: User,
+        submenus: [
+          {
+            href: '',
+            label: 'Historial de estudiante',
+          },
+        ],
+      },
+      {
+        href: '',
+        label: 'Traslado',
+        icon: User,
+      },
+    ],
+  },
+]
 
 export const menuDocsData: Group[] = [
   {
@@ -173,7 +237,6 @@ export const menuDocsData: Group[] = [
             label: 'Toast Custom',
             active: false,
           },
-          
         ],
       },
       {
@@ -265,11 +328,11 @@ export const menuDocsData: Group[] = [
         submenus: [
           {
             href: '/docs/footer',
-            label: 'Footer',            
+            label: 'Footer',
             active: false,
-          }
+          },
         ],
-      }
+      },
     ],
   },
 ]
