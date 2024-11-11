@@ -1,14 +1,24 @@
+import React, { isValidElement } from 'react'
 import { Button } from '../ui/button'
 
 interface LayoutFormContentProps {
   children: React.ReactNode
   title?: string
   description?: string
+  position?: 'left' | 'right' | 'none'
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void
 }
 
 export const LayoutFormContent = (props: LayoutFormContentProps) => {
-  const { children, onSubmit, title, description } = props
+  const { children, onSubmit, title, description, position = 'none' } = props
+
+  const aside = React.Children.toArray(children).find(
+    (child) => isValidElement(child) && child.type === AsideLayoutFormContent
+  )
+
+  const mainContent = React.Children.toArray(children).find(
+    (child) => !aside || child !== aside
+  )
 
   return (
     <>
@@ -21,7 +31,15 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
         action=""
         onSubmit={onSubmit}
       >
-        <main className="h-screen max-h-[calc(100vh-200px)]">{children}</main>
+        <main className="h-screen max-h-[calc(100vh-200px)] flex flex-row gap-4">
+          {position !== 'none' && <>{position === 'left' && aside && aside}</>}
+          <section
+            className={`w-full ${position === 'none' ? '' : 'lg:w-3/4'}`}
+          >
+            {mainContent}
+          </section>
+          {position !== 'none' && <>{position === 'right' && aside && aside}</>}
+        </main>
         <footer className="mt-4 border-t absolute left-0 right-0 bottom-0 bg-white">
           <main className="flex justify-end w-full py-5 container">
             <Button variant="ghost">Cancelar</Button>
@@ -33,6 +51,14 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
   )
 }
 
-// export const LayoutAside = ({ children }) => {
-//   return <aside className="w-80 border-r border-gray-300">{children}</aside>
-// }
+export const AsideLayoutFormContent = ({
+  children,
+}: {
+  children: React.ReactNode
+}) => {
+  return (
+    <aside className="w-1/4 h-full bg-gray-100 p-4 overflow-y-auto">
+      {children}
+    </aside>
+  )
+}
