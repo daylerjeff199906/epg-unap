@@ -13,6 +13,8 @@ import {
   ChartBarBig,
   Boxes,
   NotebookPen,
+  IdCard,
+  ArrowRightLeft,
 } from 'lucide-react'
 
 type Submenu = {
@@ -150,12 +152,12 @@ export const menuAcademicosData: Group[] = [
     groupLabel: 'Matriculas',
     menus: [
       {
-        href: 'etapas-matriculas',
+        href: '/academic/etapas-matriculas',
         label: 'Etapas de matriculas',
         icon: ChartBarBig,
       },
       {
-        href: '',
+        href: '/academic/grupos',
         label: 'Grupos',
         icon: Boxes,
       },
@@ -182,18 +184,18 @@ export const menuAcademicosData: Group[] = [
       {
         href: '',
         label: 'Registros académicos',
-        icon: User,
+        icon: IdCard,
         submenus: [
           {
             href: '',
-            label: 'Historial de estudiante',
+            label: 'Estudiante',
           },
         ],
       },
       {
         href: '',
         label: 'Traslado',
-        icon: User,
+        icon: ArrowRightLeft,
       },
     ],
   },
