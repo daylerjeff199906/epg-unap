@@ -1,4 +1,9 @@
-import { DatePicker, QueryFilter, StatusFilter } from '@/modules/academic'
+import {
+  DatePicker,
+  ProgramFilter,
+  QueryFilter,
+  StatusFilter,
+} from '@/modules/academic'
 
 export const EnrollmentStagesFilterSection = () => {
   return (
@@ -6,6 +11,7 @@ export const EnrollmentStagesFilterSection = () => {
       <section className="flex flex-col sm:flex-row items-center gap-3">
         <DatePicker />
         <StatusFilter />
+        <ProgramFilter />
       </section>
       <QueryFilter />
     </main>
