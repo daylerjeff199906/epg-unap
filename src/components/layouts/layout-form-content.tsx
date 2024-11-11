@@ -16,8 +16,8 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
     (child) => isValidElement(child) && child.type === AsideLayoutFormContent
   )
 
-  const mainContent = React.Children.toArray(children).find(
-    (child) => !aside || child !== aside
+  const mainContent = React.Children.toArray(children).filter(
+    (child) => !(isValidElement(child) && child.type === AsideLayoutFormContent)
   )
 
   return (
