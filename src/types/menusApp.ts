@@ -10,6 +10,8 @@ import {
   Table2,
   Table,
   LayoutPanelTop,
+  ChartBarBig,
+  Boxes,
 } from 'lucide-react'
 
 type Submenu = {
@@ -147,14 +149,14 @@ export const menuAcademicosData: Group[] = [
     groupLabel: 'Matriculas',
     menus: [
       {
-        href: '',
+        href: 'etapas-matriculas',
         label: 'Etapas de matriculas',
-        icon: Users,
+        icon: ChartBarBig,
       },
       {
         href: '',
         label: 'Grupos',
-        icon: User,
+        icon: Boxes,
       },
       {
         href: '',
