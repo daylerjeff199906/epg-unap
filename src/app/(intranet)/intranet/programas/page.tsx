@@ -32,7 +32,7 @@ export default async function Page() {
       subtitle="Lista de programas matriculados hasta la actualidad"
     >
       <section className="flex flex-col gap-5">
-        {programs?.data.map((program) => (
+        {programs?.data?.map((program) => (
           <ProgramCard
             key={program.id}
             data={program}

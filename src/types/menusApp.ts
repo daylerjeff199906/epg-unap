@@ -10,6 +10,11 @@ import {
   Table2,
   Table,
   LayoutPanelTop,
+  ChartBarBig,
+  Boxes,
+  NotebookPen,
+  IdCard,
+  ArrowRightLeft,
 } from 'lucide-react'
 
 type Submenu = {
@@ -130,7 +135,71 @@ export const menuAdminData: Group[] = [
   },
 ]
 
-export const menuAcademicosData: Group[] = []
+export const menuAcademicosData: Group[] = [
+  {
+    groupLabel: '',
+    menus: [
+      {
+        href: '/academic',
+        label: 'Inicio',
+        icon: House,
+        submenus: [],
+        active: false,
+      },
+    ],
+  },
+  {
+    groupLabel: 'Matriculas',
+    menus: [
+      {
+        href: '/academic/etapas-matriculas',
+        label: 'Etapas de matriculas',
+        icon: ChartBarBig,
+      },
+      {
+        href: '/academic/grupos',
+        label: 'Grupos',
+        icon: Boxes,
+      },
+      {
+        href: '',
+        label: 'Matriculas',
+        icon: NotebookPen,
+        submenus: [
+          {
+            label: 'Matriculas realizadas',
+            href: '',
+          },
+          {
+            label: 'Matricular estudiante',
+            href: '',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    groupLabel: 'Expedientes',
+    menus: [
+      {
+        href: '',
+        label: 'Registros académicos',
+        icon: IdCard,
+        submenus: [
+          {
+            href: '',
+            label: 'Estudiante',
+          },
+        ],
+      },
+      {
+        href: '',
+        label: 'Traslado',
+        icon: ArrowRightLeft,
+      },
+    ],
+  },
+]
 
 export const menuDocsData: Group[] = [
   {
@@ -173,7 +242,6 @@ export const menuDocsData: Group[] = [
             label: 'Toast Custom',
             active: false,
           },
-          
         ],
       },
       {
@@ -265,11 +333,11 @@ export const menuDocsData: Group[] = [
         submenus: [
           {
             href: '/docs/footer',
-            label: 'Footer',            
+            label: 'Footer',
             active: false,
-          }
+          },
         ],
-      }
+      },
     ],
   },
 ]
