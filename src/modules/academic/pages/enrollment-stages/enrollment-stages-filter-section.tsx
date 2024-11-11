@@ -1,3 +1,9 @@
+import { DatePicker } from '@/modules/academic'
+
 export const EnrollmentStagesFilterSection = () => {
-  return <div>enrollment-stages-filter-section</div>
+  return (
+    <section>
+      <DatePicker />
+    </section>
+  )
 }
