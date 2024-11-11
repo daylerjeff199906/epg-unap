@@ -1,5 +1,9 @@
 import { MultiStepTimeline } from '@/components/app'
-import { AsideLayoutFormContent, LayoutFormContent } from '@/components/layouts'
+import {
+  AsideLayoutFormContent,
+  HeaderFormSection,
+  LayoutFormContent,
+} from '@/components/layouts'
 
 export const FrmEnrollmentStageEditor = () => {
   return (
@@ -22,7 +26,12 @@ export const FrmEnrollmentStageEditor = () => {
             ]}
           />
         </AsideLayoutFormContent>
-        asdadsasdadadasdad
+        <section className="p-4">
+          <HeaderFormSection
+            title="Selección de etapa y plan"
+            description="Selecciona al periodo que pertenece a matrícula"
+          />
+        </section>
       </LayoutFormContent>
     </div>
   )
