@@ -1,3 +1,4 @@
+import { SwitchCustom } from '@/components/app'
 import { ContentInput, HeaderFormSection } from '@/components/layouts'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -26,6 +27,18 @@ export const BasicInformationSection = () => {
         <Textarea placeholder="Ejemplo: Etapa de matrícula para el ciclo 2022-1" />
       </ContentInput>
       <Divider />
+      <ContentInput
+        id="status"
+        label="Estado"
+        description="Selecciona el estado de la etapa. Por defecto, se encuentra activo"
+      >
+        <div className="bg-white">
+          <SwitchCustom
+            label="Activo"
+            description="Activa o desactiva la etapa"
+          />
+        </div>
+      </ContentInput>
     </div>
   )
 }
