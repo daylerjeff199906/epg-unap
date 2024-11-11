@@ -12,6 +12,7 @@ import {
   LayoutPanelTop,
   ChartBarBig,
   Boxes,
+  NotebookPen,
 } from 'lucide-react'
 
 type Submenu = {
@@ -160,8 +161,8 @@ export const menuAcademicosData: Group[] = [
       },
       {
         href: '',
-        label: '',
-        icon: User,
+        label: 'Matriculas',
+        icon: NotebookPen,
         submenus: [
           {
             label: 'Matriculas realizadas',
