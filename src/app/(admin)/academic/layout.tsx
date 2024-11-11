@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     template: '%s | ACADEMICOS | EPG - UNAP',
     default: 'Sistema de Gestión Académica - EPG - UNAP',
   },
-  description: 'ACADEMICOS | EPG - UNAP',
+  description: 'Sistema de Gestión Académica - EPG - UNAP',
 }
 
-const APP_NAME_KEY: MenuConfigApps = 'panel-admin'
+const APP_NAME_KEY: MenuConfigApps = 'academic'
 
 export default function Layout(props: LayoutProps) {
   const { children } = props
