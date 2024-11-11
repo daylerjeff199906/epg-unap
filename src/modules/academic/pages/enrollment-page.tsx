@@ -1,5 +1,12 @@
+import { EnrollmentFilter } from "./enrollment/filter-section";
+import { EnrollmentHeader } from "./enrollment/header-section";
+
 export default function EnrollmentPage() {
+
   return (
-    <div>EnrollmentPage</div>
+    <>
+      <EnrollmentHeader />
+      <EnrollmentFilter />
+    </>
   )
 }

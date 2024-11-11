@@ -18,6 +18,7 @@ import {FooterSimple} from './footer-custom/footer-simple'
 import {FooterLinksSection} from './footer-custom/footer-links-section'
 import { FooterInfo } from './footer-custom/footer-info'
 import { Footer } from './footer'
+import { DatePicker } from './date-picker'
 
 export {
   NavBarCustom,
@@ -39,5 +40,6 @@ export {
   FooterSimple,
   FooterLinksSection,
   FooterInfo,
-  Footer
+  Footer,
+  DatePicker
 }

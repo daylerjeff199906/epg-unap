@@ -52,7 +52,7 @@ export const HeaderSection = (props: HeaderSectionProps) => {
   const fontSizeDescription = fontSize[size].description
 
   return (
-    <main className="p-6 rounded-lg flex flex-col gap-5">
+    <main className="py-6 rounded-lg flex flex-col gap-5">
       <section className='flex flex-col gap-1'>
         <h2 className={`font-bold text-gray-800 ${fontSizeTitle}`}>
           {title || 'Título de la sección'}
