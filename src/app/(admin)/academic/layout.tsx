@@ -8,10 +8,10 @@ interface LayoutProps {
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Admin Panel | EPG - UNAP',
-    default: 'Panel de administración de EPG - UNAP',
+    template: '%s | ACADEMICOS | EPG - UNAP',
+    default: 'Sistema de Gestión Académica - EPG - UNAP',
   },
-  description: 'Panel de administración de EPG - UNAP',
+  description: 'ACADEMICOS | EPG - UNAP',
 }
 
 const APP_NAME_KEY: MenuConfigApps = 'panel-admin'
