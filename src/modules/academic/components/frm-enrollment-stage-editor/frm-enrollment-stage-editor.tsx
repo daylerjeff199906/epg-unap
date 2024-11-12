@@ -11,11 +11,15 @@ export const FrmEnrollmentStageEditor = () => {
     'periodo-plan'
   )
 
-//   const handleOnSubmit = () => {}
+  const labelOnSubmit =
+    selectedStep === 'info-basica' ? 'Terminar y guardar' : 'Siguiente'
+  const labelOnCancel = selectedStep !== 'periodo-plan' ? 'Atrás' : 'Cancelar'
+
+  //   const handleOnSubmit = () => {}
 
   const handleOnCancel = () => {
     if (selectedStep === 'periodo-plan') {
-      router.push('/academic/enrollment-stage')
+      router.push('/academic/etapas-matriculas')
     } else {
       setSelectedStep('periodo-plan')
     }
@@ -26,9 +30,8 @@ export const FrmEnrollmentStageEditor = () => {
       <LayoutFormContent
         title="Agregar etapa de matrícula"
         position="left"
-        labelOnSubmit={
-          selectedStep === 'info-basica' ? 'Terminar y guardar' : 'Siguiente'
-        }
+        labelOnSubmit={labelOnSubmit}
+        labelOnCancel={labelOnCancel}
         onCancel={handleOnCancel}
       >
         <AsideLayoutFormContent>
