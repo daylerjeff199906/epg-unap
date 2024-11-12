@@ -1,7 +1,7 @@
 import { IPerson } from '@/types/person'
 import { IAdmin_Unity } from './IAdmin_Unity'
 import { IStaff_Type } from './IStaff_Type'
-import { IRectoral_Resolution } from './IResolution'
+import { IResolution_Rectoral } from './IResolution_Rectoral'
 import { IPrograms } from '../academic/IPrograms'
 
 export interface IStaff {
@@ -11,5 +11,5 @@ export interface IStaff {
   id_program: IPrograms
   id_staff_type: IStaff_Type
   is_active: boolean
-  id_rectoral_resolution: IRectoral_Resolution
+  id_rectoral_resolution: IResolution_Rectoral
 }

@@ -1,4 +1,4 @@
-export interface IRectoral_Resolution {
+export interface IResolution_Rectoral {
   id: number
   number: number
   date: Date
