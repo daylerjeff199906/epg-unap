@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: IProps): Promise<Metadata> {
   const name = (await params).slug
 
   return {
-    title: `Añadir grupo - ${name.toUpperCase()}`,
+    title: `AÑADIR GRUPO - ${name.toUpperCase()}`,
   }
 }
 
