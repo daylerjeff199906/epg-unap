@@ -15,25 +15,24 @@ export const enrollmentStagesColum: ColumnDef<Record<string, unknown>>[] = [
     header: 'ID',
   },
   {
-    accessorKey: 'fecha_creacion',
-    header: 'F. DE CREACION',
+    accessorKey: 'range-date',
+    header: 'F. de etapa',
   },
   {
-    accessorKey: 'nombre_usuario',
-    header: 'NOMBRE DE USUARIO',
-    // cell: ({ row }) => <div>{String(row.original.nombre_usuario)}</div>,
+    accessorKey: 'range-date-extempt',
+    header: 'F. de etapa (exentemporánea)',
   },
   {
-    accessorKey: 'persona_asignada',
-    header: 'PERSONA ASIGNADA',
+    accessorKey: 'plan-study',
+    header: 'PLAN DE ESTUDIO',
   },
   {
-    accessorKey: 'roles',
-    header: 'ROLES',
+    accessorKey: 'program',
+    header: 'PROGRAMA',
   },
   {
-    accessorKey: 'permisos',
-    header: 'PERMISOS',
+    accessorKey: 'promotion',
+    header: 'PROMOCIÓN',
   },
   {
     accessorKey: 'actions',
