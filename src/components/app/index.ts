@@ -19,6 +19,7 @@ import { FooterLinksSection } from './footer-custom/footer-links-section'
 import { FooterInfo } from './footer-custom/footer-info'
 import { Footer } from './footer'
 import { DatePickerCustom } from './date-picker-custom'
+import { DataTableFilter } from './data-table-filter'
 
 export {
   NavBarCustom,
@@ -42,4 +43,5 @@ export {
   FooterInfo,
   Footer,
   DatePickerCustom,
+  DataTableFilter,
 }
