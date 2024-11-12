@@ -1,3 +1,9 @@
+import { DatePickerCustom } from '@/components/app'
+
 export const EnrollmentGroupsFiltersSection = () => {
-  return <section>enrollment-groups-filters-section</section>
+  return (
+    <section>
+      <DatePickerCustom />
+    </section>
+  )
 }

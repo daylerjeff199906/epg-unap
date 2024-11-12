@@ -2,7 +2,10 @@
 import { HeaderSection } from '@/components/app'
 import { DataTable } from '@/components/tables'
 import { usePathname } from 'next/navigation'
-import { groupsCourseColumn } from '@/modules/academic'
+import {
+  EnrollmentGroupsFiltersSection,
+  groupsCourseColumn,
+} from '@/modules/academic'
 
 interface GroupsCourseListPageProps {
   slug: string
@@ -21,11 +24,12 @@ export const GroupsCourseListPage = (props: GroupsCourseListPageProps) => {
         description="Gestión de grupos de matrículas. En esta sección se pueden visualizar los grupos de matrículas, así como agregar nuevos grupos."
         hrefAddLink={`${pathname}/agregar`}
       />
-      <section>
+      <section className="pt-4">
         <DataTable
           columns={groupsCourseColumn}
           data={[]}
           hasSearch={true}
+          childrenHeader={<EnrollmentGroupsFiltersSection />}
         />
       </section>
     </>
