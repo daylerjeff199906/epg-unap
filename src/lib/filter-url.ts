@@ -1,33 +1,40 @@
 import { useCallback } from 'react'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 
+interface IQueryParams {
+  key: string
+  value: string
+}
+
+type IRemoveFilter = Omit<IQueryParams, 'value'>
+
 export const useFilterFromUrl = () => {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()!
 
-  const getParams = (nameParams: string, defaultValue: string) => {
-    const value = searchParams.get(nameParams)
-    return value || defaultValue
+  const getParams = ({ key, value }: IQueryParams) => {
+    const result = searchParams.get(key)
+    return result || value
   }
 
   const updateFilter = useCallback(
-    (name: string, value: string) => {
+    ({ key, value } : IQueryParams) => {
       const params = new URLSearchParams(searchParams)
 
       // Set the new filter
-      if (name === 'page') {
+      if (key === 'page') {
         if (value === '1') {
-          params.delete(name)
+          params.delete(key)
         } else {
-          params.set(name, value)
+          params.set(key, value)
         }
       } else {
         params.delete('page')
         if (value === '') {
-          params.delete(name)
+          params.delete(key)
         } else {
-          params.set(name, value)
+          params.set(key, value)
         }
       }
 
@@ -38,7 +45,7 @@ export const useFilterFromUrl = () => {
         if (foundUpdatedParam) {
           keysToRemove.push(key)
         }
-        if (key === name) {
+        if (key === key) {
           foundUpdatedParam = true
         }
       }
@@ -53,11 +60,11 @@ export const useFilterFromUrl = () => {
   )
 
   const createFilter = useCallback(
-    (name: string, value: string) => {
+    ({ key, value }: IQueryParams) => {
       const params = new URLSearchParams(searchParams)
 
       // Set the new filter
-      params.set(name, value)
+      params.set(key, value)
 
       const queryString = params.toString()
       const url = `${pathname}${queryString ? `?${queryString}` : ''}`
@@ -68,11 +75,11 @@ export const useFilterFromUrl = () => {
   )
 
   const removeFilter = useCallback(
-    (name: string) => {
+    ({ key }: IRemoveFilter) => {
       const params = new URLSearchParams(searchParams)
 
       // Remove the filter
-      params.delete(name)
+      params.delete(key)
 
       const queryString = params.toString()
       const url = `${pathname}${queryString ? `?${queryString}` : ''}`

@@ -1,4 +1,8 @@
+'use client'
+
 import { Search } from 'lucide-react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useDebouncedCallback } from 'use-debounce';
 
 interface TableHeaderProps {
   valueSearch?: string
@@ -8,7 +12,23 @@ interface TableHeaderProps {
 }
 
 export const TableHeaderCustom = (props: TableHeaderProps) => {
-  const { valueSearch, onValueSearch, hasSearch, placeholder } = props
+  const { hasSearch, placeholder } = props
+
+  const searchParams = useSearchParams();
+  const { replace } = useRouter();
+  const pathname = usePathname();
+
+  const handleSearch = useDebouncedCallback((term: string) => {
+    console.log(`Searching... ${term}`);
+
+    const params = new URLSearchParams(searchParams);
+    if (term) {
+      params.set('query', term);
+    } else {
+      params.delete('query');
+    }
+    replace(`${pathname}?${params.toString()}`);
+  }, 300);
 
   return (
     <main>
@@ -21,8 +41,10 @@ export const TableHeaderCustom = (props: TableHeaderProps) => {
             <input
               type="text"
               placeholder={placeholder || 'Buscar...'}
-              value={valueSearch}
-              onChange={(e) => onValueSearch && onValueSearch(e.target.value)}
+              onChange={(e) => {
+                handleSearch(e.target.value);
+              }}
+              defaultValue={searchParams.get('query')?.toString()}
               className="w-[150px] lg:w-[250px] focus:outline-none"
             />
           </section>

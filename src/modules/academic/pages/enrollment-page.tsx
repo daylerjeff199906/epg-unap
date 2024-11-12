@@ -1,3 +1,4 @@
+import EnrollmentTable from "./enrollment/enrollment-table";
 import { EnrollmentFilter } from "./enrollment/filter-section";
 import { EnrollmentHeader } from "./enrollment/header-section";
 
@@ -7,6 +8,7 @@ export default function EnrollmentPage() {
     <>
       <EnrollmentHeader />
       <EnrollmentFilter />
+      <EnrollmentTable />
     </>
   )
 }

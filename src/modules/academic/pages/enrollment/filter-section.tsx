@@ -1,8 +1,9 @@
 'use client'
 
-import { DatePicker, InputSearch } from "@/components/app"
+import { DatePicker } from "@/components/app"
 import { CommandFilter } from "./command-filter"
 import { useFilterFromUrl } from "@/lib/filter-url"
+import SearchFilter from "./search-filter"
 
 const fruits = [
     { value: "apple", label: "Apple" },
@@ -12,14 +13,13 @@ const fruits = [
     { value: "pineapple", label: "Pineapple" },
 ]
 
-export const EnrollmentFilter = (
-) => {
+export const EnrollmentFilter = () => {
 
     const {getParams} = useFilterFromUrl()
 
-    const newDate = getParams('date', '')
-    const newStatus = getParams('status', '')
-    const newType = getParams('type', '')
+    const newDate = getParams({key: 'date', value: ''})
+    const newStatus = getParams({key: 'status', value: ''})
+    const newType = getParams({key: 'type', value: ''})
 
     return (
         <main className="rounded-lg flex justify-between gap-4">
@@ -44,7 +44,7 @@ export const EnrollmentFilter = (
                     data={fruits}
                     searchParam={{initialStatus: newType}}
                 />
-                <InputSearch />
+                <SearchFilter />
             </section>
         </main>
     )

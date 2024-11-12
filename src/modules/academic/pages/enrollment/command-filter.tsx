@@ -21,8 +21,8 @@ import { ChevronDown, Check } from "lucide-react"
 
 type searchParams = {
     initialStatus?: string
-  }
-  
+}
+
 
 type Status = {
     value: string
@@ -38,14 +38,14 @@ interface IProps {
     filterKey: string
     label?: string
     placeholder?: string
-    className?: string 
-    popclassName?: string 
+    className?: string
+    popclassName?: string
     hasSearch?: boolean
     searchParam?: searchParams
     data?: IData[]
 }
 
-export function CommandFilter(props: IProps) {
+export const CommandFilter = (props: IProps) => {
     const { filterKey, label, placeholder, data, className, popclassName, hasSearch, searchParam } = props
 
     const { createFilter, removeFilter } = useFilterFromUrl()
@@ -59,14 +59,14 @@ export function CommandFilter(props: IProps) {
 
     useEffect(() => {
         if (selectedStatus) {
-            createFilter(filterKey, selectedStatus.value)
+            createFilter({ query: filterKey, value: selectedStatus.value })
         } else {
-            removeFilter(filterKey)
+            removeFilter({ query: filterKey })
         }
     }, [selectedStatus, createFilter, removeFilter, filterKey])
 
     return (
-        <div 
+        <div
             className={cn("border border-input bg-background w-[230px] min-w-[190px] flex items-start justify-between rounded-md pl-4 sm:flex-row sm:items-center gap-1", className)}
         >
             <p className="text-sm text-muted-foreground">
@@ -89,16 +89,16 @@ export function CommandFilter(props: IProps) {
                         ) : (
                             <>
                                 <div className="flex items-center justify-between w-full text-sm font-semibold">
-                                        {selectedStatus || "Todos"}
+                                    {selectedStatus || "Todos"}
                                     <ChevronDown className="h-4 w-4 opacity-50" />
                                 </div>
                             </>
                         )}
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent 
-                    className={cn("w-[150px] p-0", popclassName)} 
-                    side="bottom" 
+                <PopoverContent
+                    className={cn("w-[150px] p-0", popclassName)}
+                    side="bottom"
                     align="start"
                 >
                     <Command>
@@ -119,7 +119,7 @@ export function CommandFilter(props: IProps) {
                                         }}
                                     >
                                         {status.label}
-                                        <Check 
+                                        <Check
                                             className={cn(
                                                 "ml-auto",
                                                 selectedStatus?.value === status.value ? "opacity-100" : "opacity-0"

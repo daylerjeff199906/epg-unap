@@ -1,6 +1,8 @@
-export const payments: Payment[] = [
+import { IEnrollment } from "@/modules/academic/pages/enrollment/enrollment-columns"
+
+export const payments: IEnrollment[] = [
     {
-        id: "001",
+        id: 1,
         fecha_creacion: "20/10/2024",
         nombre_usuario: "asaavedral@postgradounap.edu.pe",
         persona_asignada: "ANGIE LÓPEZ HUAMASH",
@@ -8,7 +10,7 @@ export const payments: Payment[] = [
         permisos: ["ADMINISTRADOR", "DOCENTE", "ESTUDIANTE"]
     },
     {
-        id: "002",
+        id: 2,
         fecha_creacion: "21/10/2024",
         nombre_usuario: "jlopezr@postgradounap.edu.pe",
         persona_asignada: "JUAN LÓPEZ RAMÍREZ",
@@ -16,24 +18,24 @@ export const payments: Payment[] = [
         permisos: ["ESTUDIANTE"]
     },
     {
-        "id": "003",
-        "fecha_creacion": "22/10/2024",
+        id: 3,
+        fecha_creacion: "22/10/2024",
         nombre_usuario: "mperezc@postgradounap.edu.pe",
         persona_asignada: "MARÍA PÉREZ CASTRO",
         roles: ["DOCENTE", "ESTUDIANTE"],
         permisos: ["DOCENTE", "ESTUDIANTE"]
     },
     {
-        "id": "004",
-        "fecha_creacion": "23/10/2024",
+        id: 4,
+        fecha_creacion: "23/10/2024",
         nombre_usuario: "rfernandezv@postgradounap.edu.pe",
         persona_asignada: "ROBERTO FERNÁNDEZ VARGAS",
         roles: ["ADMINISTRADOR"],
         permisos: ["ADMINISTRADOR"]
     },
     {
-        "id": "005",
-        "fecha_creacion": "24/10/2024",
+        id: 5,
+        fecha_creacion: "24/10/2024",
         nombre_usuario: "lramirezs@postgradounap.edu.pe",
         persona_asignada: "LAURA RAMÍREZ SÁNCHEZ",
         roles: ["DOCENTE"],

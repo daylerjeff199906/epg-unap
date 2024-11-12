@@ -26,7 +26,7 @@ interface IProps {
     className?: string
 }
 
-export function SelectFilter(props: IProps) {
+export const SelectFilter = (props: IProps) => {
     const { filterKey, selectLabel, placeholder, data, className } = props
 
     const [value, setValue] = useState<string | undefined>("")
@@ -35,9 +35,9 @@ export function SelectFilter(props: IProps) {
 
     useEffect(() => {
         if (value) {
-            createFilter(filterKey, value)
+            createFilter({ query: filterKey, value: value })
         } else {
-            removeFilter(filterKey)
+            removeFilter({ query: filterKey })
         }
     }, [value, createFilter, removeFilter, filterKey])
 

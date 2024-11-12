@@ -8,6 +8,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from '@/components/ui/select'
+import { usePathname, useSearchParams } from 'next/navigation'
 
 export interface IDataTablePaginationProps {
     page: number
@@ -27,10 +28,12 @@ export function DataTablePagination(props: IDataTablePaginationProps) {
         count,
     } = props
 
-    console.log(page, pageSize, count)
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const currentPage = Number(searchParams.get('page')) || 1;
 
     return (
-        <div className="flex items-center justify-between px-2">
+        <div className="flex items-center justify-between p-2 bg-white">
             {/* <div className="flex-1 text-sm text-muted-foreground">
           {table.getFilteredSelectedRowModel().rows.count} of{' '}
           {table.getFilteredRowModel().rows.count} row(s) selected.

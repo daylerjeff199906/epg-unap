@@ -2,12 +2,12 @@
 
 import { DataTable } from '@/components/tables/shadcn-table/main-table';
 import { useEffect, useState } from 'react';
-import { paymentColumns } from './payment-columns';
-import { Payment, payments } from './payments-data';
+import { payments } from './payments-data';
+import { enrollementColumns, IEnrollment } from '@/modules/academic/pages/enrollment/enrollment-columns';
 
 export default function PaymentsTable() {
     const [search, setSearch] = useState('');
-    const [filteredPayments, setFilteredPayments] = useState<Payment[]>([]);
+    const [filteredPayments, setFilteredPayments] = useState<IEnrollment[]>([]);
 
     useEffect(() => {
         const filtered = payments.filter((payment) => {
@@ -19,7 +19,7 @@ export default function PaymentsTable() {
     return (
         <>
             <DataTable
-                columns={paymentColumns}
+                columns={enrollementColumns}
                 data={filteredPayments}
                 searchPlaceholder='Buscar por nombre'
                 valueSearch={search}

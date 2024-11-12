@@ -108,7 +108,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
     }
 
     return (
-        <div className="space-y-4 p-4 bg-white">
+        <div className="space-y-4 bg-white">
             {hasToolbar && (
                 <TableHeaderCustom
                     hasSearch={hasSearch}
