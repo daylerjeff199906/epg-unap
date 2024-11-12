@@ -6,6 +6,8 @@ export const EnrollmentGroupsFiltersSection = () => {
     <section className="flex flex-col sm:flex-row items-center gap-3">
       <DatePickerCustom />
       <StatusFilter />
+      {/* componetizar esta seccion */}
+      <section></section>
     </section>
   )
 }
