@@ -1,7 +1,7 @@
 import { HeaderSection } from '@/components/app'
 import { EnrollmentStagesFilterSection } from './enrollment-stages-filter-section'
 import { DataTable } from '@/components/tables'
-import { enrollmentStagesColum } from './enrollment-stages-colum'
+import { enrollmentStagesColumn } from '../../components'
 
 export const EnrollmentStagesListPage = () => {
   return (
@@ -14,7 +14,7 @@ export const EnrollmentStagesListPage = () => {
       <section className="flex flex-col gap-1 pt-3">
         <EnrollmentStagesFilterSection />
         <DataTable
-          columns={enrollmentStagesColum}
+          columns={enrollmentStagesColumn}
           data={[]}
         />
       </section>

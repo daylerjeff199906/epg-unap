@@ -2,7 +2,7 @@
 import { HeaderSection } from '@/components/app'
 import { DataTable } from '@/components/tables'
 import { usePathname } from 'next/navigation'
-import { groupsCourseColum } from '../../components'
+import { groupsCourseColumn } from '@/modules/academic'
 
 interface GroupsCourseListPageProps {
   slug: string
@@ -23,7 +23,7 @@ export const GroupsCourseListPage = (props: GroupsCourseListPageProps) => {
       />
       <section>
         <DataTable
-          columns={groupsCourseColum}
+          columns={groupsCourseColumn}
           data={[]}
         />
       </section>

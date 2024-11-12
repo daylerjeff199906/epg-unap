@@ -1,3 +1,4 @@
-import { groupsCourseColum } from './groups-course-colum'
+import { groupsCourseColumn } from './groups-course-column'
+import { enrollmentStagesColumn } from './enrollment-stages-column'
 
-export { groupsCourseColum }
+export { groupsCourseColumn, enrollmentStagesColumn }
