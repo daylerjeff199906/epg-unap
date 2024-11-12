@@ -1,3 +1,3 @@
 export const EnrollmentGroupsFiltersSection = () => {
-  return <div>enrollment-groups-filters-section</div>
+  return <section>enrollment-groups-filters-section</section>
 }
