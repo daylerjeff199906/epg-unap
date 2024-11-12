@@ -48,7 +48,7 @@ export const EnrollmentGroupsFiltersSection = () => {
               <Accordion
                 type="single"
                 collapsible
-                className='p-2 px-6'
+                className="p-2 px-6"
               >
                 <AccordionItem value="item-1">
                   <AccordionTrigger>Por docente</AccordionTrigger>
