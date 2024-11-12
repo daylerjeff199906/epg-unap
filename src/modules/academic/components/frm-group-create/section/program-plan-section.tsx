@@ -37,7 +37,6 @@ export const ProgramPlanSection = () => {
         label="Programa"
         description="Selecciona el programa"
       >
-        adsasdda
         <Popover
           open={open}
           onOpenChange={setOpen}
@@ -52,13 +51,13 @@ export const ProgramPlanSection = () => {
               {value
                 ? frameworks.find((framework) => framework.value === value)
                     ?.label
-                : 'Seleccionar periodo...'}
+                : 'Seleccionar programa...'}
               <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-full lg:min-w-[680px] p-0">
             <Command>
-              <CommandInput placeholder="Buscar periodo ..." />
+              <CommandInput placeholder="Buscar programa ..." />
               <CommandList>
                 <CommandEmpty>No framework found.</CommandEmpty>
                 <CommandGroup>
