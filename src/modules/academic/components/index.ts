@@ -2,4 +2,5 @@ import { FrmEnrollmentStageEditor } from './frm-enrollment-stage-editor/frm-enro
 
 export * from './enrollment-stages-filters'
 export * from './cards'
+export * from './table'
 export { FrmEnrollmentStageEditor }
