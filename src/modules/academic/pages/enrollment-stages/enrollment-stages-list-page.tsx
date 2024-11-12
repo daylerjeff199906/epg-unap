@@ -11,7 +11,7 @@ export const EnrollmentStagesListPage = () => {
         description='Consulta y gestiona las etapas registradas en el sistema. Usa el botón "Añadir" para crear nuevas matrículas y actualiza la información existente según sea necesario.'
         hrefAddLink="/academic/etapas-matriculas/agregar"
       />
-      <section className="flex flex-col gap-5">
+      <section className="flex flex-col gap-1 pt-3">
         <EnrollmentStagesFilterSection />
         <DataTable
           columns={enrollmentStagesColum}
