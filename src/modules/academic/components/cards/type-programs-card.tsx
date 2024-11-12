@@ -12,7 +12,7 @@ export const TypesProgramsCard = (props: TypesProgramsCardProps) => {
 
   return (
     <Link
-      className="flex flex-col gap-4 border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:bg-gray-100"
+      className="flex flex-col gap-4 border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:bg-gray-100 min-w-[280px] max-w-[280px] cursor-pointer"
       href={href || '#'}
     >
       <main className="p-8 flex flex-col gap-4">
