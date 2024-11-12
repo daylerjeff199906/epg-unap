@@ -5,16 +5,21 @@ interface TableHeaderProps {
   onValueSearch?: (value: string) => void
   hasSearch?: boolean
   placeholder?: string
+  childrenHeader?: React.ReactNode
 }
 
 export const TableHeaderCustom = (props: TableHeaderProps) => {
-  const { valueSearch, onValueSearch, hasSearch, placeholder } = props
+  const { valueSearch, onValueSearch, hasSearch, placeholder, childrenHeader } =
+    props
 
   return (
-    <main>
+    <main className="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <section className="w-full">
+        {childrenHeader && <header>{childrenHeader}</header>}
+      </section>
       {hasSearch && (
         <main>
-          <section className="flex items-center space-x-2 border rounded-md border-gray-200 p-2 px-3 max-w-sm">
+          <section className="flex items-center space-x-2 border rounded-md border-gray-200 py-1.5 px-3 max-w-sm bg-white">
             <div>
               <Search className="w-4 h-4" />
             </div>
