@@ -15,9 +15,15 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 
+export interface IFiltersItems {
+  label: string
+  key: string
+  content: React.ReactNode
+}
+
 interface DataTableFilterProps {
   title?: string
-  filtersItems: { label: string; key: string; content: React.ReactNode }[]
+  filtersItems: IFiltersItems[]
 }
 
 export const DataTableFilter = (props: DataTableFilterProps) => {
