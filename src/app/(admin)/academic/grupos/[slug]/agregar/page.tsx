@@ -1,3 +1,4 @@
+import { FrmGroupCreate } from '@/modules/academic'
 import { Metadata } from 'next'
 
 interface IProps {
@@ -16,5 +17,5 @@ export async function generateMetadata({ params }: IProps): Promise<Metadata> {
 }
 
 export default function page() {
-  return <div>page</div>
+  return <FrmGroupCreate />
 }

@@ -41,7 +41,7 @@ export const FrmGroupCreate = () => {
             steps={[
               {
                 id: 'program-plan',
-                title: 'Información del programa y plan de estudio',
+                title: 'Programa y plan de estudio',
               },
               {
                 id: 'info-course',
