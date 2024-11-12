@@ -96,16 +96,13 @@ export const BasicInformationSection = () => {
         label="Rango activo"
         description="Selecciona el rango de fechas en el que la etapa estará activa. Por defecto, se encuentra activa"
       >
-        <Popover
-        // open={isOpen}
-        // onOpenChange={setIsOpen}
-        >
+        <Popover>
           <PopoverTrigger asChild>
             <Button
               id="date"
               variant={'outline'}
               className={cn(
-                'w-[300px] justify-start text-left font-normal',
+                'w-full justify-start text-left font-normal',
                 !date && 'text-muted-foreground'
               )}
             >
@@ -120,7 +117,7 @@ export const BasicInformationSection = () => {
                   format(date.from, 'LLL dd, y')
                 )
               ) : (
-                <span>Pick a date</span>
+                <span>Selecciona el rango fecha</span>
               )}
             </Button>
           </PopoverTrigger>
@@ -144,7 +141,68 @@ export const BasicInformationSection = () => {
               mode="range"
               defaultMonth={date?.from}
               selected={date}
-              onSelect={(range) => setDate({ from: range?.from, to: range?.to })}
+              onSelect={(range) =>
+                setDate({ from: range?.from, to: range?.to })
+              }
+              numberOfMonths={2}
+            />
+          </PopoverContent>
+        </Popover>
+      </ContentInput>
+      <Divider />
+      <ContentInput
+        id="date-range-extention"
+        label="Rango extemporáneo"
+        description="Selecciona el rango de fechas en el que la etapa estará activa de manera extemporánea. Por defecto, se encuentra activa"
+      >
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button
+              id="date"
+              variant={'outline'}
+              className={cn(
+                'w-full justify-start text-left font-normal',
+                !date && 'text-muted-foreground'
+              )}
+            >
+              <CalendarIcon className="mr-2 h-4 w-4" />
+              {date?.from ? (
+                date.to ? (
+                  <>
+                    {format(date.from, 'LLL dd, y')} -{' '}
+                    {format(date.to, 'LLL dd, y')}
+                  </>
+                ) : (
+                  format(date.from, 'LLL dd, y')
+                )
+              ) : (
+                <span>Selecciona el rango fecha</span>
+              )}
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent
+            className="w-auto p-0"
+            align="start"
+          >
+            <Select onValueChange={selectRange}>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Quick select" />
+              </SelectTrigger>
+              <SelectContent position="popper">
+                <SelectItem value="today">Today</SelectItem>
+                <SelectItem value="yesterday">Yesterday</SelectItem>
+                <SelectItem value="last7">Last 7 days</SelectItem>
+                <SelectItem value="last30">Last 30 days</SelectItem>
+              </SelectContent>
+            </Select>
+            <Calendar
+              initialFocus
+              mode="range"
+              defaultMonth={date?.from}
+              selected={date}
+              onSelect={(range) =>
+                setDate({ from: range?.from, to: range?.to })
+              }
               numberOfMonths={2}
             />
           </PopoverContent>
