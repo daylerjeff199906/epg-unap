@@ -15,24 +15,29 @@ export const groupsCourseColum: ColumnDef<Record<string, unknown>>[] = [
     header: 'ID',
   },
   {
-    accessorKey: 'range-date',
-    header: 'F. de etapa',
-  },
-  {
-    accessorKey: 'range-date-extempt',
-    header: 'F. de etapa (exentemporánea)',
-  },
-  {
-    accessorKey: 'plan-study',
-    header: 'PLAN DE ESTUDIO',
+    accessorKey: 'created-at',
+    header: 'F. creación',
   },
   {
     accessorKey: 'program',
     header: 'PROGRAMA',
   },
   {
-    accessorKey: 'promotion',
-    header: 'PROMOCIÓN',
+    accessorKey: 'course',
+    header: 'CURSO',
+  },
+  {
+    accessorKey: 'teacher',
+    header: 'DOCENTE',
+  },
+
+  {
+    accessorKey: 'period',
+    header: 'PERIODO',
+  },
+  {
+    accessorKey: 'group-aforo',
+    header: 'GRUPO/AFORO',
   },
   {
     accessorKey: 'actions',
