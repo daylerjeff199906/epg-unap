@@ -9,30 +9,35 @@ import type { ColumnDef } from '@tanstack/react-table'
 // import { MoreHorizontal } from 'lucide-react'
 // import { Payment } from './payments-data'
 
-export const enrollmentStagesColum: ColumnDef<Record<string, unknown>>[] = [
+export const groupsCourseColumn: ColumnDef<Record<string, unknown>>[] = [
   {
     accessorKey: 'id',
     header: 'ID',
   },
   {
-    accessorKey: 'range-date',
-    header: 'F. de etapa',
-  },
-  {
-    accessorKey: 'range-date-extempt',
-    header: 'F. de etapa (exentemporánea)',
-  },
-  {
-    accessorKey: 'plan-study',
-    header: 'PLAN DE ESTUDIO',
+    accessorKey: 'created-at',
+    header: 'F. creación',
   },
   {
     accessorKey: 'program',
     header: 'PROGRAMA',
   },
   {
-    accessorKey: 'promotion',
-    header: 'PROMOCIÓN',
+    accessorKey: 'course',
+    header: 'CURSO',
+  },
+  {
+    accessorKey: 'teacher',
+    header: 'DOCENTE',
+  },
+
+  {
+    accessorKey: 'period',
+    header: 'PERIODO',
+  },
+  {
+    accessorKey: 'group-aforo',
+    header: 'GRUPO/AFORO',
   },
   {
     accessorKey: 'actions',

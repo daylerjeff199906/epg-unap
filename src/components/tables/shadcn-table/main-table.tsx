@@ -142,7 +142,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
                   key={header.id}
                   className={`text-xs text-gray-300 font-semibold truncate ${
                     header.column.id === 'actions'
-                      ? 'sticky right-0 bg-black shadow-md'
+                      ? 'sticky right-0 bg-primary-900 shadow-md'
                       : ''
                   }`}
                   // style={{ width: header.getSize() }}
@@ -194,7 +194,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
                   <TableCell
                     className={
                       cell.column.id === 'actions'
-                        ? 'sticky right-0 bg-background'
+                        ? 'sticky right-0 bg-primary-800'
                         : ''
                     }
                     key={cell.id}

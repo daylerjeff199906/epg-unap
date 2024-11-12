@@ -9,7 +9,7 @@ import type { ColumnDef } from '@tanstack/react-table'
 // import { MoreHorizontal } from 'lucide-react'
 // import { Payment } from './payments-data'
 
-export const enrollmentStagesColum: ColumnDef<Record<string, unknown>>[] = [
+export const enrollmentStagesColumn: ColumnDef<Record<string, unknown>>[] = [
   {
     accessorKey: 'id',
     header: 'ID',

@@ -9,6 +9,7 @@ interface LayoutFormContentProps {
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void
   onCancel?: () => void
   labelOnSubmit?: string
+  labelOnCancel?: string
 }
 
 export const LayoutFormContent = (props: LayoutFormContentProps) => {
@@ -20,6 +21,7 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
     description,
     position = 'none',
     labelOnSubmit,
+    labelOnCancel,
   } = props
 
   const aside = React.Children.toArray(children).find(
@@ -63,7 +65,7 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
               type="button"
               onClick={onCancel}
             >
-              Cancelar
+              {labelOnCancel || 'Cancelar'}
             </Button>
             <Button type="submit">{labelOnSubmit || 'Guardar'}</Button>
           </main>
