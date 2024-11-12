@@ -3,6 +3,11 @@ import { useState } from 'react'
 import { MultiStepTimeline } from '@/components/app'
 import { AsideLayoutFormContent, LayoutFormContent } from '@/components/layouts'
 import { useRouter, usePathname } from 'next/navigation'
+import {
+  CourseSection,
+  ProgramPlanSection,
+  TeachersAssignedSection,
+} from './section'
 
 export const FrmGroupCreate = () => {
   const router = useRouter()
@@ -54,7 +59,11 @@ export const FrmGroupCreate = () => {
             ]}
           />
         </AsideLayoutFormContent>
-        <section className="p-4"></section>
+        <section className="p-4">
+          {selectedStep === 'program-plan' && <ProgramPlanSection />}
+          {selectedStep === 'info-course' && <CourseSection />}
+          {selectedStep === 'group-teacher ' && <TeachersAssignedSection />}
+        </section>
       </LayoutFormContent>
     </div>
   )
