@@ -2,7 +2,7 @@ import { FrmEnrollmentStageEditor } from '@/modules/academic'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Matricular estudiante',
+  title: 'Crear etapa de matrícula',
 }
 
 export default function Page() {
