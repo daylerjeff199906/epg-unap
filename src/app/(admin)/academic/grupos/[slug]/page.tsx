@@ -1,3 +1,4 @@
+import { GroupsCourseListPage } from '@/modules/academic'
 import { Metadata } from 'next'
 
 interface IProps {
@@ -18,10 +19,5 @@ export async function generateMetadata({ params }: IProps): Promise<Metadata> {
 export default function Page(props: IProps) {
   const { slug } = props.params
 
-  return (
-    <div>
-      <h1>Grupos de Cursos</h1>
-      <p>Slug: {slug}</p>
-    </div>
-  )
+  return <GroupsCourseListPage slug={slug} />
 }
