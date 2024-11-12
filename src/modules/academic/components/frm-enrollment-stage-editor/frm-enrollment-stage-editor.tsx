@@ -19,7 +19,7 @@ export const FrmEnrollmentStageEditor = () => {
 
   const handleOnCancel = () => {
     if (selectedStep === 'periodo-plan') {
-      router.push('/academic/enrollment-stage')
+      router.push('/academic/etapas-matriculas')
     } else {
       setSelectedStep('periodo-plan')
     }
