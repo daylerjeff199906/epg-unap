@@ -25,6 +25,7 @@ export const GroupsCourseListPage = (props: GroupsCourseListPageProps) => {
         <DataTable
           columns={groupsCourseColumn}
           data={[]}
+          hasSearch={true}
         />
       </section>
     </>
