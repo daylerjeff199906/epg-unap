@@ -108,7 +108,7 @@ export const ProgramPlanSection = () => {
                 value={year}
                 htmlFor={year}
                 title={`Plan de estudio ${year}`}
-                code="2022-1"
+                code={`Código: ${year}`}
                 description="Sede principal"
               />
             ))}
