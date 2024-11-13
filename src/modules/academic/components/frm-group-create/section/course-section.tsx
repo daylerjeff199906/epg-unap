@@ -12,6 +12,8 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { RadioGroup } from '@/components/ui/radio-group'
+import { CoursePlanStudyCardRadio } from '../../cards'
 
 export const CourseSection = () => {
   return (
@@ -45,27 +47,47 @@ export const CourseSection = () => {
           description="Selecciona el curso, puedes facilitar tu búsqueda por ciclo"
           orientation="vertical"
         >
-          <section className="flex items-center gap-4">
-            <Input placeholder="Buscar curso..." />
-            <Select>
-              <SelectTrigger className="w-[240px]">
-                <SelectValue placeholder="Seleccionar ciclo" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Ciclo</SelectLabel>
-                  <SelectItem value="1">Ciclo 1</SelectItem>
-                  <SelectItem value="2">Ciclo 2</SelectItem>
-                  <SelectItem value="3">Ciclo 3</SelectItem>
-                  <SelectItem value="4">Ciclo 4</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-            <Button type="button">
-              <Search />
-              Buscar
-            </Button>
-          </section>
+          <main className="flex flex-col gap-4">
+            <section className="flex items-center gap-4">
+              <Input placeholder="Buscar curso..." />
+              <Select>
+                <SelectTrigger className="w-[240px]">
+                  <SelectValue placeholder="Seleccionar ciclo" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Ciclo</SelectLabel>
+                    <SelectItem value="1">Ciclo 1</SelectItem>
+                    <SelectItem value="2">Ciclo 2</SelectItem>
+                    <SelectItem value="3">Ciclo 3</SelectItem>
+                    <SelectItem value="4">Ciclo 4</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              <Button type="button">
+                <Search />
+                Buscar
+              </Button>
+            </section>
+            <section>
+              <RadioGroup
+                defaultValue="default"
+                className="grid grid-cols-3 gap-4"
+              >
+                {['Course 1', 'Course 2', 'Course 3'].map((course) => (
+                  <CoursePlanStudyCardRadio
+                    key={course}
+                    id={course}
+                    value={course}
+                    htmlFor={course}
+                    title={`${course}`}
+                    code={`Código: ${course}`}
+                    description="Sede principal"
+                  />
+                ))}
+              </RadioGroup>
+            </section>
+          </main>
         </ContentInput>
       </section>
     </div>
