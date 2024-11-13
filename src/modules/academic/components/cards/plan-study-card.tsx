@@ -1,7 +1,11 @@
+import { Card } from '@/components/ui/card'
 import React from 'react'
 
-export const PlanStudyCXard = () => {
+export const PlanStudyCard = () => {
   return (
-    <div>plan-study-card</div>
+    <Card>
+      <header></header>
+      <p></p>
+    </Card>
   )
 }

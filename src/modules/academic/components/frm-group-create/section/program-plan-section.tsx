@@ -19,6 +19,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { Check, ChevronsUpDown } from 'lucide-react'
+import { PlanStudyCard } from '@/modules/academic'
 
 const frameworks = [] as { label: string; value: string }[]
 
@@ -94,8 +95,11 @@ export const ProgramPlanSection = () => {
         description="Selecciona el plan de estudio"
         orientation="vertical"
       >
-        asdads
-        {/* <Input placeholder="Ejemplo: Federico villareal" /> */}
+        <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <PlanStudyCard />
+          <PlanStudyCard />
+          <PlanStudyCard />
+        </section>
       </ContentInput>
     </div>
   )
