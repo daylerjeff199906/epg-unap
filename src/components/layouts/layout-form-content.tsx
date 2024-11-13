@@ -50,7 +50,7 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
       <main className="flex flex-row gap-4">
         {position !== 'none' && <>{position === 'left' && aside && aside}</>}
         <section
-          className={`w-full  h-fit pb-6
+          className={`w-full  h-fit p-6
               ${position === 'none' ? '' : 'lg:w-3/4'} ${
             position === 'left'
               ? 'border-l'
@@ -84,5 +84,9 @@ export const AsideLayoutFormContent = ({
 }: {
   children: React.ReactNode
 }) => {
-  return <aside className="w-1/4 h-full p-4 overflow-y-auto sticky z-20 top-40">{children}</aside>
+  return (
+    <aside className="w-1/4 h-full p-4 overflow-y-auto sticky z-20 top-40">
+      {children}
+    </aside>
+  )
 }

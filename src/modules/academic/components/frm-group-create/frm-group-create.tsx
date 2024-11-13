@@ -61,11 +61,9 @@ export const FrmGroupCreate = () => {
           ]}
         />
       </AsideLayoutFormContent>
-      <section className="p-4">
-        {selectedStep === 'program-plan' && <ProgramPlanSection />}
-        {selectedStep === 'info-course' && <CourseSection />}
-        {selectedStep === 'group-teacher' && <TeachersAssignedSection />}
-      </section>
+      {selectedStep === 'program-plan' && <ProgramPlanSection />}
+      {selectedStep === 'info-course' && <CourseSection />}
+      {selectedStep === 'group-teacher' && <TeachersAssignedSection />}
     </LayoutFormContent>
   )
 }
