@@ -19,7 +19,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { Check, ChevronsUpDown } from 'lucide-react'
-import { PlanStudyCard } from '@/modules/academic'
+import { PlanStudyCardRadio } from '@/modules/academic'
 import { RadioGroup } from '@/components/ui/radio-group'
 
 const frameworks = [] as { label: string; value: string }[]
@@ -102,7 +102,7 @@ export const ProgramPlanSection = () => {
             className="grid grid-cols-3 gap-4"
           >
             {['2022', '2023', '2024'].map((year) => (
-              <PlanStudyCard
+              <PlanStudyCardRadio
                 key={year}
                 id={year}
                 value={year}

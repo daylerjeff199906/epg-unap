@@ -12,7 +12,7 @@ interface PlanStudyCardProps {
   description: string
 }
 
-export const PlanStudyCard: React.FC<PlanStudyCardProps> = ({
+export const PlanStudyCardRadio: React.FC<PlanStudyCardProps> = ({
   id,
   value,
   htmlFor,

@@ -1,4 +1,4 @@
 import { TypesProgramsCard } from './type-programs-card'
-import { PlanStudyCard } from './plan-study-card'
+import { PlanStudyCardRadio } from './plan-study-card-radio'
 
-export { TypesProgramsCard, PlanStudyCard }
+export { TypesProgramsCard, PlanStudyCardRadio }
