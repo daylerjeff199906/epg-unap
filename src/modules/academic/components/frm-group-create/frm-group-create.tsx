@@ -31,43 +31,41 @@ export const FrmGroupCreate = () => {
   }
 
   return (
-    <div>
-      <LayoutFormContent
-        title="Agregar grupo"
-        position="left"
-        labelOnSubmit={labelOnSubmit}
-        labelOnCancel={labelOnCancel}
-        onCancel={handleOnCancel}
-        onSubmit={() => {
-          console.log('submit')
-        }}
-      >
-        <AsideLayoutFormContent>
-          <MultiStepTimeline
-            selectedStep={selectedStep}
-            setSelectedStep={setSelectedStep}
-            steps={[
-              {
-                id: 'program-plan',
-                title: 'Programa y plan de estudio',
-              },
-              {
-                id: 'info-course',
-                title: 'Información del curso',
-              },
-              {
-                id: 'group-teacher',
-                title: 'Asignar docentes',
-              },
-            ]}
-          />
-        </AsideLayoutFormContent>
-        <section className="p-4">
-          {selectedStep === 'program-plan' && <ProgramPlanSection />}
-          {selectedStep === 'info-course' && <CourseSection />}
-          {selectedStep === 'group-teacher' && <TeachersAssignedSection />}
-        </section>
-      </LayoutFormContent>
-    </div>
+    <LayoutFormContent
+      title="Agregar grupo"
+      position="left"
+      labelOnSubmit={labelOnSubmit}
+      labelOnCancel={labelOnCancel}
+      onCancel={handleOnCancel}
+      onSubmit={() => {
+        console.log('submit')
+      }}
+    >
+      <AsideLayoutFormContent>
+        <MultiStepTimeline
+          selectedStep={selectedStep}
+          setSelectedStep={setSelectedStep}
+          steps={[
+            {
+              id: 'program-plan',
+              title: 'Programa y plan de estudio',
+            },
+            {
+              id: 'info-course',
+              title: 'Información del curso',
+            },
+            {
+              id: 'group-teacher',
+              title: 'Asignar docentes',
+            },
+          ]}
+        />
+      </AsideLayoutFormContent>
+      <section className="p-4">
+        {selectedStep === 'program-plan' && <ProgramPlanSection />}
+        {selectedStep === 'info-course' && <CourseSection />}
+        {selectedStep === 'group-teacher' && <TeachersAssignedSection />}
+      </section>
+    </LayoutFormContent>
   )
 }
