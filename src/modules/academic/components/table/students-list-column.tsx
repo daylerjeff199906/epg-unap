@@ -26,6 +26,10 @@ export const studentslistcolumn: ColumnDef<Record<string, unknown>>[] = [
     header: 'NOMBRES',
   },
   {
+    accessorKey: 'last_name1',
+    header: 'APELLIDO',
+  },
+  {
     accessorKey: 'email',
     header: 'CORREO',
   },
@@ -35,12 +39,8 @@ export const studentslistcolumn: ColumnDef<Record<string, unknown>>[] = [
     header: 'CONTACTO',
   },
   {
-    accessorKey: 'user',
-    header: 'USUARIO',
-  },
-  {
-    accessorKey: 'user',
-    header: 'USUARIO',
+    accessorKey: 'state',
+    header: 'ESTADO',
   },
   {
     accessorKey: 'actions',
