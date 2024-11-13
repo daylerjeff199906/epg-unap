@@ -9,12 +9,12 @@ export default function PaymentsTable() {
     const [search, setSearch] = useState('');
     const [filteredPayments, setFilteredPayments] = useState<IEnrollment[]>([]);
 
-    useEffect(() => {
-        const filtered = payments.filter((payment) => {
-            return payment.nombre_usuario.toLowerCase().includes(search.toLowerCase());
-        });
-        setFilteredPayments(filtered);
-    }, [search]);
+  useEffect(() => {
+    const filtered = payments.filter((payment) => {
+      return payment.nombre_usuario.toLowerCase().includes(search.toLowerCase())
+    })
+    setFilteredPayments(filtered)
+  }, [search])
 
     return (
         <>

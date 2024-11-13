@@ -3,14 +3,18 @@ import {
   House,
   LayoutPanelTop,
   LucideIcon,
-  NotebookPen,
   Settings,
   Table,
   Table2,
   TextCursorInput,
   TriangleAlert,
   User,
-  Users
+  Users,
+  ChartBarBig,
+  Boxes,
+  NotebookPen,
+  IdCard,
+  ArrowRightLeft,
 } from 'lucide-react'
 
 type Submenu = {
@@ -148,14 +152,14 @@ export const menuAcademicosData: Group[] = [
     groupLabel: 'Matriculas',
     menus: [
       {
-        href: '',
+        href: '/academic/etapas-matriculas',
         label: 'Etapas de matriculas',
-        icon: Users,
+        icon: ChartBarBig,
       },
       {
-        href: '',
+        href: '/academic/grupos',
         label: 'Grupos',
-        icon: User,
+        icon: Boxes,
       },
       {
         href: '/matriculas',
@@ -164,11 +168,11 @@ export const menuAcademicosData: Group[] = [
         submenus: [
           {
             label: 'Matriculas realizadas',
-            href: '/matriculas',
+            href: '/academic/matriculas',
           },
           {
             label: 'Matricular estudiante',
-            href: '/agregar',
+            href: '/academic/matriculas/agregar'
           },
         ],
       },
@@ -180,18 +184,18 @@ export const menuAcademicosData: Group[] = [
       {
         href: '',
         label: 'Registros académicos',
-        icon: User,
+        icon: IdCard,
         submenus: [
           {
             href: '',
-            label: 'Historial de estudiante',
+            label: 'Estudiante',
           },
         ],
       },
       {
         href: '',
         label: 'Traslado',
-        icon: User,
+        icon: ArrowRightLeft,
       },
     ],
   },

@@ -1,5 +1,8 @@
 import { ContentInput } from './content-input'
-import { LayoutFormContent } from './layout-form-content'
+import {
+  LayoutFormContent,
+  AsideLayoutFormContent,
+} from './layout-form-content'
 import { HeaderFormSection } from './header-form-section'
 import { LayoutSectionPage } from './layout-section-page'
 import { LayoutStudent } from './layout-student'
@@ -10,4 +13,5 @@ export {
   HeaderFormSection,
   LayoutSectionPage,
   LayoutStudent,
+  AsideLayoutFormContent,
 }

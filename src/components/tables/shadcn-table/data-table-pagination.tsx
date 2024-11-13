@@ -1,21 +1,26 @@
-import { ChevronLeft, ChevronRight, ChevronsLeftIcon, ChevronsRightIcon } from 'lucide-react'
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
+} from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from '@/components/ui/select'
 
 export interface IDataTablePaginationProps {
-    page: number
-    pageSize: number
-    count: number
-    onPageChange: (page: number) => void
-    onPageSizeChange: (pageSize: number) => void
-    itemsSelected?: number
+  page: number
+  pageSize: number
+  count: number
+  onPageChange: (page: number) => void
+  onPageSizeChange: (pageSize: number) => void
+  itemsSelected?: number
 }
 
 export function DataTablePagination(props: IDataTablePaginationProps) {

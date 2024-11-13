@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import type { ColumnDef } from "@tanstack/react-table";
 import { MoreHorizontal } from "lucide-react";
+import Link from "next/link";
 
 export interface IEnrollment {
     id: number;
@@ -57,9 +58,9 @@ export const enrollementColumns: ColumnDef<IEnrollment>[] = [
                         <DropdownMenuItem
                             asChild
                         >
-                            <a href={`/rooms/${id}`}>
+                            <Link href={`/matriculas/${id}`}>
                                 Editar
-                            </a>
+                            </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>Ver detalles</DropdownMenuItem>
                     </DropdownMenuContent>

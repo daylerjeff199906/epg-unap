@@ -1,4 +1,8 @@
-import { menuAcademicosData, menuAdminData, menuDocsData } from '@/types/menusApp'
+import {
+  menuAcademicosData,
+  menuAdminData,
+  menuDocsData,
+} from '@/types/menusApp'
 import { LucideIcon } from 'lucide-react'
 
 type Submenu = {
@@ -36,13 +40,13 @@ export function getMenuList(
     case 'docs':
       menuData = menuDocsData // Puedes agregar un menú de documentación
       break
-    case 'academicos':
+    case 'academic':
       menuData = menuAcademicosData
+      break
     // Puedes agregar más casos para diferentes aplicaciones
     default:
       menuData = [] // Retorna un menú vacío o muestra un error si el appName no coincide
   }
-
   // Actualizar el estado `active` según el `pathname`
   return menuData.map((group) => ({
     ...group,

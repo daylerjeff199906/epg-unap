@@ -1,50 +1,33 @@
-'use client'
-
-import { useFilterFromUrl } from '@/lib/filter-url';
 import { Search } from 'lucide-react'
-import { usePathname, useRouter } from 'next/navigation'
-import { useDebouncedCallback } from 'use-debounce';
 
 interface TableHeaderProps {
   valueSearch?: string
   onValueSearch?: (value: string) => void
   hasSearch?: boolean
   placeholder?: string
+  childrenHeader?: React.ReactNode
 }
 
 export const TableHeaderCustom = (props: TableHeaderProps) => {
-  const { hasSearch, placeholder } = props
-  const {getParams, createFilter, removeFilter} = useFilterFromUrl() 
-
-  const { replace } = useRouter();
-  const pathname = usePathname();
-
-  const handleSearch = useDebouncedCallback((term: string) => {
-    console.log(`Searching... ${term}`);
-
-    if (term) {
-      createFilter({ key: 'query', value: term });
-    } else {
-      removeFilter({ key: 'query' });
-    }
-    replace(`${pathname}?${getParams({ key: 'query', value: term })}`);
-  }, 300);
+  const { valueSearch, onValueSearch, hasSearch, placeholder, childrenHeader } =
+    props
 
   return (
-    <main>
+    <main className="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <section className="w-full">
+        {childrenHeader && <header>{childrenHeader}</header>}
+      </section>
       {hasSearch && (
         <main>
-          <section className="flex items-center space-x-2 border rounded-md border-gray-200 p-2 px-3 max-w-sm">
+          <section className="flex items-center space-x-2 border rounded-md border-gray-200 py-1.5 px-3 max-w-sm bg-white">
             <div>
               <Search className="w-4 h-4" />
             </div>
             <input
               type="text"
               placeholder={placeholder || 'Buscar...'}
-              onChange={(e) => {
-                handleSearch(e.target.value);
-              }}
-              defaultValue={props.valueSearch }
+              value={valueSearch}
+              onChange={(e) => onValueSearch && onValueSearch(e.target.value)}
               className="w-[150px] lg:w-[250px] focus:outline-none"
             />
           </section>
