@@ -20,8 +20,6 @@ export const PlanStudyCard: React.FC<PlanStudyCardProps> = ({
   description,
   code,
 }) => {
-  // Referencia al RadioGroupItem
-
   return (
     <Card className="relative rounded-md">
       <Label
@@ -35,7 +33,9 @@ export const PlanStudyCard: React.FC<PlanStudyCardProps> = ({
         </CardHeader>
         <CardContent></CardContent>
         <CardFooter>
-          <p className="line-clamp-2 text-gray-600 text-sm font-normal">{description}</p>
+          <p className="line-clamp-2 text-gray-600 text-sm font-normal">
+            {description}
+          </p>
         </CardFooter>
         <RadioGroupItem
           value={value}
