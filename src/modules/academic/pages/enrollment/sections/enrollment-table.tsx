@@ -5,7 +5,7 @@ import { enrollementColumns, IEnrollment } from './enrollment-columns';
 import { payments } from '@/modules/examples/tables/shadcn/payments-data';
 import { useEffect, useState } from 'react';
 import { useFilterFromUrl } from '@/lib/filter-url';
-import { TablePaginationFilter } from './pagination-filter';
+import { TablePaginationFilter } from '../../../components/filters/pagination-filter';
 
 export default function EnrollmentTable () {
     const { getParams, createFilter } = useFilterFromUrl();

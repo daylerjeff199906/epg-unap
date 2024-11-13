@@ -1,4 +1,4 @@
-import { IEnrollment } from "@/modules/academic/pages/enrollment/enrollment-columns"
+import { IEnrollment } from "@/modules/academic/pages/enrollment/sections/enrollment-columns"
 
 export type Payment = {
     id: string

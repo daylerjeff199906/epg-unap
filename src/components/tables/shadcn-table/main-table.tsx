@@ -140,7 +140,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
               {headerGroup.headers.map((header) => (
                 <TableHead
                   key={header.id}
-                  className={`text-xs text-gray-300 font-semibold truncate ${
+                  className={`text-xs text-gray-300 font-semibold truncate bg-primary-900 shadow-md ${
                     header.column.id === 'actions'
                       ? 'sticky right-0 bg-primary-900 shadow-md'
                       : ''

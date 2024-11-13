@@ -1,9 +1,8 @@
 'use client'
 
-import { DatePicker } from "@/components/app"
-import { CommandFilter } from "./command-filter"
+import { DatePicker } from "@/components/app/date-picker"
 import { useFilterFromUrl } from "@/lib/filter-url"
-import SearchFilter from "./search-filter"
+import { CommandFilter, SearchFilter } from "@/modules/academic"
 
 const status = [
     {value: 'active', label: 'Activo'},

@@ -3,7 +3,7 @@
 import { DataTable } from '@/components/tables/shadcn-table/main-table';
 import { useEffect, useState } from 'react';
 import { payments } from './payments-data';
-import { enrollementColumns, IEnrollment } from '@/modules/academic/pages/enrollment/enrollment-columns';
+import { enrollementColumns, IEnrollment } from '@/modules/academic/pages/enrollment/sections/enrollment-columns';
 
 export default function PaymentsTable() {
     const [search, setSearch] = useState('');

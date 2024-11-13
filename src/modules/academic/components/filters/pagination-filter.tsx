@@ -18,13 +18,13 @@ export interface IDataTablePaginationProps {
     itemsSelected?: number;
 }
 
-export function TablePaginationFilter({
+export const  TablePaginationFilter = ({
     page,
     pageSize,
     count,
     onPageChange,
     onPageSizeChange,
-}: IDataTablePaginationProps) {
+}: IDataTablePaginationProps) => {
     const { createFilter, getParams } = useFilterFromUrl()
 
      // Obtiene el valor actual de page y pageSize de los parámetros de búsqueda o usa los valores predeterminados

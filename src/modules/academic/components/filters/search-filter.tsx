@@ -9,7 +9,7 @@ interface IProps {
     placeholder?: string
 }
 
-export default function SearchFilter({ placeholder }: IProps) {
+export const SearchFilter = ({ placeholder }: IProps) => {
 
     const { createFilter, removeFilter, getParams } = useFilterFromUrl();
     const searchParams = getParams({ key: 'search', value: '' });
