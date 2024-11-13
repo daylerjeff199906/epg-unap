@@ -1,7 +1,8 @@
 'use client'
 
+import { useFilterFromUrl } from '@/lib/filter-url';
 import { Search } from 'lucide-react'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce';
 
 interface TableHeaderProps {
@@ -13,21 +14,20 @@ interface TableHeaderProps {
 
 export const TableHeaderCustom = (props: TableHeaderProps) => {
   const { hasSearch, placeholder } = props
+  const {getParams, createFilter, removeFilter} = useFilterFromUrl() 
 
-  const searchParams = useSearchParams();
   const { replace } = useRouter();
   const pathname = usePathname();
 
   const handleSearch = useDebouncedCallback((term: string) => {
     console.log(`Searching... ${term}`);
 
-    const params = new URLSearchParams(searchParams);
     if (term) {
-      params.set('query', term);
+      createFilter({ key: 'query', value: term });
     } else {
-      params.delete('query');
+      removeFilter({ key: 'query' });
     }
-    replace(`${pathname}?${params.toString()}`);
+    replace(`${pathname}?${getParams({ key: 'query', value: term })}`);
   }, 300);
 
   return (
@@ -44,7 +44,7 @@ export const TableHeaderCustom = (props: TableHeaderProps) => {
               onChange={(e) => {
                 handleSearch(e.target.value);
               }}
-              defaultValue={searchParams.get('query')?.toString()}
+              defaultValue={props.valueSearch }
               className="w-[150px] lg:w-[250px] focus:outline-none"
             />
           </section>

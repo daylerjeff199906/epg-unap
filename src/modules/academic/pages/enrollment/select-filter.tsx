@@ -35,9 +35,9 @@ export const SelectFilter = (props: IProps) => {
 
     useEffect(() => {
         if (value) {
-            createFilter({ query: filterKey, value: value })
+            createFilter({ key: filterKey, value: value })
         } else {
-            removeFilter({ query: filterKey })
+            removeFilter({ key: filterKey })
         }
     }, [value, createFilter, removeFilter, filterKey])
 

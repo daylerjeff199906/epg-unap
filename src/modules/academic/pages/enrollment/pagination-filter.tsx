@@ -7,7 +7,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from '@/components/ui/select';
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+import { useFilterFromUrl } from '@/lib/filter-url';
 
 export interface IDataTablePaginationProps {
     page: number;
@@ -25,29 +25,29 @@ export function TablePaginationFilter({
     onPageChange,
     onPageSizeChange,
 }: IDataTablePaginationProps) {
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
-    const router = useRouter();
+    const { createFilter, getParams } = useFilterFromUrl()
 
-    const currentPage = Number(searchParams.get('page')) || page;
-    const currentPageSize = Number(searchParams.get('pageSize')) || pageSize;
+     // Obtiene el valor actual de page y pageSize de los parámetros de búsqueda o usa los valores predeterminados
+    const currentPage = Number(getParams({key: 'page', value: ''})) || page;
+    const currentPageSize = Number(getParams({key: 'pageSize', value: ''})) || pageSize;
 
-    const createPageURL = (pageNumber: number, pageSize: number) => {
-        const params = new URLSearchParams(searchParams);
-        params.set('page', pageNumber.toString());
-        params.set('pageSize', pageSize.toString());
-        return `${pathname}?${params.toString()}`;
+    // Actualiza la página en la URL
+    const handlePageChange = (page: number) => {
+        if (onPageChange) {
+            onPageChange(page);
+        } else {
+            createFilter({ key: 'page', value: page.toString() });
+        }
     };
 
-    const handlePageChange = (newPage: number) => {
-        if (onPageChange) onPageChange(newPage);
-        router.push(createPageURL(newPage, currentPageSize));
-    };
-
-    const handlePageSizeChange = (newPageSize: number) => {
-        if (onPageSizeChange) onPageSizeChange(newPageSize);
-        router.push(createPageURL(currentPage, newPageSize));
-    };
+    // Actualiza el tamaño de la página en la URL
+    const handlePageSizeChange = (pageSize: number) => {
+        if (onPageSizeChange) {
+            onPageSizeChange(pageSize);
+        } else {
+            createFilter({ key: 'pageSize', value: pageSize.toString() });
+        }
+    }
 
     return (
         <div className="flex items-center justify-between p-2 bg-white">
