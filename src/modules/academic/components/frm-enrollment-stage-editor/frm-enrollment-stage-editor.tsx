@@ -50,10 +50,10 @@ export const FrmEnrollmentStageEditor = () => {
             ]}
           />
         </AsideLayoutFormContent>
-        <section className="p-4">
-          {selectedStep === 'periodo-plan' && <StageStudyPlanSection />}
-          {selectedStep === 'info-basica' && <BasicInformationSection />}
-        </section>
+        {/* <section className="p-4"> */}
+        {selectedStep === 'periodo-plan' && <StageStudyPlanSection />}
+        {selectedStep === 'info-basica' && <BasicInformationSection />}
+        {/* </section> */}
       </LayoutFormContent>
     </div>
   )

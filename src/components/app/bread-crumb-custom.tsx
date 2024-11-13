@@ -18,7 +18,8 @@ export const BreadcrumbCustom = () => {
 
     const breadcrumbPaths = paths.map((path, index) => {
       const href = `/${paths.slice(0, index + 1).join('/')}`
-      const pathReplace = path.replace(/-/g, ' ')
+      const pathReplace = index === 0 ? 'Inicio' : path.replace(/-/g, ' ')
+
       return (
         <div
           key={path}
