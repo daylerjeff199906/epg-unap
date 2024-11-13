@@ -37,11 +37,16 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
       action=""
       onSubmit={onSubmit}
     >
-      <header className="flex flex-col gap-1 pt-5">
-        <h1 className="font-bold text-xl">{title || 'Titulo de Formulario'}</h1>
-        {description && <p className="text-sm text-gray-500">{description}</p>}
+      <header className="py-4 border sticky left-0 right-0 top-24 z-20 bg-white rounded-sm mt-4">
+        <section className="flex flex-col gap-1 h-fit bg-white container">
+          <h1 className="font-bold text-xl">
+            {title || 'Titulo de Formulario'}
+          </h1>
+          {description && (
+            <p className="text-sm text-gray-500">{description}</p>
+          )}
+        </section>
       </header>
-      <hr className="mt-4 border-t border-gray-300" />
       <main className="flex flex-row gap-4">
         {position !== 'none' && <>{position === 'left' && aside && aside}</>}
         <section
@@ -79,5 +84,5 @@ export const AsideLayoutFormContent = ({
 }: {
   children: React.ReactNode
 }) => {
-  return <aside className="w-1/4 h-full p-4 overflow-y-auto">{children}</aside>
+  return <aside className="w-1/4 h-full p-4 overflow-y-auto sticky z-20 top-40">{children}</aside>
 }
