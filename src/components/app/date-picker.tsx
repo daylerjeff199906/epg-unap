@@ -24,7 +24,7 @@ type Iprops = {
   searchParam?: searchParams
 }
 
-export function DatePicker(props: Iprops) {
+export function DatePickerFilter(props: Iprops) {
   const { placeholder, className, searchParam } = props
 
   const [date, setDate] = React.useState<Date | undefined>(

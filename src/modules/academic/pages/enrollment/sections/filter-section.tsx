@@ -1,6 +1,6 @@
 'use client'
 
-import { DatePicker } from "@/components/app/date-picker"
+import { DatePickerFilter } from "@/components/app/date-picker"
 import { useFilterFromUrl } from "@/lib/filter-url"
 import { CommandFilter, SearchFilter } from "@/modules/academic"
 
@@ -22,7 +22,7 @@ export const EnrollmentFilter = () => {
     return (
         <main className="rounded-lg flex justify-between gap-4">
             <section className="flex gap-2">
-                <DatePicker 
+                <DatePickerFilter 
                     searchParam={{initialDate: newDate}}
                     className="w-[200px]"
                 />
