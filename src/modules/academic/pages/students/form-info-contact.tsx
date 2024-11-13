@@ -73,41 +73,6 @@ export const InformationContactStudents = () => {
       >
         <Input placeholder="Example: 21557" />
       </ContentInput>
-      {/* 
-      <ContentInput
-        id="documento"
-        label="Tipo de persona"
-        description="Selecciona si es persona jurídica o natural"
-      >
-        <Select onValueChange={(value) => console.log("Opción seleccionada:", value)}>
-          <SelectTrigger>
-            <SelectValue placeholder="Seleccione un tipo de persona" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="NATURAL">NATURAL</SelectItem>
-            <SelectItem value="JURIDICA">JURIDICA</SelectItem>
-          </SelectContent>
-        </Select>
-      </ContentInput>
-      <Divider />
-      <ContentInput
-        id="document"
-        label="N° DOCUMENTO"
-        description="Ingresa una descripción de la etapa"
-      >
-        <Input placeholder="Ejemplo: 0017745l" />
-      </ContentInput>
-      <Divider />
-      
-      <Divider />
-      <ContentInput
-        id="last_name_1"
-        label="APELLIDO PATERNO"
-        description="Ingresa apellido paterno del estudiante"
-      >
-        <Input placeholder="Apellido paterno" />
-      </ContentInput> */}
- 
     </div>
   )
 }
