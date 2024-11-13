@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/popover'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { PlanStudyCard } from '@/modules/academic'
+import { RadioGroup } from '@/components/ui/radio-group'
 
 const frameworks = [] as { label: string; value: string }[]
 
@@ -96,9 +97,26 @@ export const ProgramPlanSection = () => {
         orientation="vertical"
       >
         <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <PlanStudyCard />
-          <PlanStudyCard />
-          <PlanStudyCard />
+          <RadioGroup defaultValue="comfortable">
+            <PlanStudyCard
+              id="2021"
+              title="Plan de estudio 2021"
+              code="2021"
+              sede="Sede principal"
+            />
+            <PlanStudyCard
+              id="2022"
+              title="Plan de estudio 2021"
+              code="2021"
+              sede="Sede principal"
+            />
+            <PlanStudyCard
+              id="2023"
+              title="Plan de estudio 2021"
+              code="2021"
+              sede="Sede principal"
+            />
+          </RadioGroup>
         </section>
       </ContentInput>
     </div>

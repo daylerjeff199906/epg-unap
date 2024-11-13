@@ -1,18 +1,45 @@
+'use client'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
-import React from 'react'
+import { RadioGroupItem } from '@/components/ui/radio-group'
 
-export const PlanStudyCard = () => {
+interface PlanStudyCardProps {
+  id: string
+  title: string
+  code: string
+  sede: string
+}
+
+export const PlanStudyCard: React.FC<PlanStudyCardProps> = ({
+  id,
+  title,
+  code,
+  sede,
+}) => {
   return (
-    <Card>
-      <CardContent className="pt-4">
+    <Card
+    // className={`cursor-pointer transition-all ${
+    //   isSelected ? 'ring-2 ring-primary' : ''
+    // }`}
+    // onClick={handleClick}
+    >
+      <CardContent className="pt-4 flex justify-between items-start">
         <header>
-          <h2 className="font-semibold">Plan de estudio</h2>
-          <h3 className="text-sm text-gray-500">Cod. 2021-1</h3>
+          <h2 className="font-semibold">{title}</h2>
+          <h3 className="text-sm text-muted-foreground">Cod. {code}</h3>
         </header>
-        <p></p>
+
+        {/* <CircleCheck
+          className={`w-6 h-6 text-primary ${
+            isSelected ? 'opacity-100' : 'opacity-0'
+          }`}
+        /> */}
+        <RadioGroupItem
+          value={id}
+          id={id}
+        />
       </CardContent>
       <CardFooter>
-        <h3 className="text-sm text-gray-600">Sede</h3>
+        <h3 className="text-sm text-muted-foreground">Sede: {sede}</h3>
       </CardFooter>
     </Card>
   )
