@@ -96,26 +96,22 @@ export const ProgramPlanSection = () => {
         description="Selecciona el plan de estudio"
         orientation="vertical"
       >
-        <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <RadioGroup defaultValue="comfortable">
-            <PlanStudyCard
-              id="2021"
-              title="Plan de estudio 2021"
-              code="2021"
-              sede="Sede principal"
-            />
-            <PlanStudyCard
-              id="2022"
-              title="Plan de estudio 2021"
-              code="2021"
-              sede="Sede principal"
-            />
-            <PlanStudyCard
-              id="2023"
-              title="Plan de estudio 2021"
-              code="2021"
-              sede="Sede principal"
-            />
+        <section className="">
+          <RadioGroup
+            defaultValue="default"
+            className="grid grid-cols-3 gap-4"
+          >
+            {['2022', '2023', '2024'].map((year) => (
+              <PlanStudyCard
+                key={year}
+                id={year}
+                value={year}
+                htmlFor={year}
+                title={`Plan de estudio ${year}`}
+                code="2022-1"
+                description="Sede principal"
+              />
+            ))}
           </RadioGroup>
         </section>
       </ContentInput>
