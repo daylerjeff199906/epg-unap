@@ -62,7 +62,7 @@ export const FrmGroupCreate = () => {
         <section className="p-4">
           {selectedStep === 'program-plan' && <ProgramPlanSection />}
           {selectedStep === 'info-course' && <CourseSection />}
-          {selectedStep === 'group-teacher ' && <TeachersAssignedSection />}
+          {selectedStep === 'group-teacher' && <TeachersAssignedSection />}
         </section>
       </LayoutFormContent>
     </div>

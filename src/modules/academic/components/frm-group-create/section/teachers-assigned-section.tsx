@@ -4,8 +4,8 @@ export const TeachersAssignedSection = () => {
   return (
     <div className="flex flex-col gap-6">
       <HeaderFormSection
-        title="Agregar lista de ambientes"
-        description="Escriba hasta 20 ambientes a quienes puedes asignarles sus datos y estados"
+        title="Agregar grupos y docentes"
+        description="Selecciona el curso para asignar los grupos y docentes"
       />
     </div>
   )
