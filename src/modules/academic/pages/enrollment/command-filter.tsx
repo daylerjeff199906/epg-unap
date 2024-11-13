@@ -59,9 +59,9 @@ export const CommandFilter = (props: IProps) => {
 
     useEffect(() => {
         if (selectedStatus) {
-            createFilter({ query: filterKey, value: selectedStatus.value })
+            createFilter({ key: filterKey, value: selectedStatus.value })
         } else {
-            removeFilter({ query: filterKey })
+            removeFilter({ key: filterKey })
         }
     }, [selectedStatus, createFilter, removeFilter, filterKey])
 

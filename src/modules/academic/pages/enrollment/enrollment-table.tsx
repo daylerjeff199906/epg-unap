@@ -5,21 +5,32 @@ import { enrollementColumns, IEnrollment } from './enrollment-columns';
 import { payments } from '@/modules/examples/tables/shadcn/payments-data';
 import { useEffect, useState } from 'react';
 import { useFilterFromUrl } from '@/lib/filter-url';
-import { DataTablePagination } from '@/components/tables';
+import { TablePaginationFilter } from './pagination-filter';
 
 export default function EnrollmentTable () {
-    const { getParams } = useFilterFromUrl();
+    const { getParams, createFilter } = useFilterFromUrl();
 
     const searchTerm = getParams({ key: 'search', value: '' });
+    const page = getParams({ key: 'page', value: '' });
+    const pageSize = getParams({ key: 'pageSize', value: '' });
 
     const [filteredPayments, setFilteredPayments] = useState<IEnrollment[]>([]);
 
     useEffect(() => {
-        const filtered = payments.filter((payment) => {
-            return payment.nombre_usuario.toLowerCase().includes(searchTerm.toLowerCase());
-        });
-        setFilteredPayments(filtered);
-    }, [searchTerm]);
+        let filtered = payments;
+    
+        // Filtrado por búsqueda
+        if (searchTerm) {
+            filtered = filtered.filter((payment) =>
+                payment.nombre_usuario.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
+    
+        // Cálculo del índice de inicio y final para la paginación
+        const startIndex = (parseInt(page || '1') - 1) * parseInt(pageSize || '10');
+        const paginatedPayments = filtered.slice(startIndex, startIndex + parseInt(pageSize || '10'));
+        setFilteredPayments(paginatedPayments);
+    }, [searchTerm, page, pageSize]);
 
     return (
         <>
@@ -27,14 +38,17 @@ export default function EnrollmentTable () {
                 columns={enrollementColumns}
                 data={filteredPayments}
                 isStriped
-                hasPagination
             />
-            <DataTablePagination 
-                page={1}
-                pageSize={15}
-                count={filteredPayments.length}
-                onPageChange={() => {}}
-                onPageSizeChange={() => {}}
+            <TablePaginationFilter 
+                page={parseInt(page || '1')}
+                pageSize={parseInt(pageSize || '15')}
+                count={payments.length}
+                onPageChange={(page) => {
+                    createFilter({ key: 'page', value: page.toString() });
+                }}
+                onPageSizeChange={(pageSize) => {
+                    createFilter({ key: 'pageSize', value: pageSize.toString() });
+                }}
             />
         </>
     );

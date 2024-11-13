@@ -5,12 +5,11 @@ import { CommandFilter } from "./command-filter"
 import { useFilterFromUrl } from "@/lib/filter-url"
 import SearchFilter from "./search-filter"
 
-const fruits = [
-    { value: "apple", label: "Apple" },
-    { value: "banana", label: "Banana" },
-    { value: "blueberry", label: "Blueberry" },
-    { value: "grapes", label: "Grapes" },
-    { value: "pineapple", label: "Pineapple" },
+const status = [
+    {value: 'active', label: 'Activo'},
+    {value: 'inactive', label: 'Inactivo'},
+    {value: 'pending', label: 'Pendiente'},
+    {value: 'canceled', label: 'Cancelado'},
 ]
 
 export const EnrollmentFilter = () => {
@@ -32,7 +31,7 @@ export const EnrollmentFilter = () => {
                     filterKey='status'
                     label='Estado'
                     placeholder="Seleccionar estado"
-                    data={fruits}
+                    data={status}
                     searchParam={{initialStatus: newStatus}}
                 />
             </section>
@@ -41,7 +40,7 @@ export const EnrollmentFilter = () => {
                     filterKey='type'
                     label='Tipo'
                     placeholder="Seleccionar tipo"
-                    data={fruits}
+                    data={status}
                     searchParam={{initialStatus: newType}}
                 />
                 <SearchFilter />

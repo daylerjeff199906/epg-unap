@@ -8,7 +8,6 @@ import {
     SelectTrigger,
     SelectValue,
 } from '@/components/ui/select'
-import { usePathname, useSearchParams } from 'next/navigation'
 
 export interface IDataTablePaginationProps {
     page: number
@@ -27,10 +26,6 @@ export function DataTablePagination(props: IDataTablePaginationProps) {
         onPageSizeChange,
         count,
     } = props
-
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
-    const currentPage = Number(searchParams.get('page')) || 1;
 
     return (
         <div className="flex items-center justify-between p-2 bg-white">
@@ -105,3 +100,5 @@ export function DataTablePagination(props: IDataTablePaginationProps) {
         </div>
     )
 }
+
+

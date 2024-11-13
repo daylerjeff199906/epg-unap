@@ -35,9 +35,9 @@ export function DatePicker(props: Iprops) {
   // Update URL params when date changes
   React.useEffect(() => {
     if (date) {
-      createFilter({ query: "date", value: format(date, "yyyy-MM-dd") })
+      createFilter({ key: "date", value: format(date, "yyyy-MM-dd") })
     } else {
-      removeFilter({ query: "date" })
+      removeFilter({ key: "date" })
     }
   }, [date, createFilter, removeFilter])
 
