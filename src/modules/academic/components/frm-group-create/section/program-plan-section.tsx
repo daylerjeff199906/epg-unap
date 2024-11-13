@@ -100,6 +100,7 @@ export const ProgramPlanSection = () => {
           <RadioGroup
             defaultValue="default"
             className="grid grid-cols-3 gap-4"
+            required
           >
             {['2022', '2023', '2024'].map((year) => (
               <PlanStudyCardRadio

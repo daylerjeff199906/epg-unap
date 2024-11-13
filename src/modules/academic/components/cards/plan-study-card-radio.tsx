@@ -10,6 +10,7 @@ interface PlanStudyCardProps {
   title: string
   code: string
   description: string
+  required?: boolean
 }
 
 export const PlanStudyCardRadio: React.FC<PlanStudyCardProps> = ({
@@ -19,6 +20,7 @@ export const PlanStudyCardRadio: React.FC<PlanStudyCardProps> = ({
   title,
   description,
   code,
+  required = false,
 }) => {
   return (
     <Card className="relative rounded-md">
@@ -41,6 +43,7 @@ export const PlanStudyCardRadio: React.FC<PlanStudyCardProps> = ({
           value={value}
           id={id}
           className="absolute top-4 right-4"
+          required={required}
         />
       </Label>
     </Card>

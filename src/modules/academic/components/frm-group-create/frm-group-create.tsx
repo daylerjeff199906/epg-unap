@@ -38,6 +38,9 @@ export const FrmGroupCreate = () => {
         labelOnSubmit={labelOnSubmit}
         labelOnCancel={labelOnCancel}
         onCancel={handleOnCancel}
+        onSubmit={() => {
+          console.log('submit')
+        }}
       >
         <AsideLayoutFormContent>
           <MultiStepTimeline
