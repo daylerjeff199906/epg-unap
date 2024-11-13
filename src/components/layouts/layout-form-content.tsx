@@ -37,7 +37,7 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
       action=""
       onSubmit={onSubmit}
     >
-      <header className="p-4 border-b sticky left-0 right-0 top-24 z-20 bg-gray-50 rounded-sm mt-4">
+      <header className="p-4 border-b sticky left-0 right-0 top-24 z-20 bg-gray-50 rounded-sm">
         <section className="flex flex-col gap-1 h-fit bg-white">
           <h1 className="font-bold text-xl">
             {title || 'Titulo de Formulario'}
