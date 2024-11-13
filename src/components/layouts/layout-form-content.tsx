@@ -37,8 +37,8 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
       action=""
       onSubmit={onSubmit}
     >
-      <header className="py-4 border sticky left-0 right-0 top-24 z-20 bg-white rounded-sm mt-4">
-        <section className="flex flex-col gap-1 h-fit bg-white container">
+      <header className="p-4 border sticky left-0 right-0 top-24 z-20 bg-white rounded-sm mt-4">
+        <section className="flex flex-col gap-1 h-fit bg-white">
           <h1 className="font-bold text-xl">
             {title || 'Titulo de Formulario'}
           </h1>
@@ -50,7 +50,7 @@ export const LayoutFormContent = (props: LayoutFormContentProps) => {
       <main className="flex flex-row gap-4">
         {position !== 'none' && <>{position === 'left' && aside && aside}</>}
         <section
-          className={`w-full 
+          className={`w-full  h-fit pb-6
               ${position === 'none' ? '' : 'lg:w-3/4'} ${
             position === 'left'
               ? 'border-l'
