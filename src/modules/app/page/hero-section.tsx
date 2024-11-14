@@ -10,8 +10,10 @@ export const HeroSection = () => {
           Build beautiful software faster
         </h1>
         <p className="text-xl lg:text-2xl mb-8 text-gray-300">
-          Saas UI is a React component library that doesn't get in your way and
-          helps you build intuitive SaaS products with speed.
+          Saas UI is a React component library that
+          {`doesn't`}
+          get in your way and helps you build intuitive SaaS products with
+          speed.
         </p>
         <div className="flex items-center space-x-4 mb-8">
           <Image
@@ -40,88 +42,15 @@ export const HeroSection = () => {
           </Button>
         </div>
       </div>
-      <Image
-        src="/images/wallpaper-banner.webp"
-        alt="epg-unap"
-        layout="fill"
-        objectFit="cover"
-        width={1920}
-        height={720}
-      />
-
-      {/* <div className="flex-1 p-8 lg:p-16">
-        <Card className="bg-gray-900/50 text-white h-full overflow-hidden backdrop-blur-sm">
-          <div className="flex items-center justify-between p-4 border-b border-gray-800">
-            <div className="flex items-center space-x-4">
-              <div className="w-8 h-8 bg-gray-700 rounded-full" />
-              <span>Saas UI</span>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Button
-                variant="ghost"
-                size="icon"
-              >
-                <Search className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-              >
-                <Settings className="h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold">Contacts</h2>
-              <Button
-                variant="outline"
-                size="sm"
-              >
-                <Users className="mr-2 h-4 w-4" />
-                Invite people
-              </Button>
-            </div>
-            <table className="w-full">
-              <thead>
-                <tr className="text-left text-gray-500">
-                  <th className="pb-2">Name</th>
-                  <th className="pb-2">Email</th>
-                  <th className="pb-2">Created at</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  {
-                    name: 'Margaret Abe',
-                    email: 'margaret_abe40@gmail.com',
-                    date: 'Nov 10, 2021',
-                  },
-                  {
-                    name: 'Isa Ozturk',
-                    email: 'isa_ozturk@site-internet.info',
-                    date: 'Jan 28, 2021',
-                  },
-                  {
-                    name: 'Yu Amerson',
-                    email: 'yu-amerson@global.info',
-                    date: 'Feb 3, 2022',
-                  },
-                ].map((contact, index) => (
-                  <tr
-                    key={index}
-                    className="border-t border-gray-800"
-                  >
-                    <td className="py-2">{contact.name}</td>
-                    <td className="py-2 text-gray-400">{contact.email}</td>
-                    <td className="py-2 text-gray-400">{contact.date}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Card>
-      </div> */}
+      <section className="flex-1 p-8 lg:p-16">
+        <Image
+          src="/images/wallpaper-banner.webp"
+          alt="epg-unap"
+          objectFit="cover"
+          width={1200}
+          height={762}
+        />
+      </section>
     </div>
   )
 }
