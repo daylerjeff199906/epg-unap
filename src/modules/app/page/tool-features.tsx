@@ -66,10 +66,19 @@ export const Toolfeatures = () => {
           {features.map((feature, index) => (
             <Link
               key={index}
-              className="bg-transparent px-8 py-16 flex flex-col items-center text-center border-r border-b border-gray-800 hover:bg-gradient-to-tr hover:from-gray-800 hover:to-gray-900 transition-colors duration-300"
+              className="relative bg-transparent px-8 py-16 flex flex-col items-center text-center border-gray-800 border-b border-r 
+                 hover:bg-gradient-to-b hover:from-gray-800 hover:to-gray-900 transition-transform duration-300"
               href={feature.href || '#'}
               target="_blank"
             >
+              {/* Separadores verticales: no en la última columna */}
+              {(index + 1) % 3 !== 0 && (
+                <div className="absolute right-0 top-0 h-full w-px bg-gray-700"></div>
+              )}
+              {/* Separadores horizontales: no en la última fila */}
+              {index < features.length - 3 && (
+                <div className="absolute bottom-0 left-0 w-full h-px bg-gray-700"></div>
+              )}
               <div className="bg-gray-800 rounded-full p-3 mb-4">
                 {feature.icon}
               </div>
