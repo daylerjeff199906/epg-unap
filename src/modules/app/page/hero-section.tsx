@@ -8,10 +8,10 @@ export const HeroSection = () => {
     <div className="flex flex-col lg:flex-row h-screen bg-gradient-to-br from-blue-900 via-gray-900 to-teal-900 text-white relative">
       <main className="container flex-1 flex flex-col lg:flex-row sm:gap-12">
         <div className="flex-1 flex flex-col justify-center p-8 lg:p-16 w-full max-w-4xl">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-4 animate-appearance-in">
             The CMS of the Education Institution
           </h1>
-          <p className="text-xl lg:text-2xl mb-8 text-gray-300">
+          <p className="text-xl lg:text-2xl mb-8 text-gray-300 animate-appearance-in">
             The best way to manage your institution, with the best tools and
             technologies.
           </p>
