@@ -6,7 +6,7 @@ import { useFilterFromUrl } from '@/lib/filter-url';
 import { buttonLabels } from '@/lib/constants';
 import { enrollmentSteps } from './sections/enrollment-steps';
 
-export const AddEnrollmentForm = () => {
+export default function AddEnrollmentPage () {
   const { getParams, createFilter, removeFilter } = useFilterFromUrl();
 
   const currentStep = getParams({ key: 'step', value: '' }) || enrollmentSteps[0].id;
@@ -53,7 +53,7 @@ export const AddEnrollmentForm = () => {
             steps={enrollmentSteps}
           />
         </AsideLayoutFormContent>
-        <section className="p-4">{currentStepContent}</section>
+        <section>{currentStepContent}</section>
       </LayoutFormContent>
     </div>
   );

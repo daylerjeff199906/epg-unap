@@ -7,9 +7,10 @@ import { useFilterFromUrl } from '@/lib/filter-url';
 
 interface IProps {
     placeholder?: string
+    icon?: boolean
 }
 
-export const SearchFilter = ({ placeholder }: IProps) => {
+export const SearchFilter = ({ placeholder, icon }: IProps) => {
 
     const { createFilter, removeFilter, getParams } = useFilterFromUrl();
     const searchParams = getParams({ key: 'search', value: '' });
@@ -23,10 +24,10 @@ export const SearchFilter = ({ placeholder }: IProps) => {
     }, 300);
 
     return (
-        <div className="relative flex items-center">
-            <Search className="absolute left-3 text-gray-500" />
+        <div className="relative flex items-center gap-2">
+            {icon ? <Search className="absolute left-3 text-gray-500" /> : null}
             <Input
-                className="pl-10"
+                className={icon ? 'pl-10' : ''}
                 placeholder={placeholder || 'Buscar...'}
                 onChange={(e) => {
                     handleSearch(e.target.value);
