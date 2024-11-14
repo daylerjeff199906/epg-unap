@@ -9,6 +9,16 @@ export const metadata: Metadata = {
   title: 'Template EPG - UNAP',
   description:
     'Template de la Escuela de Posgrado de la Universidad Nacional de la Amazonía Peruana',
+  openGraph: {
+    images: [
+      {
+        url: 'https://epg-unap.vercel.app/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Template EPG - UNAP',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
