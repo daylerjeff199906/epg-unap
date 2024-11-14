@@ -14,6 +14,8 @@ pnpm dev
 bun dev
 ```
 
+![Project Image](https://firebasestorage.googleapis.com/v0/b/aurora-ecommerce.appspot.com/o/apps%2Flanding.webp?alt=media&token=9f164c5c-b328-43e1-828b-675030e4dabd)
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
