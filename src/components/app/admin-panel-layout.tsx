@@ -25,7 +25,7 @@ export default function AdminPanelLayout({
           !settings.disabled && (!getOpenState() ? 'lg:ml-[90px]' : 'lg:ml-72')
         )}
       >
-        <section className="px-4 py-3 bg-gray-100">
+        <section className="px-4 py-3 bg-gray-100 sticky top-14 z-20">
           <BreadcrumbCustom />
         </section>
         <main className="w-full container">{children}</main>
