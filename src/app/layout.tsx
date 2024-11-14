@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: 'https://epg-unap.vercel.app/og-image.png',
+        url: 'https://firebasestorage.googleapis.com/v0/b/aurora-ecommerce.appspot.com/o/apps%2Flanding.webp?alt=media&token=9f164c5c-b328-43e1-828b-675030e4dabd',
         width: 1200,
         height: 630,
         alt: 'Template EPG - UNAP',
