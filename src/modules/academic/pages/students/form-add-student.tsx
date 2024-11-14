@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { InformationStudents } from './form-info-students'
 import { useRouter } from 'next/navigation'
 import { InformationContactStudents } from './form-info-contact'
+import { SelectProgramStudents } from './form-select-program'
 
 export const FrmStudentStageEditor = () => {
   const router = useRouter()
@@ -13,7 +14,7 @@ export const FrmStudentStageEditor = () => {
   )
 
   const labelOnSubmit =
-    selectedStep === 'info-contact' ? 'Terminar y guardar' : 'Siguiente'
+    selectedStep === 'select-program' ? 'Terminar y guardar' : 'Siguiente'
   const labelOnCancel = selectedStep !== 'info-personal' ? 'Atrás' : 'Cancelar'
 
   //   const handleOnSubmit = () => {}
@@ -58,6 +59,7 @@ export const FrmStudentStageEditor = () => {
         <section className="p-4">
           {selectedStep === 'info-personal' && <InformationStudents />}
           {selectedStep === 'info-contact' && <InformationContactStudents />}
+          {selectedStep === 'select-program' && <SelectProgramStudents />}
         </section>
       </LayoutFormContent>
     </div>
