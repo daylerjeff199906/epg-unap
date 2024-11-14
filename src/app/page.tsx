@@ -1,3 +1,9 @@
+import { HeroSection } from '@/modules/app'
+
 export default function Page() {
-  return <div>page</div>
+  return (
+    <main>
+      <HeroSection />
+    </main>
+  )
 }
