@@ -41,8 +41,13 @@ export const NavBar = () => {
     <nav className="bg-gray-950/20 text-white py-4 px-6 fixed top-0 right-0 left-0 z-50 backdrop-blur-md">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <div className="w-6 h-6 bg-purple-600 rounded mr-2"></div>
-          <span className="text-xl font-bold">EPG-UI</span>
+          <img
+            src="/brands/next-js.svg"
+            alt="NEXT."
+            width={32}
+            height={24}
+          />
+          <span className="text-xl font-bold ml-2">EPG-UI</span>
         </div>
         <div className="hidden md:flex items-center space-x-6">
           <NavItems />
