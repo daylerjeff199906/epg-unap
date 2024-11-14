@@ -22,7 +22,7 @@ export default function EnrollmentTable () {
         // Filtrado por búsqueda
         if (searchTerm) {
             filtered = filtered.filter((payment) =>
-                payment.nombre_usuario.toLowerCase().includes(searchTerm.toLowerCase())
+                payment.persona_asignada.toLowerCase().includes(searchTerm.toLowerCase())
             );
         }
     

@@ -187,7 +187,7 @@ export const menuAcademicosData: Group[] = [
         icon: IdCard,
         submenus: [
           {
-            href: '',
+          href: '/academic/estudiantes',
             label: 'Estudiante',
           },
         ],

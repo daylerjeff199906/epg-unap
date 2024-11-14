@@ -4,7 +4,7 @@ import { MultiStepTimeline } from '@/components/app';
 import { AsideLayoutFormContent, LayoutFormContent } from '@/components/layouts';
 import { useFilterFromUrl } from '@/lib/filter-url';
 import { buttonLabels } from '@/lib/constants';
-import { enrollmentSteps } from './sections/enrollment-steps';
+import { enrollmentSteps } from './add-sections/enrollment-steps';
 
 export default function AddEnrollmentPage () {
   const { getParams, createFilter, removeFilter } = useFilterFromUrl();

@@ -24,7 +24,7 @@ export const SearchFilter = ({ placeholder, icon }: IProps) => {
     }, 300);
 
     return (
-        <div className="relative flex items-center gap-2">
+        <div className="relative flex items-center gap-2 w-full">
             {icon ? <Search className="absolute left-3 text-gray-500" /> : null}
             <Input
                 className={icon ? 'pl-10' : ''}
