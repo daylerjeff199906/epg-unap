@@ -63,7 +63,7 @@ export const HeroSection = () => {
             objectFit="cover"
             width={1900}
             height={920}
-            className="h-full object-cover max-h-[60vh] object-left border rounded-md"
+            className="h-full object-cover max-h-[60vh] object-left border rounded-md animate-appearance-in"
           />
         </section>
       </main>

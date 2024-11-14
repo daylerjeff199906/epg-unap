@@ -1,3 +1,4 @@
+'use client'
 import {
   Database,
   BookOpen,
@@ -67,7 +68,7 @@ export const Toolfeatures = () => {
             <Link
               key={index}
               className="relative bg-transparent px-8 py-16 flex flex-col items-center text-center  
-              hover:bg-gradient-to-b hover:from-gray-800/5 hover:to-gray-500/30 transition-transform-opacity duration-500 ease-in-out"
+              hover:bg-gradient-to-b hover:from-gray-800/5 hover:to-gray-500/30 transition-colors-opacity duration-700 ease-in-out"
               href={feature.href || '#'}
               target="_blank"
             >
