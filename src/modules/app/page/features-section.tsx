@@ -56,7 +56,7 @@ export const Featuressection = () => {
           There are many variations of passages of Lorem Ipsum available but the
           majority have suffered alteration in some form.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-11">
           {features.map((feature, index) => (
             <div
               key={index}
