@@ -3,7 +3,7 @@
 import { HeaderSection } from "@/components/app"
 import { Divider } from "@nextui-org/react"
 import { CardStudents } from "../../students/components"
-import { CourseSelector } from "@/modules/academic/components"
+import { CoursesList } from "./courses-list"
 
 const expedientData = [
     {
@@ -31,7 +31,7 @@ export const SelectCourseForm = () => {
                     className="border-none rounded-none bg-transparent"
                 />
                 <Divider />
-                <CourseSelector />
+                <CoursesList />
             </form>
         </>
     )
