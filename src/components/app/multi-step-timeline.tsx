@@ -1,14 +1,15 @@
 'use client'
 import { Check } from 'lucide-react'
 
-export interface Step {
+export interface IStepper {
   id: string
   title: string
-  description?: string
+  description?: string 
+  content?: React.ReactNode
 }
 
 interface MultiStepTimelineProps {
-  steps: Step[]
+  steps: IStepper[]
   selectedStep?: string | null
   setSelectedStep?: (index: string) => void
 }

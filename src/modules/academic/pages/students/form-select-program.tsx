@@ -6,8 +6,18 @@ import { Button } from '@/components/ui/button'
 import { Filter, Search } from 'lucide-react'
 import {CardStudents} from './components/index'
 
-
 export const SelectProgramStudents = () => {
+
+    const expedientData = [
+        {
+            id: 1,
+            title: 'Programa de Ingenieria',
+            title_plan: 'Plan de estudio 2021',
+            title_state: 'En curso',
+            nombre_usuario: 'Juan Perez',
+            persona_asignada: 'Maria Lopez',
+        }
+    ]
 
     return (
         <div className="flex flex-col gap-6">
@@ -35,9 +45,7 @@ export const SelectProgramStudents = () => {
             </div>
             <CardStudents
                 showButton={true}
-                title='MAESTRÍA EN CIENCIAS EN GESTIÓN AMBIENTAL '
-                title_plan='Plan de estudios A - 2024 - II'
-                title_state='Activo'
+                expedient={expedientData[0]}
             />
         </div>
     )
