@@ -172,7 +172,7 @@ export const menuAcademicosData: Group[] = [
           },
           {
             label: 'Matricular estudiante',
-            href: '/academic/matriculas/agregar'
+            href: '/academic/matriculas/agregar',
           },
         ],
       },
@@ -187,7 +187,7 @@ export const menuAcademicosData: Group[] = [
         icon: IdCard,
         submenus: [
           {
-          href: '/academic/estudiantes',
+            href: '/academic/estudiantes',
             label: 'Estudiante',
           },
         ],
@@ -341,6 +341,8 @@ export const menuDocsData: Group[] = [
     ],
   },
 ]
+
+export const menuEconomicData: Group[] = []
 
 export const menuTeacherData: Group[] = []
 
