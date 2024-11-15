@@ -44,15 +44,15 @@ export const CourseSelector = (props: IProps) => {
             <div className="grid grid-cols-[1fr,2fr,1fr] flex-1 gap-4 text-sm">
                 <div>
                     <p className="text-muted-foreground text-xs">Cod</p>
-                    <p>{course.code}</p>
+                    <p className="text-sm font-bold">{course.code}</p>
                 </div>
                 <div>
                     <p className="text-muted-foreground text-xs">Curso</p>
-                    <p>{course.name}</p>
+                    <p className="text-sm font-bold">{course.name}</p>
                 </div>
                 <div>
                     <p className="text-muted-foreground text-xs">Créditos</p>
-                    <p className="inline-flex items-center rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-medium">
+                    <p className="inline-flex items-center rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-bold">
                         {course.credits} cred.
                     </p>
                 </div>
