@@ -40,7 +40,7 @@ export const EnrollmentList = () => {
             filteredExpedients.map((expedient) => (
                 <CardStudents
                     key={expedient.id}
-                    showButton={true}
+                    showButton
                     expedient={expedient}
                 />
             ))

@@ -1,17 +1,18 @@
 import { IExpedient } from "@/modules/examples/enrollment-data"
 import { Button, Chip, Divider } from "@nextui-org/react"
+import { cn } from "@/lib/utils"
 
 interface CardStudentsProps {
     expedient: IExpedient
-    showButton: boolean
+    showButton?: boolean
+    className?: string
 }
 
 export const CardStudents = (props: CardStudentsProps) => {
-
-    const {showButton, expedient} = props
+    const {showButton, expedient, className} = props
 
     return (
-        <main className="flex flex-col gap-2 bg-white border-1 rounded-medium p-4">
+        <main className={cn("flex flex-col gap-2 bg-white border-1 rounded-medium p-4", className)}>
             <section className="flex flex-col gap-2">
                 <div className="flex justify-between items-center">
                     <h1 className="font-bold text-base">{expedient.title}</h1>
