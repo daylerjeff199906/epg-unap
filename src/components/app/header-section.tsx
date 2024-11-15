@@ -15,6 +15,8 @@ interface HeaderSectionProps {
   onRefreshButtonClick?: () => void
   onExportButtonClick?: () => void
   size?: 'sm' | 'md' | 'lg'
+  buttonLabel?: string
+  addIcon?: React.ReactNode
 }
 
 const fontSize = {
@@ -46,13 +48,15 @@ export const HeaderSection = (props: HeaderSectionProps) => {
     onRefreshButtonClick,
     disabledActions,
     children,
+    buttonLabel,
+    addIcon,
   } = props
 
   const fontSizeTitle = fontSize[size].title
   const fontSizeDescription = fontSize[size].description
 
   return (
-    <main className="pt-6 pb-2 rounded-lg flex flex-col gap-3">
+    <main className="py-6 rounded-lg flex flex-col gap-5">
       <section className='flex flex-col gap-1'>
         <h2 className={`font-bold text-gray-800 ${fontSizeTitle}`}>
           {title || 'Título de la sección'}
@@ -68,20 +72,20 @@ export const HeaderSection = (props: HeaderSectionProps) => {
         <div className="flex space-x-2">
           {showAddButton && (
             <Button
-              variant="outline"
-              className="bg-white"
+              variant="secondary"
+              className="bg-default-100"
               asChild
             >
               <Link href={hrefAddLink || '#'}>
-                <Plus className="mr-2 h-4 w-4" />
-                Agregar nuevo
+                { addIcon || <Plus className="mr-2 h-4 w-4" />}
+                { buttonLabel || 'Agregar nuevo' }
               </Link>
             </Button>
           )}
           {showRefreshButton && (
             <Button
-              variant="outline"
-              className="bg-white"
+              variant="secondary"
+              className="bg-default-100"
               onClick={onRefreshButtonClick}
             >
               <RefreshCw className="mr-2 h-4 w-4" />
@@ -90,8 +94,8 @@ export const HeaderSection = (props: HeaderSectionProps) => {
           )}
           {showExportButton && (
             <Button
-              variant="outline"
-              className="bg-white"
+              variant="secondary"
+              className="bg-default-100"
               onClick={onExportButtonClick}
             >
               <Download className="mr-2 h-4 w-4" />

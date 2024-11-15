@@ -18,6 +18,7 @@ import { FooterSimple } from './footer-custom/footer-simple'
 import { FooterLinksSection } from './footer-custom/footer-links-section'
 import { FooterInfo } from './footer-custom/footer-info'
 import { Footer } from './footer'
+import { DatePickerFilter } from './date-picker'
 import { DatePickerCustom } from './date-picker-custom'
 import { DataTableFilter } from './data-table-filter'
 
@@ -42,6 +43,7 @@ export {
   FooterLinksSection,
   FooterInfo,
   Footer,
+  DatePickerFilter,
   DatePickerCustom,
   DataTableFilter,
 }

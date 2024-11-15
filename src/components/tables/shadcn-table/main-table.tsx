@@ -130,7 +130,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
           childrenHeader={childrenHeader}
         />
       )}
-      <Table className="w-full border-collapse bg-white">
+      <Table className="w-full border-collapse bg-transparent">
         <TableHeader className="bg-primary-900 sticky top-0 z-10">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow
@@ -140,7 +140,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
               {headerGroup.headers.map((header) => (
                 <TableHead
                   key={header.id}
-                  className={`text-xs text-gray-300 font-semibold truncate ${
+                  className={`text-xs text-gray-300 font-semibold truncate bg-primary-900 shadow-md ${
                     header.column.id === 'actions'
                       ? 'sticky right-0 bg-primary-900 shadow-md'
                       : ''
@@ -194,7 +194,7 @@ export function DataTable<TData, TValue>(props: DataTableProps<TData, TValue>) {
                   <TableCell
                     className={
                       cell.column.id === 'actions'
-                        ? 'sticky right-0 bg-primary-800'
+                        ? 'sticky right-0 bg-transparent shadow-md'
                         : ''
                     }
                     key={cell.id}

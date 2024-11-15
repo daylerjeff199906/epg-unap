@@ -7,11 +7,11 @@ import {
   UserAuthFinally,
 } from './sections'
 
-import { Step } from '@/components/app/multi-step-timeline'
+import { IStepper } from '@/components/app/multi-step-timeline'
 import { useState } from 'react'
 import { LayoutFormContent } from '@/components/layouts'
 
-const steps: Step[] = [
+const steps: IStepper[] = [
   {
     id: 'user-info-basic',
     title: 'Información básica',
