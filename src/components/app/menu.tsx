@@ -67,14 +67,21 @@ export function Menu({ isOpen, app }: MenuProps) {
                         <Tooltip delayDuration={100}>
                           <TooltipTrigger asChild>
                             <Button
-                              variant={
+                              // variant={
+                              //   (active === undefined &&
+                              //     pathname.startsWith(`${href}`)) ||
+                              //   active
+                              //     ? 'ghost'
+                              //     : 'ghost'
+                              // }
+                              variant="ghost"
+                              className={`w-full justify-start h-10 mb-1 ${
                                 (active === undefined &&
                                   pathname.startsWith(`${href}`)) ||
                                 active
-                                  ? 'secondary'
-                                  : 'ghost'
-                              }
-                              className="w-full justify-start h-10 mb-1"
+                                  ? 'font-bold text-white'
+                                  : 'text-muted-foreground'
+                              }`}
                               asChild
                             >
                               <Link href={href}>
