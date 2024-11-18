@@ -15,6 +15,8 @@ import {
   NotebookPen,
   IdCard,
   ArrowRightLeft,
+  HandCoins,
+  LayoutGrid,
 } from 'lucide-react'
 
 type Submenu = {
@@ -361,7 +363,7 @@ export const menuEconomicData: Group[] = [
       {
         href: '/economic/pagos',
         label: 'Pagos',
-        icon: ChartBarBig,
+        icon: HandCoins,
         submenus: [
           {
             href: '/economic/pagos',
@@ -385,7 +387,7 @@ export const menuEconomicData: Group[] = [
       {
         href: '/economic/conceptos',
         label: 'Conceptos',
-        icon: Boxes,
+        icon: LayoutGrid,
         submenus: [
           {
             href: '/economic/conceptos',
