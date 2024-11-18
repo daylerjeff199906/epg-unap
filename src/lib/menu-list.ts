@@ -2,6 +2,7 @@ import {
   menuAcademicosData,
   menuAdminData,
   menuDocsData,
+  menuEconomicData,
 } from '@/types/menusApp'
 import { LucideIcon } from 'lucide-react'
 
@@ -46,6 +47,9 @@ export function getMenuList(
       break
     case 'academic':
       menuData = menuAcademicosData
+      break
+    case 'economic':
+      menuData = menuEconomicData
       break
     // Puedes agregar más casos para diferentes aplicaciones
     default:
