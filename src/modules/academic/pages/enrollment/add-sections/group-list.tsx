@@ -1,8 +1,6 @@
 "use client"
 
-import * as React from "react"
-import { ChevronDown } from "lucide-react"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+// import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import {
     Accordion,
     AccordionContent,
@@ -10,51 +8,9 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import { cn } from "@/lib/utils"
-
-const courses = [
-    {
-        id: '1',
-        code: 'C000256',
-        name: 'NOMBRE DEL CURSO I',
-        groups: [
-            {
-                id: 'a1',
-                name: 'GRUPO A',
-                teacher: 'PEPITO EL GRILLO MARADONA',
-                schedule: 'LUNES - MIERCOLES - VIERNES',
-                shift: 'NOCHE',
-                spots: { taken: 10, total: 60 },
-                available: true
-            },
-            {
-                id: 'b1',
-                name: 'GRUPO B',
-                teacher: 'PEPITO EL GRILLO MARADONA',
-                schedule: 'LUNES - MIERCOLES - VIERNES',
-                shift: 'NOCHE',
-                spots: { taken: 10, total: 60 },
-                available: true
-            }
-        ]
-    },
-    {
-        id: '2',
-        code: 'C000256',
-        name: 'NOMBRE DEL CURSO II',
-        selected: true,
-        groups: [
-            {
-                id: 'a2',
-                name: 'GRUPO A',
-                teacher: 'PEPITO EL GRILLO MARADONA',
-                schedule: 'LUNES - MIERCOLES - VIERNES',
-                shift: 'NOCHE',
-                spots: { taken: 10, total: 60 },
-                available: true
-            }
-        ]
-    }
-]
+import { CircleCheckBig, CircleDot } from "lucide-react"
+import { useState } from "react"
+import { CourseGroupCard } from "./course-group-card"
 
 interface CourseGroup {
     id: string
@@ -69,7 +25,7 @@ interface CourseGroup {
     available: boolean
 }
 
-interface Course {
+export interface Course {
     id: string
     code: string
     name: string
@@ -77,12 +33,21 @@ interface Course {
     selected?: boolean
 }
 
-export default function GroupList({
+interface IProps {
+    courses: Course[]
+}
 
-}: {
-    courses?: Course[]
-}) {
-    const [selectedGroup, setSelectedGroup] = React.useState<string>("")
+export default function GroupList({ courses }: IProps) {
+    const [selectedGroups, setSelectedGroups] = useState<{
+        [courseId: string]: string;
+    }>({});
+
+    const handleGroupSelection = (courseId: string, groupId: string) => {
+        setSelectedGroups((prev) => ({
+            ...prev,
+            [courseId]: groupId,
+        }));
+    };
 
     return (
         <div className="w-full h-full overflow-auto">
@@ -93,21 +58,48 @@ export default function GroupList({
                         key={course.id}
                         value={course.id}
                         className={cn(
-                            "border rounded-sm",
-                            course.selected ? "bg-green-50" : "bg-gray-50"
+                            "border border-none rounded-sm",
                         )}
                     >
-                        <AccordionTrigger className="px-4 hover:no-underline [&[data-state=open]>div>svg]:rotate-180">
-                            <div className="flex items-center gap-4 w-full">
-                                <div className="text-sm text-muted-foreground">{course.code}</div>
-                                <div className="text-sm font-medium">{course.name}</div>
-                                <ChevronDown className="ml-auto h-4 w-4 shrink-0 transition-transform duration-200" />
-                            </div>
+                        <AccordionTrigger className={
+                            cn(
+                                "px-4 hover:no-underline [&[data-state=open]>div>svg]:rotate-180 border-b py-2",
+                                selectedGroups[course.id] ? "bg-success-50" : " bg-default-100"
+                            )
+                        }>
+                            <section className="flex items-center gap-4 w-full">
+                                <div className={
+                                    cn(
+                                        "rounded-md p-1",
+                                        selectedGroups[course.id] ? "bg-success-700 border text-white border-success-800" : "text-muted-foreground border border-black"
+                                    )
+                                }>
+                                    {selectedGroups[course.id] ? <CircleCheckBig /> : <CircleDot />}
+                                </div>
+                                <div className="flex flex-col justify-start items-start">
+                                    <div className="text-sm font-bold text-muted-foreground">{course.code}</div>
+                                    <div className={
+                                        cn(
+                                            "text-base font-semibold",
+                                            selectedGroups[course.id] ? "text-success-800" : "text-default-foreground"
+                                        )
+                                    }>
+                                        {course.name}
+                                    </div>
+                                </div>
+                            </section>
                         </AccordionTrigger>
-                        <AccordionContent>
-                            <RadioGroup
-                                value={selectedGroup}
-                                onValueChange={setSelectedGroup}
+                        <AccordionContent className="pt-4">
+                            <CourseGroupCard
+                                course={course}
+                                selectedGroups={selectedGroups}
+                                handleGroupSelection={handleGroupSelection}
+                            />
+                            {/* <RadioGroup
+                                value={selectedGroups[course.id] || ""}
+                                onValueChange={(groupId) =>
+                                    handleGroupSelection(course.id, groupId)
+                                }
                                 className="px-4 pb-4"
                             >
                                 {course.groups.map((group) => (
@@ -115,19 +107,27 @@ export default function GroupList({
                                         key={group.id}
                                         className={cn(
                                             "border rounded-sm p-4",
-                                            selectedGroup === group.id && "bg-blue-50"
+                                            selectedGroups[course.id] === group.id && "bg-primary-50"
                                         )}
                                     >
-                                        <div className="flex items-start gap-4">
+                                        <section className="flex items-center gap-4">
                                             <RadioGroupItem
                                                 value={group.id}
                                                 id={group.id}
-                                                className="mt-1"
                                             />
                                             <div className="flex-1">
                                                 <div className="flex justify-between items-start mb-1">
-                                                    <div className="font-medium">
-                                                        {course.name} - {group.name}
+                                                    <div className="flex flex-col gap-1">
+                                                        <p className="text-sm font-bold">
+                                                            {course.name} - {group.name}
+                                                        </p>
+                                                        <div className="text-xs text-muted-foreground">
+                                                            <div>DOCENTE: {group.teacher}</div>
+                                                            <div className="flex gap-8">
+                                                                <span>HORARIO: {group.schedule}</span>
+                                                                <span>TURNO: {group.shift}</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div className="text-sm text-right">
                                                         <div className="text-muted-foreground">Plazas</div>
@@ -141,18 +141,11 @@ export default function GroupList({
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="text-sm text-muted-foreground">
-                                                    <div>DOCENTE: {group.teacher}</div>
-                                                    <div className="flex gap-8">
-                                                        <span>HORARIO: {group.schedule}</span>
-                                                        <span>TURNO: {group.shift}</span>
-                                                    </div>
-                                                </div>
                                             </div>
-                                        </div>
+                                        </section>
                                     </div>
                                 ))}
-                            </RadioGroup>
+                            </RadioGroup> */}
                         </AccordionContent>
                     </AccordionItem>
                 ))}
