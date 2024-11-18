@@ -394,7 +394,7 @@ export const menuEconomicData: Group[] = [
             label: 'Conceptos de pago',
           },
           {
-            href: '/economic/descuentos',
+            href: '/economic/conceptos/descuentos',
             label: 'Descuentos',
           },
         ],
