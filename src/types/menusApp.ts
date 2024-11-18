@@ -1,15 +1,15 @@
 import {
+  BookUser,
   House,
+  LayoutPanelTop,
+  LucideIcon,
+  Settings,
+  Table,
+  Table2,
+  TextCursorInput,
+  TriangleAlert,
   User,
   Users,
-  Settings,
-  LucideIcon,
-  BookUser,
-  TriangleAlert,
-  TextCursorInput,
-  Table2,
-  Table,
-  LayoutPanelTop,
   ChartBarBig,
   Boxes,
   NotebookPen,
@@ -162,17 +162,17 @@ export const menuAcademicosData: Group[] = [
         icon: Boxes,
       },
       {
-        href: '',
+        href: '/matriculas',
         label: 'Matriculas',
         icon: NotebookPen,
         submenus: [
           {
             label: 'Matriculas realizadas',
-            href: '',
+            href: '/academic/matriculas',
           },
           {
             label: 'Matricular estudiante',
-            href: '',
+            href: '/academic/matriculas/agregar'
           },
         ],
       },
@@ -187,7 +187,7 @@ export const menuAcademicosData: Group[] = [
         icon: IdCard,
         submenus: [
           {
-            href: '',
+          href: '/academic/estudiantes',
             label: 'Estudiante',
           },
         ],

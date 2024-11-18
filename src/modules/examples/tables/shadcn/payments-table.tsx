@@ -1,13 +1,13 @@
 'use client'
 
-import { DataTable } from '@/components/tables/shadcn-table/main-table'
-import { useEffect, useState } from 'react'
-import { paymentColumns } from './payment-columns'
-import { Payment, payments } from './payments-data'
+import { DataTable } from '@/components/tables/shadcn-table/main-table';
+import { useEffect, useState } from 'react';
+import { payments } from './payments-data';
+import { enrollementColumns, IEnrollment } from '@/modules/academic/pages/enrollment/sections/enrollment-columns';
 
 export default function PaymentsTable() {
-  const [search, setSearch] = useState('')
-  const [filteredPayments, setFilteredPayments] = useState<Payment[]>([])
+    const [search, setSearch] = useState('');
+    const [filteredPayments, setFilteredPayments] = useState<IEnrollment[]>([]);
 
   useEffect(() => {
     const filtered = payments.filter((payment) => {
@@ -16,16 +16,16 @@ export default function PaymentsTable() {
     setFilteredPayments(filtered)
   }, [search])
 
-  return (
-    <>
-      <DataTable
-        columns={paymentColumns}
-        data={filteredPayments}
-        searchPlaceholder="Buscar por nombre"
-        valueSearch={search}
-        onValueSearch={(value) => setSearch(value)}
-        isStriped
-      />
-    </>
-  )
+    return (
+        <>
+            <DataTable
+                columns={enrollementColumns}
+                data={filteredPayments}
+                searchPlaceholder='Buscar por nombre'
+                valueSearch={search}
+                onValueSearch={(value) => setSearch(value)}
+                isStriped
+            />
+        </>
+    );
 }

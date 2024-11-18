@@ -33,6 +33,10 @@ export function getMenuList(
 ): Group[] {
   let menuData: Group[]
 
+  pathname = pathname.split('/').slice(0, 3).join('/')
+  // const path = pathname.split('/').slice(0, 3).join('/')
+  // console.log(path)
+
   switch (appName) {
     case 'panel-admin':
       menuData = menuAdminData

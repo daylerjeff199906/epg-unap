@@ -9,6 +9,16 @@ export const metadata: Metadata = {
   title: 'Template EPG - UNAP',
   description:
     'Template de la Escuela de Posgrado de la Universidad Nacional de la Amazonía Peruana',
+  openGraph: {
+    images: [
+      {
+        url: 'https://firebasestorage.googleapis.com/v0/b/aurora-ecommerce.appspot.com/o/apps%2Flanding.webp?alt=media&token=9f164c5c-b328-43e1-828b-675030e4dabd',
+        width: 1200,
+        height: 630,
+        alt: 'Template EPG - UNAP',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({

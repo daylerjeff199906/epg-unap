@@ -1,9 +1,19 @@
-import PaymentsTable from "@/modules/examples/tables/shadcn/payments-table";
+import {
+  Featuressection,
+  Footer,
+  HeroSection,
+  NavBar,
+  Toolfeatures,
+} from '@/modules/app'
 
-export default function Home() {
+export default function Page() {
   return (
-    <main>
-      <PaymentsTable />
-    </main>
+    <>
+      <NavBar />
+      <HeroSection />
+      <Featuressection />
+      <Toolfeatures />
+      <Footer />
+    </>
   )
 }
