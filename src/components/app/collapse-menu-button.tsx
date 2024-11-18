@@ -45,7 +45,6 @@ interface CollapseMenuButtonProps {
 export function CollapseMenuButton({
   icon: Icon,
   label,
-  //   active,
   submenus,
   isOpen,
 }: CollapseMenuButtonProps) {
@@ -66,14 +65,9 @@ export function CollapseMenuButton({
         asChild
       >
         <Button
-          // variant={isSubmenuActive ? 'secondary' : 'ghost'}
           variant="ghost"
           className={`w-full justify-start h-10 
-             ${
-               isSubmenuActive
-                 ? 'font-bold text-white'
-                 : 'text-muted-foreground'
-             }
+             ${isSubmenuActive ? 'font-bold text-white' : 'text-gray-300'}
              `}
         >
           <div className="w-full items-center flex justify-between">
@@ -114,7 +108,7 @@ export function CollapseMenuButton({
             key={index}
             variant="ghost"
             className={`w-full justify-start h-10 mb-1 ${
-              active ? 'font-bold text-white' : 'text-muted-foreground'
+              active ? 'font-bold text-white' : 'text-gray-400'
             }`}
             asChild
           >
