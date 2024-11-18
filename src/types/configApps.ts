@@ -7,6 +7,10 @@ export const configApps = {
     name: 'Académicos',
     color: '#27272A',
   },
+  economic: {
+    name: 'Económicos',
+    color: '#004D40',
+  },
   docs: {
     name: 'Documentación',
     color: '#2C2C2C',

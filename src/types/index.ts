@@ -1,2 +1,5 @@
 export * from './more-apps'
 export * from './footer-info'
+export * from './accounts/index'
+export * from './person/index'
+export * from './core/index'
