@@ -342,7 +342,92 @@ export const menuDocsData: Group[] = [
   },
 ]
 
-export const menuEconomicData: Group[] = []
+export const menuEconomicData: Group[] = [
+  {
+    groupLabel: '',
+    menus: [
+      {
+        href: '/economic',
+        label: 'Inicio',
+        icon: House,
+        submenus: [],
+        active: false,
+      },
+    ],
+  },
+  {
+    groupLabel: 'Gestión de pagos',
+    menus: [
+      {
+        href: '/economic/pagos',
+        label: 'Pagos',
+        icon: ChartBarBig,
+        submenus: [
+          {
+            href: '/economic/pagos',
+            label: 'Lista de pagos',
+          },
+          {
+            href: '/economic/pagos/conciliar',
+            label: 'Conciliar pagos',
+          },
+          {
+            href: '/economic/pagos/importar',
+            label: 'Importar pagos',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    groupLabel: 'Gestión de conceptos',
+    menus: [
+      {
+        href: '/economic/conceptos',
+        label: 'Conceptos',
+        icon: Boxes,
+        submenus: [
+          {
+            href: '/economic/conceptos',
+            label: 'Conceptos de pago',
+          },
+          {
+            href: '/economic/descuentos',
+            label: 'Descuentos',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    groupLabel: 'Reportes',
+    menus: [
+      {
+        href: '/economic/reportes',
+        label: 'Reportes',
+        icon: Table,
+        submenus: [
+          {
+            href: '/economic/reportes',
+            label: 'Reporte de pagos',
+          },
+          {
+            href: '/economic/reportes/estudiantes',
+            label: 'Reporte de estudiantes',
+          },
+          {
+            href: '/economic/reportes/pensiones',
+            label: 'Reporte pensiones',
+          },
+          {
+            href: '/economic/reportes/programas',
+            label: 'Reporte programas',
+          },
+        ],
+      },
+    ],
+  },
+]
 
 export const menuTeacherData: Group[] = []
 
