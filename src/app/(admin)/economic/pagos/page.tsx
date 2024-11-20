@@ -1,3 +1,8 @@
+import { EnrollmentPaymentsList } from "@/modules/economic";
+
 export default function page() {
-  return <div>page</div>
+  return (
+    <EnrollmentPaymentsList />
+  )
 }
+

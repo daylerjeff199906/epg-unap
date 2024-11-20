@@ -15,24 +15,32 @@ export const enrollmentPagesColumn: ColumnDef<Record<string, unknown>>[] = [
     header: 'ID',
   },
   {
-    accessorKey: 'range-date',
-    header: 'F. de etapa',
+    accessorKey: 'created-at',
+    header: 'F. de creado',
   },
   {
-    accessorKey: 'range-date-extempt',
-    header: 'F. de etapa (exentemporánea)',
+    accessorKey: 'code',
+    header: 'Codigo',
   },
   {
-    accessorKey: 'plan-study',
-    header: 'PLAN DE ESTUDIO',
+    accessorKey: 'concept',
+    header: 'Concepto',
   },
   {
-    accessorKey: 'program',
-    header: 'PROGRAMA',
+    accessorKey: 'person',
+    header: 'Persona',
   },
   {
-    accessorKey: 'promotion',
-    header: 'PROMOCIÓN',
+    accessorKey: 'estado',
+    header: 'Estado',
+  },
+  {
+    accessorKey: 'valided',
+    header: 'Validado',
+  },
+  {
+    accessorKey: 'import_payments',
+    header: 'Importe',
   },
   {
     accessorKey: 'actions',
