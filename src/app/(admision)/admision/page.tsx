@@ -1,3 +1,5 @@
+import { NavbarUser } from '@/components/intranet'
+import { admisionMenu } from '@/components/intranet/navbar-user/menu-items-list'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,5 +10,9 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <div>page</div>
+  return (
+    <>
+      <NavbarUser menuItems={admisionMenu} />
+    </>
+  )
 }
