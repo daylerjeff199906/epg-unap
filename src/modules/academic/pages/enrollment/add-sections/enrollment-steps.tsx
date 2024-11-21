@@ -1,7 +1,8 @@
 import { IStepper } from "@/components/app/multi-step-timeline";
-import { SearchFilter } from "@/modules/academic/components";
 import { SelectExpedientForm } from "./select-expedient-form";
 import { SelectCourseForm } from "./select-course-form";
+import { SelectGroupForm } from "./select-group-form";
+import { ResumeStep } from "./resume-step";
 
 export const enrollmentSteps: IStepper[] = [
   {
@@ -17,6 +18,11 @@ export const enrollmentSteps: IStepper[] = [
   {
     id: 'seleccionar-grupo-finalizar',
     title: 'Seleccionar grupo y finalizar',
-    content: <SearchFilter />,
+    content: <SelectGroupForm />,
   },
+  {
+    id: 'finalizado',
+    title: 'Finalizado',
+    content: <ResumeStep />
+  }
 ];
