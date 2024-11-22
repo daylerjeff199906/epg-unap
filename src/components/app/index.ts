@@ -21,6 +21,7 @@ import { Footer } from './footer'
 import { DatePickerFilter } from './date-picker'
 import { DatePickerCustom } from './date-picker-custom'
 import { DataTableFilter } from './data-table-filter'
+import BannerSection from './banner-section'
 
 export {
   NavBarCustom,
@@ -46,4 +47,5 @@ export {
   DatePickerFilter,
   DatePickerCustom,
   DataTableFilter,
+  BannerSection,
 }

@@ -3,7 +3,8 @@
 import { HeaderSection } from "@/components/app"
 import { Divider } from "@nextui-org/react"
 import { CardStudents } from "../../students/components"
-import { CoursesList } from "./courses-list"
+import GroupList from "./group-list"
+import { courses } from "@/modules/examples/tables/course-data"
 
 const expedientData = [
     {
@@ -16,7 +17,7 @@ const expedientData = [
     }
 ]
 
-export const SelectCourseForm = () => {
+export const SelectGroupForm = () => {
 
     return (
         <>
@@ -31,7 +32,7 @@ export const SelectCourseForm = () => {
                     className="border-none rounded-none bg-transparent"
                 />
                 <Divider />
-                <CoursesList />
+                <GroupList courses={courses} />
             </form>
         </>
     )
