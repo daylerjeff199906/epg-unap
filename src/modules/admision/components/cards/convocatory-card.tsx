@@ -1,6 +1,9 @@
+'use client'
 import { CalendarDays } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { useState } from 'react'
+import Link from 'next/link'
 
 interface ConvocatoriaCardProps {
   title: string
@@ -22,12 +25,14 @@ export function ConvocatoriaCard({
   currentStage,
   totalStages,
 }: ConvocatoriaCardProps) {
+  const [isHover, setIsHover] = useState(false)
   return (
     <Card
-      //   className={`overflow-hidden ${
-      //     viewType === 'list' ? 'flex flex-row' : 'flex flex-col'
-      //   }`}
-      className="overflow-hidden "
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+      className={`overflow-hidden  ${
+        isHover ? 'shadow-lg bg-gray-50 cursor-pointer' : 'shadow-sm'
+      }`}
     >
       <div className="w-full">
         <CardHeader className="space-y-1 w-full">
@@ -39,7 +44,16 @@ export function ConvocatoriaCard({
               {period}
             </Badge>
           </div>
-          <h3 className="text-lg font-semibold">{title}</h3>
+          <Link
+            href={`/admision/convocatorias/${title
+              .toLowerCase()
+              .replace(/\s/g, '-')}`}
+            className={`text-lg font-semibold ${
+              isHover ? 'text-primary-800 underline' : 'text-black'
+            }`}
+          >
+            {title}
+          </Link>
           <div className="flex items-center text-sm text-muted-foreground">
             <CalendarDays className="mr-1 h-4 w-4" />
             <span>
