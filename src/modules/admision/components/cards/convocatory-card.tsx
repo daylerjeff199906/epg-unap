@@ -1,0 +1,75 @@
+import { CalendarDays } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+
+interface ConvocatoriaCardProps {
+  title: string
+  period: string
+  startDate: string
+  endDate: string
+  description: string
+  imageUrl: string
+  currentStage: number
+  totalStages: number
+  viewType: 'grid' | 'list'
+}
+
+export function ConvocatoriaCard({
+  title,
+  period,
+  startDate,
+  endDate,
+  description,
+  currentStage,
+  totalStages,
+  viewType,
+}: ConvocatoriaCardProps) {
+  return (
+    <Card
+      className={`overflow-hidden ${
+        viewType === 'list' ? 'flex flex-row' : 'flex flex-col'
+      }`}
+    >
+      <div
+        className={`flex flex-col ${viewType === 'list' ? 'w-2/3' : 'w-full'}`}
+      >
+        <CardHeader className="space-y-1">
+          <div className="flex items-center justify-between">
+            <Badge
+              variant="outline"
+              className="bg-blue-50 text-blue-500 hover:bg-blue-50"
+            >
+              {period}
+            </Badge>
+          </div>
+          <h3 className="text-lg font-semibold">{title}</h3>
+          <div className="flex items-center text-sm text-muted-foreground">
+            <CalendarDays className="mr-1 h-4 w-4" />
+            <span>
+              {startDate} - {endDate}
+            </span>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-muted-foreground mb-4">{description}</p>
+          <div className="space-y-2">
+            <div className="flex justify-between text-sm">
+              <span>Etapa actual</span>
+              <span>
+                {currentStage} de {totalStages}
+              </span>
+            </div>
+            {/* <Progress
+              value={(currentStage / totalStages) * 100}
+              className="w-full"
+            /> */}
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button className="w-full">Ver detalles</Button>
+        </CardFooter>
+      </div>
+    </Card>
+  )
+}

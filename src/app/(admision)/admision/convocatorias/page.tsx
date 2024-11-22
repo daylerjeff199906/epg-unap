@@ -1,3 +1,4 @@
+import { ConvocatoryListPage } from '@/modules/admision'
 import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Convocatorias',
@@ -6,5 +7,5 @@ export const metadata: Metadata = {
 }
 
 export default function page() {
-  return <div>page</div>
+  return <ConvocatoryListPage />
 }
