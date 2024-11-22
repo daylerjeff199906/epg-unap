@@ -1,3 +1,4 @@
+import { BannerSection } from '@/components/app'
 import { ConvocatoryListPage } from '@/modules/admision'
 import { Metadata } from 'next'
 export const metadata: Metadata = {
@@ -7,5 +8,13 @@ export const metadata: Metadata = {
 }
 
 export default function page() {
-  return <ConvocatoryListPage />
+  return (
+    <>
+      <BannerSection
+        title="Convocatorias"
+        description="Convocatorias de admisión a la Escuela de Posgrado de la Universidad Nacional de la Amazonía Peruana."
+      />
+      <ConvocatoryListPage />
+    </>
+  )
 }

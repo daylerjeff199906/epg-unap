@@ -4,7 +4,7 @@ import { NavigationMenuDemoProps } from './INavbarProps'
 
 export const NavbarUser = ({ menuItems }: NavigationMenuDemoProps) => {
   return (
-    <nav className="bg-primary-900 border-b border-white sticky top-0 right-0 left-0">
+    <nav className="bg-primary-900 border-b border-white sticky top-0 right-0 left-0 z-40">
       <header className="container py-3 flex items-center justify-between gap-8">
         <section id="navbar">
           <Link
