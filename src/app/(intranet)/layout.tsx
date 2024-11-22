@@ -1,4 +1,5 @@
 import { NavbarUser } from '@/components/intranet'
+import { intranetMenu } from '@/components/intranet/navbar-user/menu-items-list'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function Layout(props: LayoutProps) {
   const { children } = props
   return (
     <>
-      <NavbarUser />
+      <NavbarUser menuItems={intranetMenu} />
       {children}
     </>
   )
