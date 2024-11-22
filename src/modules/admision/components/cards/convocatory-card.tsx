@@ -1,7 +1,6 @@
 import { CalendarDays } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 
 interface ConvocatoriaCardProps {
   title: string
@@ -12,7 +11,6 @@ interface ConvocatoriaCardProps {
   imageUrl: string
   currentStage: number
   totalStages: number
-  viewType: 'grid' | 'list'
 }
 
 export function ConvocatoriaCard({
@@ -23,18 +21,16 @@ export function ConvocatoriaCard({
   description,
   currentStage,
   totalStages,
-  viewType,
 }: ConvocatoriaCardProps) {
   return (
     <Card
-      className={`overflow-hidden ${
-        viewType === 'list' ? 'flex flex-row' : 'flex flex-col'
-      }`}
+      //   className={`overflow-hidden ${
+      //     viewType === 'list' ? 'flex flex-row' : 'flex flex-col'
+      //   }`}
+      className="overflow-hidden "
     >
-      <div
-        className={`flex flex-col ${viewType === 'list' ? 'w-2/3' : 'w-full'}`}
-      >
-        <CardHeader className="space-y-1">
+      <div className="w-full">
+        <CardHeader className="space-y-1 w-full">
           <div className="flex items-center justify-between">
             <Badge
               variant="outline"
@@ -66,9 +62,6 @@ export function ConvocatoriaCard({
             /> */}
           </div>
         </CardContent>
-        <CardFooter>
-          <Button className="w-full">Ver detalles</Button>
-        </CardFooter>
       </div>
     </Card>
   )

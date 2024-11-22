@@ -9,8 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Button } from '@/components/ui/button'
-import { Grid, List } from 'lucide-react'
 
 const convocatorias = [
   {
@@ -70,7 +68,6 @@ const convocatorias = [
 export const ConvocatoryListPage = () => {
   const [filter, setFilter] = useState('')
   const [periodFilter, setPeriodFilter] = useState('all')
-  const [viewType, setViewType] = useState<'grid' | 'list'>('grid')
 
   const filteredConvocatorias = convocatorias.filter(
     (conv) =>
@@ -104,37 +101,12 @@ export const ConvocatoryListPage = () => {
             </SelectContent>
           </Select>
         </div>
-        <div className="flex space-x-2">
-          <Button
-            variant={viewType === 'grid' ? 'default' : 'outline'}
-            size="icon"
-            onClick={() => setViewType('grid')}
-            aria-label="Vista de cuadrícula"
-          >
-            <Grid className="h-4 w-4" />
-          </Button>
-          <Button
-            variant={viewType === 'list' ? 'default' : 'outline'}
-            size="icon"
-            onClick={() => setViewType('list')}
-            aria-label="Vista de lista"
-          >
-            <List className="h-4 w-4" />
-          </Button>
-        </div>
       </div>
-      <div
-        className={
-          viewType === 'grid'
-            ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-            : 'space-y-6'
-        }
-      >
+      <div className="grid grid-cols-1 gap-4">
         {filteredConvocatorias.map((conv) => (
           <ConvocatoriaCard
             key={conv.id}
             {...conv}
-            viewType={viewType}
           />
         ))}
       </div>
