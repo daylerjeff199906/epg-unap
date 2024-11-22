@@ -27,14 +27,14 @@ export default function BannerSection({
       )}
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-8 md:mb-0 md:mr-8">
+          <div className="mb-8 md:mb-0 md:mr-8 order-2 sm:order-1">
             <h1 className="text-4xl font-bold text-white mb-2">{title}</h1>
             {description && (
               <p className="text-gray-300 max-w-2xl">{description}</p>
             )}
           </div>
           {rightContent && (
-            <div className="w-full md:w-auto">{rightContent}</div>
+            <div className="w-full md:w-auto order-1 sm:order-2">{rightContent}</div>
           )}
         </div>
       </div>

@@ -16,7 +16,7 @@ interface ConvocatoriaCardProps {
   totalStages: number
 }
 
-export function ConvocatoriaCard({
+export const ConvocatoriaCard = ({
   title,
   period,
   startDate,
@@ -24,7 +24,7 @@ export function ConvocatoriaCard({
   description,
   currentStage,
   totalStages,
-}: ConvocatoriaCardProps) {
+}: ConvocatoriaCardProps) => {
   const [isHover, setIsHover] = useState(false)
   return (
     <Card
