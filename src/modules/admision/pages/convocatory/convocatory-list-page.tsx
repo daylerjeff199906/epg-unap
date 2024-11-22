@@ -77,7 +77,7 @@ export const ConvocatoryListPage = () => {
 
   return (
     <main className="space-y-4 container">
-      <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4">
+      <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4 pt-8">
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
           <Input
             placeholder="Buscar convocatorias..."

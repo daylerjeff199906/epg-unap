@@ -15,7 +15,7 @@ export default function BannerSection({
   rightContent,
 }: HeaderProps) {
   return (
-    <div className="relative bg-[#0A192F] py-16 overflow-hidden">
+    <div className="relative bg-[#0A192F] py-16 sm:py-24 overflow-hidden">
       {backgroundImage && (
         <Image
           src={backgroundImage}
@@ -25,11 +25,13 @@ export default function BannerSection({
           priority
         />
       )}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0 md:mr-8">
             <h1 className="text-4xl font-bold text-white mb-2">{title}</h1>
-            {description && <p className="text-gray-300">{description}</p>}
+            {description && (
+              <p className="text-gray-300 max-w-2xl">{description}</p>
+            )}
           </div>
           {rightContent && (
             <div className="w-full md:w-auto">{rightContent}</div>
