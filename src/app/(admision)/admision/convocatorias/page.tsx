@@ -12,7 +12,7 @@ export default function page() {
   return (
     <>
       <BannerSection
-        title="Convocatorias"
+        title="Convocatorias abiertas"
         description="Convocatorias de admisión a la Escuela de Posgrado de la Universidad Nacional de la Amazonía Peruana."
         rightContent={
           <Image

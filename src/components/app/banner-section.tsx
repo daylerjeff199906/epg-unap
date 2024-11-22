@@ -15,7 +15,7 @@ export default function BannerSection({
   rightContent,
 }: HeaderProps) {
   return (
-    <div className="relative bg-[#0A192F] py-16 sm:py-24 overflow-hidden">
+    <div className="relative bg-[#0A192F] py-16 md:py-20 overflow-hidden">
       {backgroundImage && (
         <Image
           src={backgroundImage}
