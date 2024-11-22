@@ -25,7 +25,7 @@ export const ProgramListPage = () => {
       <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4 pt-8">
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
           <Input
-            placeholder="Buscar convocatorias..."
+            placeholder="Buscar programas..."
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
             className="max-w-sm"
