@@ -9,6 +9,7 @@ interface ConvocatoriaCardProps {
   status: 'active' | 'inactive'
   title: string
   description: string
+  isActive?: boolean
 }
 
 export const ConvocatoriaCard = ({
@@ -16,13 +17,18 @@ export const ConvocatoriaCard = ({
   status,
   title,
   description,
+  isActive,
 }: ConvocatoriaCardProps) => {
   return (
-    <Card className="p-4">
+    <Card
+      className={`p-4 border-l-8 ${
+        isActive && 'bg-slate-50 border-primary-500'
+      }`}
+    >
       <div className="flex items-start gap-4">
-        <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+        <div className="py-2 px-3 bg-white flex items-center justify-center shadow-xl rounded-md">
           <Image
-            src="/placeholder.svg?height=40&width=40"
+            src="/brands/escudo-epg.webp"
             alt="Icon"
             width={24}
             height={24}
@@ -31,7 +37,13 @@ export const ConvocatoriaCard = ({
         </div>
         <div className="flex-1">
           <div className="flex items-center justify-between mb-2">
-            <Badge className="bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
+            <Badge
+              className={
+                status === 'active'
+                  ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-100'
+                  : 'bg-danger-50 text-danger-500 hover:bg-danger-100'
+              }
+            >
               {status === 'active' ? 'Activa' : 'Inactiva'}
             </Badge>
           </div>

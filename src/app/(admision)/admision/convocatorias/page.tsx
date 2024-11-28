@@ -43,10 +43,10 @@ export default async function Page() {
         }
       />
       <main className="flex flex-col sm:flex-row gap-6 py-12 space-y-4 container">
-        <aside className="w-full sm:w-1/4">
+        <aside className="w-full sm:w-1/3">
           <ConvocatoryListPage convocatorias={convocatorias} />
         </aside>
-        <article className="w-full sm:w-3/4"></article>
+        <article className="w-full sm:w-2/3"></article>
       </main>
     </>
   )
