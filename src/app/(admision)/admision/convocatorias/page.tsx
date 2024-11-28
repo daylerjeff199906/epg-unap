@@ -2,6 +2,7 @@ import { BannerSection } from '@/components/app'
 import { ConvocatoryListPage } from '@/modules/admision'
 import { Metadata } from 'next'
 import Image from 'next/image'
+
 export const metadata: Metadata = {
   title: 'Convocatorias',
   description:
@@ -24,12 +25,11 @@ export default function page() {
           />
         }
       />
-      {/* <ConvocatoryListPage /> */}
-      <main className="flex flex-col sm:flex-row justify-between space-y-4">
-        <aside>
+      <main className="flex flex-col sm:flex-row gap-6 py-12 space-y-4 container">
+        <aside className="w-full sm:w-1/4">
           <ConvocatoryListPage />
         </aside>
-        <article></article>
+        <article className="w-full sm:w-3/4"></article>
       </main>
     </>
   )

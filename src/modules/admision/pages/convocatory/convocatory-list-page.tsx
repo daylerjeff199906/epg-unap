@@ -1,60 +1,35 @@
 'use client'
-// import { useState } from 'react'
-// import { ConvocatoriaCard } from '../../components'
-// import { Input } from '@/components/ui/input'
-// import {
-//   Select,
-//   SelectContent,
-//   SelectItem,
-//   SelectTrigger,
-//   SelectValue,
-// } from '@/components/ui/select'
 
-export const ConvocatoryListPage = () => {
-  // const [filter, setFilter] = useState('')
-  // const [periodFilter, setPeriodFilter] = useState('all')
+import { DatePickerCustom } from '@/components/app'
+import { IConvocatory } from '@/types/admision'
+import { ConvocatoriaCard } from '../../components'
 
-  // const filteredConvocatorias = convocatorias.filter(
-  //   (conv) =>
-  //     conv.title.toLowerCase().includes(filter.toLowerCase()) &&
-  //     (periodFilter === 'all' || conv.period === periodFilter)
-  // )
+interface Props {
+  convocatorias?: IConvocatory[]
+}
+
+export const ConvocatoryListPage = (prop: Props) => {
+  const { convocatorias = [] } = prop
 
   return (
-    <main className="space-y-4 container">
-      {/* <div className="flex flex-col sm:flex-row justify-between space-y-2 sm:space-y-0 sm:space-x-4 pt-8">
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-          <Input
-            placeholder="Buscar convocatorias..."
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="max-w-sm"
-          />
-          <Select
-            value={periodFilter}
-            onValueChange={setPeriodFilter}
-          >
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Periodo" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="all">Todos</SelectItem>
-              <SelectItem value="2024-I">2024-I</SelectItem>
-              <SelectItem value="2024-II">2024-II</SelectItem>
-              <SelectItem value="2024-Verano">2024-Verano</SelectItem>
-              <SelectItem value="2024-III">2024-III</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 gap-4">
-        {filteredConvocatorias.map((conv) => (
-          <ConvocatoriaCard
-            key={conv.id}
-            {...conv}
-          />
-        ))}
-      </div> */}
+    <main className="flex flex-col gap-3">
+      <section>
+        <DatePickerCustom />
+      </section>
+      <article className="flex flex-col gap-4">
+        <h2 className="text-lg font-bold">Convocatorias disponibles</h2>
+        <section className="grid grid-cols-1 gap-4">
+          {convocatorias.map((conv) => (
+            <ConvocatoriaCard
+              key={conv.id}
+              id={String(conv.id)}
+              description={`Desde el ${conv.start_date} hasta el ${conv.end_date}`}
+              title={`Convocatoria ${conv.start_date} - ${conv.id_period}`}
+              status={conv.is_active ? 'active' : 'inactive'}
+            />
+          ))}
+        </section>
+      </article>
     </main>
   )
 }

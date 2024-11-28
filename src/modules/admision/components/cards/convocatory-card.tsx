@@ -1,81 +1,45 @@
 'use client'
-import { CalendarDays } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { useState } from 'react'
+import { Card } from '@/components/ui/card'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface ConvocatoriaCardProps {
+  id: string
+  status: 'active' | 'inactive'
   title: string
-  period: string
-  startDate: string
-  endDate: string
   description: string
-  imageUrl: string
-  currentStage: number
-  totalStages: number
 }
 
 export const ConvocatoriaCard = ({
+  id,
+  status,
   title,
-  period,
-  startDate,
-  endDate,
   description,
-  currentStage,
-  totalStages,
 }: ConvocatoriaCardProps) => {
-  const [isHover, setIsHover] = useState(false)
   return (
-    <Card
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
-      className={`overflow-hidden  ${
-        isHover ? 'shadow-lg bg-gray-50 cursor-pointer' : 'shadow-sm'
-      }`}
-    >
-      <div className="w-full">
-        <CardHeader className="space-y-1 w-full">
-          <div className="flex items-center justify-between">
-            <Badge
-              variant="outline"
-              className="bg-blue-50 text-blue-500 hover:bg-blue-50"
-            >
-              {period}
+    <Card className="p-4">
+      <div className="flex items-start gap-4">
+        <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+          <Image
+            src="/placeholder.svg?height=40&width=40"
+            alt="Icon"
+            width={24}
+            height={24}
+            className="rounded-full"
+          />
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center justify-between mb-2">
+            <Badge className="bg-emerald-100 text-emerald-700 hover:bg-emerald-100">
+              {status === 'active' ? 'Activa' : 'Inactiva'}
             </Badge>
           </div>
-          <Link
-            href={`/admision/convocatorias/${title
-              .toLowerCase()
-              .replace(/\s/g, '-')}`}
-            className={`text-lg font-semibold ${
-              isHover ? 'text-primary-800 underline' : 'text-black'
-            }`}
-          >
-            {title}
-          </Link>
-          <div className="flex items-center text-sm text-muted-foreground">
-            <CalendarDays className="mr-1 h-4 w-4" />
-            <span>
-              {startDate} - {endDate}
-            </span>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground mb-4">{description}</p>
-          <div className="space-y-2">
-            <div className="flex justify-between text-sm">
-              <span>Etapa actual</span>
-              <span>
-                {currentStage} de {totalStages}
-              </span>
-            </div>
-            {/* <Progress
-              value={(currentStage / totalStages) * 100}
-              className="w-full"
-            /> */}
-          </div>
-        </CardContent>
+          <h3 className="font-semibold mb-1">
+            <Link href={`/admision/convocatorias/${id}`}>{title}</Link>
+          </h3>
+          <p className="text-sm text-slate-500">{description}</p>
+        </div>
       </div>
     </Card>
   )
