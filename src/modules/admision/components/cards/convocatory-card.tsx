@@ -1,8 +1,9 @@
 'use client'
 import { Badge } from '@/components/ui/badge'
 import { Card } from '@/components/ui/card'
-import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { useFilterFromUrl } from '@/lib/filter-url'
 
 interface ConvocatoriaCardProps {
   id: string
@@ -19,11 +20,33 @@ export const ConvocatoriaCard = ({
   description,
   isActive,
 }: ConvocatoriaCardProps) => {
+  const router = useRouter()
+  const { getParams } = useFilterFromUrl()
+  const idPeriod = getParams({
+    key: 'etapa',
+    value: '',
+  })
+
+  const isSelected = idPeriod === id
+  function handleConvocatoryClick() {
+    if (idPeriod !== '' && idPeriod === id) {
+      router.push(`/admision/convocatorias`, {
+        scroll: false,
+      })
+    } else {
+      router.push(`/admision/convocatorias?etapa=${id}`, {
+        scroll: false,
+      })
+    }
+  }
+
   return (
     <Card
-      className={`p-4 border-l-8 ${
-        isActive && 'bg-slate-50 border-primary-500'
+      className={`p-4 border-l-8 group rounded-md ${
+        (isActive || isSelected) &&
+        'bg-slate-50 border-primary-800 hover:cursor-pointer '
       }`}
+      onClick={handleConvocatoryClick}
     >
       <div className="flex items-start gap-4">
         <div className="py-2 px-3 bg-white flex items-center justify-center shadow-xl rounded-md">
@@ -47,9 +70,7 @@ export const ConvocatoriaCard = ({
               {status === 'active' ? 'Activa' : 'Inactiva'}
             </Badge>
           </div>
-          <h3 className="font-semibold mb-1">
-            <Link href={`/admision/convocatorias/${id}`}>{title}</Link>
-          </h3>
+          <h3 className="font-semibold mb-1 group-hover:underline">{title}</h3>
           <p className="text-sm text-slate-500">{description}</p>
         </div>
       </div>
