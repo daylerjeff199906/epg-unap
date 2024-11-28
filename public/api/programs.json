@@ -1,44 +1,160 @@
 {
-  "data": [
+  "programs": [
     {
       "id": 1,
-      "titulo": "Maestría en Ciencias en Gestión Ambiental",
-      "planEstudios": "Plan de Estudios: Plan - A - 2024 - II",
-      "facultad": "Ingeniería de sistemas",
-      "creditos": 123,
-      "duracion": "2 años",
-      "estado": "En curso",
-      "botones": [
-        {
-          "texto": "Historial económico",
-          "tipo": "outline"
-        },
-        {
-          "texto": "Detalles académicos",
-          "tipo": "primary"
-        }
-      ],
-      "etiqueta": "Programa actual"
+      "type": "Maestría",
+      "name": "Maestría en Gestión Pública",
+      "description": "Desarrolla habilidades avanzadas en la gestión de políticas públicas.",
+      "duration": "2 años",
+      "slots": 30,
+      "modality": "Presencial",
+      "credits": 60,
+      "degree": "Magíster en Gestión Pública",
+      "image": "https://example.com/maestria-gestion-publica.jpg",
+      "associated_calls": [1, 2, 6]
     },
     {
       "id": 2,
-      "titulo": "Maestría en Gestión de Recursos Naturales",
-      "planEstudios": "Plan de Estudios: Plan - B - 2023 - I",
-      "facultad": "Ciencias ambientales",
-      "creditos": 110,
-      "duracion": "1.5 años",
-      "estado": "Finalizado",
-      "botones": [
-        {
-          "texto": "Historial económico",
-          "tipo": "outline"
-        },
-        {
-          "texto": "Detalles académicos",
-          "tipo": "primary"
-        }
-      ],
-      "etiqueta": "Programa finalizado"
+      "type": "Doctorado",
+      "name": "Doctorado en Ciencias Ambientales",
+      "description": "Programa orientado a la investigación en temas medioambientales.",
+      "duration": "4 años",
+      "slots": 15,
+      "modality": "Semipresencial",
+      "credits": 120,
+      "degree": "Doctor en Ciencias Ambientales",
+      "image": "https://example.com/doctorado-ciencias-ambientales.jpg",
+      "associated_calls": [1, 4, 6, 9]
+    },
+    {
+      "id": 3,
+      "type": "Diplomado",
+      "name": "Diplomado en Innovación Tecnológica",
+      "description": "Explora nuevas tecnologías aplicadas en diferentes industrias.",
+      "duration": "6 meses",
+      "slots": 40,
+      "modality": "Virtual",
+      "credits": 20,
+      "degree": "Certificado de Diplomado en Innovación Tecnológica",
+      "image": "https://example.com/diplomado-innovacion.jpg",
+      "associated_calls": [2, 5]
+    },
+    {
+      "id": 4,
+      "type": "Especialización",
+      "name": "Especialización en Derecho Penal",
+      "description": "Profundiza en el estudio de la legislación penal y su aplicación.",
+      "duration": "1 año",
+      "slots": 25,
+      "modality": "Presencial",
+      "credits": 30,
+      "degree": "Especialista en Derecho Penal",
+      "image": "https://example.com/especializacion-derecho-penal.jpg",
+      "associated_calls": [1, 4, 7]
+    },
+    {
+      "id": 5,
+      "type": "Maestría",
+      "name": "Maestría en Educación",
+      "description": "Formación avanzada para educadores en diversas áreas de enseñanza.",
+      "duration": "2 años",
+      "slots": 50,
+      "modality": "Presencial",
+      "credits": 60,
+      "degree": "Magíster en Educación",
+      "image": "https://example.com/maestria-educacion.jpg",
+      "associated_calls": [2, 3, 6]
+    },
+    {
+      "id": 6,
+      "type": "Doctorado",
+      "name": "Doctorado en Ciencias de la Salud",
+      "description": "Investigación avanzada en temas de salud pública y clínica.",
+      "duration": "4 años",
+      "slots": 10,
+      "modality": "Semipresencial",
+      "credits": 120,
+      "degree": "Doctor en Ciencias de la Salud",
+      "image": "https://example.com/doctorado-ciencias-salud.jpg",
+      "associated_calls": [1, 5, 9]
+    },
+    {
+      "id": 7,
+      "type": "Diplomado",
+      "name": "Diplomado en Marketing Digital",
+      "description": "Especialízate en estrategias y herramientas de marketing digital.",
+      "duration": "6 meses",
+      "slots": 40,
+      "modality": "Virtual",
+      "credits": 18,
+      "degree": "Certificado de Diplomado en Marketing Digital",
+      "image": "https://example.com/diplomado-marketing.jpg",
+      "associated_calls": [2, 3, 8]
+    },
+    {
+      "id": 8,
+      "type": "Especialización",
+      "name": "Especialización en Recursos Humanos",
+      "description": "Perfecciona tus habilidades en la gestión del talento humano.",
+      "duration": "1 año",
+      "slots": 35,
+      "modality": "Semipresencial",
+      "credits": 30,
+      "degree": "Especialista en Recursos Humanos",
+      "image": "https://example.com/especializacion-rrhh.jpg",
+      "associated_calls": [3, 6]
+    },
+    {
+      "id": 9,
+      "type": "Maestría",
+      "name": "Maestría en Finanzas",
+      "description": "Formación avanzada en análisis y gestión financiera.",
+      "duration": "2 años",
+      "slots": 20,
+      "modality": "Presencial",
+      "credits": 60,
+      "degree": "Magíster en Finanzas",
+      "image": "https://example.com/maestria-finanzas.jpg",
+      "associated_calls": [1, 5]
+    },
+    {
+      "id": 10,
+      "type": "Doctorado",
+      "name": "Doctorado en Economía",
+      "description": "Profundiza en la investigación y análisis económico.",
+      "duration": "4 años",
+      "slots": 12,
+      "modality": "Semipresencial",
+      "credits": 120,
+      "degree": "Doctor en Economía",
+      "image": "https://example.com/doctorado-economia.jpg",
+      "associated_calls": [2, 7]
+    },
+    {
+      "id": 11,
+      "type": "Diplomado",
+      "name": "Diplomado en Gestión de Proyectos",
+      "description": "Aprende a gestionar proyectos de forma eficiente y estratégica.",
+      "duration": "8 meses",
+      "slots": 30,
+      "modality": "Virtual",
+      "credits": 24,
+      "degree": "Certificado de Diplomado en Gestión de Proyectos",
+      "image": "https://example.com/diplomado-proyectos.jpg",
+      "associated_calls": [1, 4, 5]
+    },
+    {
+      "id": 12,
+      "type": "Especialización",
+      "name": "Especialización en Negocios Internacionales",
+      "description": "Domina el comercio global y las relaciones internacionales.",
+      "duration": "1 año",
+      "slots": 30,
+      "modality": "Presencial",
+      "credits": 32,
+      "degree": "Especialista en Negocios Internacionales",
+      "image": "https://example.com/especializacion-negocios.jpg",
+      "associated_calls": [6, 8]
     }
   ]
 }
