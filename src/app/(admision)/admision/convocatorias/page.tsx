@@ -16,7 +16,7 @@ export default async function Page() {
 
   try {
     // Fetch convocatorias
-    const response = await fetchCore('/api/convocatory', {
+    const response = await fetchCore('/api/convocatory.json', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -26,8 +26,6 @@ export default async function Page() {
   } catch (error) {
     console.error('Error fetching convocatorias:', error)
   }
-
-  console.log('convocatorias:', convocatorias)
 
   return (
     <>
