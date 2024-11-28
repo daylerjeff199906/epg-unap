@@ -70,7 +70,13 @@ export const ConvocatoriaCard = ({
               {status === 'active' ? 'Activa' : 'Inactiva'}
             </Badge>
           </div>
-          <h3 className="font-semibold mb-1 group-hover:underline">{title}</h3>
+          <h3
+            className={`font-bold mb-1 group-hover:underline ${
+              (isActive || isSelected) && 'text-primary-800'
+            }`}
+          >
+            {title}
+          </h3>
           <p className="text-sm text-slate-500">{description}</p>
         </div>
       </div>

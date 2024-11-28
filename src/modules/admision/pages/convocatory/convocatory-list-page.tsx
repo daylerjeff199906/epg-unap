@@ -13,8 +13,8 @@ export const ConvocatoryListPage = (prop: Props) => {
 
   return (
     <main className="flex flex-col gap-3">
-      <section>
-        <DatePickerCustom />
+      <section className="w-full">
+        <DatePickerCustom className="w-full" />
       </section>
       <article className="flex flex-col gap-4">
         <h2 className="text-lg font-bold">Convocatorias disponibles</h2>
