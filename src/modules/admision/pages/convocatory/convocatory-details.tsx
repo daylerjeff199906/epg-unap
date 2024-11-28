@@ -1,3 +1,5 @@
+import { Card } from '@/components/ui/card'
+
 export const ConvocatoryDetails = () => {
   return (
     <main className="flex flex-col gap-6">
@@ -9,6 +11,27 @@ export const ConvocatoryDetails = () => {
       </section>
       <section>
         <h2 className="font-bold text-lg">Cronograma</h2>
+        <div>
+          <div className="relative pl-8 border-l-2 border-slate-200">
+            <div className="absolute left-0 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-slate-200" />
+            <div className="mb-1">
+              <span className="font-semibold">ABR</span>
+              <div className="text-2xl font-bold">20</div>
+            </div>
+            <Card className="p-4">
+              <h3 className="font-semibold mb-2">Presentación de documentos</h3>
+              <p className="text-sm text-slate-500 mb-2">
+                Desde el 20 de febrero 2024 al 28 de marzo 2024
+              </p>
+              <button className="text-sm text-blue-600 hover:underline">
+                Ver detalles
+              </button>
+            </Card>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 className="font-bold text-lg">Programas en convocatoria</h2>
       </section>
     </main>
   )

@@ -19,7 +19,7 @@ export const ConvocatoryListPage = (prop: Props) => {
       </section>
       <article className="flex flex-col gap-4">
         <h2 className="text-lg font-bold">Convocatorias disponibles</h2>
-        <ScrollArea className="space-y-4 h-[calc(100vh-460px)] pr-4">
+        <ScrollArea className="h-[calc(100vh-460px)] pr-4">
           {convocatorias.map((conv) => (
             <div
               key={conv.id}
