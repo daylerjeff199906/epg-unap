@@ -24,7 +24,13 @@ export default function page() {
           />
         }
       />
-      <ConvocatoryListPage />
+      {/* <ConvocatoryListPage /> */}
+      <main className="flex flex-col sm:flex-row justify-between space-y-4">
+        <aside>
+          <ConvocatoryListPage />
+        </aside>
+        <article></article>
+      </main>
     </>
   )
 }
