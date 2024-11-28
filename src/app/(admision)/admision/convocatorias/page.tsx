@@ -17,7 +17,7 @@ export default function page() {
         rightContent={
           <Image
             src="/svg/graduation-cap.svg"
-            alt='Ilustración de una persona con un megáfono y un cartel que dice "Convocatorias"'
+            alt='Ilustración de una person  a con un megáfono y un cartel que dice "Convocatorias"'
             width={300}
             height={300}
             className="object-cover"

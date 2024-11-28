@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "description": "Recepción de documentos",
+    "date_start": "2024-12-01",
+    "date_end": "2024-12-10",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "description": "Revisión de expedientes",
+    "date_start": "2024-12-11",
+    "date_end": "2024-12-15",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "description": "Publicación de resultados preliminares",
+    "date_start": "2024-12-16",
+    "date_end": "2024-12-16",
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "description": "Recepción de reclamos",
+    "date_start": "2024-12-17",
+    "date_end": "2024-12-18",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "description": "Resolución de reclamos",
+    "date_start": "2024-12-19",
+    "date_end": "2024-12-20",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "description": "Examen de conocimientos",
+    "date_start": "2024-12-21",
+    "date_end": "2024-12-21",
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "description": "Entrevista personal",
+    "date_start": "2024-12-22",
+    "date_end": "2024-12-23",
+    "isActive": false
+  },
+  {
+    "id": 8,
+    "description": "Publicación de resultados finales",
+    "date_start": "2024-12-24",
+    "date_end": "2024-12-24",
+    "isActive": false
+  },
+  {
+    "id": 9,
+    "description": "Matrícula ordinaria",
+    "date_start": "2025-01-02",
+    "date_end": "2025-01-10",
+    "isActive": false
+  },
+  {
+    "id": 10,
+    "description": "Inicio de clases",
+    "date_start": "2025-01-15",
+    "date_end": "2025-01-15",
+    "isActive": false
+  }
+]
