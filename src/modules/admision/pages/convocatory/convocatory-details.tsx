@@ -9,15 +9,16 @@ export const ConvocatoryDetails = () => {
           Desde el 01/01/2022 hasta el 31/01/2022
         </p>
       </section>
-      <section>
+      <section className="flex flex-col gap-5">
         <h2 className="font-bold text-lg">Cronograma</h2>
-        <div>
-          <div className="relative pl-8 border-l-2 border-slate-200">
+        <div className="flex gap-4 items-center w-full">
+          <div>
+            <h2 className="font-semibold text-center">ABR</h2>
+            <hr className="border-slate-200 my-2 border-1 w-20" />
+            <div className="text-2xl font-bold text-center">20</div>
+          </div>
+          <div className="relative pl-8 border-l-2 border-slate-200 w-full">
             <div className="absolute left-0 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-slate-200" />
-            <div className="mb-1">
-              <span className="font-semibold">ABR</span>
-              <div className="text-2xl font-bold">20</div>
-            </div>
             <Card className="p-4">
               <h3 className="font-semibold mb-2">Presentación de documentos</h3>
               <p className="text-sm text-slate-500 mb-2">

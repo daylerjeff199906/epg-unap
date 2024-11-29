@@ -42,7 +42,7 @@ export const ConvocatoriaCard = ({
 
   return (
     <Card
-      className={`p-4 border-l-8 group rounded-sm ${
+      className={`p-4 group rounded-sm ${
         (isActive || isSelected) &&
         'bg-slate-50 border-primary-800 hover:cursor-pointer '
       }`}
