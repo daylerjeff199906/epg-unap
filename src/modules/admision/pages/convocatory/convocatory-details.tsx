@@ -19,7 +19,21 @@ export const ConvocatoryDetails = (props: ConvocatoryDetailsProps) => {
 
   const eventsEmpty = data?.events?.length === 0
 
-  
+  // const formatDate = (date: string) => {
+  //   const d = new Date(date)
+  //   return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
+  // }
+
+  const getMonth = (date: string) => {
+    const d = new Date(date)
+    const month = d.toLocaleString('default', { month: 'short' })
+    return month
+  }
+
+  const getDateDay = (date: string) => {
+    const d = new Date(date)
+    return d.getDate()
+  }
 
   return (
     <main className="flex flex-col gap-6">
@@ -39,9 +53,13 @@ export const ConvocatoryDetails = (props: ConvocatoryDetailsProps) => {
               className="flex gap-4 items-center w-full"
             >
               <div>
-                <h2 className="font-semibold text-center">ABR</h2>
+                <h2 className="font-semibold text-center">
+                  {getMonth(event.date)}
+                </h2>
                 <hr className="border-slate-200 my-2 border-1 w-20" />
-                <div className="text-2xl font-bold text-center">20</div>
+                <div className="text-2xl font-bold text-center">
+                  {getDateDay(event.date)}
+                </div>
               </div>
               <div className="relative pl-8 border-l-2 border-slate-200 w-full">
                 <div className="absolute left-0 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-slate-200" />

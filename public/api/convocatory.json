@@ -4,7 +4,7 @@
     "description": "Recepción de documentos",
     "start_date": "2024-12-01",
     "end_date": "2024-12-10",
-    "isActive": true,
+    "is_active": true,
     "id_period": 1
   },
   {
@@ -12,7 +12,7 @@
     "description": "Revisión de expedientes",
     "start_date": "2024-12-11",
     "end_date": "2024-12-15",
-    "isActive": true,
+    "is_active": true,
     "id_period": 1
   },
   {
@@ -20,7 +20,7 @@
     "description": "Publicación de resultados preliminares",
     "start_date": "2024-12-16",
     "end_date": "2024-12-16",
-    "isActive": true,
+    "is_active": true,
     "id_period": 2
   },
   {
@@ -28,7 +28,7 @@
     "description": "Recepción de reclamos",
     "start_date": "2024-12-17",
     "end_date": "2024-12-18",
-    "isActive": true,
+    "is_active": true,
     "id_period": 3
   },
   {
@@ -36,7 +36,7 @@
     "description": "Resolución de reclamos",
     "start_date": "2024-12-19",
     "end_date": "2024-12-20",
-    "isActive": true,
+    "is_active": true,
     "id_period": 3
   },
   {
@@ -44,7 +44,7 @@
     "description": "Examen de conocimientos",
     "start_date": "2024-12-21",
     "end_date": "2024-12-21",
-    "isActive": true,
+    "is_active": true,
     "id_period": 4
   },
   {
@@ -52,7 +52,7 @@
     "description": "Entrevista personal",
     "start_date": "2024-12-22",
     "end_date": "2024-12-23",
-    "isActive": false,
+    "is_active": false,
     "id_period": 4
   },
   {
@@ -60,7 +60,7 @@
     "description": "Publicación de resultados finales",
     "start_date": "2024-12-24",
     "end_date": "2024-12-24",
-    "isActive": false,
+    "is_active": false,
     "id_period": 2
   },
   {
@@ -68,7 +68,7 @@
     "description": "Matrícula ordinaria",
     "start_date": "2025-01-02",
     "end_date": "2025-01-10",
-    "isActive": false,
+    "is_active": false,
     "id_period": 5
   },
   {
@@ -76,7 +76,7 @@
     "description": "Inicio de clases",
     "start_date": "2025-01-15",
     "end_date": "2025-01-15",
-    "isActive": false,
+    "is_active": false,
     "id_period": 5
   }
 ]
