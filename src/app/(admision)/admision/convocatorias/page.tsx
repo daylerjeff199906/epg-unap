@@ -60,8 +60,6 @@ export default async function Page(props: Props) {
     (conv) => conv.id === Number(etapa)
   )
 
-  console.log('convocatoriaSelected', convocatoriaSelected)
-
   return (
     <>
       <BannerSection

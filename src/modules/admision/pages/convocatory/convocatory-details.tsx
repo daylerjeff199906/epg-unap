@@ -13,7 +13,7 @@ export interface schedules {
 }
 
 interface ConvocatoryDetailsProps {
-  data: schedules
+  data?: schedules
   convocatorySelected?: IConvocatory
 }
 
@@ -45,7 +45,7 @@ export const ConvocatoryDetails = (props: ConvocatoryDetailsProps) => {
         <h2 className="font-bold text-lg">Cronograma</h2>
 
         {!eventsEmpty &&
-          data.events.map((event) => (
+          data?.events.map((event) => (
             <div
               key={event.id}
               className="flex gap-4 items-center w-full"
