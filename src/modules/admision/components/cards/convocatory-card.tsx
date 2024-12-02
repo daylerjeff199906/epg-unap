@@ -1,81 +1,84 @@
 'use client'
-import { CalendarDays } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { useState } from 'react'
-import Link from 'next/link'
+import { Card } from '@/components/ui/card'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { useFilterFromUrl } from '@/lib/filter-url'
 
 interface ConvocatoriaCardProps {
+  id: string
+  status: 'active' | 'inactive'
   title: string
-  period: string
-  startDate: string
-  endDate: string
   description: string
-  imageUrl: string
-  currentStage: number
-  totalStages: number
+  isActive?: boolean
 }
 
 export const ConvocatoriaCard = ({
+  id,
+  status,
   title,
-  period,
-  startDate,
-  endDate,
   description,
-  currentStage,
-  totalStages,
+  isActive,
 }: ConvocatoriaCardProps) => {
-  const [isHover, setIsHover] = useState(false)
+  const router = useRouter()
+  const { getParams } = useFilterFromUrl()
+  const idPeriod = getParams({
+    key: 'etapa',
+    value: '',
+  })
+
+  const isSelected = idPeriod === id
+  function handleConvocatoryClick() {
+    if (idPeriod !== '' && idPeriod === id) {
+      router.push(`/admision/convocatorias`, {
+        scroll: false,
+      })
+    } else {
+      router.push(`/admision/convocatorias?etapa=${id}`, {
+        scroll: false,
+      })
+    }
+  }
+
   return (
     <Card
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
-      className={`overflow-hidden  ${
-        isHover ? 'shadow-lg bg-gray-50 cursor-pointer' : 'shadow-sm'
+      className={`p-4 group rounded-sm ${
+        (isActive || isSelected) &&
+        'bg-slate-50 border-primary-800 hover:cursor-pointer '
       }`}
+      onClick={handleConvocatoryClick}
     >
-      <div className="w-full">
-        <CardHeader className="space-y-1 w-full">
-          <div className="flex items-center justify-between">
+      <div className="flex items-start gap-4">
+        <div className="py-2 px-3 bg-white flex items-center justify-center shadow-xl rounded-md">
+          <Image
+            src="/brands/escudo-epg.webp"
+            alt="Icon"
+            width={24}
+            height={24}
+            className="rounded-full"
+          />
+        </div>
+        <div className="flex-1">
+          <div className="flex items-center justify-between mb-2">
             <Badge
-              variant="outline"
-              className="bg-blue-50 text-blue-500 hover:bg-blue-50"
+              className={
+                status === 'active'
+                  ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-100'
+                  : 'bg-danger-50 text-danger-500 hover:bg-danger-100'
+              }
             >
-              {period}
+              {status === 'active' ? 'Activa' : 'Inactiva'}
             </Badge>
           </div>
-          <Link
-            href={`/admision/convocatorias/${title
-              .toLowerCase()
-              .replace(/\s/g, '-')}`}
-            className={`text-lg font-semibold ${
-              isHover ? 'text-primary-800 underline' : 'text-black'
+          <h3
+            className={`font-bold mb-1 group-hover:underline ${
+              (isActive || isSelected) && 'text-primary-800'
             }`}
           >
             {title}
-          </Link>
-          <div className="flex items-center text-sm text-muted-foreground">
-            <CalendarDays className="mr-1 h-4 w-4" />
-            <span>
-              {startDate} - {endDate}
-            </span>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground mb-4">{description}</p>
-          <div className="space-y-2">
-            <div className="flex justify-between text-sm">
-              <span>Etapa actual</span>
-              <span>
-                {currentStage} de {totalStages}
-              </span>
-            </div>
-            {/* <Progress
-              value={(currentStage / totalStages) * 100}
-              className="w-full"
-            /> */}
-          </div>
-        </CardContent>
+          </h3>
+          <p className="text-sm text-slate-500">{description}</p>
+        </div>
       </div>
     </Card>
   )
