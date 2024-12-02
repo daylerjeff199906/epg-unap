@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased bg-background text-foreground dark:bg-background-dark dark:text-foreground-dark`}
+        className={`${inter.className} antialiased bg-primary-50 text-foreground dark:bg-background-dark dark:text-foreground-dark`}
       >
         <Providers>{children}</Providers>
       </body>
