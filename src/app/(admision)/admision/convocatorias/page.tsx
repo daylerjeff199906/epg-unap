@@ -2,6 +2,7 @@ import { fetchCore } from '@/api/core'
 import { BannerSection } from '@/components/app'
 import { ConvocatoryDetails, ConvocatoryListPage } from '@/modules/admision'
 import { SearchParams } from '@/types'
+import { ISchedule } from '@/types/academic'
 import { IConvocatory } from '@/types/admision'
 import { Metadata } from 'next'
 import Image from 'next/image'
@@ -21,6 +22,7 @@ export default async function Page(props: Props) {
   const { etapa } = searchParams
 
   let convocatorias: IConvocatory[] = []
+  let shedule: ISchedule[] = []
 
   try {
     // Fetch convocatorias
@@ -34,6 +36,21 @@ export default async function Page(props: Props) {
   } catch (error) {
     console.error('Error fetching convocatorias:', error)
   }
+
+  try {
+    // Fetch shedule
+    const response = await fetchCore('/api/schedules.json', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    shedule = await response.json()
+  } catch (error) {
+    console.error('Error fetching shedule:', error)
+  }
+
+  console.log('convocatorias:', shedule)
 
   return (
     <>

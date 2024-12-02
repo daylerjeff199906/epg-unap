@@ -1,5 +1,7 @@
 import { Card } from '@/components/ui/card'
 
+// interface
+
 export const ConvocatoryDetails = () => {
   return (
     <main className="flex flex-col gap-6">
