@@ -1,8 +1,8 @@
 import { fetchCore } from '@/api/core'
 import { BannerSection } from '@/components/app'
 import { ConvocatoryDetails, ConvocatoryListPage } from '@/modules/admision'
+import { schedules } from '@/modules/admision/pages/convocatory/convocatory-details'
 import { SearchParams } from '@/types'
-import { ISchedule } from '@/types/academic'
 import { IConvocatory } from '@/types/admision'
 import { Metadata } from 'next'
 import Image from 'next/image'
@@ -22,7 +22,9 @@ export default async function Page(props: Props) {
   const { etapa } = searchParams
 
   let convocatorias: IConvocatory[] = []
-  let shedule: ISchedule[] = []
+  let scheduleList: {
+    schedules: schedules[]
+  } | null = null
 
   try {
     // Fetch convocatorias
@@ -38,19 +40,21 @@ export default async function Page(props: Props) {
   }
 
   try {
-    // Fetch shedule
+    // Fetch schedule
     const response = await fetchCore('/api/schedules.json', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
     })
-    shedule = await response.json()
+    scheduleList = await response.json()
   } catch (error) {
     console.error('Error fetching shedule:', error)
   }
 
-  console.log('convocatorias:', shedule)
+  const schedule = scheduleList?.schedules?.find(
+    (item) => item.call_stage_id === Number(etapa)
+  )
 
   return (
     <>
@@ -88,7 +92,7 @@ export default async function Page(props: Props) {
             </main>
           )}
 
-          {etapa && <ConvocatoryDetails />}
+          {etapa && schedule && <ConvocatoryDetails data={schedule} />}
         </article>
       </main>
     </>
