@@ -1,8 +1,21 @@
 import { Card } from '@/components/ui/card'
 
-// interface
+export interface schedules {
+  call_stage_id: number
+  events: {
+    id: number
+    name: string
+    description: string
+    date: string
+  }[]
+}
 
-export const ConvocatoryDetails = () => {
+interface ConvocatoryDetailsProps {
+  data: schedules
+}
+
+export const ConvocatoryDetails = (props: ConvocatoryDetailsProps) => {
+  const { data } = props
   return (
     <main className="flex flex-col gap-6">
       <section className="w-full">
