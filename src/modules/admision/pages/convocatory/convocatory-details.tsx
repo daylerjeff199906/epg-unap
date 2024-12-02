@@ -38,7 +38,7 @@ export const ConvocatoryDetails = (props: ConvocatoryDetailsProps) => {
       <section className="w-full">
         <h2 className="font-bold text-lg">Detalle de la convocatoria</h2>
         <p className="text-gray-500 text-sm">
-          Desde el 01/01/2022 hasta el 31/01/2022
+          {`Desde el ${convocatorySelected?.start_date} hasta el ${convocatorySelected?.end_date}`}
         </p>
       </section>
       <section className="flex flex-col gap-5">
