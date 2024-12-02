@@ -22,8 +22,6 @@ export const ConvocatoryDetails = (props: ConvocatoryDetailsProps) => {
 
   const eventsEmpty = data?.events?.length === 0
 
-  console.log('convocatorySelected', convocatorySelected)
-
   const getMonth = (date: string) => {
     const d = new Date(date)
     const month = d.toLocaleString('default', { month: 'short' })
