@@ -1,4 +1,5 @@
 import { Card } from '@/components/ui/card'
+import { ProgramsTypesSection } from './programs-types-section'
 
 export interface schedules {
   call_stage_id: number
@@ -76,8 +77,9 @@ export const ConvocatoryDetails = (props: ConvocatoryDetailsProps) => {
             </div>
           ))}
       </section>
-      <section>
+      <section className="flex flex-col gap-6">
         <h2 className="font-bold text-lg">Programas en convocatoria</h2>
+        <ProgramsTypesSection />
       </section>
     </main>
   )

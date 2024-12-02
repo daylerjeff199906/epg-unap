@@ -2,7 +2,13 @@ import { GraduationCap, ChevronRight } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import Link from 'next/link'
 
-export const MastersCard = () => {
+interface ProgramTypeCardProps {
+  title: string
+  url: string
+}
+
+export const ProgramTypeCard = (props: ProgramTypeCardProps) => {
+  const { title = '', url } = props
   return (
     <Card className="w-[280px] hover:shadow-lg transition-shadow">
       <CardContent className="p-6">
@@ -11,13 +17,13 @@ export const MastersCard = () => {
             <GraduationCap className="w-6 h-6 text-blue-500" />
           </div>
           <div className="space-y-2">
-            <h2 className="text-lg font-semibold text-slate-900">Maestrías</h2>
+            <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
             <p className="text-sm text-slate-600">
-              Ver programas, filtrados solo Maestrías
+              Ver programas, filtrados solo {title?.toLowerCase()}
             </p>
           </div>
           <Link
-            href="#"
+            href={url || '#'}
             className="inline-flex items-center text-sm text-blue-500 hover:text-blue-600 font-medium"
           >
             Filtrar
