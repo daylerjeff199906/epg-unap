@@ -56,6 +56,10 @@ export default async function Page(props: Props) {
     (item) => item.call_stage_id === Number(etapa)
   )
 
+  const convocatoriaSelected = convocatorias.find(
+    (conv) => conv.id === Number(etapa)
+  )
+
   return (
     <>
       <BannerSection
@@ -92,7 +96,12 @@ export default async function Page(props: Props) {
             </main>
           )}
 
-          {etapa && schedule && <ConvocatoryDetails data={schedule} />}
+          {etapa && schedule && (
+            <ConvocatoryDetails
+              convocatorySelected={convocatoriaSelected}
+              data={schedule}
+            />
+          )}
         </article>
       </main>
     </>

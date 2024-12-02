@@ -1,5 +1,6 @@
 import { Card } from '@/components/ui/card'
 import { ProgramsTypesSection } from './programs-types-section'
+import { IConvocatory } from '@/types/admision'
 
 export interface schedules {
   call_stage_id: number
@@ -13,17 +14,15 @@ export interface schedules {
 
 interface ConvocatoryDetailsProps {
   data: schedules
+  convocatorySelected?: IConvocatory
 }
 
 export const ConvocatoryDetails = (props: ConvocatoryDetailsProps) => {
-  const { data } = props
+  const { data, convocatorySelected } = props
 
   const eventsEmpty = data?.events?.length === 0
 
-  // const formatDate = (date: string) => {
-  //   const d = new Date(date)
-  //   return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
-  // }
+  console.log('convocatorySelected', convocatorySelected)
 
   const getMonth = (date: string) => {
     const d = new Date(date)
