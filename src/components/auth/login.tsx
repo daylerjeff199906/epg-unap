@@ -1,11 +1,12 @@
+'use client'
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { EyeIcon, EyeOffIcon } from 'lucide-react'
-import { useState } from 'react'
 
-export default function LoginPage() {
+export const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
@@ -14,7 +15,7 @@ export default function LoginPage() {
       <div className="hidden lg:flex w-1/2 bg-[#001529] relative flex-col p-8">
         <div className="flex items-center gap-2 text-white">
           <Image
-            src="/placeholder.svg?height=40&width=40"
+            src="/brands/escudo-epg.webp?height=40&width=40"
             alt="EPG-UNAP Logo"
             width={40}
             height={40}
