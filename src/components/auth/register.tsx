@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/select'
 import { AuthLayout } from './auth-layout'
 
-export default function RegisterPage() {
+export const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [accepted, setAccepted] = useState(false)
