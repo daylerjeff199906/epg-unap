@@ -19,7 +19,7 @@ export const Login = () => {
             alt="EPG-UNAP Logo"
             width={35}
             height={35}
-            className="object-contain"
+            className="object-contain w-9 h-9 min-w-9 min-h-9"
           />
           <span className="text-xl font-semibold">EPG - UNAP</span>
         </div>
@@ -114,7 +114,7 @@ export const Login = () => {
               onClick={() => {}}
             >
               <Image
-                src="/placeholder.svg?height=20&width=20"
+                src="/svg/google.svg"
                 alt="Google"
                 width={20}
                 height={20}
