@@ -12,18 +12,18 @@ export const Login = () => {
   return (
     <div className="min-h-screen w-full flex">
       {/* Left side */}
-      <div className="hidden lg:flex w-1/2 bg-[#001529] relative flex-col p-8">
+      <div className="hidden lg:flex w-3/5 bg-[#001529] relative flex-col p-8 justify-between">
         <div className="flex items-center gap-2 text-white">
           <Image
             src="/brands/escudo-epg.webp?height=40&width=40"
             alt="EPG-UNAP Logo"
-            width={40}
-            height={40}
+            width={35}
+            height={35}
             className="object-contain"
           />
           <span className="text-xl font-semibold">EPG - UNAP</span>
         </div>
-        <div className="mt-32 text-white">
+        <div className="mt-32 text-white max-w-xl">
           <h1 className="text-4xl font-bold mb-4">Admisión</h1>
           <p className="text-lg opacity-90">
             Inicia sesión para más información de las convocatorias y
@@ -42,7 +42,7 @@ export const Login = () => {
       </div>
 
       {/* Right side */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
+      <div className="w-full lg:w-2/5 flex items-center justify-center p-8 bg-white">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center lg:text-left">
             <h2 className="text-2xl font-bold mb-2">Bienvenido de vuelta</h2>
