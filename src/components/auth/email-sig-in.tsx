@@ -34,7 +34,7 @@ export const EmailSignup = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-6"
+        className="space-y-8"
       >
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
