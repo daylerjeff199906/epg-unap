@@ -8,19 +8,25 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { AuthLayout } from './auth-layout'
 
+//eliminar opcioonal
+import { useRouter } from 'next/navigation'
+
 export const EmailSignup = () => {
   const [email, setEmail] = useState('')
   const [accepted, setAccepted] = useState(false)
 
+  const router = useRouter()
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle form submission
+    router.push('/sig-up/verify?email=' + email)
   }
 
   return (
     <AuthLayout>
       <div className="space-y-2">
-        <h2 className="text-2xl font-bold">Crear cuenta</h2>
+        <h2 className="text-2xl font-bold">Verificar email</h2>
         <p className="text-sm text-gray-600">
           ¿Ya tienes cuenta?{' '}
           <Link
