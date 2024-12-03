@@ -15,7 +15,6 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Header */}
       <header className="bg-[#001632] p-4">
         <nav>
           <a
