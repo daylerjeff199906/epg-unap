@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { AuthLayout } from './auth-layout'
 
-export default function VerifyEmailPage() {
+export const VerifyEmail = () => {
   const [code, setCode] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
