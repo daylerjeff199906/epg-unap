@@ -19,7 +19,7 @@ export const Login = () => {
             alt="EPG-UNAP Logo"
             width={35}
             height={35}
-            className="object-contain w-9 h-9 min-w-9 min-h-9"
+            className="object-contain w-9 h-9 min-w-9 min-h-9 max-w-9 max-h-9"
           />
           <span className="text-xl font-semibold">EPG - UNAP</span>
         </div>
