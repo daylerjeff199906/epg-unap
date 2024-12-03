@@ -49,7 +49,7 @@ export const Login = () => {
             <p className="text-sm text-muted-foreground">
               No tienes una cuenta?{' '}
               <Link
-                href="#"
+                href="/signup"
                 className="text-blue-600 hover:underline"
               >
                 Crear cuenta
