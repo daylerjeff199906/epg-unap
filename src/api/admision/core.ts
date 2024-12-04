@@ -1,8 +1,9 @@
+"use server";
 const isProduction = process.env.NODE_ENV === 'production'
 // const urlProd = process.env.API_URL_PROD
 const urlProd = 'https://epg-unap.vercel.app/'
 // const urlLocal = process.env.API_URL_LOCAL
-const urlLocal = 'http://192.168.16.184:8000/'
+const urlLocal = 'http://192.168.16.184:8000/api/'
 const appName = process.env.APP_NAME
 
 const urlBase = isProduction ? urlProd : urlLocal

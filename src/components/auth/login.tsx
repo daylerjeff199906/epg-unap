@@ -8,13 +8,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { EyeIcon, EyeOffIcon } from 'lucide-react'
+import { EyeIcon, EyeOffIcon, Loader } from 'lucide-react'
 import { AuthLayout } from './auth-layout'
 import { fetchLogin } from '@/api/admision'
 
 // Esquema de validación con Zod
 const loginSchema = z.object({
-  username: z.string().email('Por favor, ingresa un correo válido.'),
+  username: z.string({
+    message: 'El usuario es requerido.',
+  }),
   password: z
     .string()
     .min(6, 'La contraseña debe tener al menos 6 caracteres.'),
@@ -24,6 +26,8 @@ type LoginFormValues = z.infer<typeof loginSchema>
 
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const [loading, setLoading] = useState(false)
+
   const {
     control,
     handleSubmit,
@@ -37,10 +41,11 @@ export const Login = () => {
   })
 
   const onSubmit = async (data: LoginFormValues) => {
-    'use server'
+    setLoading(true)
     console.log('Datos enviados:', data)
     const response = await fetchLogin(data)
     console.log('Respuesta del servidor:', response)
+    setLoading(false)
   }
 
   return (
@@ -71,8 +76,8 @@ export const Login = () => {
               render={({ field }) => (
                 <Input
                   {...field}
-                  type="email"
-                  placeholder="Email"
+                  type="text"
+                  placeholder="Usuario"
                   className="w-full"
                 />
               )}
@@ -129,7 +134,9 @@ export const Login = () => {
         <Button
           type="submit"
           className="w-full bg-[#001529] hover:bg-[#002140]"
+          disabled={loading}
         >
+          {loading && <Loader className="w-6 h-6 mr-2 animate-spin" />}
           Iniciar sesión
         </Button>
 

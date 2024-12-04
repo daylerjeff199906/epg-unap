@@ -1,5 +1,5 @@
 {
   "auth": {
-    "login": "/auth/login/"
+    "login": "accounts/login/"
   }
 }

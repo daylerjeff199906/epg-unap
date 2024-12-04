@@ -16,13 +16,18 @@ export const fetchLogin = async (data: {
   password: string
 }) => {
   const path = apiDataUrl.auth.login
-  const response = await fetchCore(`${path}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
 
-  return response.json()
+  try {
+    const response = await fetchCore(`${path}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+
+    return response.json()
+  } catch (error) {
+    return error
+  }
 }
