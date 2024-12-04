@@ -22,6 +22,7 @@ import { DatePickerFilter } from './date-picker'
 import { DatePickerCustom } from './date-picker-custom'
 import { DataTableFilter } from './data-table-filter'
 import BannerSection from './banner-section'
+import { PeriodPostCard } from './perios-post-card'
 
 export {
   NavBarCustom,
@@ -48,4 +49,5 @@ export {
   DatePickerCustom,
   DataTableFilter,
   BannerSection,
+  PeriodPostCard,
 }

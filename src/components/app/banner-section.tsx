@@ -14,6 +14,7 @@ interface HeaderProps {
   showBreadcrumb?: boolean
   rightContent?: ReactNode
   contentBackButton?: ReactNode
+  bottomContent?: ReactNode
 }
 
 export default function BannerSection({
@@ -23,6 +24,7 @@ export default function BannerSection({
   rightContent,
   hideBackButton,
   showBreadcrumb,
+  bottomContent,
 }: HeaderProps) {
   const router = useRouter()
   const pathname = usePathname()
@@ -89,6 +91,9 @@ export default function BannerSection({
             </div>
           )}
         </div>
+        {bottomContent && (
+          <div className="mt-8">{bottomContent}</div>
+        )}
       </div>
     </div>
   )
