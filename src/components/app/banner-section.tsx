@@ -36,7 +36,7 @@ export default function BannerSection({
   }
 
   return (
-    <div className="relative bg-[#0A192F] py-16 md:py-20 overflow-hidden min-h-[300px]">
+    <div className="relative bg-primary-900 py-16 md:py-20 overflow-hidden min-h-[260px]">
       {backgroundImage && (
         <Image
           src={backgroundImage}
@@ -48,7 +48,7 @@ export default function BannerSection({
       )}
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="md:mr-8 order-2 sm:order-1 flex flex-col gap-2 items-start">
+          <div className="mb-8 md:mb-0 md:mr-8 order-2 sm:order-1 flex flex-col gap-2 items-start">
             {showBreadcrumb && <BreadcrumbCustom />}
             {!hideBackButton && (
               <>

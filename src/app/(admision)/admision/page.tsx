@@ -17,13 +17,13 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-50">
-      <article className="relative">
+      <article className="sm:relative">
         <BannerSection />
-        <section className="container space-y-6 absolute -bottom-10 right-0 left-0">
+        <section className="container space-y-6 sm:absolute sm:-bottom-10 sm:right-0 sm:left-0">
           <WelcomeBanner />
         </section>
       </article>
-      <main className="container space-y-6 pt-16">
+      <main className="container space-y-6 sm:pt-16">
         <ProfileCompletion />
         <ActionCards />
         <EventsAndNotifications />
