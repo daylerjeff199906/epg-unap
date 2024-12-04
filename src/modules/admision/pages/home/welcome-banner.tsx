@@ -16,18 +16,13 @@ export const WelcomeBanner = () => {
           >
             Etapas activas
           </Button>
-          <Button
-            variant="ghost"
-            className="text-white hover:bg-blue-500"
-          >
-            Mis postulaciones
-          </Button>
+          <Button variant="ghost">Mis postulaciones</Button>
         </div>
       </section>
       <img
-        src="/svg/graduation-hats.svg"
+        src="/svg/graduation-cap.svg"
         alt="image-default"
-        className="w-64 h-64 absolute bottom-0 right-0"
+        className="w-72 h-72 absolute bottom-0 right-6"
       />
     </div>
   )
