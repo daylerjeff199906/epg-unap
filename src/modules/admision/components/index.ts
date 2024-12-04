@@ -6,6 +6,7 @@ import { AcademicInfoForm } from './frm-profile/academic-info-form'
 import { ContactInfoForm } from './frm-profile/contact-info-form'
 import { PersonalInfoForm } from './frm-profile/personal-info-form'
 import { WorkInfoForm } from './frm-profile/work-info-profile'
+import { ProgramDetailCard } from './cards/program-detail-card'
 
 export {
   ConvocatoriaCard,
@@ -16,4 +17,5 @@ export {
   ContactInfoForm,
   PersonalInfoForm,
   WorkInfoForm,
+  ProgramDetailCard,
 }
