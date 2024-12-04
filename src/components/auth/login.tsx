@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { EyeIcon, EyeOffIcon } from 'lucide-react'
 import { AuthLayout } from './auth-layout'
+import { fetchLogin } from '@/api/admision'
 
 // Esquema de validación con Zod
 const loginSchema = z.object({
@@ -35,9 +36,11 @@ export const Login = () => {
     },
   })
 
-  const onSubmit = (data: LoginFormValues) => {
+  const onSubmit = async (data: LoginFormValues) => {
+    'use server'
     console.log('Datos enviados:', data)
-    // Aquí puedes manejar la lógica de login
+    const response = await fetchLogin(data)
+    console.log('Respuesta del servidor:', response)
   }
 
   return (

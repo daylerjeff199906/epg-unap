@@ -2,11 +2,27 @@
 import { fetchCore } from './core'
 import apiDataUrl from '@/utils/apiUrlData.json'
 
-export async function fetchLogin(data: { username: string; password: string }) {
-  const path = apiDataUrl.auth.login
+// export async function fetchLogin(data: FormData) {
+//   const path = apiDataUrl.auth.login
 
-  return fetchCore(`${path}`, {
+//   return await fetchCore(`${path}`, {
+//     method: 'POST',
+//     body: JSON.stringify(data),
+//   })
+// }
+
+export const fetchLogin = async (data: {
+  username: string
+  password: string
+}) => {
+  const path = apiDataUrl.auth.login
+  const response = await fetchCore(`${path}`, {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify(data),
   })
+
+  return response.json()
 }
