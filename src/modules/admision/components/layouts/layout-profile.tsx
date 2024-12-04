@@ -37,8 +37,8 @@ export function LayoutProfile({ children }: { children: React.ReactNode }) {
                 <Link
                   key={index}
                   href={data.url}
-                  className={`block p-4 hover:bg-gray-100 border-b ${
-                    pathname === data.url ? 'border-l-8 border-primary-800' : ''
+                  className={`block p-4 text-gray-500 hover:bg-gray-100 border-b ${
+                    pathname === data.url ? 'border-l-5 border-primary-800 text-primary-800 font-medium' : ''
                   }`}
                 >
                   {data.title}
