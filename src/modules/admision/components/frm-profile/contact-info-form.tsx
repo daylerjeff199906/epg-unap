@@ -10,87 +10,82 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Switch } from '@/components/ui/switch'
 import { Calendar } from '@/components/ui/calendar'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import { CalendarIcon, Plus } from 'lucide-react'
+import { CalendarIcon } from 'lucide-react'
 import { format } from 'date-fns'
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
 
-export function AcademicInfoForm() {
+export function ContactInfoForm() {
   const [date, setDate] = useState<Date>()
 
   return (
     <form className="space-y-8">
       <div className="space-y-4">
-        <h2 className="text-2xl font-semibold">Información Académica</h2>
+        <h2 className="text-2xl font-semibold">Contacto</h2>
         <div className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
-              <Label>Selecciona el nivel educativo *</Label>
+              <Label>Dirección *</Label>
               <Select>
                 <SelectTrigger>
-                  <SelectValue placeholder="Bachiller" />
+                  <SelectValue placeholder="Cod. Ubigeo" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="bachiller">Bachiller</SelectItem>
-                  <SelectItem value="maestria">Maestría</SelectItem>
+                  <SelectItem value="160016">160016</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="career">&nbsp;</Label>
+              <Label htmlFor="address">&nbsp;</Label>
               <Input
-                id="career"
-                placeholder="Panadería nuclear"
+                id="address"
+                placeholder="Ingrese su dirección actual"
               />
             </div>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="institution">
-              Nombre de la institución donde cursaste tus estudios *
-            </Label>
+            <Label htmlFor="email">Email *</Label>
             <Input
-              id="institution"
-              placeholder="Universidad Nacional Larco Herrera"
+              id="email"
+              type="email"
+              placeholder="Ingrese su email"
             />
           </div>
           <div className="space-y-2">
-            <Label>Periodos de estudio *</Label>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  variant="outline"
-                  className={cn(
-                    'w-full justify-start text-left font-normal',
-                    !date && 'text-muted-foreground'
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {date ? (
-                    format(date, 'PPP')
-                  ) : (
-                    <span>Desde el 20/02/2018 al 20/03/2024</span>
-                  )}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0">
-                <Calendar
-                  mode="single"
-                  selected={date}
-                  onSelect={setDate}
-                  initialFocus
-                />
-              </PopoverContent>
-            </Popover>
+            <Label htmlFor="phone">Celular *</Label>
+            <Input
+              id="phone"
+              type="tel"
+              placeholder="Ingrese su celular de contacto"
+            />
           </div>
           <div className="space-y-2">
-            <Label>Fecha de entrega de diploma</Label>
+            <Label htmlFor="whatsapp">WhatsApp *</Label>
+            <Input
+              id="whatsapp"
+              placeholder="Ingrese su email"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label>Estado civil</Label>
+            <Select>
+              <SelectTrigger>
+                <SelectValue placeholder="Seleccione estado civil" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="casado">Casado</SelectItem>
+                <SelectItem value="soltero">Soltero</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
+            <Label>Fecha de nacimiento *</Label>
             <Popover>
               <PopoverTrigger asChild>
                 <Button
@@ -118,18 +113,30 @@ export function AcademicInfoForm() {
               </PopoverContent>
             </Popover>
           </div>
-          <div className="flex items-center space-x-2">
-            <Switch id="graduated" />
-            <Label htmlFor="graduated">Egresado</Label>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2">
+              <Label>Lugar nacimiento</Label>
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Cod. Ubigeo" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="160016">160016</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label>País</Label>
+              <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Perú" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="peru">Perú</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
-          <Button
-            type="button"
-            variant="outline"
-            className="w-full"
-          >
-            <Plus className="mr-2 h-4 w-4" />
-            Agregar estudio
-          </Button>
         </div>
       </div>
       <div className="flex justify-end gap-4">

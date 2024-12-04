@@ -1,46 +1,54 @@
+'use client'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+const dataUrls = [
+  {
+    title: 'Información personal',
+    url: '/admision/informacion-personal',
+  },
+  {
+    title: 'Información de contacto',
+    url: '#',
+  },
+  {
+    title: 'Información académica',
+    url: '#',
+  },
+  {
+    title: 'Información laboral',
+    url: '#',
+  },
+]
 
 export function LayoutProfile({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
+
   return (
     <div className="min-h-screen bg-[#f5f8fc]">
       <main className="container py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">Bienvenido, Pancracio</h1>
-          <p className="text-gray-600">
-            Bienvenidos, si deseas postular a un programa no pierdas la
-            oportunidad
-          </p>
-        </div>
-        <div className="grid md:grid-cols-[240px,1fr] gap-8">
-          <nav className="bg-white rounded-lg p-4 h-fit">
-            <div className="space-y-2">
-              <Link
-                className="block px-4 py-2 rounded-md hover:bg-gray-100"
-                href="#"
-              >
-                Información personal
-              </Link>
-              <Link
-                className="block px-4 py-2 rounded-md hover:bg-gray-100"
-                href="#"
-              >
-                Información de contacto
-              </Link>
-              <Link
-                className="block px-4 py-2 rounded-md hover:bg-gray-100"
-                href="#"
-              >
-                Información académica
-              </Link>
-              <Link
-                className="block px-4 py-2 rounded-md hover:bg-gray-100"
-                href="#"
-              >
-                Información laboral
-              </Link>
+        <div className="flex flex-co sm:flex-row gap-8">
+          <nav className="bg-white rounded-lg h-fit min-w-[240px] w-80">
+            <div className="p-4 border-b">
+              <h2 className="font-bold text-lg">Tus detalles</h2>
+            </div>
+            <div className="">
+              {dataUrls.map((data, index) => (
+                <Link
+                  key={index}
+                  href={data.url}
+                  className={`block p-4 hover:bg-gray-100 border-b ${
+                    pathname === data.url ? 'border-l-8 border-primary-800' : ''
+                  }`}
+                >
+                  {data.title}
+                </Link>
+              ))}
             </div>
           </nav>
-          <div className="bg-white rounded-lg p-6">{children}</div>
+          <article className="w-full bg-white rounded-lg p-6">
+            {children}
+          </article>
         </div>
       </main>
     </div>
