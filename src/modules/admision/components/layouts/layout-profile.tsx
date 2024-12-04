@@ -9,15 +9,15 @@ const dataUrls = [
   },
   {
     title: 'Información de contacto',
-    url: '#',
+    url: '/admision/informacion-personal/contacto',
   },
   {
     title: 'Información académica',
-    url: '#',
+    url: '/admision/informacion-personal/academico',
   },
   {
     title: 'Información laboral',
-    url: '#',
+    url: '/admision/informacion-personal/laboral',
   },
 ]
 
@@ -38,7 +38,9 @@ export function LayoutProfile({ children }: { children: React.ReactNode }) {
                   key={index}
                   href={data.url}
                   className={`block p-4 text-gray-500 hover:bg-gray-100 border-b ${
-                    pathname === data.url ? 'border-l-5 border-primary-800 text-primary-800 font-medium' : ''
+                    pathname === data.url
+                      ? 'border-l-5 border-primary-800 text-primary-800 font-medium'
+                      : ''
                   }`}
                 >
                   {data.title}
