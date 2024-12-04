@@ -14,9 +14,7 @@ import { fetchLogin } from '@/api/admision'
 
 // Esquema de validación con Zod
 const loginSchema = z.object({
-  username: z.string({
-    message: 'El usuario es requerido.',
-  }),
+  username: z.string().min(5, 'El usuario es requerido.'),
   password: z
     .string()
     .min(6, 'La contraseña debe tener al menos 6 caracteres.'),
@@ -73,12 +71,12 @@ export const Login = () => {
         </p>
       </div>
       {errorsList?.length > 0 && (
-        <section>
-          <ul className="space-y-2 mt-4">
+        <section className="bg-danger-50 border border-danger-200 text-danger-800 px-4 py-3 rounded relative">
+          <ul className="flex flex-col gap-1">
             {errorsList.map((error, index) => (
               <li
                 key={index}
-                className="text-red-500 text-sm"
+                className="text-red-500 text-sm list-disc list-inside"
               >
                 {error}
               </li>
@@ -89,7 +87,7 @@ export const Login = () => {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="space-y-6"
+        className="flex flex-col gap-6"
       >
         <div className="space-y-4">
           {/* Campo de email */}
