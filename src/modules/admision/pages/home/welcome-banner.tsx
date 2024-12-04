@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import { urlDataAdmision } from '../../constants'
 
 export const WelcomeBanner = () => {
   return (
@@ -13,10 +15,17 @@ export const WelcomeBanner = () => {
           <Button
             variant="secondary"
             className="bg-white hover:bg-gray-100 text-blue-600"
+            asChild
           >
-            Etapas activas
+            <Link href={urlDataAdmision.convocation.urls.base}>
+              Etapas activas
+            </Link>
           </Button>
-          <Button variant="ghost">Mis postulaciones</Button>
+          <Button variant="ghost">
+            <Link href={urlDataAdmision.admision.urls.base}>
+              Mis postulaciones
+            </Link>
+          </Button>
         </div>
       </section>
       <img
