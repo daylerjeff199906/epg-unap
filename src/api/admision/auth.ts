@@ -2,19 +2,20 @@
 import { fetchCore } from './core'
 import apiDataUrl from '@/utils/apiUrlData.json'
 
-// export async function fetchLogin(data: FormData) {
-//   const path = apiDataUrl.auth.login
-
-//   return await fetchCore(`${path}`, {
-//     method: 'POST',
-//     body: JSON.stringify(data),
-//   })
-// }
+export interface LoginResponse {
+  user_token: string
+  person_token: string
+  first_name: string
+  last_name: string
+  email: string
+  refresh_token: string
+  access_token: string
+}
 
 export const fetchLogin = async (data: {
   username: string
   password: string
-}) => {
+}): Promise<{ status: number; data?: LoginResponse; errors?: string[] }> => {
   const path = apiDataUrl.auth.login
 
   try {
@@ -26,8 +27,26 @@ export const fetchLogin = async (data: {
       body: JSON.stringify(data),
     })
 
-    return response.json()
+    if (!response.ok) {
+      // Si el estado no es exitoso, parseamos el error
+      const errorResponse = await response.json()
+      return {
+        status: response.status,
+        errors: errorResponse.errors || ['Error desconocido.'],
+      }
+    }
+
+    // Si el estado es exitoso, parseamos los datos
+    const responseData: LoginResponse = await response.json()
+    return {
+      status: response.status,
+      data: responseData,
+    }
   } catch (error) {
-    return error
+    console.error('Error al realizar la petición:', error)
+    return {
+      status: 500,
+      errors: ['Error al conectar con el servidor.'],
+    }
   }
 }

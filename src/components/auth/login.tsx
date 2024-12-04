@@ -27,6 +27,7 @@ type LoginFormValues = z.infer<typeof loginSchema>
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [errorsList, setErrorsList] = useState<Array<string>>([])
 
   const {
     control,
@@ -42,9 +43,18 @@ export const Login = () => {
 
   const onSubmit = async (data: LoginFormValues) => {
     setLoading(true)
-    console.log('Datos enviados:', data)
+    setErrorsList([])
+    // setUserData(null)
+
     const response = await fetchLogin(data)
-    console.log('Respuesta del servidor:', response)
+
+    if (response.status === 200 && response.data) {
+      // setUserData(response.data)
+      console.log('Usuario autenticado:', response.data)
+    } else {
+      setErrorsList(response.errors || ['Error desconocido.'])
+    }
+
     setLoading(false)
   }
 
@@ -62,6 +72,20 @@ export const Login = () => {
           </Link>
         </p>
       </div>
+      {errorsList?.length > 0 && (
+        <section>
+          <ul className="space-y-2 mt-4">
+            {errorsList.map((error, index) => (
+              <li
+                key={index}
+                className="text-red-500 text-sm"
+              >
+                {error}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <form
         onSubmit={handleSubmit(onSubmit)}
