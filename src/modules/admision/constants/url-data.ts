@@ -2,7 +2,7 @@ export const URL_BASE = '/admision'
 export const urlDataAdmision = {
   home: {
     urls: {
-      base: `${URL_BASE}/inicio`,
+      base: `${URL_BASE}`,
     },
     title: 'Inicio',
     description: 'Bienvenido a la plataforma de admisión de la UNAP',
