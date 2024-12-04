@@ -1,18 +1,8 @@
-// import { BannerSection } from '@/components/intranet'
 import { BannerSection } from '@/components/app'
 import { ActionCards } from '@/modules/admision/pages/home/actions-card'
 import { EventsAndNotifications } from '@/modules/admision/pages/home/events-notification'
 import { ProfileCompletion } from '@/modules/admision/pages/home/profile-completion'
 import { WelcomeBanner } from '@/modules/admision/pages/home/welcome-banner'
-// import { Home } from 'lucide-react'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: {
-    template: '%s | ADMISION | EPG - UNAP',
-    default: 'ADMISION | EPG - UNAP',
-  },
-}
 
 export default function Page() {
   return (

@@ -1,5 +1,8 @@
 import { Progress } from '@/components/ui/progress'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import { urlDataAdmision } from '../../constants'
+import { ArrowRight } from 'lucide-react'
 
 export const ProfileCompletion = () => {
   return (
@@ -24,8 +27,11 @@ export const ProfileCompletion = () => {
       <Button
         variant="link"
         className="text-blue-600 p-0"
+        asChild
       >
-        Completar perfil →
+        <Link href={urlDataAdmision.profile.urls.base}>
+          Completar perfil <ArrowRight className="w-4 h-4" />
+        </Link>
       </Button>
     </div>
   )

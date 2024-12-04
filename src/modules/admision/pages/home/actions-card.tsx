@@ -1,5 +1,6 @@
 import { Book, GraduationCap, Coins } from 'lucide-react'
 import { ActionCard } from '../../components'
+import { urlDataAdmision } from '../../constants'
 
 export const ActionCards = () => {
   const cards = [
@@ -7,13 +8,13 @@ export const ActionCards = () => {
       icon: <Book className="w-6 h-6 text-blue-600" />,
       title: 'Convocatorias',
       description: 'Explora nuestros programas académicos',
-      link: '/admision/convocatorias',
+      link: urlDataAdmision.convocation.urls.base,
     },
     {
       icon: <GraduationCap className="w-6 h-6 text-blue-600" />,
       title: 'Postulaciones',
       description: 'Revisa el estado de tus postulaciones',
-      link: '#',
+      link: urlDataAdmision.admision.urls.base,
     },
     {
       icon: <Coins className="w-6 h-6 text-blue-600" />,
