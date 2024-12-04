@@ -3,22 +3,21 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Clock, Users, BookOpen, GraduationCap } from 'lucide-react'
 import Image from "next/image"
+import { IProgram } from "@/types/admision"
 
-interface IProgramCardProps {
-  title: string
-  description: string
-  duration: string
-  capacity: number
-  credits: number
-  modality: string
+interface IProps {
+  program: IProgram
 }
 
-export const ProgramCard = () => {
+export const ProgramCard = (props: IProps) => {
+  const { program } = props
+  const { name, description, duration, slots, credits, type, image } = program
+
   return (
-    <Card className="max-w-md overflow-hidden border-none shadow-none rounded-sm">
+    <Card className="overflow-hidden border-none shadow-none rounded-sm">
       <div className="relative h-48">
         <Image
-          src="/placeholder.svg"
+          src={image}
           alt="Presentación del programa"
           fill
           className="object-cover"
@@ -26,44 +25,41 @@ export const ProgramCard = () => {
       </div>
       <CardContent className="p-6">
         <div className="space-y-4">
-          {/* Header */}
           <div className="flex justify-between items-start gap-4">
-            <h2 className="text-xl font-bold leading-tight">
-              MAESTRÍA EN CIENCIAS EN GESTIÓN AMBIENTAL
+            <h2 className="text-xl font-bold leading-tight uppercase">
+              {name}
             </h2>
             <Badge variant="secondary" className="bg-blue-50 text-blue-600 hover:bg-blue-50">
-              Presencial
+              {program.modality}
             </Badge>
           </div>
 
-          {/* Description */}
           <p className="text-gray-600">
-            Forma profesionales capaces de liderar la gestión y modernización del Estado
+            {description}
           </p>
 
-          {/* Stats Grid */}
           <div className="grid grid-cols-2 gap-4">
             <div className="flex items-center gap-2 text-gray-600">
               <Clock className="h-4 w-4 text-blue-600" />
-              <span>2 años</span>
+              <span>{duration}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
               <Users className="h-4 w-4 text-blue-600" />
-              <span>39 cupos</span>
+              <span>{slots} cupos</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
               <BookOpen className="h-4 w-4 text-blue-600" />
-              <span>72 créditos</span>
+              <span>{credits} créditos</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
               <GraduationCap className="h-4 w-4 text-blue-600" />
-              <span>Grado académico</span>
+              <span>{type}</span>
             </div>
           </div>
-          {/* CTA Button */}
+
           <div className="flex justify-end">
             <Button className="bg-blue-600 hover:bg-blue-700">
-              Postular ahora
+              Inscribete ahora
             </Button>
           </div>
         </div>
