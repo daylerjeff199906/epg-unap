@@ -1,5 +1,5 @@
 export const URL_BASE = '/admision'
-export const urlData = {
+export const urlDataAdmision = {
   home: {
     urls: {
       base: `${URL_BASE}/inicio`,

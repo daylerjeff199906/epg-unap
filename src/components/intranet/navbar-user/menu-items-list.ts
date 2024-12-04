@@ -1,3 +1,4 @@
+import { urlDataAdmision } from '@/modules/admision'
 export const intranetMenu: {
   title: string
   href: string
@@ -47,22 +48,22 @@ export const admisionMenu: {
 }[] = [
   {
     title: 'Inicio',
-    href: '/admision',
-    description: 'Panel de inicio del postulante',
+    href: urlDataAdmision.home.urls.base,
+    description: urlDataAdmision.home.description,
   },
   {
     title: 'Convocatorias',
-    href: '/admision/convocatorias',
-    description: 'Convocatorias de admisión',
+    href: urlDataAdmision.convocation.urls.base,
+    description: urlDataAdmision.convocation.description,
   },
   {
-    title: 'Proceso de Admisión',
-    href: '/admision/proceso-de-admision',
-    description: 'Proceso de admisión',
+    title: 'Postulaciones',
+    href: urlDataAdmision.admision.urls.base,
+    description: urlDataAdmision.admision.description,
   },
   {
     title: 'Información personal',
-    href: '/admision/informacion-personal',
-    description: 'Requisitos de admisión',
+    href: urlDataAdmision.profile.urls.base,
+    description: urlDataAdmision.profile.description,
   },
 ]
