@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { NavigationMenuDemo } from './menu-items'
 import { NavigationMenuDemoProps } from './INavbarProps'
+import { urlDataAdmision } from '@/modules/admision'
 
 export const NavbarUser = ({ menuItems }: NavigationMenuDemoProps) => {
   return (
@@ -8,7 +9,7 @@ export const NavbarUser = ({ menuItems }: NavigationMenuDemoProps) => {
       <header className="container py-3 flex items-center justify-between gap-8">
         <section id="navbar">
           <Link
-            href={'/intranet'}
+            href={urlDataAdmision.home.urls.base}
             className="flex items-center gap-2 w-fit hover:cursor-pointer"
           >
             <img
