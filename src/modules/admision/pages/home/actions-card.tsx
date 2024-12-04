@@ -7,7 +7,7 @@ export const ActionCards = () => {
       icon: <Book className="w-6 h-6 text-blue-600" />,
       title: 'Convocatorias',
       description: 'Explora nuestros programas académicos',
-      link: '#',
+      link: '/admision/convocatorias',
     },
     {
       icon: <GraduationCap className="w-6 h-6 text-blue-600" />,
