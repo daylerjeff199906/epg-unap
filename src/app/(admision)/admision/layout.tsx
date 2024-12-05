@@ -1,4 +1,4 @@
-import { CenteredWithBrandingFooter } from '@/components/app/footer-custom/centered-with-branding-footer'
+import { BrandingLinkTopFooter } from '@/components/app/footer-custom/branding-link-top-footer'
 import { NavbarUser } from '@/components/intranet'
 import { admisionMenu } from '@/components/intranet/navbar-user/menu-items-list'
 import { Metadata } from 'next'
@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <NavbarUser menuItems={admisionMenu} />
       {children}
-      <CenteredWithBrandingFooter />
+      <BrandingLinkTopFooter />
     </>
   )
 }
