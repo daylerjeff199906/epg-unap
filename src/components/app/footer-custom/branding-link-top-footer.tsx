@@ -5,7 +5,7 @@ import Link from 'next/link'
 export const BrandingLinkTopFooter = () => {
   return (
     <footer className="bg-gray-100 border-t">
-      <div className="relative container lg:pt-24">
+      <div className="relative container lg:pt-24 pb-4">
         <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
           <a
             className="inline-block rounded-full bg-primary-800 p-2 text-white shadow transition hover:bg-teal-500 sm:p-3 lg:p-4"
@@ -40,7 +40,7 @@ export const BrandingLinkTopFooter = () => {
                   alt="logo-epg"
                   className="w-6 h-10"
                 />
-                <h1 className="w-32 min-w-32 font-black text-xs text-primary-800">
+                <h1 className="w-32 min-w-32 font-bold text-xs text-primary-800">
                   ESCUELA DE POSTGRADO UNAP
                 </h1>
               </Link>
