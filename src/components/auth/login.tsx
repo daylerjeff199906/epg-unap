@@ -71,7 +71,7 @@ export const Login = () => {
         </p>
       </div>
       {errorsList?.length > 0 && (
-        <section className="bg-danger-50 border border-danger-200 text-danger-800 px-4 py-3 rounded relative">
+        <section className="bg-danger-50 border border-danger-200 text-danger-800 px-4 py-3 rounded relative dark:bg-danger-500 dark:border-danger-400 dark:text-danger-100">
           <ul className="flex flex-col gap-1">
             {errorsList.map((error, index) => (
               <li
