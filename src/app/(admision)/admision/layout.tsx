@@ -2,6 +2,7 @@ import { CenteredWithBrandingFooter } from '@/components/app/footer-custom/cente
 import { NavbarUser } from '@/components/intranet'
 import { admisionMenu } from '@/components/intranet/navbar-user/menu-items-list'
 import { Metadata } from 'next'
+// import 'react-toastify/dist/ReactToastify.css'
 
 export const metadata: Metadata = {
   title: {
