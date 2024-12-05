@@ -1,9 +1,13 @@
+'use client'
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Clock, Users, BookOpen, GraduationCap } from 'lucide-react'
 import Image from "next/image"
 import { IProgram } from "@/types/admision"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 interface IProps {
   program: IProgram
@@ -12,6 +16,7 @@ interface IProps {
 export const ProgramCard = (props: IProps) => {
   const { program } = props
   const { name, description, duration, slots, credits, type, image } = program
+  const pathname = usePathname()
 
   return (
     <Card className="overflow-hidden border-none shadow-none rounded-sm">
@@ -58,9 +63,11 @@ export const ProgramCard = (props: IProps) => {
           </div>
 
           <div className="flex justify-end">
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Inscribete ahora
-            </Button>
+            <Link href={`${pathname}/${program.id}`}>
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Inscribete ahora
+              </Button>
+            </Link>
           </div>
         </div>
       </CardContent>
