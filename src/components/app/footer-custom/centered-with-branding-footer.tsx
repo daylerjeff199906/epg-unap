@@ -1,5 +1,5 @@
-import { urlDataAdmision } from "@/modules/admision"
-import Link from "next/link"
+import { urlDataAdmision } from '@/modules/admision'
+import Link from 'next/link'
 
 export const CenteredWithBrandingFooter = () => {
   return (
@@ -22,7 +22,9 @@ export const CenteredWithBrandingFooter = () => {
         </div>
 
         <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-          Escuela de Postgrado de la Universidad Nacional de la Amazonía Peruana. 
+          Escuela de Postgrado de la Universidad Nacional de la Amazonía
+          Peruana. Av. Abelardo Quiñones Km. 2.5, Iquitos, Perú. Teléfono: (065)
+          26-0000 Anexo 1101.
         </p>
 
         <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
@@ -31,8 +33,7 @@ export const CenteredWithBrandingFooter = () => {
               className="text-gray-700 transition hover:text-gray-700/75"
               href="#"
             >
-              {' '}
-              About{' '}
+              Inicio{' '}
             </a>
           </li>
 
@@ -41,8 +42,7 @@ export const CenteredWithBrandingFooter = () => {
               className="text-gray-700 transition hover:text-gray-700/75"
               href="#"
             >
-              {' '}
-              Careers{' '}
+              Convocatorias{' '}
             </a>
           </li>
 
@@ -51,8 +51,7 @@ export const CenteredWithBrandingFooter = () => {
               className="text-gray-700 transition hover:text-gray-700/75"
               href="#"
             >
-              {' '}
-              History{' '}
+              Postulaciones{' '}
             </a>
           </li>
 
@@ -61,28 +60,7 @@ export const CenteredWithBrandingFooter = () => {
               className="text-gray-700 transition hover:text-gray-700/75"
               href="#"
             >
-              {' '}
-              Services{' '}
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75"
-              href="#"
-            >
-              {' '}
-              Projects{' '}
-            </a>
-          </li>
-
-          <li>
-            <a
-              className="text-gray-700 transition hover:text-gray-700/75"
-              href="#"
-            >
-              {' '}
-              Blog{' '}
+              Perfil
             </a>
           </li>
         </ul>
