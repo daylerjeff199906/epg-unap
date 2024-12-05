@@ -1,14 +1,60 @@
 'use client'
+
 import { useState } from 'react'
+import { useForm, Controller } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { EyeIcon, EyeOffIcon } from 'lucide-react'
+import { EyeIcon, EyeOffIcon, Loader } from 'lucide-react'
 import { AuthLayout } from './auth-layout'
+import { fetchLogin } from '@/api/admision'
+
+// Esquema de validación con Zod
+const loginSchema = z.object({
+  username: z.string().min(5, 'El usuario es requerido.'),
+  password: z
+    .string()
+    .min(6, 'La contraseña debe tener al menos 6 caracteres.'),
+})
+
+type LoginFormValues = z.infer<typeof loginSchema>
 
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [errorsList, setErrorsList] = useState<Array<string>>([])
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormValues>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      username: '',
+      password: '',
+    },
+  })
+
+  const onSubmit = async (data: LoginFormValues) => {
+    setLoading(true)
+    setErrorsList([])
+    // setUserData(null)
+
+    const response = await fetchLogin(data)
+
+    if (response.status === 200 && response.data) {
+      // setUserData(response.data)
+      console.log('Usuario autenticado:', response.data)
+    } else {
+      setErrorsList(response.errors || ['Error desconocido.'])
+    }
+
+    setLoading(false)
+  }
 
   return (
     <AuthLayout>
@@ -17,28 +63,67 @@ export const Login = () => {
         <p className="text-sm text-muted-foreground">
           No tienes una cuenta?{' '}
           <Link
-            href="/sig-up"
+            href="/sign-up"
             className="text-blue-600 hover:underline"
           >
             Crear cuenta
           </Link>
         </p>
       </div>
+      {errorsList?.length > 0 && (
+        <section className="bg-danger-50 border border-danger-200 text-danger-800 px-4 py-3 rounded relative dark:bg-danger-500 dark:border-danger-400 dark:text-danger-100">
+          <ul className="flex flex-col gap-1">
+            {errorsList.map((error, index) => (
+              <li
+                key={index}
+                className="text-red-500 text-sm list-disc list-inside"
+              >
+                {error}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
-      <form className="space-y-6">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-6"
+      >
         <div className="space-y-4">
+          {/* Campo de email */}
           <div>
-            <Input
-              type="email"
-              placeholder="Email"
-              className="w-full"
+            <Controller
+              name="username"
+              control={control}
+              render={({ field }) => (
+                <Input
+                  {...field}
+                  type="text"
+                  placeholder="Usuario"
+                  className="w-full"
+                />
+              )}
             />
+            {errors.username && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.username.message}
+              </p>
+            )}
           </div>
+
+          {/* Campo de contraseña */}
           <div className="relative">
-            <Input
-              type={showPassword ? 'text' : 'password'}
-              placeholder="Password"
-              className="w-full pr-10"
+            <Controller
+              name="password"
+              control={control}
+              render={({ field }) => (
+                <Input
+                  {...field}
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Password"
+                  className="w-full pr-10"
+                />
+              )}
             />
             <button
               type="button"
@@ -51,6 +136,11 @@ export const Login = () => {
                 <EyeIcon className="h-5 w-5" />
               )}
             </button>
+            {errors.password && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.password.message}
+              </p>
+            )}
           </div>
         </div>
 
@@ -63,7 +153,12 @@ export const Login = () => {
           </Link>
         </div>
 
-        <Button className="w-full bg-[#001529] hover:bg-[#002140]">
+        <Button
+          type="submit"
+          className="w-full bg-[#001529] hover:bg-[#002140]"
+          disabled={loading}
+        >
+          {loading && <Loader className="w-6 h-6 mr-2 animate-spin" />}
           Iniciar sesión
         </Button>
 

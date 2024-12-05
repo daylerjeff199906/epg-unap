@@ -13,7 +13,7 @@ export default function Page() {
           <WelcomeBanner />
         </section>
       </article>
-      <main className="container space-y-6 pt-20 sm:pt-16">
+      <main className="container space-y-6 pt-20 sm:pt-16 pb-10">
         <ProfileCompletion />
         <ActionCards />
         <EventsAndNotifications />

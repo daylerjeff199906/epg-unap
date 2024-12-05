@@ -10,7 +10,7 @@
       "modality": "Presencial",
       "credits": 60,
       "degree": "Magíster en Gestión Pública",
-      "image": "https://example.com/maestria-gestion-publica.jpg",
+      "image": "https://picsum.photos/seed/gestion-publica/400/300",
       "associated_calls": [1, 2, 6]
     },
     {
@@ -23,7 +23,7 @@
       "modality": "Semipresencial",
       "credits": 120,
       "degree": "Doctor en Ciencias Ambientales",
-      "image": "https://example.com/doctorado-ciencias-ambientales.jpg",
+      "image": "https://picsum.photos/seed/ciencias-ambientales/400/300",
       "associated_calls": [1, 4, 6, 9]
     },
     {
@@ -36,7 +36,7 @@
       "modality": "Virtual",
       "credits": 20,
       "degree": "Certificado de Diplomado en Innovación Tecnológica",
-      "image": "https://example.com/diplomado-innovacion.jpg",
+      "image": "https://picsum.photos/seed/innovacion-tecnologica/400/300",
       "associated_calls": [2, 5]
     },
     {
@@ -49,7 +49,7 @@
       "modality": "Presencial",
       "credits": 30,
       "degree": "Especialista en Derecho Penal",
-      "image": "https://example.com/especializacion-derecho-penal.jpg",
+      "image": "https://picsum.photos/seed/derecho-penal/400/300",
       "associated_calls": [1, 4, 7]
     },
     {
@@ -62,7 +62,7 @@
       "modality": "Presencial",
       "credits": 60,
       "degree": "Magíster en Educación",
-      "image": "https://example.com/maestria-educacion.jpg",
+      "image": "https://picsum.photos/seed/educacion/400/300",
       "associated_calls": [2, 3, 6]
     },
     {
@@ -75,7 +75,7 @@
       "modality": "Semipresencial",
       "credits": 120,
       "degree": "Doctor en Ciencias de la Salud",
-      "image": "https://example.com/doctorado-ciencias-salud.jpg",
+      "image": "https://picsum.photos/seed/ciencias-salud/400/300",
       "associated_calls": [1, 5, 9]
     },
     {
@@ -88,7 +88,7 @@
       "modality": "Virtual",
       "credits": 18,
       "degree": "Certificado de Diplomado en Marketing Digital",
-      "image": "https://example.com/diplomado-marketing.jpg",
+      "image": "https://picsum.photos/seed/marketing-digital/400/300",
       "associated_calls": [2, 3, 8]
     },
     {
@@ -101,7 +101,7 @@
       "modality": "Semipresencial",
       "credits": 30,
       "degree": "Especialista en Recursos Humanos",
-      "image": "https://example.com/especializacion-rrhh.jpg",
+      "image": "https://picsum.photos/seed/recursos-humanos/400/300",
       "associated_calls": [3, 6]
     },
     {
@@ -114,7 +114,7 @@
       "modality": "Presencial",
       "credits": 60,
       "degree": "Magíster en Finanzas",
-      "image": "https://example.com/maestria-finanzas.jpg",
+      "image": "https://picsum.photos/seed/finanzas/400/300",
       "associated_calls": [1, 5]
     },
     {
@@ -127,7 +127,7 @@
       "modality": "Semipresencial",
       "credits": 120,
       "degree": "Doctor en Economía",
-      "image": "https://example.com/doctorado-economia.jpg",
+      "image": "https://picsum.photos/seed/economia/400/300",
       "associated_calls": [2, 7]
     },
     {
@@ -140,7 +140,7 @@
       "modality": "Virtual",
       "credits": 24,
       "degree": "Certificado de Diplomado en Gestión de Proyectos",
-      "image": "https://example.com/diplomado-proyectos.jpg",
+      "image": "https://picsum.photos/seed/gestion-proyectos/400/300",
       "associated_calls": [1, 4, 5]
     },
     {
@@ -153,7 +153,7 @@
       "modality": "Presencial",
       "credits": 32,
       "degree": "Especialista en Negocios Internacionales",
-      "image": "https://example.com/especializacion-negocios.jpg",
+      "image": "https://picsum.photos/seed/negocios-internacionales/400/300",
       "associated_calls": [6, 8]
     }
   ]
