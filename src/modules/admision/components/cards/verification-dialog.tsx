@@ -4,15 +4,17 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText } from 'lucide-react'
 import { OTPInput, SlotProps } from 'input-otp'
-import { useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react"
 import { cn } from "@nextui-org/react"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogFooter, AlertDialogTrigger } from "@/components/ui/alert-dialog"
+import Link from "next/link"
 
 export function VerificationDialog() {
     const router = useRouter()
     const searchParams = useSearchParams()
     const [code, setCode] = useState('')
+    const pathname = usePathname()
 
     console.log(searchParams)
 
@@ -94,8 +96,11 @@ export function VerificationDialog() {
                     <AlertDialogAction
                         className="w-full"
                         disabled={isLoading}
+                        asChild
                     >
-                        Continuar
+                        <Link href={pathname + '/upload-files'}>
+                            Continuar
+                        </Link>
                     </AlertDialogAction>
                     <AlertDialogCancel
                         className="w-full"
