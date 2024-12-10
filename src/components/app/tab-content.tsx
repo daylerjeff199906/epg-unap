@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 interface IProps {
   right: React.ReactNode
-  left: string
+  left: React.ReactNode
   titleRight?: string
   titleLeft?: string
 }
@@ -16,30 +16,30 @@ export const TabContent = (props: IProps) => {
       defaultValue="ui"
       className="w-full space-y-8"
     >
-      <TabsList className="grid max-w-screen-sm grid-cols-3 px-0 bg-transparent">
+      <TabsList className="grid grid-cols-1 max-w-screen-sm md:grid-cols-3 px-0 bg-transparent">
         <TabsTrigger
           value="ui"
-          className="bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-black rounded-none data-[state=active]:shadow-none data-[state=active]:bg-transparent"
+          className="pb-4 bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-primary-900 rounded-none data-[state=active]:shadow-none data-[state=active]:bg-transparent data-[state=active]:text-primary-900 text-medium"
         >
           {titleRight || 'Right'}
         </TabsTrigger>
         <TabsTrigger
           value="code"
-          className="bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-black rounded-none data-[state=active]:shadow-none data-[state=active]:bg-transparent"
+          className="pb-4 bg-transparent data-[state=active]:border-b-2 data-[state=active]:border-primary-900 rounded-none data-[state=active]:shadow-none data-[state=active]:bg-transparent data-[state=active]:text-primary-900 text-medium"
         >
           {titleLeft || 'Left'}
         </TabsTrigger>
       </TabsList>
       <TabsContent value="ui">
         <main
-          className={`flex flex-col w-full`}
+          className={`flex flex-col w-full pt-16 md:pt-4`}
         >
           {right}
         </main>
       </TabsContent>
       <TabsContent
         value="code"
-        className="max-w-screen-md px-1"
+        className="flex flex-col w-full pt-16 md:pt-4"
       >
         {left}
       </TabsContent>

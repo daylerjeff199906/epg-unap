@@ -5,14 +5,14 @@ export const PostulationDetailCard = () => {
         <div className="space-y-6">
             <div className="space-y-4">
                 <TitleParagraph text="Objetivos del programa" />
-                <p className="text-base text-foreground">
+                <p className="text-foreground">
                     Esta maestría es una iniciativa de la Universidad Nacional de la Amazonía Peruana, comprometida con la excelencia académica y la formación de profesionales del derecho. El programa se ofrece de manera presencial y está diseñado para proporcionar a los estudiantes una comprensión profunda del marco legal en las áreas de derecho civil y comercial.
                 </p>
             </div>
 
             <div className="space-y-4">
                 <TitleParagraph text="Perfil del estudiante" />
-                <ul className="list-disc list-inside text-base text-foreground space-y-1 pl-4">
+                <ul className="list-disc list-inside  text-foreground space-y-1 pl-4">
                     <li>
                         Haber terminado la maestría en Antropología o contar con una
                         experiencia en investigación antropológica equivalente.
@@ -28,7 +28,7 @@ export const PostulationDetailCard = () => {
 
             <div className="space-y-4">
                 <TitleParagraph text="Perfil del graduado" />
-                <p className="text-base text-foreground">
+                <p className=" text-foreground">
                     Al completar el Doctorado en Ciencias con mención en Ecología
                     Amazónica en la Escuela de Posgrado de la UNAP, los graduados
                     estarían preparados para...
@@ -45,7 +45,7 @@ export const PostulationDetailCard = () => {
 
             <div className="space-y-4">
                 <TitleParagraph text="Documentación requerida" />
-                <ul className="list-disc list-inside text-base text-foreground space-y-1 pl-4">
+                <ul className="list-disc list-inside  text-foreground space-y-1 pl-4">
                     <li>
                         Copia fedateada del grado de maestro emitida por la universidad de origen. Y constancia de inscripción de la SUNEDU.
                     </li>

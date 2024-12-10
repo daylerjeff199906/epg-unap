@@ -1,0 +1,150 @@
+{
+    "data": [
+      {
+        "plan_estudio": {
+          "id": 1,
+          "nombre": "Ingeniería de Software",
+          "is_active": true,
+          "costo": 15000,
+          "comision": null,
+          "cuotas": 10,
+          "matriculas": 2,
+          "modalidad": "Presencial",
+          "sede": "Lima",
+          "duracion_academica": 24,
+          "programa": 101
+        },
+        "ciclos": [
+          {
+            "ciclo": 1,
+            "cursos": [
+              {
+                "id": 101,
+                "nombre": "Matemática Básica",
+                "codigo": "MATH101",
+                "ciclo": 1,
+                "creditos": 3,
+                "horas_teoricas": 2,
+                "horas_practicas": 2,
+                "requisitos": []
+              },
+              {
+                "id": 102,
+                "nombre": "Introducción a la Programación",
+                "codigo": "CS101",
+                "ciclo": 1,
+                "creditos": 4,
+                "horas_teoricas": 3,
+                "horas_practicas": 2,
+                "requisitos": []
+              }
+            ]
+          },
+          {
+            "ciclo": 2,
+            "cursos": [
+              {
+                "id": 201,
+                "nombre": "Álgebra Lineal",
+                "codigo": "MATH201",
+                "ciclo": 2,
+                "creditos": 3,
+                "horas_teoricas": 3,
+                "horas_practicas": 0,
+                "requisitos": [
+                  { "requisito__codigo": "MATH101" }
+                ]
+              },
+              {
+                "id": 202,
+                "nombre": "Estructuras de Datos",
+                "codigo": "CS201",
+                "ciclo": 2,
+                "creditos": 4,
+                "horas_teoricas": 3,
+                "horas_practicas": 2,
+                "requisitos": [
+                  { "requisito__codigo": "CS101" }
+                ]
+              }
+            ]
+          }
+        ],
+        "horas_totales": 28,
+        "creditos_totales": 14
+      },
+      {
+        "plan_estudio": {
+          "id": 2,
+          "nombre": "Ciencia de Datos",
+          "is_active": true,
+          "costo": 18000,
+          "comision": null,
+          "cuotas": 12,
+          "matriculas": 3,
+          "modalidad": "Online",
+          "sede": null,
+          "duracion_academica": 18,
+          "programa": 102
+        },
+        "ciclos": [
+          {
+            "ciclo": 1,
+            "cursos": [
+              {
+                "id": 301,
+                "nombre": "Fundamentos de Estadística",
+                "codigo": "STAT101",
+                "ciclo": 1,
+                "creditos": 3,
+                "horas_teoricas": 2,
+                "horas_practicas": 2,
+                "requisitos": []
+              },
+              {
+                "id": 302,
+                "nombre": "Introducción a Python",
+                "codigo": "PY101",
+                "ciclo": 1,
+                "creditos": 4,
+                "horas_teoricas": 3,
+                "horas_practicas": 2,
+                "requisitos": []
+              }
+            ]
+          },
+          {
+            "ciclo": 2,
+            "cursos": [
+              {
+                "id": 401,
+                "nombre": "Modelos de Machine Learning",
+                "codigo": "ML201",
+                "ciclo": 2,
+                "creditos": 4,
+                "horas_teoricas": 3,
+                "horas_practicas": 2,
+                "requisitos": [
+                  { "requisito__codigo": "STAT101" },
+                  { "requisito__codigo": "PY101" }
+                ]
+              },
+              {
+                "id": 402,
+                "nombre": "Bases de Datos",
+                "codigo": "DB201",
+                "ciclo": 2,
+                "creditos": 3,
+                "horas_teoricas": 2,
+                "horas_practicas": 2,
+                "requisitos": []
+              }
+            ]
+          }
+        ],
+        "horas_totales": 32,
+        "creditos_totales": 14
+      }
+    ]
+  }
+  
