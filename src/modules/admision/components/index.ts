@@ -11,6 +11,7 @@ import { TitleParagraph } from './typography/title-paragraph'
 import { PostulacionCard } from './cards/postulation-card'
 import { AplicationCard } from './cards/postulation-action-card'
 import { PostulationDetailCard } from './cards/postulation-detail-card'
+import { VerificationDialog } from './cards/verification-dialog'
 
 export {
   ConvocatoriaCard,
@@ -26,4 +27,5 @@ export {
   PostulacionCard,
   AplicationCard,
   PostulationDetailCard,
+  VerificationDialog,
 }

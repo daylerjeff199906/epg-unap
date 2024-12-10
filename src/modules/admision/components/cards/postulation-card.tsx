@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CalendarIcon, ClockIcon } from "lucide-react";
+import { VerificationDialog } from "./verification-dialog";
 
 export const PostulacionCard = () => {
     return (
@@ -21,9 +22,7 @@ export const PostulacionCard = () => {
                 <Button size='sm' className="rounded-sm w-full py-2 bg-gray-100 text-blue-900 font-medium hover:bg-gray-200">
                     Cronograma completo
                 </Button>
-                <Button size='sm' className="rounded-sm w-full py-2 bg-blue-500 font-medium hover:bg-blue-600">
-                    Validar pago
-                </Button>
+                <VerificationDialog />
             </div>
         </div>
     );
